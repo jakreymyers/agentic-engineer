@@ -27,6 +27,8 @@ REPORT_FILE: $3 (defaults to './agents/background/background-report-ĐAY-NAME_HH
 - Use --output-format text for standard text output
 - Use --dangerously-skip-permissions to bypass permission prompts for automated operation
 - Use all provided cli flags AS IS. Do not alter them.
+- The append-system-prompt contains all report structure requirements and renaming logic
+- IMPORTANT: Do not alter the append-system-prompt in any way.
 
 ## Workflow
 1. Create the report directory if it doesn't exist:
@@ -112,3 +114,4 @@ After launching the background agent, respond with:
 ```
 Background Claude Code kicked off. Agent is writing to `REPORT_FILE` as it works.
 When it completes it will rename the file to `REPORT_FILE.complete.md` on success or `REPORT_FILE.failed.md` if it fails.
+```
