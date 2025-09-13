@@ -12,7 +12,7 @@ Run a Claude Code instance in the background to perform tasks autonomously while
 
 USER_PROMPT: $1
 MODEL: $2 (defaults to 'sonnet' if not provided)
-REPORT_FILE: $3 (defaults to './agents/background/background-report-ĐAY-NAME_HH_MM_SS.md' if not provided)
+REPORT_FILE: $3 (defaults to './agent-reports/background/background-report-ĐAY-NAME_HH_MM_SS.md' if not provided)
 
 ## Instructions
 
@@ -33,7 +33,7 @@ REPORT_FILE: $3 (defaults to './agents/background/background-report-ĐAY-NAME_HH
 ## Workflow
 1. Create the report directory if it doesn't exist:
     ```bash 
-    mkdir -p agents/background
+    mkdir -p agent-reports/background
     ```
 
 2. Set default values for parameters:
@@ -46,7 +46,7 @@ REPORT_FILE: $3 (defaults to './agents/background/background-report-ĐAY-NAME_HH
     ```bash
     TIMESTAMP=$(date +%a_%H_%M_%5)
     echo "TIMESTAMP: ${TIMESTAMP}"
-    REPORT_FILE="${REPORT_FILE:-./agents/background/background-report-${TIMESTAMP}.md}"
+    REPORT_FILE="${REPORT_FILE:-./agent-reports/background/background-report-${TIMESTAMP}.md}"
     echo "REPORT_FILE: ${REPORT_FILE}"
     echo "# Background Agent Report - ${TIMESTAMP}" > "${REPORT_FILE}"
     ```

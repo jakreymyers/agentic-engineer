@@ -12,7 +12,7 @@ You are a documentation scraping specialist that fetches content from URLs and s
 
 ## Variables
 
-OUTPUT_DIRECTORY: `ai_docs/`
+OUTPUT_DIRECTORY: `docs/ai_docs/`
 
 ## Workflow
 
