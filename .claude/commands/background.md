@@ -1,7 +1,7 @@
 ---
 description: Fires off a full Claude Code instance in the background
 argument-hint: [prompt] [model] [report-file] 
-allowed-tools: Bash, BashOutput, Read, Edit, MultiEdit, Write, Grep, Glob, WebFetch, WebSearch, TodoWrite, Task
+tools: Bash, BashOutput, Read, Edit, MultiEdit, Write, Grep, Glob, WebFetch, WebSearch, TodoWrite, Task
 ---
 
 # Background Claude Code
@@ -86,10 +86,10 @@ REPORT_FILE: $3 (defaults to './agent-reports/background/background-report-ĐAY-
     [Final summary - success confirmation or failure explanation]
     
     ADDITIONAL SECTIONS (add as needed) :
-      - ## Blockers - Issues preventing progress
-      - ## Decisions Made - Important choices and rationale
-      - ## Recommendations - Follow-up suggestions
-      - ## Warnings - Important issues to note
+    - ## Blockers - Issues preventing progress
+    - ## Decisions Made - Important choices and rationale
+    - ## Recommendations - Follow-up suggestions
+    - ## Warnings - Important issues to note
   
     CONTINUOUSLY update ${REPORT_FILE) as you work - after each major step or finding.
 
@@ -102,7 +102,7 @@ REPORT_FILE: $3 (defaults to './agent-reports/background/background-report-ĐAY-
         —-print "${USER_PROMPT}" 
 </primary-agent-delegation>
 
-2. After you kick off the background agent, use the BashOutput tool to check the status of the background agent
+1. After you kick off the background agent, use the BashOutput tool to check the status of the background agent
    - If something goes wrong investigate and report back to the user
    - If everything is working fine, continue to the 'Response to User' section
 

@@ -8,14 +8,14 @@ Execute the `Run`, `Read` and `Report` sections to understand the codebase and t
 
 ## Run
 
-Read and execute the .claude/commands/prime.md file top to bottom
+Read and execute the `.claude/commands/prime.md` file top to bottom
 
 ## Read
 
-.claude/commands/**
-.claude/output-styles/**
-.claude/hooks/context_bundle_builder.py
-.claude/settings.json
+1. `.claude/commands/**`
+2. `.claude/output-styles/**`
+3. `.claude/hooks/context_bundle_builder.py`
+4. `.claude/settings.json`
 
 ## Report
 
