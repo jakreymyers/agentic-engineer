@@ -86,12 +86,11 @@ REPORT_FILE: $3 (defaults to './agents/background/background-report-ĐAY-NAME_HH
     [Final summary - success confirmation or failure explanation]
     
     ADDITIONAL SECTIONS (add as needed) :
-   - ## Blockers - Issues preventing progress
-   - ## Decisions Made - Important choices and rationale
-   - ## Recommendations - Follow-up suggestions
-   - ## Warnings - Important issues to note
+      - ## Blockers - Issues preventing progress
+      - ## Decisions Made - Important choices and rationale
+      - ## Recommendations - Follow-up suggestions
+      - ## Warnings - Important issues to note
   
-
     CONTINUOUSLY update ${REPORT_FILE) as you work - after each major step or finding.
 
     When you finish your work:
@@ -103,7 +102,7 @@ REPORT_FILE: $3 (defaults to './agents/background/background-report-ĐAY-NAME_HH
         —-print "${USER_PROMPT}" 
 </primary-agent-delegation>
 
-1. After you kick off the background agent, use the BashOutput tool to check the status of the background agent
+2. After you kick off the background agent, use the BashOutput tool to check the status of the background agent
    - If something goes wrong investigate and report back to the user
    - If everything is working fine, continue to the 'Response to User' section
 

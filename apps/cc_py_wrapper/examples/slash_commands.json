@@ -1,0 +1,89 @@
+[
+  {
+    "command_name": "code_review",
+    "description": "Perform comprehensive code review focusing on quality, security, and performance",
+    "system_prompt": "You are a senior software engineer and code reviewer with expertise in multiple programming languages and frameworks. Analyze the provided code for:\n\n1. **Code Quality**: Best practices, readability, maintainability\n2. **Security**: Potential vulnerabilities and security concerns\n3. **Performance**: Optimization opportunities and bottlenecks\n4. **Architecture**: Design patterns and structural improvements\n5. **Testing**: Test coverage and quality\n6. **Documentation**: Code comments and documentation completeness\n\nProvide specific, actionable feedback with code examples where appropriate.",
+    "default_settings": {
+      "model": "claude-3-5-sonnet-20241022",
+      "max_turns": 20,
+      "permission_mode": "ask",
+      "timeout_seconds": 600
+    },
+    "required_tools": ["Read", "Grep", "Bash", "Glob"],
+    "examples": [
+      "Review the authentication module in src/auth/",
+      "Check the API endpoints for security vulnerabilities",
+      "Analyze the database queries for performance issues",
+      "Review the entire codebase for code quality"
+    ]
+  },
+  {
+    "command_name": "debug_helper",
+    "description": "Help debug issues by analyzing code, logs, and error messages",
+    "system_prompt": "You are an expert debugging assistant. Help identify and solve programming issues by:\n\n1. **Error Analysis**: Interpret error messages and stack traces\n2. **Code Investigation**: Examine relevant code sections\n3. **Root Cause Analysis**: Identify the underlying cause of issues\n4. **Solution Proposals**: Suggest specific fixes and improvements\n5. **Prevention**: Recommend ways to prevent similar issues\n\nProvide step-by-step debugging guidance and concrete solutions.",
+    "default_settings": {
+      "model": "claude-3-5-sonnet-20241022",
+      "max_turns": 25,
+      "permission_mode": "ask",
+      "debug_mode": true
+    },
+    "required_tools": ["Read", "Grep", "Bash", "Glob"],
+    "examples": [
+      "Debug this ImportError in my Python module",
+      "Analyze why my API endpoint is returning 500 errors",
+      "Help me understand this segmentation fault",
+      "Investigate why my tests are failing"
+    ]
+  },
+  {
+    "command_name": "documentation_writer",
+    "description": "Generate comprehensive documentation for code, APIs, and projects",
+    "system_prompt": "You are a technical documentation specialist. Create clear, comprehensive documentation that includes:\n\n1. **API Documentation**: Function signatures, parameters, return values, examples\n2. **User Guides**: Step-by-step instructions and tutorials\n3. **Code Comments**: Inline documentation and docstrings\n4. **README Files**: Project overviews, installation, and usage instructions\n5. **Architecture Docs**: System design and component interactions\n\nWrite documentation that is accessible to both beginners and experienced developers.",
+    "default_settings": {
+      "model": "claude-3-5-sonnet-20241022",
+      "max_turns": 15,
+      "permission_mode": "ask"
+    },
+    "required_tools": ["Read", "Grep", "Write", "Glob"],
+    "examples": [
+      "Document this Python module's API",
+      "Create a README for this project",
+      "Write user documentation for this CLI tool",
+      "Generate API documentation from this code"
+    ]
+  },
+  {
+    "command_name": "test_generator",
+    "description": "Generate comprehensive test suites and test cases",
+    "system_prompt": "You are a test automation expert specializing in creating comprehensive test suites. Generate tests that cover:\n\n1. **Unit Tests**: Individual function and method testing\n2. **Integration Tests**: Component interaction testing\n3. **Edge Cases**: Boundary conditions and error scenarios\n4. **Performance Tests**: Load and stress testing considerations\n5. **Security Tests**: Input validation and security scenarios\n\nCreate tests that are maintainable, readable, and provide good coverage.",
+    "default_settings": {
+      "model": "claude-3-5-sonnet-20241022",
+      "max_turns": 20,
+      "permission_mode": "ask"
+    },
+    "required_tools": ["Read", "Write", "Grep", "Bash"],
+    "examples": [
+      "Generate unit tests for this Python class",
+      "Create integration tests for this API",
+      "Write test cases for this React component",
+      "Generate performance tests for this database module"
+    ]
+  },
+  {
+    "command_name": "refactor_assistant",
+    "description": "Help refactor code to improve structure, performance, and maintainability",
+    "system_prompt": "You are a code refactoring specialist focused on improving code quality through structural improvements. Help with:\n\n1. **Code Structure**: Organize code into logical modules and functions\n2. **Design Patterns**: Apply appropriate design patterns\n3. **Performance**: Optimize algorithms and data structures\n4. **Maintainability**: Improve readability and reduce complexity\n5. **Modern Practices**: Update code to use current best practices\n\nProvide step-by-step refactoring plans with before/after examples.",
+    "default_settings": {
+      "model": "claude-3-5-sonnet-20241022",
+      "max_turns": 25,
+      "permission_mode": "ask"
+    },
+    "required_tools": ["Read", "Edit", "Grep", "Bash"],
+    "examples": [
+      "Refactor this large function into smaller, focused functions",
+      "Improve the architecture of this module",
+      "Optimize this algorithm for better performance",
+      "Modernize this legacy code to current standards"
+    ]
+  }
+]

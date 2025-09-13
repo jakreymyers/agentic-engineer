@@ -1,0 +1,27 @@
+[project]
+name = "cc-py-wrapper"
+version = "0.1.0"
+description = "A reusable wrapper system for Claude Code Python SDK"
+authors = [
+    {name = "Development Team"}
+]
+dependencies = [
+    "claude-code-sdk>=0.1.0",
+    "pydantic>=2.0.0",
+    "click>=8.0.0",
+    "asyncio-compat>=0.1.0",
+]
+requires-python = ">=3.8"
+
+[project.scripts]
+cc-wrapper = "cc_py_wrapper.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.20.0",
+]
