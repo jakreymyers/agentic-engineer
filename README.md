@@ -101,6 +101,19 @@ Transform ineffective AI coding slop into structured AI-assisted development thr
 | **bmad-master** | 👑 Universal | All agent capabilities for flexible execution |
 | **bmad-orchestrator** | 🎭 Conductor | Team coordination, workflow management |
 
+### Key BMAD Commands Reference
+
+| Agent | Key Commands | Purpose |
+|-------|-------------|----------|
+| **analyst** | `*brainstorm {topic}`, `*create-project-brief`, `*create-competitor-analysis`, `*research-prompt {topic}` | Research & discovery |
+| **pm** | `*create-prd`, `*create-brownfield-prd`, `*create-brownfield-story`, `*create-brownfield-epic` | Product planning |
+| **architect** | `*create-full-stack-architecture`, `*document-project`, `*create-backend-architecture` | System design |
+| **po** | `*shard-doc {doc} {dest}`, `*validate-story-draft {story}`, `*execute-checklist-po`, `*correct-course` | Validation & sharding |
+| **sm** | `*draft`, `*story-checklist`, `*correct-course` | Story creation |
+| **dev** | `*develop-story`, `*run-tests`, `*review-qa`, `*explain` | Implementation |
+| **qa** | `*risk-profile {story}`, `*test-design {story}`, `*review {story}`, `*gate {story}`, `*trace {story}`, `*nfr-assess {story}` | Quality assurance |
+| **ux-expert** | `*create-front-end-spec`, `*generate-ui-prompt` | UI/UX design |
+
 ### Greenfield Development (New Projects)
 
 #### Discovery Phase
@@ -148,40 +161,39 @@ Transform ineffective AI coding slop into structured AI-assisted development thr
 **Primary Goal:** Execute story-driven development with comprehensive testing and continuous validation
 
 1. **Story Creation** (`/sm`)
-   - `*draft` to create a integrated story file with technical details
+   - `*draft` to create integrated story file with technical details
    - `*story-checklist` to validate story draft quality
-  
-2. **Story Validation** (`/po`)
-   - `*validate-story-draft {story}` to ensure story aligns with requirements
+   - Update status from "Draft" to "Approved"
 
-3. **Optional Risk Assessment** (`/qa`)
-   - `*risk-profile {story}` to assess implementation risks
-   - `*test-design {story}` to create comprehensive test strategy
-
-4. **Implementation** (`/dev`)
-   - `*develop-story` to execute sequential task implementation
-   - Mid-development QA checks (optional):
-     - `/qa` `*trace {story}` for test coverage validation
-     - `/qa` `*nfr-assess {story}` for non-functional requirements check
+2. **Story Implementation** (`/dev`)
+   - `*develop-story {approved-story}` to execute sequential task implementation
    - `*run-tests` to execute linting and full test suite
+
 
 #### Validation Phase
 
 **Primary Goal:** Comprehensive quality assessment with risk-based testing and quality gates
 
 1. **Comprehensive Review** (`/qa`)
-   - `*review {story}` for assessment & story verifcation
-   - Requirements traceability mapping, validates acceptance criteria, creates quality gates
+   - `*review {story}` for full assessment and story verification
+   - Creates quality gate decision (PASS/CONCERNS/FAIL/WAIVED)
 
-2. **Quality Gate Management** (`/qa`)
-   - `*gate {story}` to update quality gate status after fixes
-   - Gate files stored in `docs/qa/gates/`, assessment files in `docs/qa/assessments/`
+2. **Fix Integration** (`/dev`)
+   - `*review-qa` to apply QA fixes when needed
+   - Re-run validation cycle until quality gate passes
 
-3. **Fix Integration** (`/dev`)
-   - `*review-qa` to apply QA fixes, re-run validation cycle until QA passes
+3. **Story Completion**
+   - Verify all tests pass and quality gate is satisfactory
+   - Mark story as "Done"
 
-4. **Story Completion** (`/qa`)
-   - `*review {story}` when all tests pass, mark story as "Done"
+#### Integrating Development & Testing Phases
+
+**QA commands can be used at different stages based on story complexity and risk:**
+
+- **Before Development** (High-risk/complex stories): `*risk-profile {story}`, `*test-design {story}`
+- **During Development** (Mid-implementation checks): `*trace {story}`, `*nfr-assess {story}`
+- **After Development** (Required): `*review {story}` for comprehensive assessment
+- **Post-Review** (As needed): `*gate {story}` to update quality gate status
 
 ### Brownfield Development (Existing Projects)
 
@@ -236,38 +248,6 @@ Transform ineffective AI coding slop into structured AI-assisted development thr
    - Emphasizes regression prevention and existing functionality preservation
    - `*run-tests` with particular attention to regression test suite
 
-#### Validation Phase
-
-**Primary Goal:** Comprehensive quality assessment with emphasis on system integrity and regression prevention
-
-1. **Comprehensive Review** (`/qa` - Test Architect Quinn)
-   - `*review {story}` with focus on brownfield concerns
-   - Validates no existing functionality is broken
-   - Ensures integration follows existing patterns
-   - Creates quality gate decision emphasizing system stability
-
-2. **Quality Gate Management**
-   - `*gate {story}` decisions prioritize system integrity
-   - Special attention to backward compatibility
-   - Regression testing validation
-
-3. **Fix Integration & Story Completion**
-   - `/dev` `*review-qa` to address brownfield-specific concerns
-   - Verify all existing functionality remains intact
-   - Complete story and proceed to next enhancement
-
-### Key BMAD Commands Reference
-
-| Agent | Key Commands | Purpose |
-|-------|-------------|----------|
-| **analyst** | `*brainstorm {topic}`, `*create-project-brief`, `*elicit` | Research & discovery |
-| **pm** | `*create-prd`, `*create-brownfield-prd`, `*create-brownfield-story`, `*create-brownfield-epic` | Product planning |
-| **architect** | `*create-full-stack-architecture`, `*document-project` | System design |
-| **po** | `*shard-doc {doc} {dest}`, `*validate-story-draft {story}`, `*execute-checklist-po`, `*correct-course` | Validation & sharding |
-| **sm** | `*draft`, `*story-checklist`, `*correct-course` | Story creation |
-| **dev** | `*develop-story`, `*run-tests`, `*review-qa`, `*explain` | Implementation |
-| **qa** | `*risk-profile {story}`, `*test-design {story}`, `*review {story}`, `*gate {story}`, `*trace {story}`, `*nfr-assess {story}` | Quality assurance | 
-
 #### Development & Testing Phase
 
 **Primary Goal:** Execute story-driven development with comprehensive testing and continuous validation
@@ -296,32 +276,20 @@ Transform ineffective AI coding slop into structured AI-assisted development thr
    - `*run-tests` to execute linting and full test suite
    - Mark story as "Ready for Review" when complete
 
-#### QA/Validation Phase
+#### Validation Phase
 
-**Primary Goal:** Comprehensive quality assessment with risk-based testing and quality gates
+**Primary Goal:** Comprehensive quality assessment with emphasis on system integrity and regression prevention
 
-1. **Comprehensive Review** (`/qa` - Test Architect Quinn)
-   - `*review {story}` for full test architecture assessment
-   - Performs requirements traceability mapping
-   - Conducts active code refactoring when safe
-   - Validates all acceptance criteria implementation
-   - Creates quality gate decision (PASS/CONCERNS/FAIL/WAIVED)
+1. **Comprehensive Review** (`/qa`)
+   - `*review {story}` with focus on brownfield concerns
 
-2. **Quality Gate Management**
-   - `*gate {story}` to update quality gate status after fixes
-   - Gate files stored in `docs/qa/gates/`
-   - Assessment files in `docs/qa/assessments/`
+2. **Quality Gate Management** (`/qa`)
+   - `*gate {story}` decisions prioritize system integrity
+   - Special attention to backward compatibility & regression testing validation
 
-3. **Fix Integration** (If needed)
-   - `/dev` `*review-qa` to apply QA fixes
-   - Address unchecked improvements from QA Results
-   - Re-run validation cycle until gate passes
-
-4. **Story Completion**
-   - Verify all regression tests pass
-   - Commit changes before proceeding
-   - Mark story as "Done"
-   - Proceed to next story in development cycle
+3. **Fix Integration & Story Completion** (`/dev`)
+   - `*review-qa` to address brownfield-specific concerns
+   - Verify all existing functionality remains intact
 
 ### File Structure After Setup
 
@@ -330,21 +298,21 @@ your-project/
 ├── docs/
 │   ├── prd.md                    # Product Requirements Document
 │   ├── architecture.md           # Technical Architecture
-│   ├── prd/                     # Sharded epic files
-│   │   ├── index.md             # PRD overview with section links
+│   ├── prd/                      # Sharded epic files
+│   │   ├── index.md              # PRD overview with section links
 │   │   ├── epic-1-user-auth.md
 │   │   └── epic-2-dashboard.md
-│   ├── architecture/            # Sharded architecture files
+│   ├── architecture/             # Sharded architecture files
 │   │   ├── index.md
 │   │   ├── tech-stack.md
 │   │   ├── coding-standards.md
 │   │   └── testing-strategy.md
-│   ├── stories/                 # Implementation stories
-│   │   ├── 1.1.story.md        # Epic 1, Story 1
-│   │   └── 1.2.story.md        # Epic 1, Story 2
-│   └── qa/                      # Quality assessments
-│       ├── assessments/         # Risk, NFR, and trace reports
-│       └── gates/               # Quality gate decisions
+│   ├── stories/                  # Implementation stories
+│   │   ├── 1.1.story.md          # Epic 1, Story 1
+│   │   └── 1.2.story.md          # Epic 1, Story 2
+│   └── qa/                       # Quality assessments
+│       ├── assessments/          # Risk, NFR, and trace reports
+│       └── gates/                # Quality gate decisions
 ```
 
 ## 📝 Content Creation Framework
