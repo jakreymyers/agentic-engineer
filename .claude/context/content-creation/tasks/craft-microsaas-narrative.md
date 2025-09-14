@@ -2,7 +2,7 @@
 
 ## Task Overview
 
-Create compelling narratives around Kevin's solopreneur journey and MicroSaaS development that build audience, validate ideas, and drive business outcomes.
+Create compelling narratives around Jak's solopreneur journey and MicroSaaS development that build audience, validate ideas, and drive business outcomes.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ Create compelling narratives around Kevin's solopreneur journey and MicroSaaS de
 **ELICIT: true**
 **Format: structured**
 
-I need to understand where Kevin is in the journey:
+I need to understand where Jak is in the journey:
 
 1. **Current Stage**: Pre-launch, developing, launched, scaling?
 2. **Product Status**: Idea, prototype, MVP, full product?
@@ -31,7 +31,7 @@ I need to understand where Kevin is in the journey:
 **ELICIT: true**
 **Format: comfort-levels**
 
-Let's establish what Kevin is comfortable sharing:
+Let's establish what Jak is comfortable sharing:
 
 **Financial Transparency:**
 
@@ -57,7 +57,7 @@ I'll create a compelling narrative structure:
 
 **Origin Story Elements:**
 
-- Why Kevin chose solopreneurship
+- Why Jak chose solopreneurship
 - The specific problem he couldn't stop thinking about
 - The moment he decided to build a solution
 - What he left behind and why
@@ -72,7 +72,7 @@ I'll create a compelling narrative structure:
 **Current Chapter:**
 
 - Present challenges and opportunities
-- What Kevin is learning right now
+- What Jak is learning right now
 - Community and support system
 - Vision for what's coming next
 
@@ -81,13 +81,13 @@ I'll create a compelling narrative structure:
 **ELICIT: true**
 **Format: positioning**
 
-Let's define what makes Kevin's story distinctive:
+Let's define what makes Jak's story distinctive:
 
-1. **Technical Credibility**: How does Kevin's data expertise differentiate?
+1. **Technical Credibility**: How does Jak's data expertise differentiate?
 2. **Healthcare Domain**: What healthcare-specific insights does he bring?
 3. **Practitioner Perspective**: How does real implementation experience help?
-4. **Vulnerable Authenticity**: What struggles is Kevin willing to share?
-5. **Community Value**: How does Kevin help other builders?
+4. **Vulnerable Authenticity**: What struggles is Jak willing to share?
+5. **Community Value**: How does Jak help other builders?
 
 ### 5. Audience-Specific Messaging
 
@@ -134,7 +134,7 @@ Let's plan systematic narrative development:
 - Month 3: Product development and technical challenges
 - Month 4: Growth, scaling, and future vision
 
-Which cadence feels sustainable for Kevin?
+Which cadence feels sustainable for Jak?
 
 ### 7. Vulnerability and Value Balance
 
@@ -265,10 +265,10 @@ I'll establish measurements for narrative effectiveness:
 **ELICIT: true**
 **Format: final**
 
-Here's Kevin's MicroSaaS narrative framework:
+Here's Jak's MicroSaaS narrative framework:
 
 **Core Story:**
-[Kevin's unique origin, journey, and vision]
+[Jak's unique origin, journey, and vision]
 
 **Key Themes:**
 
@@ -292,11 +292,11 @@ Ready to begin systematic narrative development? (yes/adjust/different-focus)
 
 ## Success Criteria
 
-- Authentic and sustainable for Kevin
+- Authentic and sustainable for Jak
 - Provides value to multiple audiences
 - Drives business outcomes effectively
 - Builds genuine community and relationships
-- Positions Kevin as credible expert and builder
+- Positions Jak as credible expert and builder
 
 ## Common Narrative Elements
 

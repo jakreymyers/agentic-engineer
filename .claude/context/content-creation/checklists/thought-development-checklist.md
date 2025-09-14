@@ -4,7 +4,7 @@
 
 ### ✅ Initial Concept
 
-- [ ] **Personal connection** - Kevin has direct experience with this
+- [ ] **Personal connection** - Jak has direct experience with this
 - [ ] **Unique angle** - Not just repeating common wisdom
 - [ ] **Audience relevance** - Matters to data PMs, healthcare tech, or solopreneurs
 - [ ] **Timely or evergreen** - Either trending now or always valuable
@@ -16,15 +16,15 @@
 - [ ] **Multiple dimensions** - Technical, business, and human aspects
 - [ ] **Evidence available** - Personal stories, data, or examples to support
 - [ ] **Actionable elements** - Readers can implement something
-- [ ] **Teaching opportunity** - Kevin can genuinely help others
+- [ ] **Teaching opportunity** - Jak can genuinely help others
 
 ### ✅ Authenticity Check
 
-- [ ] **Kevin's expertise** - Within his domain knowledge
+- [ ] **Jak's expertise** - Within his domain knowledge
 - [ ] **Genuine conviction** - He actually believes this
-- [ ] **Personal stakes** - Kevin has skin in the game
+- [ ] **Personal stakes** - Jak has skin in the game
 - [ ] **Vulnerability appropriate** - Comfortable sharing struggles/failures
-- [ ] **Voice consistency** - Sounds like Kevin, not generic advice
+- [ ] **Voice consistency** - Sounds like Jak, not generic advice
 
 ## Concept Development
 
@@ -46,7 +46,7 @@
 
 ### ✅ Evidence Gathering
 
-- [ ] **Personal anecdotes** - Kevin's relevant experiences
+- [ ] **Personal anecdotes** - Jak's relevant experiences
 - [ ] **Industry examples** - Real companies/tools/situations
 - [ ] **Data points** - Statistics or metrics if available
 - [ ] **Expert validation** - Others who support this view
@@ -56,7 +56,7 @@
 
 ### ✅ Unique Value Proposition
 
-- [ ] **Kevin's special insight** - What only he can share
+- [ ] **Jak's special insight** - What only he can share
 - [ ] **Practitioner perspective** - Hands-on, not theoretical
 - [ ] **Healthcare context** - Domain-specific applications
 - [ ] **Solopreneur angle** - Independent builder viewpoint
@@ -67,7 +67,7 @@
 - [ ] **Common belief challenged** - What everyone assumes
 - [ ] **Evidence for alternative** - Why conventional wisdom fails
 - [ ] **Better approach proposed** - Not just criticism, but solution
-- [ ] **Personal experience** - Kevin's journey supports this view
+- [ ] **Personal experience** - Jak's journey supports this view
 - [ ] **Respectful disagreement** - Challenge ideas, not people
 
 ### ✅ Vulnerability Balance
@@ -100,19 +100,19 @@
 
 - [ ] **Original thinking** - Not just aggregating others' ideas
 - [ ] **Actionable insight** - Reader can do something different
-- [ ] **Professional relevance** - Advances Kevin's expertise
+- [ ] **Professional relevance** - Advances Jak's expertise
 - [ ] **Helpful to others** - Genuine value for audience
-- [ ] **Authentic voice** - Sounds like Kevin's perspective
+- [ ] **Authentic voice** - Sounds like Jak's perspective
 
 ## Thought Leadership Development
 
 ### ✅ Strategic Positioning
 
-- [ ] **Expertise demonstration** - Shows Kevin's deep knowledge
+- [ ] **Expertise demonstration** - Shows Jak's deep knowledge
 - [ ] **Thought progression** - Builds on previous content
 - [ ] **Industry contribution** - Advances field understanding
 - [ ] **Community building** - Attracts like-minded professionals
-- [ ] **Authority establishment** - Positions Kevin as expert
+- [ ] **Authority establishment** - Positions Jak as expert
 
 ### ✅ Long-term Value
 
@@ -124,17 +124,17 @@
 
 ### ✅ Brand Alignment
 
-- [ ] **Voice consistency** - Matches Kevin's established style
+- [ ] **Voice consistency** - Matches Jak's established style
 - [ ] **Theme coherence** - Fits with broader narrative
 - [ ] **Professional goals** - Supports career objectives
-- [ ] **Network relevance** - Valuable to Kevin's connections
+- [ ] **Network relevance** - Valuable to Jak's connections
 - [ ] **Future opportunities** - Opens doors for speaking/consulting
 
 ## Pre-Development Review
 
 ### ✅ Readiness Indicators
 
-- [ ] **Passionate conviction** - Kevin genuinely excited about this
+- [ ] **Passionate conviction** - Jak genuinely excited about this
 - [ ] **Clear articulation** - Can explain without hesitation
 - [ ] **Evidence abundance** - Multiple examples available
 - [ ] **Reader benefit obvious** - Value proposition clear
@@ -142,11 +142,11 @@
 
 ### ✅ Development Confidence
 
-- [ ] **Expertise sufficient** - Kevin qualified to discuss this
+- [ ] **Expertise sufficient** - Jak qualified to discuss this
 - [ ] **Time investment justified** - Worth the effort to develop
 - [ ] **Multiple format potential** - Could be LinkedIn post AND blog
 - [ ] **Engagement prediction** - Likely to generate discussion
-- [ ] **Professional enhancement** - Advances Kevin's reputation
+- [ ] **Professional enhancement** - Advances Jak's reputation
 
 ## Red Flags to Reconsider
 
@@ -160,7 +160,7 @@
 
 ### Strategic Concerns
 
-- ❌ Outside Kevin's expertise area
+- ❌ Outside Jak's expertise area
 - ❌ Controversial without value
 - ❌ Undermines professional credibility
 - ❌ Doesn't fit brand narrative
@@ -173,7 +173,7 @@ When ALL of these are true, proceed to content creation:
 - ✅ Unique angle identified
 - ✅ Personal experience supports it
 - ✅ Clear value for audience
-- ✅ Authentic to Kevin's voice
+- ✅ Authentic to Jak's voice
 - ✅ Evidence available to support
 - ✅ Actionable insights ready
 - ✅ Professional relevance confirmed

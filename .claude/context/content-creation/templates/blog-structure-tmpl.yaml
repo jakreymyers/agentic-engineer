@@ -1,12 +1,12 @@
 name: blog-structure
-description: Kevin's proven blog article framework for maximum impact
+description: Jak's proven blog article framework for maximum impact
 version: 1.0.0
 sections:
   - name: opening
     description: "Compelling hook that draws readers in"
     required: true
     options:
-      - personal_story: "Start with Kevin's real experience"
+      - personal_story: "Start with Jak's real experience"
       - surprising_fact: "Counter-intuitive data or insight"
       - contrarian_take: "Challenge conventional wisdom"
       - problem_scenario: "Paint picture of common struggle"
@@ -45,15 +45,15 @@ sections:
     guidelines:
       - "Keep it concise - background, not encyclopedia"
       - "Focus on what's directly relevant"
-      - "Use Kevin's domain expertise"
+      - "Use Jak's domain expertise"
       - "Connect to reader's experience"
 
-  - name: kevin_approach
-    description: "Kevin's unique solution or perspective"
+  - name: jak_approach
+    description: "Jak's unique solution or perspective"
     required: true
     components:
       - core_insight: "The key realization"
-      - methodology: "Kevin's specific approach"
+      - methodology: "Jak's specific approach"
       - why_different: "What makes this unique"
       - evidence: "Why this works"
     structure:
@@ -91,12 +91,12 @@ sections:
       - "Here's what success looks like..."
 
   - name: conclusion_synthesis
-    description: "Kevin's perspective and key takeaways"
+    description: "Jak's perspective and key takeaways"
     required: true
     elements:
       - key_insights: "3-5 main points"
       - broader_implications: "What this means for the field"
-      - kevin_perspective: "Personal reflection"
+      - jak_perspective: "Personal reflection"
       - call_to_action: "What reader should do next"
     avoid:
       - "Simple summary of what was said"
@@ -125,7 +125,7 @@ formatting_guidelines:
 seo_considerations:
   - title: "Include primary keyword naturally"
   - headers: "Use target keywords in H2s"
-  - internal_links: "Link to related Kevin content"
+  - internal_links: "Link to related Jak content"
   - meta_description: "Compelling 150-160 characters"
   - alt_text: "Descriptive image tags"
 
@@ -136,9 +136,9 @@ engagement_elements:
   - related_posts: "Link to complementary content"
   - social_share: "Quotable sections for LinkedIn"
 
-kevin_specific_touches:
+jak_specific_touches:
   - healthcare_context: "Industry-specific applications"
-  - data_product_angle: "Connect to Kevin's expertise"
+  - data_product_angle: "Connect to Jak's expertise"
   - solopreneur_insights: "Independent builder perspective"
   - vulnerability: "Appropriate sharing of struggles"
   - practical_wisdom: "Hard-won insights from experience"
@@ -146,6 +146,6 @@ kevin_specific_touches:
 quality_checks:
   - value_density: "Every paragraph delivers insight"
   - actionability: "Reader knows exactly what to do"
-  - authenticity: "Sounds like Kevin's voice"
+  - authenticity: "Sounds like Jak's voice"
   - originality: "Unique perspective, not rehashed advice"
   - evidence: "Claims supported by experience/data"

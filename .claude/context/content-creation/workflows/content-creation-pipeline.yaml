@@ -10,7 +10,7 @@ phases:
       - thought-partner
     steps:
       - id: brainstorm
-        action: "Generate initial ideas based on current trends and Kevin's expertise"
+        action: "Generate initial ideas based on current trends and Jak's expertise"
         agent: thought-partner
         command: "*brainstorm"
         
@@ -20,7 +20,7 @@ phases:
         command: "*stress-test"
         
       - id: angle
-        action: "Find unique perspective that only Kevin can provide"
+        action: "Find unique perspective that only Jak can provide"
         agent: thought-partner
         command: "*angle"
     
@@ -68,7 +68,7 @@ phases:
       - hook-optimizer
     steps:
       - id: ruthless_edit
-        action: "Apply Kevin's writing principles without mercy"
+        action: "Apply Jak's writing principles without mercy"
         agent: content-editor
         command: "*edit-ruthlessly"
         
@@ -118,7 +118,7 @@ quality_gates:
   - phase: ideation
     criteria:
       - unique_angle_identified
-      - aligns_with_kevin_expertise
+      - aligns_with_jak_expertise
       - clear_audience_value
       
   - phase: creation

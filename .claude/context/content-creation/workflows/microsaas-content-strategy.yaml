@@ -1,5 +1,5 @@
 name: microsaas-content-strategy
-description: Content strategy for Kevin's solopreneur journey and MicroSaaS development
+description: Content strategy for Jak's solopreneur journey and MicroSaaS development
 version: 1.0.0
 
 phases:
@@ -11,7 +11,7 @@ phases:
       - thought-partner
       - linkedin-writer
     objectives:
-      - build_solopreneur_brand: "Establish Kevin as credible indie builder"
+      - build_solopreneur_brand: "Establish Jak as credible indie builder"
       - validate_market_need: "Test ideas through content engagement"
       - document_journey: "Authentic building-in-public narrative"
       - grow_relevant_audience: "Attract potential customers and supporters"
@@ -22,7 +22,7 @@ phases:
         agent: microsaas-advisor
         command: "*journey-update"
         content_types:
-          - origin_story: "Why Kevin is going solo"
+          - origin_story: "Why Jak is going solo"
           - early_struggles: "Real challenges of independence"
           - learning_process: "Skills being developed"
           - idea_validation: "How he's testing concepts"
@@ -42,7 +42,7 @@ phases:
         agent: linkedin-writer
         command: "*create-post"
         targeting:
-          - data_product_managers: "Kevin's professional peers"
+          - data_product_managers: "Jak's professional peers"
           - healthcare_tech_leaders: "Domain expertise audience"
           - fellow_solopreneurs: "Journey companions and supporters"
           - technical_founders: "Kindred spirits building products"
@@ -56,7 +56,7 @@ phases:
       - narrative-architect
     objectives:
       - build_anticipation: "Generate interest in upcoming product"
-      - demonstrate_capability: "Show Kevin can actually build"
+      - demonstrate_capability: "Show Jak can actually build"
       - create_feedback_loops: "Get input during development"
       - maintain_authenticity: "Real struggles and breakthroughs"
     
@@ -130,7 +130,7 @@ phases:
         agent: content-editor
         command: "*authenticity-check"
         quality_focus:
-          - voice_consistency: "Still sounds like Kevin"
+          - voice_consistency: "Still sounds like Jak"
           - value_delivery: "Helpful even if not interested in product"
           - transparency_maintenance: "Honest about challenges"
           - community_focus: "Supporting others, not just selling"
@@ -167,7 +167,7 @@ phases:
           - revenue_metrics: "Actual numbers (within comfort level)"
           - customer_success: "Real user outcomes and stories"
           - operational_challenges: "What's hard about running SaaS"
-          - learning_insights: "What Kevin has discovered"
+          - learning_insights: "What Jak has discovered"
         
       - id: expertise_synthesis
         action: "Develop frameworks from experience"
@@ -176,7 +176,7 @@ phases:
         knowledge_sharing:
           - microsaas_frameworks: "Reusable approaches"
           - technical_patterns: "Architecture that works"
-          - market_insights: "What Kevin learned about customers"
+          - market_insights: "What Jak learned about customers"
           - solopreneur_wisdom: "Advice for other builders"
 
 content_types_by_phase:
@@ -289,7 +289,7 @@ success_metrics:
   
   thought_leadership:
     - original_frameworks: "Unique insights from experience"
-    - industry_influence: "Others reference Kevin's content"
+    - industry_influence: "Others reference Jak's content"
     - helping_others: "Community members succeed using advice"
     - authentic_inspiration: "Real impact on other builders"
 

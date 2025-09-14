@@ -4,15 +4,15 @@
 
 ### ✅ Topic Validation
 
-- [ ] **Expertise area** - Within Kevin's healthcare data/solopreneur domains
-- [ ] **Unique angle** - Kevin's specific perspective, not generic advice
+- [ ] **Expertise area** - Within Jak's healthcare data/solopreneur domains
+- [ ] **Unique angle** - Jak's specific perspective, not generic advice
 - [ ] **Audience value** - Clear benefit for data PMs, healthcare tech, or solopreneurs
 - [ ] **Search potential** - Keywords people actually search for
 - [ ] **Evergreen quality** - Valuable for months/years, not just today
 
 ### ✅ Research & Evidence
 
-- [ ] **Personal experience** - Kevin's real stories and examples
+- [ ] **Personal experience** - Jak's real stories and examples
 - [ ] **Supporting data** - Statistics, studies, or research
 - [ ] **Concrete examples** - Specific tools, companies, implementations
 - [ ] **Multiple sources** - Not relying on single anecdote
@@ -26,14 +26,14 @@
 - [ ] **Actionable sections** - Reader can implement advice
 - [ ] **Strong conclusion** - Synthesis and perspective, not just summary
 
-## Kevin's Writing Standards
+## Jak's Writing Standards
 
 ### ✅ Voice & Style
 
-- [ ] **Authentic Kevin voice** - Sounds like him speaking
+- [ ] **Authentic Jak voice** - Sounds like him speaking
 - [ ] **Active voice throughout** - Subject performs action
 - [ ] **No corporate jargon** - Plain English only
-- [ ] **Personal stories included** - Kevin's actual experiences
+- [ ] **Personal stories included** - Jak's actual experiences
 - [ ] **Conversational tone** - Like explaining to a colleague
 
 ### ✅ Clarity & Simplicity
@@ -90,7 +90,7 @@
 
 ### ✅ Credibility Markers
 
-- [ ] **Personal examples** - Kevin's real experiences
+- [ ] **Personal examples** - Jak's real experiences
 - [ ] **Industry context** - Healthcare/data product specifics
 - [ ] **Technical depth** - Shows genuine expertise
 - [ ] **Balanced perspective** - Acknowledges limitations/tradeoffs
@@ -161,7 +161,7 @@
 - [ ] **Archive strategy** - Keeping content discoverable
 - [ ] **Performance tracking** - Measuring long-term impact
 
-## Remember Kevin's Philosophy
+## Remember Jak's Philosophy
 
 > "The goal isn't to impress with vocabulary. It's to connect through clarity and help people solve real problems."
 
@@ -171,4 +171,4 @@ Every blog post should:
 - Share real experience, not just theory
 - Challenge conventional thinking when appropriate
 - Provide practical value readers can use immediately
-- Sound like Kevin having a thoughtful conversation
+- Sound like Jak having a thoughtful conversation

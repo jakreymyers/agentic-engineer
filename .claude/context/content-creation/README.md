@@ -1,8 +1,8 @@
-# BMAD Kevin Creator & Thought Partner Expansion Pack
+# BMAD Jak Content Creation Expansion Pack
 
 ## Overview
 
-The Kevin Creator expansion pack is a personalized content creation and thought partnership system designed specifically for Kevin Holland. This pack transforms Kevin's expertise in healthcare data products and his journey into solopreneurship into compelling content across LinkedIn, blogs, and other platforms. It enforces Kevin's writing principles while helping him develop unique perspectives at the intersection of data products, healthcare technology, and MicroSaaS development.
+The Jak Creator expansion pack is a personalized content creation and thought partnership system designed specifically for Jak Myers. This pack transforms Jak's expertise in augmented intelligence and his journey into solopreneurship into compelling content across LinkedIn, blogs, and other platforms. It enforces Jak's writing principles while helping him develop unique perspectives at the intersection of data products, healthcare technology, and MicroSaaS development.
 
 ## Core Philosophy
 
@@ -10,10 +10,10 @@ The Kevin Creator expansion pack is a personalized content creation and thought 
 
 This expansion pack implements four fundamental principles:
 
-1. **Authentic Voice**: Kevin's unique perspective as a practitioner, not just theorist
+1. **Authentic Voice**: Jak's unique perspective as a practitioner, not just theorist
 2. **Show, Don't Tell**: Concrete examples and real experiences over abstract claims
 3. **Value-First Content**: Every piece delivers actionable insights
-4. **Human, Not AI**: Content that sounds like Kevin talking, not ChatGPT writing
+4. **Human, Not AI**: Content that sounds like Jak talking, not ChatGPT writing
 
 ## What's Included
 
@@ -25,7 +25,7 @@ This expansion pack implements four fundamental principles:
    - Connects disparate concepts into frameworks
 
 2. **LinkedIn Writer** - Alex Chen
-   - Masters Kevin's punchy, value-driven LinkedIn style
+   - Masters Jak's punchy, value-driven LinkedIn style
    - Creates scroll-stopping hooks and re-hooks
    - Optimizes for engagement and virality
 
@@ -35,7 +35,7 @@ This expansion pack implements four fundamental principles:
    - Balances technical depth with accessibility
 
 4. **Content Editor** - Marcus Johnson
-   - Enforces Kevin's writing principles ruthlessly
+   - Enforces Jak's writing principles ruthlessly
    - Eliminates passive voice and jargon
    - Ensures clarity and impact
 
@@ -57,11 +57,11 @@ This expansion pack implements four fundamental principles:
 8. **Narrative Architect** - James Rodriguez
    - Structures stories for maximum impact
    - Develops recurring themes and series
-   - Builds Kevin's thought leadership arc
+   - Builds Jak's thought leadership arc
 
 ### 📋 Essential Checklists
 
-- **Content Quality Checklist**: Kevin's non-negotiable standards
+- **Content Quality Checklist**: Jak's non-negotiable standards
 - **LinkedIn Optimization Checklist**: Platform-specific best practices
 - **Blog Readiness Checklist**: Long-form content requirements
 - **Thought Development Checklist**: Idea validation and expansion
@@ -69,7 +69,7 @@ This expansion pack implements four fundamental principles:
 ### 📑 Content Templates
 
 - **LinkedIn Post Template**: Hook, value, call-to-action structure
-- **Blog Structure Template**: Kevin's proven article framework
+- **Blog Structure Template**: Jak's proven article framework
 - **Hook Framework Template**: 10 proven hook patterns
 - **MicroSaaS Pitch Template**: Product story structure
 - **Data Story Template**: Technical to business narrative
@@ -82,7 +82,7 @@ This expansion pack implements four fundamental principles:
 
 ### 📚 Knowledge Base
 
-- Kevin's writing principles and style guide
+- Jak's writing principles and style guide
 - Swipe file of successful content
 - Healthcare data product expertise
 - MicroSaaS journey documentation
@@ -96,7 +96,7 @@ This expansion pack implements four fundamental principles:
 1. Ensure you have BMAD Method installed
 2. Install this expansion pack:
    ```bash
-   bmad install --expansion bmad-kevin-creator
+   bmad install --expansion bmad-jak-creator
    ```
 
 ### Basic Usage
@@ -104,7 +104,7 @@ This expansion pack implements four fundamental principles:
 1. **Start with the full team**:
 
    ```bash
-   bmad --team kevin-creator-team
+   bmad --team jak-creator-team
    ```
 
 2. **Or activate a specific agent**:
@@ -118,7 +118,7 @@ This expansion pack implements four fundamental principles:
    bmad --workflow content-creation-pipeline
    ```
 
-## Kevin's Content Journey
+## Jak's Content Journey
 
 ### Phase 1: Idea Development (Day 1-2)
 
@@ -130,7 +130,7 @@ This expansion pack implements four fundamental principles:
 ### Phase 2: Content Creation (Day 3-4)
 
 - Draft with appropriate writer agent
-- Apply Kevin's voice and style
+- Apply Jak's voice and style
 - Include concrete examples
 - Structure for clarity
 
@@ -323,13 +323,13 @@ bmad --agent narrative-architect
 
 For questions or issues:
 
-- Review Kevin's principles in `/data/kevin-writing-principles.md`
+- Review Jak's principles in `/data/jak-writing-principles.md`
 - Check workflow examples in `/workflows/`
 - Consult agent-specific help: `*help` within any agent
 
 ## Contributing
 
-This pack is personalized for Kevin but welcomes:
+This pack is personalized for Jak but welcomes:
 
 - New hook patterns that work
 - Engagement strategies
@@ -343,4 +343,4 @@ This expansion pack follows the same license as the core BMAD Method.
 
 ## Acknowledgments
 
-Built on Kevin's actual writing samples, proven content strategies, and the collective wisdom of content creators like Lenny Rachitsky, Nathan Barry, and James Clear.
+Built on Jak's actual writing samples, proven content strategies, and the collective wisdom of content creators like Lenny Rachitsky, Nathan Barry, and James Clear.

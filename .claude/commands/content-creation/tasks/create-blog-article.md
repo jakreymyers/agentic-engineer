@@ -6,7 +6,7 @@ When this command is used, execute the following task:
 
 ## Task Overview
 
-Transform a well-developed idea into a comprehensive, engaging blog article that establishes Kevin's expertise.
+Transform a well-developed idea into a comprehensive, engaging blog article that establishes Jak's expertise.
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ I need to understand the scope and structure:
 
 ### 2. Opening Development
 
-I'll craft a compelling hook using Kevin's proven patterns:
+I'll craft a compelling hook using Jak's proven patterns:
 
 **Opening Options:**
 
@@ -58,28 +58,28 @@ I'll establish why this matters right now:
 **Structure:**
 
 - **Current Industry State**: What's happening in healthcare data/products
-- **Specific Pain Points**: Real problems Kevin's audience faces
+- **Specific Pain Points**: Real problems Jak's audience faces
 - **Cost of Inaction**: What happens if this isn't addressed
 - **Timing Context**: Why this matters now specifically
 
 **Evidence Integration:**
 
-- Kevin's direct observations
+- Jak's direct observations
 - Industry statistics/trends
 - Real customer/user feedback
 - Competitive landscape insights
 
-### 4. Kevin's Unique Approach
+### 4. Jak's Unique Approach
 
 **ELICIT: true**
 **Format: structured**
 
-Let's develop Kevin's distinctive solution:
+Let's develop Jak's distinctive solution:
 
-1. **Core Insight**: What's Kevin's key realization?
-2. **Methodology**: How does Kevin approach this differently?
+1. **Core Insight**: What's Jak's key realization?
+2. **Methodology**: How does Jak approach this differently?
 3. **Why It Works**: What makes this approach effective?
-4. **Evidence**: How does Kevin know this works?
+4. **Evidence**: How does Jak know this works?
 
 ### 5. Implementation Deep Dive
 
@@ -115,7 +115,7 @@ Let's document actual outcomes:
 
 1. **Implementation Example**: Which project/company can we reference?
 2. **Before State**: What was the starting situation?
-3. **Implementation Process**: How was Kevin's approach applied?
+3. **Implementation Process**: How was Jak's approach applied?
 4. **Results Achieved**: Specific, measurable outcomes
 5. **Lessons Learned**: What worked, what didn't, what surprised
 
@@ -130,7 +130,7 @@ I'll connect to broader trends:
 - Implications for competitive advantage
 - Technology trend connections
 
-**Kevin's Predictions:**
+**Jak's Predictions:**
 
 - Where this space is heading
 - What to prepare for
@@ -190,7 +190,7 @@ I'll create the complete article:
 
 1. Compelling opening hook
 2. Problem definition and context
-3. Kevin's unique approach
+3. Jak's unique approach
 4. Implementation deep dive
 5. Real-world results
 6. Industry implications
@@ -199,7 +199,7 @@ I'll create the complete article:
 
 **Quality Checks:**
 
-- Kevin's voice throughout
+- Jak's voice throughout
 - Logical flow between sections
 - Value in every paragraph
 - Concrete examples integrated
@@ -233,7 +233,7 @@ Ready to publish? (yes/revise/major-edit)
 
 - Passes blog readiness checklist completely
 - Provides genuine value to target audience
-- Establishes Kevin's expertise credibly
+- Establishes Jak's expertise credibly
 - Optimized for search and sharing
 - Drives meaningful engagement/discussion
 
@@ -243,7 +243,7 @@ Ready to publish? (yes/revise/major-edit)
 - Including specific tools/technologies
 - Providing downloadable resources
 - Creating visual diagrams for complex concepts
-- Linking to related Kevin content
+- Linking to related Jak content
 
 ## Time Estimate
 
@@ -256,7 +256,7 @@ Ready to publish? (yes/revise/major-edit)
 
 1. **Opening Hook**: Grabs attention immediately
 2. **Value Delivery**: Useful within first 200 words
-3. **Expertise Demo**: Shows Kevin's deep knowledge
+3. **Expertise Demo**: Shows Jak's deep knowledge
 4. **Practical Application**: Readers can implement advice
 5. **Memorable Insights**: Quotable and shareable elements
 6. **Strong Conclusion**: Ties together with perspective
@@ -266,4 +266,4 @@ Ready to publish? (yes/revise/major-edit)
 - templates/blog-structure-tmpl.yaml
 - checklists/blog-readiness-checklist.md
 - agents/blog-writer.md
-- data/kevin-writing-principles.md
+- data/jak-writing-principles.md

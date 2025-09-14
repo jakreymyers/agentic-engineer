@@ -1,5 +1,5 @@
 name: linkedin-post
-description: Kevin's LinkedIn post structure for maximum engagement
+description: Jak's LinkedIn post structure for maximum engagement
 version: 1.0.0
 sections:
   - name: hook
@@ -45,7 +45,7 @@ sections:
       - "1 main point explored from angles"
   
   - name: personal_element
-    description: "Kevin's experience or observation"
+    description: "Jak's experience or observation"
     required: true
     prompts:
       - "What personal experience relates to this?"

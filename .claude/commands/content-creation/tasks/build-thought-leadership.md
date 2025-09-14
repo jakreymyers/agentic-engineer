@@ -6,12 +6,12 @@ When this command is used, execute the following task:
 
 ## Task Overview
 
-Systematically develop Kevin's recognition as an industry expert and thought leader.
+Systematically develop Jak's recognition as an industry expert and thought leader.
 
 ## Prerequisites
 
 - Established content creation routine
-- Understanding of Kevin's unique expertise
+- Understanding of Jak's unique expertise
 - Baseline audience and engagement metrics
 
 ## Steps
@@ -21,35 +21,35 @@ Systematically develop Kevin's recognition as an industry expert and thought lea
 **ELICIT: true**
 **Format: structured**
 
-Let me understand Kevin's current thought leadership position:
+Let me understand Jak's current thought leadership position:
 
-1. **Recognition Level**: How is Kevin currently known in the industry?
+1. **Recognition Level**: How is Jak currently known in the industry?
 2. **Content Performance**: What content has resonated most?
 3. **Network Reach**: What's the current audience size and engagement?
 4. **Speaking/Recognition**: Any current speaking, podcast, or citation opportunities?
-5. **Goals**: What level of thought leadership is Kevin targeting?
+5. **Goals**: What level of thought leadership is Jak targeting?
 
 ### 2. Unique Value Proposition Development
 
-I'll help define Kevin's distinctive thought leadership angle:
+I'll help define Jak's distinctive thought leadership angle:
 
 **Core Elements:**
 
 - **Domain Expertise**: Healthcare data products + clinical informatics
 - **Practitioner Credibility**: Real implementation experience
-- **Unique Perspective**: What only Kevin can say
-- **Contrarian Insights**: Where Kevin challenges conventional wisdom
-- **Future Vision**: Kevin's predictions and industry direction
+- **Unique Perspective**: What only Jak can say
+- **Contrarian Insights**: Where Jak challenges conventional wisdom
+- **Future Vision**: Jak's predictions and industry direction
 
 **Positioning Statement Development:**
-"Kevin Holland is the go-to expert for [specific area] because [unique credential/experience] who helps [target audience] [specific outcome]."
+"Jak Myers is the go-to expert for [specific area] because [unique credential/experience] who helps [target audience] [specific outcome]."
 
 ### 3. Content Themes & Series Development
 
 **ELICIT: true**
 **Format: choice**
 
-Based on Kevin's expertise, here are potential thought leadership themes:
+Based on Jak's expertise, here are potential thought leadership themes:
 
 1. **Healthcare Data Reality**: What actually works vs. what's hyped
 2. **Data Product Management**: The unique challenges and approaches
@@ -72,8 +72,8 @@ I'll develop a systematic approach:
 
 **Content Types for Authority:**
 
-- **Frameworks**: Original mental models Kevin develops
-- **Predictions**: Industry direction based on Kevin's experience
+- **Frameworks**: Original mental models Jak develops
+- **Predictions**: Industry direction based on Jak's experience
 - **Case Studies**: Real implementations (appropriately anonymized)
 - **Contrarian Takes**: Challenge accepted wisdom with evidence
 - **Deep Dives**: Technical topics made accessible to business
@@ -85,15 +85,15 @@ I'll develop a systematic approach:
 
 Let's identify key relationships to build:
 
-1. **Industry Leaders**: Who are the recognized experts Kevin should engage with?
-2. **Peer Network**: Fellow practitioners at Kevin's level
-3. **Rising Stars**: Up-and-coming professionals Kevin can mentor
+1. **Industry Leaders**: Who are the recognized experts Jak should engage with?
+2. **Peer Network**: Fellow practitioners at Jak's level
+3. **Rising Stars**: Up-and-coming professionals Jak can mentor
 4. **Media/Platforms**: Publications, podcasts, conferences in the space
-5. **Community Participation**: Which groups/forums should Kevin be active in?
+5. **Community Participation**: Which groups/forums should Jak be active in?
 
 ### 6. Speaking and Recognition Opportunities
 
-I'll help identify platforms for Kevin's expertise:
+I'll help identify platforms for Jak's expertise:
 
 **Speaking Targets:**
 
@@ -122,7 +122,7 @@ Let's establish success metrics:
 2. **Engagement Quality**: Comments, shares, meaningful discussions
 3. **Recognition Indicators**: Speaking invites, media mentions, citations
 4. **Business Impact**: Consulting inquiries, partnership opportunities
-5. **Industry Influence**: Others referencing Kevin's content/frameworks
+5. **Industry Influence**: Others referencing Jak's content/frameworks
 
 **Tracking Method**: How will we monitor these metrics?
 
@@ -163,16 +163,16 @@ Here's the thought leadership development plan:
 - Original frameworks referenced by others
 - Regular speaking and media appearances
 - Consulting/partnership opportunities increase
-- Industry leaders engage with Kevin's content
+- Industry leaders engage with Jak's content
 
 **Year 3+ Goal**: Go-to authority driving industry direction
 
 - Sought after for major conferences/publications
-- Other experts reference Kevin's work
+- Other experts reference Jak's work
 - Business opportunities align with expertise
 - Influence on industry standards/practices
 
-Does this progression align with Kevin's goals? (yes/adjust/accelerate)
+Does this progression align with Jak's goals? (yes/adjust/accelerate)
 
 ## Success Criteria
 
@@ -210,4 +210,4 @@ Does this progression align with Kevin's goals? (yes/adjust/accelerate)
 - workflows/thought-leadership-development.yaml
 - checklists/thought-development-checklist.md
 - agents/narrative-architect.md
-- data/kevin-writing-principles.md
+- data/jak-writing-principles.md

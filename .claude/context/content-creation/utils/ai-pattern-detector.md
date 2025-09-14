@@ -126,7 +126,7 @@ grep -E "(Studies show|Experts believe|It's widely known|Industry reports)" cont
 
 ### Final Check
 - [ ] Read aloud - does it sound like bar conversation?
-- [ ] Would Kevin actually say this?
+- [ ] Would Jak actually say this?
 - [ ] Any perfect symmetry to break?
 - [ ] Too polished? Add roughness
 - [ ] Missing personality markers?

@@ -1,5 +1,3 @@
-<!-- Powered by BMAD™ Core -->
-
 # BMad Document Template Specification
 
 ## Overview

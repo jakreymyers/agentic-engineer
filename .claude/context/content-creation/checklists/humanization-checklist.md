@@ -59,9 +59,9 @@
 
 ### Final Tests
 
-- [ ] **Read aloud** - Does it sound like Kevin at a bar?
+- [ ] **Read aloud** - Does it sound like Jak at a bar?
 - [ ] **Variety check** - Not everything the same length/structure
-- [ ] **Personality check** - Can you hear Kevin's voice?
+- [ ] **Personality check** - Can you hear Jak's voice?
 - [ ] **AI detector scan** - Run through ai-pattern-detector.md
 - [ ] **Authenticity gut check** - Too polished? Add roughness
 
@@ -111,4 +111,4 @@ Perfect content looks AI-generated. Human content has:
 - Natural variation
 - Occasional messiness
 
-The goal: Sound like Kevin talking, not ChatGPT writing.
+The goal: Sound like Jak talking, not ChatGPT writing.

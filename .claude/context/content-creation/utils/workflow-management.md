@@ -1,5 +1,3 @@
-<!-- Powered by BMAD™ Core -->
-
 # Workflow Management
 
 Enables BMad orchestrator to manage and execute team workflows.

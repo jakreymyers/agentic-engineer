@@ -194,7 +194,7 @@ def humanize_structure(content_type):
 
 1. **Don't overdo it** - Too much variation looks forced
 2. **Match the mood** - Professional contexts need less chaos
-3. **Keep Kevin's voice** - Variation should enhance, not replace
+3. **Keep Jak's voice** - Variation should enhance, not replace
 4. **Test by reading aloud** - If it sounds weird spoken, fix it
 5. **Let some perfection through** - Humans occasionally write symmetrically too
 
@@ -211,4 +211,4 @@ def humanize_structure(content_type):
 | Typo | 5% of posts | Fix in comments |
 | Swear | When frustrated | "damn", "pissed" |
 
-Remember: The goal is authentic human variation, not random chaos. When in doubt, imagine Kevin explaining this at a bar after two beers.
+Remember: The goal is authentic human variation, not random chaos. When in doubt, imagine Jak explaining this at a bar after two beers.

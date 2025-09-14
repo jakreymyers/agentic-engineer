@@ -3,10 +3,10 @@ description: Template for crafting compelling MicroSaaS product stories and pitc
 version: 1.0.0
 sections:
   - name: origin_story
-    description: "Why Kevin built this product"
+    description: "Why Jak built this product"
     required: true
     elements:
-      - personal_pain: "The problem Kevin experienced firsthand"
+      - personal_pain: "The problem Jak experienced firsthand"
       - market_gap: "What existing solutions missed"
       - aha_moment: "When the solution became clear"
       - decision_trigger: "Why he decided to build it"
@@ -16,7 +16,7 @@ sections:
       - "Then I realized the real issue was..."
       - "So I decided to build exactly what I needed"
     authenticity_checks:
-      - "Real problem Kevin actually faced"
+      - "Real problem Jak actually faced"
       - "Specific to his expertise domain"
       - "Not manufactured for market appeal"
       - "Vulnerable about the struggle"
@@ -51,7 +51,7 @@ sections:
       - "You can now [simple new process]"
       - "It works by [technical differentiation]"
       - "The experience is [user benefit]"
-    kevin_angle:
+    jak_angle:
       - "Leverages his data product expertise"
       - "Solves healthcare/B2B specific challenges"
       - "Technical depth without complexity"
@@ -100,7 +100,7 @@ sections:
   - name: technical_differentiation
     description: "Why this is technically superior"
     required: true
-    leverage_kevin_expertise:
+    leverage_jak_expertise:
       - healthcare_data_knowledge: "FHIR, HL7, clinical workflows"
       - b2b_product_experience: "Enterprise needs understanding"
       - technical_implementation: "Architecture and scaling"
@@ -119,7 +119,7 @@ sections:
       - unit_economics: "Cost to serve vs revenue"
       - scalability: "How growth improves margins"
       - defensibility: "Why competitors can't copy easily"
-    kevin_advantages:
+    jak_advantages:
       - domain_expertise: "Deep healthcare/data knowledge"
       - professional_network: "Industry connections"
       - thought_leadership: "Brand recognition building"
@@ -162,7 +162,7 @@ authenticity_principles:
     - "Be honest about challenges ahead"
   
   credibility:
-    - "Leverage Kevin's real expertise"
+    - "Leverage Jak's real expertise"
     - "Reference actual experience"
     - "Provide specific examples"
   
@@ -204,7 +204,7 @@ success_indicators:
     - "Investment conversations"
   
   thought_leadership:
-    - "Positions Kevin as innovative builder"
+    - "Positions Jak as innovative builder"
     - "Demonstrates technical expertise"
     - "Shows entrepreneurial journey"
     - "Builds audience for future launches"

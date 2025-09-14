@@ -7,7 +7,7 @@ Transform a raw concept into a well-developed content idea ready for creation.
 ## Prerequisites
 
 - Basic topic or concept identified
-- Understanding of Kevin's expertise areas
+- Understanding of Jak's expertise areas
 - Access to thought development checklist
 
 ## Steps
@@ -26,12 +26,12 @@ I need to understand your initial concept. Please provide:
 
 ### 2. Expertise Validation
 
-I'll assess whether this aligns with Kevin's credibility:
+I'll assess whether this aligns with Jak's credibility:
 
-- **Domain Fit**: Does this leverage Kevin's healthcare/data expertise?
-- **Experience Base**: Can Kevin speak from actual implementation?
-- **Authenticity Check**: Would Kevin naturally discuss this topic?
-- **Authority Level**: Is Kevin qualified to lead this conversation?
+- **Domain Fit**: Does this leverage Jak's healthcare/data expertise?
+- **Experience Base**: Can Jak speak from actual implementation?
+- **Authenticity Check**: Would Jak naturally discuss this topic?
+- **Authority Level**: Is Jak qualified to lead this conversation?
 
 ### 3. Uniqueness Assessment
 
@@ -54,7 +54,7 @@ Which resonates most, or do you see a different angle?
 
 I'll help identify supporting material:
 
-- **Personal Stories**: Kevin's relevant experiences
+- **Personal Stories**: Jak's relevant experiences
 - **Industry Examples**: Real companies/situations
 - **Data Points**: Statistics or metrics if available
 - **Contrarian Evidence**: Why conventional wisdom fails
@@ -81,7 +81,7 @@ I'll validate the idea is ready for content creation:
 - [ ] Unique angle identified
 - [ ] Personal experience supports it
 - [ ] Clear audience value
-- [ ] Authentic to Kevin's voice
+- [ ] Authentic to Jak's voice
 - [ ] Evidence available
 - [ ] Actionable insights possible
 
@@ -91,7 +91,7 @@ I'll validate the idea is ready for content creation:
 Based on our development, here's your refined content idea:
 
 **Topic**: [Refined topic]
-**Unique Angle**: [Kevin's specific perspective]
+**Unique Angle**: [Jak's specific perspective]
 **Core Insight**: [Key learning]
 **Evidence Base**: [Supporting material]
 **Target Audience**: [Specific reader type]
@@ -102,15 +102,15 @@ Ready to move to content creation? (yes/refine/new-direction)
 ## Success Criteria
 
 - Passes thought development checklist
-- Leverages Kevin's unique expertise
+- Leverages Jak's unique expertise
 - Provides clear reader value
 - Supported by evidence/experience
-- Authentic to Kevin's voice
+- Authentic to Jak's voice
 - Ready for platform-specific creation
 
 ## Common Pitfalls
 
-- Developing ideas outside Kevin's expertise
+- Developing ideas outside Jak's expertise
 - Generic concepts without unique angle
 - No personal experience to support
 - Unclear value for readers
@@ -133,5 +133,5 @@ After successful development:
 ## Related Resources
 
 - checklists/thought-development-checklist.md
-- data/kevin-writing-principles.md
+- data/jak-writing-principles.md
 - agents/thought-partner.md

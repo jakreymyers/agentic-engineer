@@ -1,6 +1,6 @@
-# Kevin's Content Swipe File
+# Jak's Content Swipe File
 
-## High-Performing LinkedIn Posts from Kevin
+## High-Performing LinkedIn Posts from Jak
 
 ### Contrarian Take - Data Product Management
 
@@ -123,7 +123,7 @@
 
 ---
 
-## Successful Hook Patterns from Kevin
+## Successful Hook Patterns from Jak
 
 ### The Contrarian Opening
 
@@ -164,7 +164,7 @@ Use: "Good point. Have you seen this work differently in [specific context]? I'm
 
 ---
 
-## Content Frameworks That Work for Kevin
+## Content Frameworks That Work for Jak
 
 ### The "4 Key Shifts" Framework
 
@@ -243,7 +243,7 @@ Take successful LinkedIn posts and expand into:
 
 ---
 
-## Evergreen Content Themes for Kevin
+## Evergreen Content Themes for Jak
 
 ### Healthcare Data Expertise
 
@@ -291,7 +291,7 @@ Take successful LinkedIn posts and expand into:
 
 ### Key Learnings
 
-- Kevin's audience wants practical, implementable advice
+- Jak's audience wants practical, implementable advice
 - Healthcare context is crucial for credibility
 - Personal experience trumps theoretical knowledge
 - Structure and formatting matter enormously
@@ -312,7 +312,7 @@ Take successful LinkedIn posts and expand into:
 
 ### Low Performers Often Lack
 
-- Personal connection to Kevin's experience
+- Personal connection to Jak's experience
 - Specific industry context
 - Clear value proposition for readers
 - Structured format for scanning
@@ -323,7 +323,7 @@ Take successful LinkedIn posts and expand into:
 
 ## Inspiration Sources
 
-### Industry Leaders Kevin Studies
+### Industry Leaders Jak Studies
 
 - Lenny Rachitsky (product management insights)
 - Nathan Barry (building in public)
@@ -339,7 +339,7 @@ Take successful LinkedIn posts and expand into:
 - Community building through value creation
 - Technical depth made accessible
 
-### Platforms and Communities Kevin Monitors
+### Platforms and Communities Jak Monitors
 
 - Healthcare informatics conferences and content
 - Data product management communities

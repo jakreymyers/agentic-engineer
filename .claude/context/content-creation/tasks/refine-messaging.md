@@ -2,12 +2,12 @@
 
 ## Task Overview
 
-Polish and optimize content messaging for maximum clarity, impact, and Kevin's authentic voice.
+Polish and optimize content messaging for maximum clarity, impact, and Jak's authentic voice.
 
 ## Prerequisites
 
 - Draft content ready for refinement
-- Understanding of Kevin's writing principles
+- Understanding of Jak's writing principles
 - Target audience clearly defined
 
 ## Steps
@@ -24,13 +24,13 @@ Let me analyze the current messaging:
 3. **Primary Goal**: What should this content accomplish?
 4. **Audience**: Who specifically is this for?
 
-### 2. Kevin's Voice Assessment
+### 2. Jak's Voice Assessment
 
-I'll evaluate against Kevin's established principles:
+I'll evaluate against Jak's established principles:
 
 **Voice Markers:**
 
-- [ ] Sounds like Kevin in conversation
+- [ ] Sounds like Jak in conversation
 - [ ] Direct without unnecessary complexity
 - [ ] Practical rather than theoretical
 - [ ] Includes personal experience/perspective
@@ -79,7 +79,7 @@ I'll ensure the core value is crystal clear:
 **Evidence and Examples:**
 
 - Replace abstract claims with concrete examples
-- Add Kevin's personal experience where relevant
+- Add Jak's personal experience where relevant
 - Include specific numbers, tools, or scenarios
 - Show rather than tell wherever possible
 
@@ -102,7 +102,7 @@ I'll optimize for platform-specific engagement:
 - Refined options: [engagement-driving alternatives]
 - Recommendation: [best option for discussion]
 
-### 6. Kevin's Principles Enforcement
+### 6. Jak's Principles Enforcement
 
 I'll apply the non-negotiables ruthlessly:
 
@@ -148,9 +148,9 @@ I'll ensure the refined content flows naturally:
 - Transitions smooth and logical
 - Conclusion ties back to opening
 
-**Kevin's Voice Confirmation:**
+**Jak's Voice Confirmation:**
 
-- Would Kevin actually say this in person?
+- Would Jak actually say this in person?
 - Does it reflect his personality and style?
 - Is the level of vulnerability/openness appropriate?
 - Does it help others without being preachy?
@@ -171,13 +171,13 @@ Here's your refined content:
 - [Note value proposition strengthening]
 - [Highlight engagement optimization]
 
-**Quality Score**: [Rate 1-10 against Kevin's principles]
+**Quality Score**: [Rate 1-10 against Jak's principles]
 
 Ready to publish or need further refinement? (publish/revise/restart)
 
 ## Success Criteria
 
-- Passes all Kevin's writing principles
+- Passes all Jak's writing principles
 - Clear value proposition for readers
 - Authentic voice maintained
 - Platform-optimized for engagement
@@ -201,7 +201,7 @@ Ready to publish or need further refinement? (publish/revise/restart)
 
 ## Quality Checkpoints
 
-1. **Authenticity**: Sounds like Kevin
+1. **Authenticity**: Sounds like Jak
 2. **Clarity**: Immediately understandable
 3. **Value**: Helps readers solve problems
 4. **Engagement**: Encourages interaction
@@ -210,5 +210,5 @@ Ready to publish or need further refinement? (publish/revise/restart)
 ## Related Resources
 
 - checklists/content-quality-checklist.md
-- data/kevin-writing-principles.md
+- data/jak-writing-principles.md
 - agents/content-editor.md

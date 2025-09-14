@@ -6,13 +6,13 @@ When this command is used, execute the following task:
 
 ## Task Overview
 
-Transform an idea into a high-engagement LinkedIn post following Kevin's proven format and voice.
+Transform an idea into a high-engagement LinkedIn post following Jak's proven format and voice.
 
 ## Prerequisites
 
 - Clear topic or insight to share
 - Understanding of target audience (data PMs, healthcare tech, B2B SaaS)
-- Access to Kevin's writing principles
+- Access to Jak's writing principles
 
 ## Steps
 
@@ -26,7 +26,7 @@ I need to understand your post idea. Please provide:
 1. **Core Topic**: What's the main idea? (e.g., "Why data PMs fail at stakeholder management")
 2. **Key Insight**: What's the surprising or valuable takeaway?
 3. **Target Audience**: Who specifically needs to hear this?
-4. **Personal Angle**: What's Kevin's unique experience with this?
+4. **Personal Angle**: What's Jak's unique experience with this?
 
 ### 2. Hook Development
 
@@ -83,7 +83,7 @@ I'll write the full post following:
 - Short paragraphs (2-3 lines max)
 - Active voice only
 - Concrete examples
-- Kevin's conversational tone
+- Jak's conversational tone
 - Platform optimization
 
 ### 5. Format Optimization
@@ -118,7 +118,7 @@ Ready to publish? (yes/edit/restart)
 - Passes all items in content-quality-checklist
 - Hook stops the scroll
 - Clear value delivered
-- Sounds authentically like Kevin
+- Sounds authentically like Jak
 - Drives meaningful engagement
 
 ## Common Pitfalls
@@ -140,4 +140,4 @@ Ready to publish? (yes/edit/restart)
 - templates/linkedin-post-tmpl.yaml
 - templates/hook-framework-tmpl.yaml
 - checklists/linkedin-optimization-checklist.md
-- data/kevin-writing-principles.md
+- data/jak-writing-principles.md

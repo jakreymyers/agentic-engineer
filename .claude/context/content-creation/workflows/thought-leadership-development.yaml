@@ -1,5 +1,5 @@
 name: thought-leadership-development
-description: Systematic approach to building Kevin's authority and expertise recognition
+description: Systematic approach to building Jak's authority and expertise recognition
 version: 1.0.0
 
 phases:
@@ -11,18 +11,18 @@ phases:
       - content-editor
       - data-product-writer
     objectives:
-      - establish_authentic_voice: "Develop Kevin's unique perspective"
+      - establish_authentic_voice: "Develop Jak's unique perspective"
       - demonstrate_expertise: "Show depth in healthcare data"
       - build_audience: "Attract relevant professionals"
       - create_content_library: "Foundational pieces for reference"
     
     steps:
       - id: voice_development
-        action: "Define and refine Kevin's unique perspective"
+        action: "Define and refine Jak's unique perspective"
         agent: thought-partner
         command: "*framework"
         deliverables:
-          - "Kevin's contrarian takes on industry trends"
+          - "Jak's contrarian takes on industry trends"
           - "Unique frameworks based on experience"
           - "Personal story integration strategy"
         
@@ -32,7 +32,7 @@ phases:
         command: "*technical-story"
         deliverables:
           - "3-5 technical deep-dive articles"
-          - "Case studies from Kevin's experience"
+          - "Case studies from Jak's experience"
           - "Industry analysis pieces"
         
       - id: consistency_enforcement
@@ -104,7 +104,7 @@ phases:
         agent: narrative-architect
         command: "*authority-build"
         deliverables:
-          - "Kevin's definitive perspective on industry"
+          - "Jak's definitive perspective on industry"
           - "Signature frameworks and methodologies"
           - "Future vision and predictions"
         
@@ -188,7 +188,7 @@ escalation_triggers:
     action: "Reassess content strategy with hook-optimizer"
   
   voice_inconsistency:
-    threshold: "Content doesn't sound like Kevin"
+    threshold: "Content doesn't sound like Jak"
     action: "Review with content-editor using principles"
   
   expertise_questioning:

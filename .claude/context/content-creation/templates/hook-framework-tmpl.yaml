@@ -1,5 +1,5 @@
 name: hook-framework
-description: Proven hook patterns for Kevin's content
+description: Proven hook patterns for Jak's content
 version: 1.0.0
 hook_types:
   - name: contrarian_take
@@ -87,7 +87,7 @@ optimization_tips:
   - specificity_wins: "Concrete beats abstract every time"
   - emotion_matters: "Surprise, curiosity, or mild controversy"
   - clarity_first: "If it needs explanation, it's not a hook"
-  - voice_match: "Must sound like Kevin, not generic"
+  - voice_match: "Must sound like Jak, not generic"
 
 common_mistakes:
   - too_long: "If it's more than one line, it's not a hook"

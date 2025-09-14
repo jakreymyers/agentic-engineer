@@ -1,4 +1,4 @@
-# Kevin's Writing Principles
+# Jak's Writing Principles
 
 ## The Core Philosophy
 
@@ -49,7 +49,7 @@
 - Always include YOUR perspective
 - End with synthesis, not just summary
 
-## Kevin's Voice Characteristics
+## Jak's Voice Characteristics
 
 ### Tone Elements
 
@@ -80,7 +80,7 @@
 
 ### Thought Leader References
 
-Kevin regularly cites and builds upon:
+Jak regularly cites and builds upon:
 
 - Morgan Housel (Psychology of Money)
 - Teresa Torres (Product discovery)
@@ -95,7 +95,7 @@ Kevin regularly cites and builds upon:
 
 ## Structural Patterns
 
-### Kevin's Storytelling Framework
+### Jak's Storytelling Framework
 
 **Opening Pattern:**
 
@@ -129,7 +129,7 @@ Kevin regularly cites and builds upon:
 
 1. Personal story that illustrates a common problem
 2. Context and why traditional approaches fall short
-3. Kevin's experience-based approach or framework
+3. Jak's experience-based approach or framework
 4. Detailed implementation with real examples
 5. Broader implications and synthesis
 
@@ -235,7 +235,7 @@ Kevin regularly cites and builds upon:
 - Exact time markers: "Last Tuesday at 3pm during the standup" not "recently"
 - Mild profanity when frustrated: "This shit took forever" not "This was time-consuming"
 
-### Natural Human Patterns (Kevin's Style)
+### Natural Human Patterns (Jak's Style)
 
 - **Story-driven openings**: Real scenarios, names, and dialogue
 - **Natural admissions**: "This is a dramatic simplification" or "I'll be honest, I don't fully understand why..."
@@ -271,7 +271,7 @@ Kevin regularly cites and builds upon:
 - **NEVER maintain the same tone for an entire piece**
 - **NEVER use exactly 3-5 points in every list**
 
-## Kevin's Go-To Structures
+## Jak's Go-To Structures
 
 ### The Contrarian Take
 
@@ -299,7 +299,7 @@ Kevin regularly cites and builds upon:
 2. **Second Pass**: Eliminate passive voice
 3. **Third Pass**: Remove jargon and complexity
 4. **Fourth Pass**: Add concrete examples
-5. **Fifth Pass**: Ensure Kevin's voice
+5. **Fifth Pass**: Ensure Jak's voice
 6. **Final Pass**: Trim 20% for punch
 
 ## Remember
@@ -312,8 +312,8 @@ Every piece of content should:
 - Share real experience
 - Challenge conventional thinking
 - Provide practical value
-- Sound like Kevin talking to a colleague
+- Sound like Jak talking to a colleague
 
 ## The Ultimate Test
 
-Read it aloud. If it doesn't sound like something Kevin would say over coffee, rewrite it.
+Read it aloud. If it doesn't sound like something Jak would say over coffee, rewrite it.

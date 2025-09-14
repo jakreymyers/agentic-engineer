@@ -10,10 +10,10 @@
 - [ ] **Scannable format** - Line breaks every 2-3 lines
 - [ ] **Strong CTA** - Engaging question or clear next action
 
-### ✅ Kevin's Voice & Style
+### ✅ Jak's Voice & Style
 
-- [ ] **Sounds like Kevin** - Direct, practical, slightly contrarian
-- [ ] **Personal element** - Kevin's experience or perspective included
+- [ ] **Sounds like Jak** - Direct, practical, slightly contrarian
+- [ ] **Personal element** - Jak's experience or perspective included
 - [ ] **Concrete examples** - Specific details, not abstract concepts
 - [ ] **Active voice only** - No passive constructions
 - [ ] **No corporate speak** - Conversational language throughout
@@ -59,7 +59,7 @@
 - [ ] **Curiosity gap** - Creates need to read more
 - [ ] **Specific numbers** - Concrete data when available
 - [ ] **Contrarian angle** - Challenges common assumptions
-- [ ] **Personal stake** - Kevin has skin in the game
+- [ ] **Personal stake** - Jak has skin in the game
 
 ### Content Enhancement
 
@@ -134,7 +134,7 @@
 
 ### Content Amplifiers
 
-- Use Kevin's unique healthcare data expertise
+- Use Jak's unique healthcare data expertise
 - Reference specific tools and methodologies
 - Share behind-the-scenes insights
 - Connect to current industry events

@@ -12,7 +12,7 @@ sections:
       - competitive_advantage: "How this creates differentiation"
     approach:
       - "Start with business outcome, not technical feature"
-      - "Use concrete examples from Kevin's experience"
+      - "Use concrete examples from Jak's experience"
       - "Quantify impact where possible"
       - "Connect to reader's likely priorities"
     examples:
@@ -28,7 +28,7 @@ sections:
       - situation: "Specific business scenario"
       - conflict: "What went wrong and why"
       - stakes: "What happens if not solved"
-    kevin_perspective:
+    jak_perspective:
       - "I was working with a healthcare system that..."
       - "The data team was spending 80% of their time on..."
       - "Clinicians kept telling us they couldn't..."
@@ -55,7 +55,7 @@ sections:
       - "The technical challenge was..."
       - "We needed a system that could..."
       - "The solution works by..."
-    kevin_expertise_areas:
+    jak_expertise_areas:
       - healthcare_data: "FHIR, HL7, clinical workflows"
       - data_governance: "Quality, compliance, security"
       - integration: "APIs, ETL, real-time processing"
@@ -74,7 +74,7 @@ sections:
       - time_requirements: "Realistic timeline expectations"
       - resource_needs: "Skills, tools, budget required"
       - common_obstacles: "What typically goes wrong"
-    kevin_experience:
+    jak_experience:
       - "When we implemented this at [company]..."
       - "The biggest surprise was..."
       - "If I were doing this again, I'd..."
@@ -107,7 +107,7 @@ sections:
   - name: broader_implications
     description: "What this means for the industry/field"
     required: true
-    kevin_perspective:
+    jak_perspective:
       - industry_trends: "How this fits with broader changes"
       - future_predictions: "Where this is heading"
       - strategic_advice: "What leaders should be thinking about"
@@ -115,7 +115,7 @@ sections:
     thought_leadership_elements:
       - contrarian_insights: "What most people get wrong"
       - framework_development: "Mental models for thinking about this"
-      - best_practices: "What Kevin has learned works"
+      - best_practices: "What Jak has learned works"
       - future_vision: "What's coming next"
 
   - name: actionable_takeaways
@@ -157,7 +157,7 @@ formatting_for_accessibility:
     - technical_team: "Include implementation details"
     - mixed_audience: "Layer technical depth appropriately"
 
-kevin_credibility_markers:
+jak_credibility_markers:
   experience_references:
     - "In my work at [healthcare system/company]..."
     - "After implementing this X times..."
@@ -190,4 +190,4 @@ success_indicators:
   impact:
     - "Referenced in other technical discussions"
     - "Influences actual implementation decisions"
-    - "Positions Kevin as bridge between technical and business"
+    - "Positions Jak as bridge between technical and business"

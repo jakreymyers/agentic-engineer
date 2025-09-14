@@ -1,6 +1,6 @@
 # Content Quality Checklist
 
-## Kevin's Non-Negotiable Standards
+## Jak's Non-Negotiable Standards
 
 ### ✅ Writing Principles (MUST PASS ALL)
 
@@ -9,10 +9,10 @@
 - [ ] **No "enable" or "empower"** - These create passive constructions
 - [ ] **Minimal quotes** - Max 1 per 10 quotes from draft
 - [ ] **Concrete examples** - Show, don't tell with real scenarios
-- [ ] **Simple language** - Would Kevin say this in conversation?
+- [ ] **Simple language** - Would Jak say this in conversation?
 - [ ] **No unnecessary jargon** - Technical terms only when essential
 - [ ] **Short paragraphs** - 2-3 lines maximum
-- [ ] **Personal perspective** - Kevin's view, not generic wisdom
+- [ ] **Personal perspective** - Jak's view, not generic wisdom
 
 ### ✅ Content Structure
 
@@ -24,9 +24,9 @@
 
 ### ✅ Voice & Authenticity
 
-- [ ] **Sounds like Kevin** - Direct, practical, slightly contrarian
+- [ ] **Sounds like Jak** - Direct, practical, slightly contrarian
 - [ ] **Vulnerable where appropriate** - Real struggles and failures
-- [ ] **Specific to Kevin's expertise** - Healthcare, data products, SaaS
+- [ ] **Specific to Jak's expertise** - Healthcare, data products, SaaS
 - [ ] **No humble brags** - Genuine value, not disguised promotion
 - [ ] **Conversational tone** - Like explaining to a colleague
 
@@ -74,7 +74,7 @@
 - Energy drops while reading
 - Have to re-read sentences
 - Unclear who this helps
-- Missing Kevin's unique perspective
+- Missing Jak's unique perspective
 - No emotional connection
 - Forgettable after reading
 - Doesn't challenge thinking
@@ -88,7 +88,7 @@ Rate each piece 1-10:
 
 - **Clarity**: How easily understood?
 - **Value**: How useful to reader?
-- **Authenticity**: How much sounds like Kevin?
+- **Authenticity**: How much sounds like Jak?
 - **Engagement**: How compelling to read?
 - **Actionability**: How practical to implement?
 
@@ -104,6 +104,6 @@ Rate each piece 1-10:
 
 ## Remember
 
-> "If you don't use a word in your everyday conversation, don't use it in your writing." - Kevin's Cardinal Rule
+> "If you don't use a word in your everyday conversation, don't use it in your writing." - Jak's Cardinal Rule
 
 The goal isn't perfection. It's connection, clarity, and value.
