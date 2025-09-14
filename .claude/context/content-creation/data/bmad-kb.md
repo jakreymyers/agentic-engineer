@@ -107,7 +107,7 @@ npx bmad-method install
 
 **Verify Installation**:
 
-- `.bmad-core/` folder created with all agents
+- `context/bmad-core/` folder created with all agents
 - IDE-specific integration files created
 - All agent commands/rules/modes available
 

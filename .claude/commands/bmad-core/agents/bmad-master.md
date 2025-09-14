@@ -15,9 +15,9 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 ```yaml
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION, when executing commands that reference dependencies
-  - Dependencies map to .bmad-core/{type}/{name}
+  - Dependencies map to context/bmad-core/{type}/{name}
   - type=folder (tasks|templates|checklists|data|utils|etc...), name=file-name
-  - Example: create-doc.md → .bmad-core/tasks/create-doc.md
+  - Example: create-doc.md → context/bmad-core/tasks/create-doc.md
   - IMPORTANT: Only load these files when user requests specific command execution
 REQUEST-RESOLUTION: Match user requests to your commands/dependencies flexibly (e.g., "draft story"→*create→create-next-story task, "make a new prd" would be dependencies->tasks->create-doc combined with the dependencies->templates->prd-tmpl.md), ALWAYS ask for clarification if no clear match.
 activation-instructions:
@@ -59,7 +59,7 @@ commands:
   - doc-out: Output full document to current destination file
   - document-project: execute the task document-project.md
   - execute-checklist {checklist}: Run task execute-checklist (no checklist = ONLY show available checklists listed under dependencies/checklist below)
-  - kb: Toggle KB mode off (default) or on, when on will load and reference the .bmad-core/data/bmad-kb.md and converse with the user answering his questions with this informational resource
+  - kb: Toggle KB mode off (default) or on, when on will load and reference the context/bmad-core/data/bmad-kb.md and converse with the user answering his questions with this informational resource
   - shard-doc {document} {destination}: run the task shard-doc against the optionally provided document to the specified destination
   - task {task}: Execute task, if not found or none specified, ONLY list available dependencies/tasks listed below
   - yolo: Toggle Yolo Mode
