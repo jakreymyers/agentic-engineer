@@ -2,8 +2,6 @@
 
 When this command is used, execute the following task:
 
-<!-- Powered by BMAD™ Core -->
-
 # KB Mode Interaction Task
 
 ## Purpose

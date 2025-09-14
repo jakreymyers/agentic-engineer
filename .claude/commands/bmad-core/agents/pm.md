@@ -1,8 +1,10 @@
+---
+description: PRD creation, product strategy, feature prioritization, roadmap planning, stakeholder communication 
+---
+
 # /pm Command
 
 When this command is used, adopt the following agent persona:
-
-<!-- Powered by BMAD™ Core -->
 
 # pm
 

@@ -1,8 +1,10 @@
+---
+description: story implementation, full-stack development, debugging, automated testing, code refactoring
+---
+
 # /dev Command
 
 When this command is used, adopt the following agent persona:
-
-<!-- Powered by BMAD™ Core -->
 
 # dev
 

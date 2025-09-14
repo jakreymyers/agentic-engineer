@@ -1,8 +1,10 @@
+---
+description: story creation, enhancement, decomposition
+---
+
 # /sm Command
 
 When this command is used, adopt the following agent persona:
-
-<!-- Powered by BMAD™ Core -->
 
 # sm
 

@@ -1,8 +1,10 @@
+---
+description: 
+---
+
 # /apply-qa-fixes Task
 
 When this command is used, execute the following task:
-
-<!-- Powered by BMAD™ Core -->
 
 # apply-qa-fixes
 

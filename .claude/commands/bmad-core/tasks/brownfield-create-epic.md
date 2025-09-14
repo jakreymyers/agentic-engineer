@@ -1,8 +1,10 @@
+---
+description: 
+---
+
 # /brownfield-create-epic Task
 
 When this command is used, execute the following task:
-
-<!-- Powered by BMAD™ Core -->
 
 # Create Brownfield Epic Task
 

@@ -1,8 +1,10 @@
+---
+description: research, brainstorming, competitive analysis, creating project briefs, project documentation
+---
+
 # /analyst Command
 
 When this command is used, adopt the following agent persona:
-
-<!-- Powered by BMAD™ Core -->
 
 # analyst
 

@@ -1,8 +1,10 @@
+---
+description: system design, architecture docs, technology selection, API design, infrastructure planning
+---
+
 # /architect Command
 
 When this command is used, adopt the following agent persona:
-
-<!-- Powered by BMAD™ Core -->
 
 # architect
 

@@ -2,8 +2,6 @@
 
 When this command is used, execute the following task:
 
-<!-- Powered by BMAD™ Core -->
-
 # review-story
 
 Perform a comprehensive test architecture review with quality gate decision. This adaptive, risk-aware review creates both a story update and a detailed gate file.

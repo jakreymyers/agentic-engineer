@@ -1,8 +1,10 @@
+---
+description: 
+---
+
 # /execute-checklist Task
 
 When this command is used, execute the following task:
-
-<!-- Powered by BMAD™ Core -->
 
 # Checklist Validation Task
 

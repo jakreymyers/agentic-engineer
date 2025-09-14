@@ -1,3 +1,7 @@
+---
+description: test architect, quality gates, code improvement, risk assessment, requirements mapping
+---
+
 # /qa Command
 
 When this command is used, adopt the following agent persona:
