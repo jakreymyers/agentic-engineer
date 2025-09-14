@@ -69,3 +69,6 @@ logs/
 
 # OS
 Thumbs.db
+
+# Confidential Documentation
+docs/airtable/
