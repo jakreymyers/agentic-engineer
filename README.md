@@ -75,6 +75,7 @@ The system provides two main frameworks:
 
 - #### 🏗️ **BMAD-Core: Software Development**
   For building applications with AI agent assistance.
+  Based on [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by Brian Madison.
 
 - #### 📝 **Content-Creation: Thought Leadership**
   For creating LinkedIn posts, blog articles, and marketing content.
@@ -135,10 +136,8 @@ Transform ineffective AI coding slop into structured AI-assisted development thr
 
 1. **Document Validation** (`/po`)
    - `*execute-checklist-po` to run master checklist validation
-   - Review documents for alignment and consistency
    - Use `*correct-course` to identify and resolve issues
    - Update PRD/Architecture as needed through respective agents (`/architect`, `/ux-expert`, etc)
-   - Repeat validation cycle until alignment achieved
 
 2. **Document Sharding** (`/po`)
    - `*shard-doc docs/prd.md docs/prd` to break PRD into epic files
@@ -149,33 +148,29 @@ Transform ineffective AI coding slop into structured AI-assisted development thr
 **Primary Goal:** Execute story-driven development with comprehensive testing and continuous validation
 
 1. **Story Creation** (`/sm`)
-   - `*draft` to execute the create-next-story task
-   - Reviews previous story insights and architecture context
-   - Creates comprehensive story file with technical details
+   - `*draft` to create a integrated story file with technical details
    - `*story-checklist` to validate story draft quality
+  
+2. **Story Validation** (`/po`)
+   - `*validate-story-draft {story}` to ensure story aligns with requirements
 
-2. **Optional Risk Assessment** (`/qa`)
+3. **Optional Risk Assessment** (`/qa`)
    - `*risk-profile {story}` to assess implementation risks
    - `*test-design {story}` to create comprehensive test strategy
 
-3. **Story Validation** (`/po`)
-   - `*validate-story-draft {story}` to ensure story aligns with requirements
-
 4. **Implementation** (`/dev`)
    - `*develop-story` to execute sequential task implementation
-   - Follows order: Read task → Implement → Write tests → Execute validations → Update checkboxes
    - Mid-development QA checks (optional):
      - `/qa` `*trace {story}` for test coverage validation
      - `/qa` `*nfr-assess {story}` for non-functional requirements check
    - `*run-tests` to execute linting and full test suite
-   - Mark story as "Ready for Review" when complete
 
 #### Validation Phase
 
 **Primary Goal:** Comprehensive quality assessment with risk-based testing and quality gates
 
 1. **Comprehensive Review** (`/qa`)
-   - `*review {story}` for full test architecture assessment
+   - `*review {story}` for assessment & story verifcation
    - Requirements traceability mapping, validates acceptance criteria, creates quality gates
 
 2. **Quality Gate Management** (`/qa`)
@@ -186,8 +181,7 @@ Transform ineffective AI coding slop into structured AI-assisted development thr
    - `*review-qa` to apply QA fixes, re-run validation cycle until QA passes
 
 4. **Story Completion** (`/qa`)
-   - Verify all tests pass, mark story as "Done"
-   - Proceed to next story in development cycle
+   - `*review {story}` when all tests pass, mark story as "Done"
 
 ### Brownfield Development (Existing Projects)
 
@@ -199,9 +193,9 @@ Transform ineffective AI coding slop into structured AI-assisted development thr
 
 1. **Enhancement Classification** (`/analyst`)
 
-   - **Single story** → Use `*create-brownfield-story`
-   - **Small feature** → Use `*create-brownfield-epic`
-
+   - **Single story** → Use `*brownfield-create-story`
+   - **Small feature** → Use `*brownfield-create-epic`
+   - **Large feature** → Use `*document-project` + `*create-prd`
 
 #### Planning Phase
 
@@ -211,22 +205,21 @@ Transform ineffective AI coding slop into structured AI-assisted development thr
    - `*create-brownfield-story` for immediate implementation
 
 2. **For Small Features** (`/pm`)
-   - `*create-brownfield-epic` for focused epic with 1-3 stories
+   - `*create-brownfield-epic` for a focused epic with 1-3 stories
 
 3. **For Major Enhancements**
    - **Documentation Check**: Assess if adequate project documentation exists
    - **Project Analysis** (if needed): `/architect` `*document-project` to capture current system state
-   - **PRD Creation**: `/pm` `*create-brownfield-prd` for major enhancement planning
-   - **Validation**: `/po` `*execute-checklist-po` to validate artifacts
-   - **Document Sharding**: `/po` `*shard-doc {doc} {destination}` to prepare for development
+   - **PRD Creation**: Use `/pm` to `*create-prd` plan for major enhancements
+   - **Validation**: Use `/po` to `*execute-checklist-po` and validate artifacts
+   - **Document Sharding**: Use `/po` to `*shard-doc {doc} {destination}` and prepare for development
 
 #### Development Phase
 
 **Primary Goal:** Execute story-driven development following existing system patterns
 
 1. **Story Creation** (`/sm` - Scrum Master Bob)
-   - `*draft` to execute create-next-story (for sharded documents)
-   - OR work directly with brownfield stories/epics from planning
+   - `*draft` to execute stories or work directly with brownfield stories/epics from planning
    - `*story-checklist` to validate story draft quality
 
 2. **Optional Risk Assessment** (High-risk brownfield changes)
