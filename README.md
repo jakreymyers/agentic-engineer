@@ -482,3 +482,4 @@ Coordinate multiple agents on complex tasks with shared context.
 Spin up autonomous agents for time-intensive work.
 
 ---
+Test: Normal git operations after history cleanup
