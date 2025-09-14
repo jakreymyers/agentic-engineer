@@ -1,5 +1,5 @@
 ---
-description: 
+description: generate structured research prompts across various domains (market/technical/customer/strategic)
 ---
 
 # /create-deep-research-prompt Task

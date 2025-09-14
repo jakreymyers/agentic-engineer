@@ -1,3 +1,7 @@
+---
+description: validate NFRs (security/performance/reliability/maintainability)
+---
+
 # /nfr-assess Task
 
 When this command is used, execute the following task:

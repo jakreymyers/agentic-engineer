@@ -1,5 +1,5 @@
 ---
-description: 
+description: transform minimal/non-BMAD documentation into executable stories via interactive context gathering
 ---
 
 # /create-brownfield-story Task

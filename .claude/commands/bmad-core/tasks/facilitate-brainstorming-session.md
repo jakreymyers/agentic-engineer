@@ -1,3 +1,7 @@
+---
+description: facilitate interactive ideation using structured brainstorming techniques
+---
+
 # /facilitate-brainstorming-session Task
 
 When this command is used, execute the following task:

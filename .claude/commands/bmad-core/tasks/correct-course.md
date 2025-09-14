@@ -1,5 +1,5 @@
 ---
-description: 
+description: navigate sprint changes via structured checklist to draft change proposal
 ---
 
 # /correct-course Task

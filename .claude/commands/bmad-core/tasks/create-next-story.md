@@ -1,5 +1,5 @@
 ---
-description: 
+description: identify next logical story and enrich with architecture context for dev implementation
 ---
 
 # /create-next-story Task

@@ -1,5 +1,5 @@
 ---
-description: 
+description: create single-session story for minor brownfield fixes
 ---
 
 # /brownfield-create-story Task

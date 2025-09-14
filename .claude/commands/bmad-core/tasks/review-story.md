@@ -1,3 +1,7 @@
+---
+description: test architecture review and story acceptance validation
+---
+
 # /review-story Task
 
 When this command is used, execute the following task:

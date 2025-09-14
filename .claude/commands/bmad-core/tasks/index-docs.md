@@ -1,3 +1,7 @@
+---
+description: maintain documentation index integrity by scanning and organizing all docs hierarchically
+---
+
 # /index-docs Task
 
 When this command is used, execute the following task:

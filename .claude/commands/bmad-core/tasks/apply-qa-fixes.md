@@ -1,5 +1,5 @@
 ---
-description: 
+description: read QA outputs to create prioritized fix plan then guide implementation with validation
 ---
 
 # /apply-qa-fixes Task

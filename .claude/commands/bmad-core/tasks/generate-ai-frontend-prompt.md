@@ -1,3 +1,7 @@
+---
+description: craft optimized prompts for AI-assisted frontend design tools
+---
+
 # /generate-ai-frontend-prompt Task
 
 When this command is used, execute the following task:

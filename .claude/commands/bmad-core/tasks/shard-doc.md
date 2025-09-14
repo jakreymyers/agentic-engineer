@@ -1,3 +1,7 @@
+---
+description: split large documents into a collection of smaller documents, organized by section
+---
+
 # /shard-doc Task
 
 When this command is used, execute the following task:

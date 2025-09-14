@@ -1,5 +1,5 @@
 ---
-description: 
+description: validate artifacts against role-specific checklists for quality assurance
 ---
 
 # /execute-checklist Task

@@ -1,3 +1,7 @@
+---
+description: generate risk assessment matrix, analyze probability × impact analysis, determine mitigations
+---
+
 # /risk-profile Task
 
 When this command is used, execute the following task:

@@ -1,3 +1,7 @@
+---
+description: create quality gate decisions with actionable feedback for stories
+---
+
 # /qa-gate Task
 
 When this command is used, execute the following task:

@@ -1,5 +1,5 @@
 ---
-description: 
+description: analyze current state and generate project documentation
 ---
 
 # /document-project Task

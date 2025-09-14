@@ -1,3 +1,7 @@
+---
+description: create requirements tracability matrrix and ensure every acceptance criterion has test coverage
+---
+
 # /trace-requirements Task
 
 When this command is used, execute the following task:

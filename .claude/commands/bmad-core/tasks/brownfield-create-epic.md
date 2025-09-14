@@ -1,5 +1,5 @@
 ---
-description: 
+description: create epic for brownfield enhancements, bypassing full PRD process
 ---
 
 # /brownfield-create-epic Task

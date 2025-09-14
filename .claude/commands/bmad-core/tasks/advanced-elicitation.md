@@ -1,5 +1,5 @@
 ---
-description: 
+description: improve artifact and planning quality through structured brainstorming + refinement techniques
 ---
 
 # /advanced-elicitation Task

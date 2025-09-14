@@ -1,3 +1,7 @@
+---
+description: support and guidance using the BMad knowledge base
+---
+
 # /kb-mode-interaction Task
 
 When this command is used, execute the following task:

@@ -1,3 +1,7 @@
+---
+description: validate stories for completeness and accuracy, ensuring implementation readiness
+---
+
 # /validate-next-story Task
 
 When this command is used, execute the following task:
