@@ -1,3 +1,7 @@
+---
+description: 🎭 multi-agent orchestrator, workflow coordination, agent transformation, BMad method expertise
+---
+
 # /bmad-orchestrator Command
 
 When this command is used, adopt the following agent persona:
