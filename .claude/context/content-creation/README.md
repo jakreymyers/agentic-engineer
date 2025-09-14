@@ -1,8 +1,8 @@
-# BMAD Jak Content Creation Expansion Pack
+# Jak's Content Creation Expansion Pack
 
 ## Overview
 
-The Jak Creator expansion pack is a personalized content creation and thought partnership system designed specifically for Jak Myers. This pack transforms Jak's expertise in augmented intelligence and his journey into solopreneurship into compelling content across LinkedIn, blogs, and other platforms. It enforces Jak's writing principles while helping him develop unique perspectives at the intersection of data products, healthcare technology, and MicroSaaS development.
+**Jak's Content Creation expansion pack** is a personalized content creation and thought partnership system designed specifically for Jak Myers. This pack transforms Jak's expertise in augmented intelligence and his journey into solopreneurship into compelling content across LinkedIn, blogs, and other platforms. It enforces Jak's writing principles while helping him develop unique perspectives at the intersection of data products, healthcare technology, and MicroSaaS development.
 
 ## Core Philosophy
 
@@ -89,59 +89,30 @@ This expansion pack implements four fundamental principles:
 - BMAD Method integration
 - CEDAF delegation framework
 
-## Quick Start
-
-### Installation
-
-1. Ensure you have BMAD Method installed
-2. Install this expansion pack:
-   ```bash
-   bmad install --expansion bmad-jak-creator
-   ```
-
-### Basic Usage
-
-1. **Start with the full team**:
-
-   ```bash
-   bmad --team jak-creator-team
-   ```
-
-2. **Or activate a specific agent**:
-
-   ```bash
-   bmad --agent thought-partner
-   ```
-
-3. **Run the content pipeline**:
-   ```bash
-   bmad --workflow content-creation-pipeline
-   ```
-
 ## Jak's Content Journey
 
-### Phase 1: Idea Development (Day 1-2)
+### Phase 1: Idea Development 
 
 - Brainstorm with Thought Partner
 - Validate angle and uniqueness
 - Research supporting evidence
 - Outline key messages
 
-### Phase 2: Content Creation (Day 3-4)
+### Phase 2: Content Creation 
 
 - Draft with appropriate writer agent
 - Apply Jak's voice and style
 - Include concrete examples
 - Structure for clarity
 
-### Phase 3: Optimization (Day 5)
+### Phase 3: Optimization
 
 - Edit with Content Editor
 - Optimize hooks with Hook Optimizer
 - Ensure principles compliance
 - Polish for platform
 
-### Phase 4: Distribution (Day 6-7)
+### Phase 4: Distribution
 
 - Publish at optimal times
 - Engage with comments strategically
@@ -213,44 +184,6 @@ This expansion pack implements four fundamental principles:
 - **Product Management**: Evergreen best practices
 - **Personal Growth**: Quarterly reflections
 
-## Example Commands
-
-### Develop New Ideas
-
-```bash
-bmad --agent thought-partner
-> *brainstorm
-```
-
-### Write LinkedIn Post
-
-```bash
-bmad --agent linkedin-writer
-> *create-post
-```
-
-### Edit Content
-
-```bash
-bmad --agent content-editor
-> *edit-ruthlessly
-```
-
-### Plan Content Calendar
-
-```bash
-bmad --agent narrative-architect
-> *content-strategy
-```
-
-## Success Metrics
-
-- **LinkedIn**: 10%+ engagement rate
-- **Blog**: 5+ minute average read time
-- **Thought Leadership**: 3+ speaking invitations/quarter
-- **MicroSaaS Content**: 20%+ conversion to trials
-- **Overall**: 50%+ YoY audience growth
-
 ## Common Pitfalls to Avoid
 
 ### The Abstract Theory Trap
@@ -318,28 +251,6 @@ bmad --agent narrative-architect
 - Feeling inauthentic
 - Burnout symptoms
 - Negative feedback patterns
-
-## Support
-
-For questions or issues:
-
-- Review Jak's principles in `/data/jak-writing-principles.md`
-- Check workflow examples in `/workflows/`
-- Consult agent-specific help: `*help` within any agent
-
-## Contributing
-
-This pack is personalized for Jak but welcomes:
-
-- New hook patterns that work
-- Engagement strategies
-- Platform-specific optimizations
-- Tool integrations
-- Performance insights
-
-## License
-
-This expansion pack follows the same license as the core BMAD Method.
 
 ## Acknowledgments
 
