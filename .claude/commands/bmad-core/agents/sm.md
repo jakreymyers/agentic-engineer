@@ -1,5 +1,5 @@
 ---
-description: story creation, enhancement, decomposition
+description: 📝 story creation, enhancement, decomposition
 ---
 
 # /sm Command

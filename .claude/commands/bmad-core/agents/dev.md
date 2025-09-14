@@ -1,5 +1,5 @@
 ---
-description: story implementation, full-stack development, debugging, automated testing, code refactoring
+description: 💻 story implementation, full-stack development, debugging, automated testing, code refactoring
 ---
 
 # /dev Command

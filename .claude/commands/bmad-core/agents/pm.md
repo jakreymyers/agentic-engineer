@@ -1,5 +1,5 @@
 ---
-description: PRD creation, product strategy, feature prioritization, roadmap planning, stakeholder communication 
+description: 🎯 PRD creation, product strategy, feature prioritization, roadmap planning, stakeholder communication 
 ---
 
 # /pm Command

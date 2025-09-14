@@ -1,5 +1,5 @@
 ---
-description: story refinement, backlog prioritization, acceptance criteria, sprint planning, task decomposition
+description: ✅ story refinement, backlog prioritization, acceptance criteria, sprint planning, task decomposition
 ---
 
 # /po Command

@@ -1,5 +1,5 @@
 ---
-description: research, brainstorming, competitive analysis, creating project briefs, project documentation
+description: 🔍 research, brainstorming, competitive analysis, creating project briefs, project documentation
 ---
 
 # /analyst Command

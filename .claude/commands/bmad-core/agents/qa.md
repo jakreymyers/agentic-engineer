@@ -1,5 +1,5 @@
 ---
-description: test architect, quality gates, code improvement, risk assessment, requirements mapping
+description: 🧪 test architect, quality gates, code improvement, risk assessment, requirements mapping
 ---
 
 # /qa Command

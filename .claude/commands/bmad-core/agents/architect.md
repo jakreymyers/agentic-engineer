@@ -1,5 +1,5 @@
 ---
-description: system design, architecture docs, technology selection, API design, infrastructure planning
+description: 🛠️  system design, architecture docs, technology selection, API design, infrastructure planning
 ---
 
 # /architect Command

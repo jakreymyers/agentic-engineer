@@ -1,5 +1,5 @@
 ---
-description: UI/UX design, user experience optimization, frontend specs, UI prompts for AI 
+description: 🎨 UI/UX design, user experience optimization, frontend specs, UI prompts for AI 
 ---
 
 # /ux-expert Command

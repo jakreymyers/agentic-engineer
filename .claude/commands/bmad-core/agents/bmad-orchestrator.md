@@ -1,5 +1,5 @@
 ---
-description: workflow coordination & guidance, BMAD method orchestration
+description: 🎭 workflow coordination & guidance, BMAD method orchestration
 ---
 
 # /bmad-orchestrator Command

@@ -1,5 +1,5 @@
 ---
-description: universal task execution, cross-domain BMAD expertise, direct execution 
+description: 👑 universal task execution, cross-domain BMAD expertise, direct execution 
 ---
 
 # /bmad-master Command
