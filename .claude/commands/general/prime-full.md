@@ -8,7 +8,7 @@ Execute the `Run`, `Read` and `Report` sections to understand the codebase and t
 
 ## Run
 
-git ls-files
+`git ls-files`
 
 ## Read
 
