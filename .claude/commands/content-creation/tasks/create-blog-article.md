@@ -1,3 +1,7 @@
+---
+description: transform developed ideas into polished blog articles with strategic content development
+---
+
 # /create-blog-article Task
 
 When this command is used, execute the following task:

@@ -1,3 +1,7 @@
+---
+description: transform raw concepts into validated, ready-to-create content ideas
+---
+
 # /develop-content-idea Task
 
 When this command is used, execute the following task:

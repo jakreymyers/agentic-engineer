@@ -1,3 +1,7 @@
+---
+description: systematic thought leadership development with content strategy and industry positioning
+---
+
 # /build-thought-leadership Task
 
 When this command is used, execute the following task:

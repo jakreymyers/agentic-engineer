@@ -1,3 +1,7 @@
+---
+description: content messaging optimization for clarity, impact, and authentic voice alignment
+---
+
 # /refine-messaging Task
 
 When this command is used, execute the following task:

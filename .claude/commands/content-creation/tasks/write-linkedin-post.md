@@ -1,3 +1,7 @@
+---
+description: high-engagement LinkedIn post creation with hook development and format optimization
+---
+
 # /write-linkedin-post Task
 
 When this command is used, execute the following task:

@@ -1,3 +1,7 @@
+---
+description: authentic solopreneur story crafting for audience building and business outcomes
+---
+
 # /craft-microsaas-narrative Task
 
 When this command is used, execute the following task:
