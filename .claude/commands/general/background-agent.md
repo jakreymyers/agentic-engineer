@@ -2,6 +2,7 @@
 description: Fires off a full Claude Code instance in the background
 argument-hint: [prompt] [model] [report-file] 
 tools: Bash, BashOutput, Read, Edit, MultiEdit, Write, Grep, Glob, WebFetch, WebSearch, TodoWrite, Task
+model: opus
 ---
 
 # Background Claude Code
@@ -12,7 +13,7 @@ Run a Claude Code instance in the background to perform tasks autonomously while
 
 USER_PROMPT: $1
 MODEL: $2 (defaults to 'sonnet' if not provided)
-REPORT_FILE: $3 (defaults to './reports/background-agent/background-report-ĐAY-NAME_HH_MM_SS.md' if not provided)
+REPORT_FILE: $3 (defaults to './reports/background-agent/background-report-DD-MMM-YYYY_HH-MM-SS.md' if not provided)
 
 ## Instructions
 
@@ -31,15 +32,16 @@ REPORT_FILE: $3 (defaults to './reports/background-agent/background-report-ĐAY-
 - IMPORTANT: Do not alter the append-system-prompt in any way.
 
 ## Workflow
+
 1. Create the report directory if it doesn't exist:
     ```bash 
     mkdir -p reports/background-agent
     ```
 
 2. Set default values for parameters:
-- `MODEL`
-- `TIMESTAMP` (capture once for consistency)
-- `REPORT_FILE` (using the captured timestamp)
+   - `MODEL`
+   - `TIMESTAMP` (capture once for consistency)
+   - `REPORT_FILE` (using the captured timestamp)
 
 3. Create the initial report file with just the header (IMPORTANT: Only IF no report file is provided - if it is provided, echo it and skip this step):
     Get this into your context window so you know what to pass into the Claude Code command.
@@ -52,6 +54,7 @@ REPORT_FILE: $3 (defaults to './reports/background-agent/background-report-ĐAY-
     ```
 
 <primary-agent-delegation>
+
 4. Construct the Claude Code command with all settings:
 
    - Execute the command using Bash with run_in_background=true
@@ -61,20 +64,31 @@ REPORT_FILE: $3 (defaults to './reports/background-agent/background-report-ĐAY-
         --model "${MODEL}" \
         --output-format text \
         --dangerously-skip-permissions \
-        --append-system-prompt "IMPORTANT: You are running as a background agent. Your primary responsibility is to execute work and document your progress continuously in $(REPORT_FILE}. Iteratively write to the report file continuously as you work. Every few tool calls you should update the REPORT_FILE ## Progress section. Follow this file structure.
+        --append-system-prompt "IMPORTANT: You are running as a background agent. Your primary responsibility is to execute work and document your progress continuously in ${REPORT_FILE}. Iteratively write to the report file continuously as you work. Every few tool calls you should update the REPORT_FILE ## Progress section. Follow this file structure.
 
-## CRITICAL WORKFLOW STRUCTURE
+## WORKFLOW
 
    IMPORTANT: You MUST follow this workflow as you work:
    
    1. The file ${REPORT_FILE} has been created with a header. You must UPDATE as you proceed it (not recreate it) with this EXACT markdown structure:
 
     ```markdown
-    # Background Agent Report - DAY-NAME_HH_MM_SS
+    # Background Agent Report - DD-MMM-YYYY_HH-MM-SS
 
     ## Task Understanding
     Clearly state what the user requested. Break down complex requests into numbered items:
     User requested:
+    1. [First task item]
+    2. [Second task item]
+    3. [Next task item]
+
+    ## Progress
+    IMPORTANT: Document each major step as you work. Update this section as you work:
+    - Starting task execution
+    - [Action taken with tool/command used]
+    - [Finding or observation]
+    - [Next action]
+    (Keep adding bullets as you work)
 
     ## Results
     List concrete outcomes and deliverables with specific details. Update as you work:
@@ -91,18 +105,18 @@ REPORT_FILE: $3 (defaults to './reports/background-agent/background-report-ĐAY-
     - ## Recommendations - Follow-up suggestions
     - ## Warnings - Important issues to note
   
-    CONTINUOUSLY update ${REPORT_FILE) as you work - after each major step or finding.
+    CONTINUOUSLY update ${REPORT_FILE} as you work - after each major step or finding.
 
     When you finish your work:
-       - If successful: Rename $(REPORT_FILE) to $(REPORT_FILE.md}. complete.md
-       - If failed/blocked: Rename ${REPORT_FILE) to ${REPORT_FILE.md}. failed. md
+       - If successful: Rename $(REPORT_FILE) to ${REPORT_FILE.md}-complete.md
+       - If failed/blocked: Rename ${REPORT_FILE} to ${REPORT_FILE.md}-failed.md
     
     Remember: The report is your PRIMARY output. Update it frequently and thoroughly.
     ```" \
         —-print "${USER_PROMPT}" 
 </primary-agent-delegation>
 
-1. After you kick off the background agent, use the BashOutput tool to check the status of the background agent
+2. After you kick off the background agent, use the BashOutput tool to check the status of the background agent
    - If something goes wrong investigate and report back to the user
    - If everything is working fine, continue to the 'Response to User' section
 
@@ -112,5 +126,5 @@ After launching the background agent, respond with:
 
 ```
 Background Claude Code kicked off. Agent is writing to `REPORT_FILE` as it works.
-When it completes it will rename the file to `REPORT_FILE.complete.md` on success or `REPORT_FILE.failed.md` if it fails.
+When it completes it will rename the file to `REPORT_FILE-complete.md` on success or `REPORT_FILE-failed.md` if it fails.
 ```

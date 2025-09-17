@@ -10,18 +10,18 @@ allowed-tools:
   ]
 ---
 
-# Claude Command: Commit
+# Git Commit
 
 Creates well-formatted commits with conventional commit messages and emoji.
 
-## Usage
+## Usage Examples
 
 ```
 /commit
 /commit --no-verify
 ```
 
-## Process
+## Workflow
 
 1. Check staged files, commit only staged files if any exist
 2. Analyze diff for multiple logical changes

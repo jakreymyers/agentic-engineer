@@ -9,7 +9,7 @@ Execute the `Workflow` and `Report` sections to understand the codebase and then
 
 # Variables
 
-README_LOCATION: `./`
+README_LOCATION: ./
 
 ## Workflow
 

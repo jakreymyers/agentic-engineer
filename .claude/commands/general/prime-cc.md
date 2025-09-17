@@ -9,7 +9,7 @@ Execute the `Workflow` and `Report` sections to understand the codebase and then
 
 # Variables
 
-CLAUDE_LOCATION: `./.claude/`
+CLAUDE_LOCATION: ./.claude/
 
 ## Workflow
 

@@ -9,7 +9,7 @@ Execute the `Workflow` and `Report` sections to understand the codebase and then
 
 ## Variables
 
-CONTEXT_LOCATION: `./.claude/context/bmad-core/`
+CONTEXT_LOCATION: ./.claude/context/bmad-core/
 
 ## Workflow
 

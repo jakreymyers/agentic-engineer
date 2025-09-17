@@ -13,7 +13,7 @@ Create a detailed implementation plan based on the user's requirements provided 
 ## Variables
 
 USER_PROMPT: $ARGUMENTS
-PLAN_OUTPUT_DIRECTORY: `./docs/prd`
+PLAN_OUTPUT_DIRECTORY: ./docs/prd
 
 ## Instructions
 

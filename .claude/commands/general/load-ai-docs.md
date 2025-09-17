@@ -1,6 +1,6 @@
 ---
 description: Load documentation from their respective websites into local markdown files our agents can use as context
-allowed-tools: Task, WebFetch, Write, Edit, Bash (ls*), mcp__firecrawl__firecrawl_scrape
+allowed-tools: Task, WebFetch, Write, Edit, Bash(ls*), mcp__firecrawl__firecrawl_scrape
 ---
 
 # Load AI Docs
@@ -33,4 +33,5 @@ DELETE_OLD_AI_DOCS_AFTER_HOURS: 24
 ```
 AI Docs Report:
 - <✅ Success or ❌ Failure or ⚠️ Skipped >: <url> - <markdown file path>
+- ...
 ```
