@@ -73,3 +73,9 @@ Thumbs.db
 # Confidential Documentation
 docs/airtable/
 docs/storyminers/
+
+# Background agent reports
+reports/background-agent/
+
+# Playwright MCP
+.playwright-mcp/
