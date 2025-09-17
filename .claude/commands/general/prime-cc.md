@@ -1,22 +1,26 @@
 ---
 description: Gain a general understanding of the codebase with a focus on Claude Code improvements
+allowed-tools: Read, Glob, Grep, Bash
 ---
 
 # Prime Claude Code
 
-Execute the `Run`, `Read` and `Report` sections to understand the codebase and then smmarize your understanding
+Execute the `Workflow` and `Report` sections to understand the codebase and then smmarize your understanding
 
-## Run
+# Variables
 
-Read and execute the `.claude/commands/prime.md` file top to bottom
+CLAUDE_LOCATION: `./.claude/`
 
-## Read
+## Workflow
 
-1. `.claude/commands/**`
-2. `.claude/output-styles/**`
-3. `.claude/hooks/context_bundle_builder.py`
-4. `.claude/settings.json`
+- Read and execute the `.claude/commands/general/prime.md` file top to bottom
+- Read these Claude Code files located in the `CLAUDE_LOCATION` directory
+  1. `agents/**`
+  2. `commands/**`
+  3. `output-styles/**`
+  4. `hooks/**`
+  5. `settings.local.json`
 
 ## Report
 
-Summarize your understanding of the codebase.
+Summarize your understanding of the codebase with a focus on the Claude Code specific functionality.

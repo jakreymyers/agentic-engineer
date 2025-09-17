@@ -1,18 +1,20 @@
 ---
-description: Gain a general understanding of the codebase
+description: Gain a general understanding of the full codebase
+allowed-tools: Read, Glob, Grep, Bash
 ---
 
-# Prime
+# Prime (Full)
 
-Execute the `Run`, `Read` and `Report` sections to understand the codebase and then smmarize your understanding
+Execute the `Workflow` and `Report` sections to understand the codebase and then smmarize your understanding
 
-## Run
+# Variables
 
-`git ls-files`
+README_LOCATION: `./`
 
-## Read
+## Workflow
 
-README.md
+- Run `git ls-files` to list all files in the repository
+- Read `README.md` located in the `README_LOCATION` directory for an overview of the project
 
 ## Report
 
