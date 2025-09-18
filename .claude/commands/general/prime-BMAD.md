@@ -17,10 +17,11 @@ CONTEXT_LOCATION: ./.claude/context/bmad-core/
 
 Read these context files located in the `CONTEXT_LOCATION` directory. This is a representative sample of the full BMAD system.
   1. `user-docs/user-guide.md`
-  2. `agent-teams/team-all.yaml`
-  3. `agents/pm.md` and `agents/architect.md` and `agents/qa.md`
-  4. `checklists/pm-checklist.md` and `checklists/architect-checklist.md`
-  5. `tasks/document-project.md` and `tasks/advanced-elicitation.md` and `tasks/execute-checklist.md`
+  2. `agent-teams/team-fullstack.yaml`
+  3. `workflows/greenfield-fullstack.yaml`
+  4. `agents/pm.md` and `agents/architect.md` and `agents/qa.md`
+  5. `checklists/pm-checklist.md` and `checklists/architect-checklist.md`
+  6. `tasks/document-project.md` and `tasks/advanced-elicitation.md` and `tasks/execute-checklist.md`
 
 ### 2. Inventory of Essential Context Files
 

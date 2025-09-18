@@ -48,7 +48,7 @@ REPORT_FILE: $3 (defaults to './reports/background-agent/background-report-DD-MM
     ```bash
     TIMESTAMP=$(date +%d-%b-%Y_%H-%M-%S)
     echo "TIMESTAMP: ${TIMESTAMP}"
-    REPORT_FILE="${REPORT_FILE:-./reports/background-agent/background-report-${TIMESTAMP}}"
+    REPORT_FILE="${REPORT_FILE:-./reports/background-agent/background-report-${TIMESTAMP}.md}"
     echo "REPORT_FILE: ${REPORT_FILE}"
     echo "# Background Agent Report - ${TIMESTAMP}" > "${REPORT_FILE}"
     ```
@@ -108,8 +108,8 @@ REPORT_FILE: $3 (defaults to './reports/background-agent/background-report-DD-MM
     CONTINUOUSLY update ${REPORT_FILE} as you work - after each major step or finding.
 
     When you finish your work:
-       - If successful: Rename ${REPORT_FILE} to ${REPORT_FILE%.md}-complete.md
-       - If failed/blocked: Rename ${REPORT_FILE} to ${REPORT_FILE%.md}-failed.md
+       - If successful: Rename ${REPORT_FILE} to ${REPORT_FILE}-complete.md
+       - If failed/blocked: Rename ${REPORT_FILE} to ${REPORT_FILE}-failed.md
     
     Remember: The report is your PRIMARY output. Update it frequently and thoroughly.
     ```" \
