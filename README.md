@@ -12,7 +12,7 @@
 Transform how you work with AI by commanding specialized agent teams through structured workflows.
 From software development to user research to content creation - achieve 10x productivity with quality control.
 
-[🎯 Get Started](#-quick-start) • [📚 Documentation](docs/) • [🤝 Contributing](#-contributing) • [💬 Discussions](https://github.com/jakreymyers/agentic-engineer/discussions)
+[🎯 Get Started](#-quick-start) • [📚 Documentation](docs/) • [🔬 User Research](#-user-research-multi-agent-system) • [💻 Development](#-bmad-core-development-framework) • [✍️ Content](#-content-creation-framework)
 
 </div>
 
@@ -114,6 +114,14 @@ agentic-engineer/
 │   │   │   ├── workflows/             # Content workflows
 │   │   │   ├── templates/             # Content templates
 │   │   │   └── data/                  # Writing guides & examples
+│   │   ├── user-research/             # User research system
+│   │   │   ├── agents/                # 6 research specialists
+│   │   │   ├── tasks/                 # 30 research tasks
+│   │   │   ├── workflows/             # 5 research workflows
+│   │   │   ├── templates/             # 32 YAML templates
+│   │   │   ├── checklists/            # Quality validation
+│   │   │   ├── data/                  # 18 knowledge bases
+│   │   │   └── user-docs/             # User guide & inventory
 │   │   └── product-strategy/          # Future expansion area
 │   └── hooks/                         # IDE lifecycle integration
 ├── apps/                              # Application code
@@ -132,27 +140,87 @@ agentic-engineer/
 └── reports/                           # Agent execution reports
 ```
 
-## 🚀 Quick Start Guide
+## 🚀 Core Frameworks
 
-### 1. Installation & Setup
+The system provides three production-ready frameworks:
 
-The framework requires installation in your project's `.claude` directory:
+### 🔬 **User Research Multi-Agent System**
+Comprehensive research orchestration with quality gates and validation.
+[Jump to User Research Section](#-user-research-multi-agent-system)
 
-```bash
-# Copy the .claude directory from this repo
-cp -r /path/to/agentic-engineer/.claude ./
+### 🏗️ **BMAD Software Development**
+Structured AI-assisted development based on [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD).
+[Jump to Development Section](#-bmad-core-development-framework)
+
+### ✍️ **Content Creation System**
+Authentic thought leadership content that builds authority.
+[Jump to Content Section](#-content-creation-framework)
+
+## 🔬 User Research Multi-Agent System
+
+### Philosophy: **Professional Research Operations with AI Orchestration**
+
+Conduct enterprise-grade user research through specialized agents, structured workflows, and comprehensive quality frameworks.
+
+### Research Agents (6 Specialists)
+
+| Agent | Persona | Specialization |
+|-------|---------|----------------|
+| **research-orchestrator** | 🎯 Dr. Morgan | Chief coordinator, quality standards, workflow progression |
+| **research-strategist** | 🔬 Dr. Sarah | Study design, sampling, advanced methodology |
+| **interview-specialist** | 🎤 Jamie | Elicitation techniques, bias prevention, rapport building |
+| **data-analyst** | 📊 Alex | Qualitative coding, statistical analysis, theme extraction |
+| **insight-synthesizer** | 💡 Dr. Riley | Cross-interview patterns, personas, journey mapping |
+| **research-reporter** | 📝 Taylor | Multi-format reports, visualizations, recommendations |
+
+### Research Workflows
+
+| Workflow | Duration | Best For | Key Features |
+|----------|----------|----------|--------------|
+| **rapid-discovery** | 5 days | Quick insights, urgent decisions | 8-10 participants, fast turnaround |
+| **user-interview-research** | 3-6 weeks | Deep behavioral understanding | All 6 agents, comprehensive analysis |
+| **conjoint-analysis** | 2-3 weeks | Feature/pricing preferences | 200+ respondents, D-efficiency >0.85 |
+| **ethnographic-research** | 4-8 weeks | Cultural/contextual insights | Field observation, thick description |
+| **mixed-methods-research** | 4-6 weeks | Validation & triangulation | Qual + quant integration |
+
+### Quality Framework
+
+- **400+ Validation Points**: Comprehensive checklists across 8 research phases
+- **Mandatory Elicitation**: 1-9 format ensures user involvement at critical points
+- **Quality Gates**: IRR >0.70, stakeholder approval >75%, recording quality >95%
+- **Error Recovery**: Automatic and manual recovery mechanisms
+
+### Key Research Commands
+
+| Command | Purpose | Agent |
+|---------|---------|-------|
+| `*research-orchestrator` | Start research project | Orchestrator |
+| `*initiate-project` | Define objectives and scope | Orchestrator |
+| `*select-methodology` | Choose research approach | Orchestrator |
+| `*design-study` | Create comprehensive study plan | Strategist |
+| `*create-screener` | Build participant screening | Strategist |
+| `*create-guide` | Generate discussion guide | Specialist |
+| `*analyze-transcript` | Process and code transcripts | Analyst |
+| `*synthesize` | Cross-interview synthesis | Synthesizer |
+| `*generate-report` | Create research report | Reporter |
+
+### Research Outputs
+
 ```
-
-### 2. Choose Your Workflow
-
-The system provides two main frameworks:
-
-- #### 🏗️ **BMAD-Core: Software Development**
-  For building applications with AI agent assistance.
-  Based on [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by Brian Madison.
-
-- #### 📝 **Content-Creation: Thought Leadership**
-  For creating LinkedIn posts, blog articles, and marketing content.
+docs/research/
+├── brief.md                    # Research objectives
+├── methodology-matrix.md       # Method selection
+├── study-design.md            # Study plan
+├── discussion-guide.md        # Interview guide
+├── screening-questionnaire.md # Participant criteria
+├── synthesis.md               # Cross-analysis
+├── personas/                  # User personas
+├── journey-maps/              # Experience maps
+└── reports/                   # Final deliverables
+    ├── full-report.md
+    ├── executive-summary.md
+    └── presentations/
+```
 
 ## 🏗️ BMAD-Core Development Framework
 
@@ -504,10 +572,16 @@ graph TD
         Q -->|Feedback to| A
     end
 
-    style U fill:#e8f5e9
-    style A fill:#fff3e0
-    style O fill:#e3f2fd
-    style Q fill:#fce4ec
+    style U fill:#4CAF50,color:#fff
+    style A fill:#FF9800,color:#fff
+    style O fill:#2196F3,color:#fff
+    style Q fill:#E91E63,color:#fff
+    style T fill:#9C27B0,color:#fff
+    style TM fill:#00BCD4,color:#fff
+    style D fill:#8BC34A,color:#fff
+    style C fill:#FF5722,color:#fff
+    style W fill:#795548,color:#fff
+    style F fill:#607D8B,color:#fff
 ```
 
 ### Agent Dependency Resolution
@@ -534,9 +608,14 @@ graph LR
 
     CTX -->|Ready| EX[Execute Commands]
 
-    style AG fill:#f3e5f5
-    style CTX fill:#e8f5e9
-    style EX fill:#fff3e0
+    style AG fill:#9C27B0,color:#fff
+    style DEP fill:#3F51B5,color:#fff
+    style T1 fill:#00BCD4,color:#fff
+    style T2 fill:#009688,color:#fff
+    style D1 fill:#4CAF50,color:#fff
+    style C1 fill:#FF5722,color:#fff
+    style CTX fill:#FF9800,color:#fff
+    style EX fill:#8BC34A,color:#fff
 ```
 
 ## 🔧 Advanced Features
@@ -555,5 +634,24 @@ Coordinate multiple agents on complex tasks with shared context.
 ```
 Spin up autonomous agents for time-intensive work.
 
+## 🤝 Contributing
+
+We welcome contributions! Please follow these guidelines:
+- Follow the existing code style and conventions
+- Write tests for new features
+- Update documentation as needed
+- Submit PR with clear description
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+## 🙏 Acknowledgments
+
+- [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) by Brian Madison
+- Claude AI by Anthropic
+- The open-source community
+
 ---
-Test: Normal git operations after history cleanup
+
+**Built with ❤️ for the AI-augmented future of work**
