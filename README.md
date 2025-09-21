@@ -1,6 +1,24 @@
-# **I Am Agentic**: The Augmented Intelligence Framework
+# 🚀 Agentic Engineer: The Augmented Intelligence Framework
 
-> **Transform into a "Vibe CEO"** - Direct specialized AI agents through structured workflows for software development and content creation.
+<div align="center">
+
+[![GitHub Stars](https://img.shields.io/github/stars/jakreymyers/agentic-engineer?style=social)](https://github.com/jakreymyers/agentic-engineer/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![AI Agents](https://img.shields.io/badge/AI%20Agents-45%2B-purple)](/.claude)
+[![Workflows](https://img.shields.io/badge/Workflows-15%2B-green)](/.claude/context)
+
+### **Orchestrate Multi-Agent AI Teams • Augment Human Intelligence • Deliver Real Results**
+
+Transform how you work with AI by commanding specialized agent teams through structured workflows.
+From software development to user research to content creation - achieve 10x productivity with quality control.
+
+[🎯 Get Started](#-quick-start) • [📚 Documentation](docs/) • [🤝 Contributing](#-contributing) • [💬 Discussions](https://github.com/jakreymyers/agentic-engineer/discussions)
+
+</div>
+
+---
+
+> **🎭 The "Vibe CEO" Approach**: Don't just prompt AI - orchestrate entire teams of specialized agents that work together, maintaining quality through systematic validation while you focus on strategy and creativity.
 
 - Demonstrates practical application of AI agents in complex, multi-stage workflows
 - Provides reusable patterns for template-driven development
@@ -9,14 +27,70 @@
 
 This system provides a comprehensive foundation for AI-assisted work that maintains human oversight and quality control while maximizing the efficiency gains from AI automation.
 
-## 📋 Repository Overview
+## ✨ What's Inside
 
-**150+ files** of production-ready AI agent orchestration system featuring:
-- **20+ specialized AI agents** across development and content domains
-- **Complete SDLC workflows** from planning to deployment
-- **Personalized content creation system** optimized for thought leadership
-- **Advanced template system** with YAML-driven definition
+<table>
+<tr>
+<td width="50%">
+
+### 🤖 **45+ Specialized AI Agents**
+Production-ready agents across three domains:
+- 🔧 **Software Development** (10 agents)
+- 🔬 **User Research** (6 agents)
+- ✍️ **Content Creation** (9 agents)
+- 🚀 **More domains coming...**
+
+</td>
+<td width="50%">
+
+### 📊 **Real-World Workflows**
+Complete end-to-end processes:
+- 💻 Full SDLC from planning to deployment
+- 🎯 5 research methodologies with quality gates
+- 📝 Content pipeline from ideation to publishing
+- ✅ 400+ validation checkpoints
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🎮 **Command & Control**
+Intuitive orchestration system:
+- 🎯 Simple `*agent` commands
+- 📋 Task-driven execution
+- 🔄 Automatic handoffs between agents
+- 📈 Progress tracking & reporting
+
+</td>
+<td width="50%">
+
+### 🛡️ **Quality Assurance**
+Built-in safety & validation:
+- ✨ Mandatory elicitation system
+- 🎯 Measurable quality gates
+- 🔍 Multi-phase checklists
+- 🔄 Error recovery mechanisms
+
+</td>
+</tr>
+</table>
   
+## 🎯 Quick Start
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/jakreymyers/agentic-engineer.git
+
+# 2. Navigate to project
+cd agentic-engineer
+
+# 3. Start using agents (with Claude)
+*research-orchestrator  # Start user research
+*bmad-master           # Software development
+*content-editor        # Content creation
+```
+
 ## 🏗️ Repository Structure
 
 ```
