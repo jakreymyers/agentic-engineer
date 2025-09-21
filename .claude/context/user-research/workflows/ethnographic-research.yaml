@@ -1,0 +1,520 @@
+# Ethnographic Research Workflow
+# In-depth observational and cultural research workflow
+
+workflow:
+  id: ethnographic-research
+  name: Ethnographic Research Study
+  version: 1.0
+  description: |
+    Comprehensive workflow for conducting ethnographic research to understand
+    users in their natural context, uncovering deep behavioral insights,
+    cultural patterns, and environmental influences on behavior.
+
+  estimated_duration: 4-8 weeks
+  team_size: 2-3 researchers
+  output_artifacts:
+    - Ethnographic study protocol
+    - Field notes and observations
+    - Photo/video documentation
+    - Cultural artifacts collection
+    - Thick descriptions
+    - Behavioral patterns analysis
+    - Environmental influence maps
+    - Ethnographic insights report
+    - Documentary materials
+
+methodology:
+  approach: Participant observation
+  techniques:
+    - Shadowing
+    - Contextual inquiry
+    - Day-in-the-life studies
+    - Cultural probes
+    - Photo elicitation
+    - Artifact analysis
+  duration: Longitudinal or intensive
+  stance: Emic (insider) perspective
+
+phases:
+  - id: study-design
+    name: Ethnographic Study Design
+    duration: 3-4 days
+    agent: research-orchestrator
+    description: |
+      Design ethnographic research approach, define field sites,
+      and establish observation protocols.
+
+    steps:
+      - id: define-scope
+        task: establish-research-project
+        focus: ethnographic
+        outputs:
+          - Research questions
+          - Cultural domains of interest
+          - Study boundaries
+        quality_gates:
+          - Questions anthropologically grounded
+          - Scope manageable
+          - Access feasible
+
+      - id: select-sites
+        action: Identify field sites
+        outputs:
+          - Site selection criteria
+          - Selected locations/contexts
+          - Access agreements
+        quality_gates:
+          - Sites representative
+          - Access secured
+          - Ethics approved
+
+    handoff:
+      to: research-strategist
+      artifacts:
+        - Study design
+        - Site agreements
+        - Ethics approval
+
+  - id: protocol-development
+    name: Observation Protocol Creation
+    duration: 2-3 days
+    agent: research-strategist
+    description: |
+      Develop detailed observation protocols and
+      data collection frameworks for field work.
+
+    steps:
+      - id: create-protocol
+        task: plan-ethnographic-study
+        template: ethnographic-plan-tmpl
+        outputs:
+          - Observation protocol
+          - Data collection framework
+          - Field note templates
+        quality_gates:
+          - Protocol comprehensive
+          - Framework structured
+          - Templates usable
+
+      - id: design-probes
+        action: Create cultural probes
+        outputs:
+          - Probe materials
+          - Instructions for participants
+          - Return mechanisms
+        quality_gates:
+          - Probes engaging
+          - Instructions clear
+          - Privacy protected
+
+      - id: prepare-tools
+        action: Ready observation tools
+        outputs:
+          - Recording equipment
+          - Note-taking systems
+          - Consent processes
+        quality_gates:
+          - Tools tested
+          - Systems ready
+          - Consent compliant
+
+    handoff:
+      to: interview-specialist
+      artifacts:
+        - Observation protocol
+        - Cultural probes
+        - Field tools
+
+  - id: immersion-phase
+    name: Field Immersion
+    duration: 2-4 weeks
+    agent: interview-specialist
+    description: |
+      Conduct intensive field observations, shadowing,
+      and contextual inquiry in natural settings.
+
+    steps:
+      - id: initial-immersion
+        action: Begin field observations
+        duration: First week
+        outputs:
+          - Initial observations
+          - Environmental mapping
+          - Key informant identification
+        quality_gates:
+          - Rapport established
+          - Context understood
+          - Informants willing
+
+      - id: deep-observation
+        action: Conduct intensive observation
+        duration: 2-3 weeks
+        outputs:
+          - Detailed field notes
+          - Behavioral patterns
+          - Photo/video documentation
+          - Artifact collection
+        quality_gates:
+          - Saturation approaching
+          - Patterns emerging
+          - Documentation rich
+
+      - id: participant-activities
+        action: Engage in participant observation
+        outputs:
+          - Participatory insights
+          - Insider perspectives
+          - Tacit knowledge capture
+        quality_gates:
+          - Participation appropriate
+          - Boundaries maintained
+          - Insights authentic
+
+      - id: contextual-interviews
+        action: Conduct in-situ interviews
+        outputs:
+          - Contextual interview notes
+          - Meaning-making discussions
+          - Native explanations
+        quality_gates:
+          - Context preserved
+          - Meanings clarified
+          - Voices authentic
+
+    handoff:
+      to: data-analyst
+      mode: continuous
+      artifacts:
+        - Field notes
+        - Media documentation
+        - Interview transcripts
+        - Artifacts
+
+  - id: coding-analysis
+    name: Ethnographic Data Analysis
+    duration: 1 week
+    agent: data-analyst
+    description: |
+      Analyze field data using ethnographic coding
+      techniques and pattern identification.
+
+    steps:
+      - id: organize-data
+        action: Structure field materials
+        outputs:
+          - Organized field notes
+          - Media catalog
+          - Artifact inventory
+        quality_gates:
+          - Data complete
+          - Organization systematic
+          - Materials accessible
+
+      - id: thematic-coding
+        task: analyze-transcript
+        approach: ethnographic
+        outputs:
+          - Coded field notes
+          - Thematic structure
+          - Pattern identification
+        quality_gates:
+          - Coding consistent
+          - Themes grounded
+          - Patterns valid
+
+      - id: cultural-analysis
+        action: Analyze cultural patterns
+        outputs:
+          - Cultural themes
+          - Ritual identification
+          - Symbol interpretation
+        quality_gates:
+          - Patterns culturally valid
+          - Interpretations emic
+          - Context preserved
+
+      - id: environmental-analysis
+        action: Map environmental influences
+        outputs:
+          - Environmental factors
+          - Spatial patterns
+          - Context-behavior links
+        quality_gates:
+          - Influences documented
+          - Links evidenced
+          - Maps accurate
+
+    handoff:
+      to: insight-synthesizer
+      artifacts:
+        - Coded data
+        - Cultural patterns
+        - Environmental maps
+
+  - id: interpretation
+    name: Ethnographic Interpretation
+    duration: 3-4 days
+    agent: insight-synthesizer
+    description: |
+      Develop thick descriptions and deep cultural
+      interpretations from field observations.
+
+    steps:
+      - id: thick-description
+        action: Create thick descriptions
+        outputs:
+          - Rich narratives
+          - Contextual stories
+          - Cultural vignettes
+        quality_gates:
+          - Descriptions rich
+          - Context preserved
+          - Meanings clear
+
+      - id: pattern-synthesis
+        task: synthesize-cross-interview
+        focus: ethnographic
+        outputs:
+          - Behavioral patterns
+          - Cultural models
+          - Social structures
+        quality_gates:
+          - Patterns robust
+          - Models coherent
+          - Structures valid
+
+      - id: theoretical-development
+        action: Develop theoretical insights
+        outputs:
+          - Emergent theory
+          - Conceptual framework
+          - Design implications
+        quality_gates:
+          - Theory grounded
+          - Framework useful
+          - Implications actionable
+
+      - id: member-checking
+        action: Validate with participants
+        outputs:
+          - Participant feedback
+          - Interpretation validation
+          - Refinements made
+        quality_gates:
+          - Feedback incorporated
+          - Validity confirmed
+          - Voice authentic
+
+    handoff:
+      to: research-reporter
+      artifacts:
+        - Thick descriptions
+        - Cultural insights
+        - Theoretical framework
+
+  - id: ethnographic-reporting
+    name: Ethnographic Documentation
+    duration: 3-4 days
+    agent: research-reporter
+    description: |
+      Create comprehensive ethnographic report with
+      rich multimedia documentation and insights.
+
+    steps:
+      - id: create-narrative
+        task: generate-research-report
+        style: ethnographic
+        outputs:
+          - Ethnographic narrative
+          - Case studies
+          - Cultural stories
+        quality_gates:
+          - Narrative engaging
+          - Stories authentic
+          - Insights clear
+
+      - id: visual-documentation
+        task: design-visualizations
+        focus: ethnographic
+        outputs:
+          - Photo essays
+          - Video compilations
+          - Environmental maps
+          - Journey documentation
+        quality_gates:
+          - Visuals compelling
+          - Context preserved
+          - Ethics maintained
+
+      - id: insights-synthesis
+        task: formulate-recommendations
+        approach: culturally-informed
+        outputs:
+          - Design principles
+          - Cultural considerations
+          - Implementation guidance
+        quality_gates:
+          - Principles grounded
+          - Considerations practical
+          - Guidance actionable
+
+    handoff:
+      to: research-orchestrator
+      artifacts:
+        - Ethnographic report
+        - Visual documentation
+        - Design principles
+
+  - id: knowledge-transfer
+    name: Insight Application
+    duration: 2-3 days
+    agent: research-orchestrator
+    description: |
+      Transfer ethnographic insights to stakeholders
+      and plan implementation of findings.
+
+    steps:
+      - id: immersive-presentation
+        action: Create immersive experience
+        outputs:
+          - Experience room/gallery
+          - Stakeholder journey
+          - Artifact display
+        quality_gates:
+          - Experience impactful
+          - Journey clear
+          - Artifacts meaningful
+
+      - id: workshop-facilitation
+        action: Run empathy workshop
+        outputs:
+          - Workshop conducted
+          - Empathy built
+          - Insights internalized
+        quality_gates:
+          - Engagement high
+          - Understanding deep
+          - Actions identified
+
+      - id: design-translation
+        action: Translate to design
+        outputs:
+          - Design principles
+          - Opportunity areas
+          - Concept directions
+        quality_gates:
+          - Translation clear
+          - Opportunities feasible
+          - Concepts grounded
+
+field_techniques:
+  observation:
+    - Participant observation
+    - Non-participant observation
+    - Structured observation
+    - Time sampling
+    - Event sampling
+
+  documentation:
+    - Field notes (descriptive, reflective, analytic)
+    - Audio/video recording
+    - Photography
+    - Sketching and mapping
+    - Artifact collection
+
+  engagement:
+    - Informal conversations
+    - Contextual interviews
+    - Walking interviews
+    - Photo elicitation
+    - Cultural probe returns
+
+  analysis:
+    - Open coding
+    - Axial coding
+    - Selective coding
+    - Constant comparison
+    - Thick description
+
+ethical_considerations:
+  informed_consent:
+    - Initial consent
+    - Ongoing consent
+    - Photo/video permissions
+    - Publication agreements
+
+  privacy:
+    - Anonymization
+    - Location masking
+    - Sensitive content handling
+    - Participant review rights
+
+  reciprocity:
+    - Community benefit
+    - Knowledge sharing
+    - Compensation approach
+    - Relationship maintenance
+
+  representation:
+    - Voice authenticity
+    - Power dynamics
+    - Cultural sensitivity
+    - Stereotype avoidance
+
+quality_criteria:
+  credibility:
+    - Prolonged engagement
+    - Persistent observation
+    - Triangulation
+    - Member checking
+
+  transferability:
+    - Thick description
+    - Purposive sampling
+    - Context documentation
+    - Boundary definition
+
+  dependability:
+    - Audit trail
+    - Process documentation
+    - Reflexivity journal
+    - Peer debriefing
+
+  confirmability:
+    - Data trail
+    - Reflexive notes
+    - External audit
+    - Negative case analysis
+
+deliverables:
+  primary:
+    - Ethnographic report (narrative)
+    - Thick descriptions
+    - Photo/video documentation
+    - Cultural insights summary
+
+  secondary:
+    - Field note excerpts
+    - Artifact catalog
+    - Environmental maps
+    - Design principles
+
+  optional:
+    - Documentary film
+    - Exhibition materials
+    - Experience prototype
+    - Training materials
+
+tools_required:
+  - Recording equipment (audio/video)
+  - Photography equipment
+  - Field note applications
+  - Qualitative analysis software
+  - research-participant-manager
+
+configuration:
+  duration: 2-8 weeks
+  sites: 2-5 locations
+  participants: 10-20 key informants
+  observation_hours: 40-200
+  documentation: multimedia

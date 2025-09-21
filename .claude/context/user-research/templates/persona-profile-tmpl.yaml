@@ -1,0 +1,339 @@
+# Persona Profile Template
+template:
+  id: persona-profile-v1
+  name: Evidence-Based User Persona Profile
+  version: 1.0
+  output:
+    format: markdown
+    filename: docs/research/personas/{{persona_name}}.md
+    title: "{{persona_name}} - User Persona Profile"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  evidence_requirement: mandatory
+  bias_prevention: active
+
+sections:
+  - id: persona-header
+    title: Persona Overview
+    instruction: |
+      Create the persona header with essential identification. Everything must be
+      traceable to research data. No fictional elements allowed.
+    elicit: true
+    sections:
+      - id: persona-identity
+        title: Identity
+        sections:
+          - id: name-title
+            title: Name and Title
+            type: text
+            instruction: Functional title, not a person's name (e.g., "The Efficiency Expert")
+          - id: defining-quote
+            title: Defining Quote
+            type: quote
+            instruction: Actual quote from research that captures this persona's essence
+            evidence_required: true
+          - id: segment-size
+            title: Segment Size
+            type: percentage
+            instruction: What percentage of users does this persona represent?
+          - id: confidence-level
+            title: Confidence Level
+            type: selection
+            options: [High, Medium, Low]
+            instruction: Based on number of participants and data consistency
+
+  - id: behavioral-foundation
+    title: Behavioral Foundation
+    instruction: |
+      Document observed behaviors that define this persona. All behaviors must come
+      from actual research observations, not assumptions.
+    elicit: true
+    sections:
+      - id: core-behaviors
+        title: Core Behaviors
+        type: evidence-list
+        instruction: |
+          List 5-7 key behaviors observed in research:
+          - Behavior: [Description]
+          - Evidence: [Participant IDs showing this]
+          - Frequency: [How often observed]
+          - Context: [When/where this occurs]
+      - id: workflow-patterns
+        title: Workflow Patterns
+        type: structured-list
+        instruction: How this persona typically approaches tasks
+      - id: tool-usage
+        title: Tool and Technology Usage
+        type: categorized-list
+        categories: [Primary Tools, Secondary Tools, Avoided Tools]
+        instruction: Actual tools mentioned/observed in research
+      - id: decision-patterns
+        title: Decision-Making Patterns
+        type: paragraphs
+        instruction: How they make decisions, evaluate options, seek information
+
+  - id: goals-motivations
+    title: Goals and Motivations
+    instruction: |
+      What drives this persona, based on expressed goals and observed motivations.
+      Include both functional and emotional drivers.
+    elicit: true
+    sections:
+      - id: primary-goals
+        title: Primary Goals
+        type: prioritized-list
+        instruction: |
+          Top 3-5 goals this persona is trying to achieve:
+          1. Goal: [Description]
+             Evidence: [Supporting quotes/observations]
+             Priority: [Critical/High/Medium]
+      - id: underlying-motivations
+        title: Underlying Motivations
+        type: bullet-list
+        instruction: Deeper motivations driving their behavior
+      - id: success-criteria
+        title: Success Criteria
+        type: structured-list
+        instruction: How this persona defines and measures success
+      - id: jobs-to-be-done
+        title: Jobs to be Done
+        type: jtbd-list
+        instruction: |
+          Main jobs this persona is hiring products/services to do:
+          - Functional: [What they need to accomplish]
+          - Emotional: [How they want to feel]
+          - Social: [How they want to be perceived]
+
+  - id: frustrations-barriers
+    title: Frustrations and Pain Points
+    instruction: |
+      Document actual frustrations expressed or observed during research.
+      These drive requirements and design decisions.
+    elicit: true
+    sections:
+      - id: major-frustrations
+        title: Major Frustrations
+        type: evidence-list
+        instruction: |
+          Top frustrations with evidence:
+          - Frustration: [Description]
+          - Severity: [High/Medium/Low]
+          - Frequency: [How often encountered]
+          - Evidence: [Quotes and participant IDs]
+          - Current Workarounds: [How they cope]
+      - id: barriers-to-success
+        title: Barriers to Success
+        type: categorized-list
+        categories: [Technical, Process, Knowledge, Resource, Social]
+        instruction: What prevents them from achieving goals
+      - id: unmet-needs
+        title: Unmet Needs
+        type: prioritized-list
+        instruction: Needs not addressed by current solutions
+
+  - id: context-environment
+    title: Context and Environment
+    instruction: |
+      Document the actual context in which this persona operates,
+      based on research observations and participant descriptions.
+    elicit: true
+    sections:
+      - id: work-environment
+        title: Work Environment
+        type: structured-description
+        instruction: Physical and digital environment characteristics
+      - id: social-context
+        title: Social Context
+        type: paragraphs
+        instruction: Team dynamics, stakeholders, collaboration patterns
+      - id: constraints
+        title: Constraints and Limitations
+        type: categorized-list
+        categories: [Time, Budget, Technical, Organizational, Regulatory]
+        instruction: Real constraints they operate under
+      - id: external-pressures
+        title: External Pressures
+        type: bullet-list
+        instruction: Pressures from stakeholders, market, regulations
+
+  - id: mental-models
+    title: Mental Models and Beliefs
+    instruction: |
+      How this persona thinks about their domain, based on language used
+      and explanations given during research.
+    elicit: true
+    sections:
+      - id: conceptual-models
+        title: Conceptual Models
+        type: paragraphs
+        instruction: How they conceptualize their work/domain
+      - id: assumptions-beliefs
+        title: Assumptions and Beliefs
+        type: bullet-list
+        instruction: Core assumptions that guide their behavior
+      - id: vocabulary-language
+        title: Vocabulary and Language
+        type: terminology-list
+        instruction: |
+          Specific terms and phrases they use:
+          - Term: [How they say it]
+          - Meaning: [What it means to them]
+          - Example: [Quote showing usage]
+      - id: knowledge-gaps
+        title: Knowledge Gaps
+        type: bullet-list
+        instruction: Areas where they lack understanding or have misconceptions
+
+  - id: scenarios-use-cases
+    title: Scenarios and Use Cases
+    instruction: |
+      Real scenarios from research that illustrate this persona's experiences.
+      These should be actual stories or observed situations, not hypotheticals.
+    elicit: true
+    sections:
+      - id: typical-scenarios
+        title: Typical Scenarios
+        type: scenario-list
+        instruction: |
+          Common situations this persona encounters:
+          - Scenario: [Title]
+          - Context: [Setup/trigger]
+          - Actions: [What they do]
+          - Challenges: [Problems encountered]
+          - Outcome: [Result]
+          - Evidence: [Research source]
+      - id: edge-cases
+        title: Edge Cases
+        type: bullet-list
+        instruction: Unusual but important situations
+      - id: failure-scenarios
+        title: Failure Scenarios
+        type: structured-list
+        instruction: When current solutions fail this persona
+
+  - id: design-implications
+    title: Design Implications
+    instruction: |
+      Translate persona characteristics into specific design guidance.
+      Each implication should be traceable to persona attributes.
+    elicit: true
+    sections:
+      - id: design-principles
+        title: Design Principles
+        type: numbered-list
+        instruction: Key principles for designing for this persona
+      - id: feature-priorities
+        title: Feature Priorities
+        type: moscow-list
+        categories: [Must Have, Should Have, Could Have, Won't Need]
+        instruction: Feature prioritization based on persona needs
+      - id: interaction-preferences
+        title: Interaction Preferences
+        type: bullet-list
+        instruction: Preferred interaction patterns and UI approaches
+      - id: communication-style
+        title: Communication Style
+        type: structured-list
+        instruction: |
+          How to communicate with this persona:
+          - Tone: [Formal/casual/technical]
+          - Detail Level: [High/medium/low]
+          - Visual vs Text: [Preference]
+          - Examples Needed: [Yes/no and what type]
+
+  - id: differentiation
+    title: Differentiation from Other Personas
+    instruction: |
+      Clearly distinguish this persona from others to prevent overlap
+      and ensure each persona serves a distinct purpose.
+    sections:
+      - id: unique-characteristics
+        title: Unique Characteristics
+        type: bullet-list
+        instruction: What makes this persona different from others
+      - id: comparison-matrix
+        title: Comparison with Other Personas
+        type: table
+        columns: [Characteristic, This Persona, Persona 2, Persona 3]
+        instruction: Key differences across personas
+      - id: when-to-use
+        title: When to Use This Persona
+        type: bullet-list
+        instruction: Specific decisions/designs where this persona should be primary
+
+  - id: evidence-documentation
+    title: Evidence and Validation
+    instruction: |
+      Complete documentation of research evidence supporting this persona.
+      This ensures the persona remains grounded in actual data.
+    sections:
+      - id: participant-mapping
+        title: Participant Mapping
+        type: list
+        instruction: Which research participants comprise this persona
+      - id: supporting-quotes
+        title: Supporting Quotes
+        type: quote-bank
+        instruction: |
+          Key quotes organized by theme:
+          Theme: [Category]
+          - "[Quote]" - Participant ID
+      - id: validation-criteria
+        title: Validation Criteria
+        type: checklist
+        instruction: How to validate this persona remains accurate
+      - id: evolution-triggers
+        title: Evolution Triggers
+        type: bullet-list
+        instruction: What changes would require updating this persona
+
+  - id: usage-guidance
+    title: Usage Guidance
+    instruction: |
+      Practical guidance for teams on how to use this persona effectively
+      in their work.
+    sections:
+      - id: application-scenarios
+        title: Application Scenarios
+        type: structured-list
+        instruction: |
+          When and how to apply this persona:
+          - Design Decisions: [How to use]
+          - Prioritization: [How to use]
+          - Communication: [How to use]
+          - Validation: [How to use]
+      - id: anti-patterns
+        title: Anti-Patterns
+        type: bullet-list
+        instruction: Common misuses of this persona to avoid
+      - id: update-schedule
+        title: Update Schedule
+        type: timeline
+        instruction: When and how this persona should be reviewed/updated
+
+validation:
+  required_fields:
+    - persona_identity
+    - behavioral_foundation
+    - goals_motivations
+    - frustrations_barriers
+    - evidence_documentation
+  evidence_requirements:
+    min_participants: 3
+    quote_requirement: mandatory
+    behavior_verification: required
+    traceability: complete
+  bias_checks:
+    - No demographic stereotypes
+    - No unfounded assumptions
+    - Behavioral focus maintained
+    - Evidence for all attributes
+    - Contradictions addressed
+  quality_standards:
+    - Distinct from other personas
+    - Actionable for design
+    - Memorable and usable
+    - Validated against scenarios
+    - Update mechanism defined

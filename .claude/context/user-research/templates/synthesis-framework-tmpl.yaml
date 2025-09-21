@@ -1,0 +1,296 @@
+# Synthesis Framework Template
+template:
+  id: synthesis-framework-v1
+  name: Cross-Interview Synthesis Framework
+  version: 1.0
+  output:
+    format: markdown
+    filename: docs/research/synthesis-report.md
+    title: "{{project_name}} Research Synthesis Report"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  evidence_requirement: strict
+
+sections:
+  - id: executive-summary
+    title: Executive Summary
+    instruction: |
+      Synthesize the most critical insights from all research sources. Include:
+      - Research scope and methodology overview (2-3 sentences)
+      - Top 3-5 key insights with confidence levels
+      - Critical implications for product/service
+      - Immediate action items
+    elicit: true
+    sections:
+      - id: research-overview
+        title: Research Overview
+        type: paragraphs
+        instruction: Brief description of research scope, methods, and participants
+      - id: key-insights
+        title: Key Insights
+        type: numbered-list
+        instruction: Top insights with evidence strength indicators [High/Medium/Low confidence]
+      - id: critical-implications
+        title: Critical Implications
+        type: bullet-list
+        instruction: What these insights mean for the business/product
+      - id: immediate-actions
+        title: Immediate Actions
+        type: numbered-list
+        instruction: Priority actions based on synthesis findings
+
+  - id: data-inventory
+    title: Data Sources and Quality
+    instruction: Document all data sources used in synthesis with quality assessment
+    elicit: true
+    sections:
+      - id: source-inventory
+        title: Source Inventory
+        type: table
+        columns: [Source ID, Type, Participants, Date, Quality Score]
+        instruction: List all data sources with quality ratings (1-5)
+      - id: participant-segments
+        title: Participant Segments
+        type: bullet-list
+        instruction: Demographic and behavioral segments represented
+      - id: data-limitations
+        title: Data Limitations
+        type: paragraphs
+        instruction: Known gaps, biases, or limitations in the data
+      - id: confidence-framework
+        title: Confidence Framework
+        type: paragraphs
+        instruction: How confidence levels are determined throughout synthesis
+
+  - id: pattern-identification
+    title: Cross-Source Patterns
+    instruction: |
+      Document patterns identified across multiple data sources. Focus on:
+      - Convergent patterns (consistent across sources)
+      - Divergent patterns (varying by segment/context)
+      - Emergent patterns (unexpected discoveries)
+      - Null patterns (expected but absent)
+    elicit: true
+    sections:
+      - id: convergent-patterns
+        title: Convergent Patterns
+        instruction: Patterns with strong agreement across sources
+        subsections:
+          - id: pattern
+            title: Pattern Description
+            type: paragraph
+          - id: evidence
+            title: Supporting Evidence
+            type: bullet-list
+            instruction: List sources and quotes
+          - id: frequency
+            title: Frequency/Strength
+            type: metrics
+            instruction: "Occurrence: X/Y sources, Confidence: High/Medium/Low"
+      - id: divergent-patterns
+        title: Divergent Patterns
+        instruction: Patterns that vary by segment or context
+      - id: emergent-patterns
+        title: Emergent Patterns
+        instruction: Unexpected or surprising discoveries
+      - id: null-patterns
+        title: Null Patterns
+        instruction: Expected patterns that were notably absent
+
+  - id: deep-insights
+    title: Synthesized Insights
+    instruction: |
+      Transform patterns into actionable insights. Each insight should:
+      - Go beyond surface observations
+      - Explain the "why" behind patterns
+      - Connect to user motivations and needs
+      - Suggest design/business implications
+    elicit: true
+    sections:
+      - id: primary-insights
+        title: Primary Insights
+        instruction: Major insights with transformative potential
+        subsections:
+          - id: insight-statement
+            title: Insight
+            type: paragraph
+            instruction: Clear, concise insight statement
+          - id: evidence-base
+            title: Evidence Base
+            type: bullet-list
+            instruction: Patterns and data supporting this insight
+          - id: interpretation
+            title: Interpretation
+            type: paragraph
+            instruction: What this means and why it matters
+          - id: confidence-level
+            title: Confidence Level
+            type: selection
+            options: [High, Medium, Low]
+            instruction: Based on evidence strength and consistency
+      - id: secondary-insights
+        title: Secondary Insights
+        instruction: Important but less critical insights
+      - id: contextual-insights
+        title: Contextual Insights
+        instruction: Insights specific to certain segments or situations
+
+  - id: contradictions-tensions
+    title: Contradictions and Tensions
+    instruction: |
+      Document and resolve conflicting findings:
+      - Direct contradictions in data
+      - Tensions between user groups
+      - Competing needs or priorities
+      - Paradoxical behaviors
+    elicit: true
+    sections:
+      - id: contradictions
+        title: Contradictions Identified
+        type: structured-list
+        instruction: Document each contradiction with evidence from both sides
+      - id: resolution-hypothesis
+        title: Resolution Hypotheses
+        type: paragraphs
+        instruction: Possible explanations for contradictions
+      - id: design-implications
+        title: Design Implications
+        type: bullet-list
+        instruction: How to address these tensions in design
+
+  - id: user-needs-goals
+    title: User Needs and Goals
+    instruction: Synthesize user needs across all sources
+    elicit: true
+    sections:
+      - id: functional-needs
+        title: Functional Needs
+        type: prioritized-list
+        instruction: What users need to accomplish
+      - id: emotional-needs
+        title: Emotional Needs
+        type: prioritized-list
+        instruction: How users need to feel
+      - id: social-needs
+        title: Social Needs
+        type: prioritized-list
+        instruction: Social and relational needs
+      - id: unmet-needs
+        title: Unmet Needs
+        type: bullet-list
+        instruction: Needs not addressed by current solutions
+
+  - id: opportunities-recommendations
+    title: Opportunities and Recommendations
+    instruction: |
+      Transform insights into actionable opportunities. Structure by:
+      - Quick wins (high impact, low effort)
+      - Strategic initiatives (high impact, high effort)
+      - Future considerations (lower priority or uncertain)
+    elicit: true
+    sections:
+      - id: quick-wins
+        title: Quick Wins
+        type: action-list
+        instruction: |
+          Immediate improvements with format:
+          - Opportunity: [Description]
+          - Evidence: [Supporting insights]
+          - Impact: [Expected outcome]
+          - Effort: [Low/Medium/High]
+      - id: strategic-initiatives
+        title: Strategic Initiatives
+        instruction: Major opportunities requiring significant investment
+      - id: future-considerations
+        title: Future Considerations
+        instruction: Longer-term opportunities or areas for research
+      - id: priority-matrix
+        title: Priority Matrix
+        type: table
+        columns: [Opportunity, Impact (1-10), Effort (1-10), Priority Score, Timeline]
+
+  - id: stakeholder-implications
+    title: Stakeholder Implications
+    instruction: What different stakeholders need to know and do
+    elicit: true
+    sections:
+      - id: product-team
+        title: For Product Teams
+        type: bullet-list
+        instruction: Feature and roadmap implications
+      - id: design-team
+        title: For Design Teams
+        type: bullet-list
+        instruction: UX/UI design directions
+      - id: engineering-team
+        title: For Engineering Teams
+        type: bullet-list
+        instruction: Technical requirements and constraints
+      - id: business-stakeholders
+        title: For Business Stakeholders
+        type: bullet-list
+        instruction: Strategic and financial implications
+
+  - id: evidence-appendix
+    title: Evidence Appendix
+    instruction: Detailed evidence supporting synthesis
+    sections:
+      - id: quote-bank
+        title: Key Quotes
+        type: structured-list
+        instruction: |
+          Representative quotes organized by theme:
+          "[Quote]" - [Participant ID, Context]
+      - id: data-visualizations
+        title: Data Visualizations
+        type: figure-list
+        instruction: Charts, graphs, and diagrams supporting insights
+      - id: traceability-matrix
+        title: Traceability Matrix
+        type: table
+        columns: [Insight ID, Supporting Patterns, Evidence Sources, Confidence]
+      - id: methodology-notes
+        title: Methodology Notes
+        type: paragraphs
+        instruction: Detailed description of synthesis approach and decisions
+
+  - id: next-steps
+    title: Next Steps and Future Research
+    instruction: Define follow-up actions and research needs
+    elicit: true
+    sections:
+      - id: validation-needs
+        title: Validation Needs
+        type: bullet-list
+        instruction: Insights requiring further validation
+      - id: research-gaps
+        title: Research Gaps
+        type: bullet-list
+        instruction: Areas needing additional research
+      - id: success-metrics
+        title: Success Metrics
+        type: table
+        columns: [Metric, Current Baseline, Target, Measurement Method]
+      - id: timeline
+        title: Recommended Timeline
+        type: phased-list
+        instruction: Phased approach to implementing recommendations
+
+validation:
+  required_fields:
+    - executive_summary
+    - pattern_identification
+    - deep_insights
+    - opportunities_recommendations
+  evidence_requirements:
+    min_sources_per_pattern: 3
+    confidence_documentation: mandatory
+    contradiction_resolution: required
+  quality_checks:
+    - All insights traceable to data
+    - Confidence levels assigned
+    - Contradictions addressed
+    - Stakeholder implications clear
+    - Next steps actionable

@@ -1,0 +1,357 @@
+# Interview Consent Form Template
+template:
+  id: consent-form-v1
+  name: Research Interview Consent Form
+  version: 1.0
+  output:
+    format: markdown
+    filename: research-outputs/consent-form.md
+    title: "{{project_name}} Interview Consent Form"
+
+workflow:
+  mode: structured
+  compliance: high
+
+sections:
+  - id: header-information
+    title: Study & Contact Information
+    instruction: |
+      Essential identification and contact information for the research study.
+      Required for participant rights and researcher accountability.
+    sections:
+      - id: study-identification
+        title: Study Identification
+        type: structured
+        required: true
+        instruction: |
+          Study identification details:
+          - Official study title and identifier/protocol number
+          - Primary researcher name, title, and institutional affiliation
+          - Research institution and department
+          - Study sponsor or funding source (if applicable)
+          - IRB approval number and date (if applicable)
+      - id: contact-information
+        title: Researcher Contact Information
+        type: contact-block
+        required: true
+        instruction: |
+          Complete contact details:
+          - Principal investigator name and credentials
+          - Institution and department affiliation
+          - Phone number and email address
+          - Mailing address for formal communications
+          - Emergency contact information (if applicable)
+
+  - id: study-overview
+    title: Study Overview & Purpose
+    instruction: |
+      Clear, accessible explanation of the research study.
+      Helps participants make informed decisions about participation.
+    sections:
+      - id: study-purpose
+        title: Study Purpose & Objectives
+        type: plain-language
+        required: true
+        instruction: |
+          Study purpose explanation:
+          - Research questions being investigated (in accessible language)
+          - Why this research is important and valuable
+          - How results will be used or applied
+          - Expected contribution to knowledge or practice
+      - id: participation-overview
+        title: What Participation Involves
+        type: detailed-description
+        required: true
+        instruction: |
+          Participation description:
+          - Interview format (in-person, remote, phone)
+          - Expected duration and time commitment
+          - Number of sessions (if multiple)
+          - Types of questions or topics to be covered
+          - Any additional activities (surveys, observations, etc.)
+
+  - id: procedures-risks-benefits
+    title: Procedures, Risks & Benefits
+    instruction: |
+      Detailed information about research procedures and participant considerations.
+      Essential for informed consent and ethical compliance.
+    sections:
+      - id: detailed-procedures
+        title: Detailed Research Procedures
+        type: step-by-step
+        required: true
+        instruction: |
+          Complete procedure description:
+          - Pre-interview preparation and communications
+          - Interview process and structure
+          - Recording methods (audio, video, notes)
+          - Data collection and storage procedures
+          - Follow-up communications or activities
+      - id: risks-discomforts
+        title: Potential Risks & Discomforts
+        type: risk-assessment
+        required: true
+        instruction: |
+          Risk disclosure:
+          - Psychological risks (discomfort, emotional response)
+          - Social risks (privacy, confidentiality concerns)
+          - Economic risks (time, opportunity cost)
+          - Physical risks (minimal for interview studies)
+          - Steps taken to minimize identified risks
+      - id: benefits
+        title: Potential Benefits
+        type: benefit-description
+        required: true
+        instruction: |
+          Benefit explanation:
+          - Direct benefits to participant (if any)
+          - Indirect benefits (contribution to knowledge)
+          - Societal or community benefits
+          - Clear statement if no direct benefits expected
+          - Compensation or incentive information
+
+  - id: privacy-confidentiality
+    title: Privacy & Confidentiality Protections
+    instruction: |
+      Comprehensive privacy protection information.
+      Critical for participant trust and regulatory compliance.
+    sections:
+      - id: data-confidentiality
+        title: Data Confidentiality Measures
+        type: security-framework
+        required: true
+        instruction: |
+          Confidentiality protections:
+          - How personal information will be protected
+          - Who will have access to data and under what circumstances
+          - Data anonymization and de-identification procedures
+          - Secure storage methods and locations
+          - Data retention period and deletion procedures
+      - id: recording-consent
+        title: Recording & Documentation Consent
+        type: recording-agreement
+        required: true
+        instruction: |
+          Recording consent details:
+          - Types of recording (audio, video, screen capture)
+          - Purpose of recording (transcription, analysis, verification)
+          - Storage and security of recordings
+          - Who will have access to recordings
+          - Participant right to request recording cessation
+      - id: data-sharing
+        title: Data Sharing & Publication
+        type: sharing-agreement
+        required: true
+        instruction: |
+          Data use and sharing:
+          - How data will be used in research analysis
+          - Plans for publication or presentation of results
+          - Level of detail in public reporting
+          - Measures to protect participant identity in publications
+          - Participant right to review materials before publication (if applicable)
+
+  - id: participant-rights
+    title: Participant Rights & Protections
+    instruction: |
+      Clear statement of participant rights and agency.
+      Ensures participants understand their control and protections.
+    sections:
+      - id: voluntary-participation
+        title: Voluntary Participation
+        type: rights-statement
+        required: true
+        instruction: |
+          Voluntary participation emphasis:
+          - Participation is completely voluntary
+          - No penalty for choosing not to participate
+          - Right to withdraw at any time without consequence
+          - Right to skip questions or topics that cause discomfort
+          - No impact on relationship with institution or services
+      - id: data-rights
+        title: Data & Privacy Rights
+        type: rights-framework
+        required: true
+        instruction: |
+          Participant data rights:
+          - Right to access their own data
+          - Right to request correction of inaccurate information
+          - Right to request deletion of data (with limitations)
+          - Right to restrict or object to data processing
+          - Right to data portability (if applicable)
+          - Process for exercising these rights
+
+  - id: compensation-costs
+    title: Compensation & Costs
+    instruction: |
+      Clear information about financial aspects of participation.
+      Transparent communication about incentives and expenses.
+    sections:
+      - id: participant-compensation
+        title: Participant Compensation
+        type: compensation-details
+        instruction: |
+          Compensation information:
+          - Amount and form of compensation (cash, gift card, etc.)
+          - Timing of compensation payment
+          - Conditions for receiving compensation
+          - Tax implications (if applicable)
+          - Process if participant withdraws early
+      - id: participant-costs
+        title: Costs to Participants
+        type: cost-disclosure
+        instruction: |
+          Cost information:
+          - Any costs to participants (typically none for interviews)
+          - Time commitment and opportunity cost acknowledgment
+          - Travel or technology requirements (if any)
+          - Reimbursement for reasonable expenses (if applicable)
+
+  - id: contact-complaints
+    title: Questions & Complaints
+    instruction: |
+      Multiple contact options for participant support and concerns.
+      Ensures participants have recourse and support resources.
+    sections:
+      - id: research-questions
+        title: Research Questions & Support
+        type: contact-information
+        required: true
+        instruction: |
+          Research support contacts:
+          - Primary researcher contact for study questions
+          - Research team member for immediate concerns
+          - Institution contact for general inquiries
+          - Technical support contact (for remote interviews)
+      - id: ethics-complaints
+        title: Ethics & Complaints
+        type: oversight-contacts
+        required: true
+        instruction: |
+          Ethics and complaint contacts:
+          - IRB or ethics committee contact information
+          - Institution ombudsman or participant advocate
+          - Independent complaint mechanism (if available)
+          - Process for filing complaints or concerns
+
+  - id: consent-signature
+    title: Consent Agreement & Signature
+    instruction: |
+      Formal consent agreement and signature collection.
+      Legal documentation of informed consent process.
+    sections:
+      - id: consent-statements
+        title: Consent Confirmation Statements
+        type: consent-checklist
+        required: true
+        instruction: |
+          Participant confirmation statements:
+          - "I have read and understood the information about this study"
+          - "I have had the opportunity to ask questions about the research"
+          - "I understand that participation is voluntary"
+          - "I understand that I can withdraw at any time"
+          - "I consent to audio recording of the interview" (separate checkbox)
+          - "I consent to video recording of the interview" (separate checkbox if applicable)
+      - id: signature-block
+        title: Signature & Date
+        type: signature-form
+        required: true
+        instruction: |
+          Signature requirements:
+          - Participant printed name
+          - Participant signature and date
+          - Researcher signature and date
+          - Version number of consent form used
+          - Copy distribution confirmation
+
+special_populations:
+  minors:
+    additional_requirements:
+      - Parental/guardian consent form
+      - Age-appropriate assent form
+      - Special protections and procedures
+      - Additional oversight requirements
+
+  vulnerable_adults:
+    additional_considerations:
+      - Capacity assessment procedures
+      - Additional safeguards and monitoring
+      - Surrogate consent options (if applicable)
+      - Enhanced participant advocacy
+
+  non_english_speakers:
+    language_accommodations:
+      - Translated consent forms
+      - Interpreter services
+      - Cultural liaison support
+      - Culturally appropriate consent processes
+
+digital_consent:
+  electronic_options:
+    - Online consent form with electronic signature
+    - Email confirmation of consent terms
+    - Recorded verbal consent with written follow-up
+    - Digital signature platforms (DocuSign, Adobe Sign)
+
+  verification_requirements:
+    - Identity verification for electronic consent
+    - Secure transmission and storage
+    - Audit trail for consent process
+    - Backup procedures for technical failures
+
+regulatory_compliance:
+  applicable_regulations:
+    - 45 CFR 46 (Common Rule) for federally funded research
+    - GDPR for European participants
+    - CCPA for California residents
+    - HIPAA (if applicable for health information)
+    - State and local privacy laws
+
+  irb_requirements:
+    - IRB review and approval before use
+    - Version control and modification tracking
+    - Periodic review and updates
+    - Deviation reporting and approval
+
+quality_assurance:
+  form_testing:
+    - Readability assessment (appropriate grade level)
+    - Comprehension testing with sample participants
+    - Legal review and approval
+    - Cultural appropriateness evaluation
+
+  ongoing_monitoring:
+    - Participant feedback on consent process
+    - Regular form review and updates
+    - Training for research staff on consent procedures
+    - Documentation of consent process quality
+
+template_customization:
+  by_research_type:
+    sensitive_topics:
+      enhanced_protections:
+        - Additional risk disclosure
+        - Enhanced support resources
+        - Trauma-informed consent language
+        - Specialized confidentiality measures
+
+    commercial_research:
+      additional_disclosures:
+        - Funding source transparency
+        - Commercial use of data
+        - Intellectual property considerations
+        - Conflict of interest disclosures
+
+  by_participant_population:
+    professionals:
+      modifications:
+        - Professional relationship considerations
+        - Workplace confidentiality protections
+        - Career impact considerations
+        - Professional network implications
+
+    consumers:
+      considerations:
+        - Product or service relationship disclosure
+        - Consumer protection emphasis
+        - Market research vs. academic distinction
+        - Commercial use transparency

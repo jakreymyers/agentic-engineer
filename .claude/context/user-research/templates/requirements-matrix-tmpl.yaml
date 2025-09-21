@@ -1,0 +1,723 @@
+# Requirements Traceability Matrix Template
+template:
+  id: requirements-matrix-v1
+  name: Requirements Traceability Matrix
+  version: 1.0
+  output:
+    format: markdown
+    filename: research-outputs/requirements-matrix.md
+    title: "{{project_name}} Requirements Traceability Matrix"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+
+sections:
+  - id: matrix-overview
+    title: Requirements Matrix Overview
+    instruction: |
+      Create comprehensive overview of the requirements traceability framework and methodology.
+      Establish clear connections between research insights and actionable requirements.
+    elicit: true
+    owner: requirements-analyst
+    sections:
+      - id: traceability-scope
+        title: Traceability Scope and Purpose
+        type: structured
+        instruction: |
+          Define the scope and purpose of this requirements traceability matrix.
+          Include what types of requirements are covered and how they connect to research.
+        sections:
+          - id: matrix-purpose
+            title: Matrix Purpose and Objectives
+            type: bullet-list
+            instruction: Why this traceability matrix is being created and its intended use
+          - id: requirement-types
+            title: Requirement Types Included
+            type: bullet-list
+            instruction: Categories of requirements tracked in this matrix
+          - id: research-sources
+            title: Research Source Integration
+            type: table
+            columns: [Research Source, Type, Date, Participants, Key Insights]
+            instruction: Research activities that inform requirements in this matrix
+          - id: stakeholder-coverage
+            title: Stakeholder Coverage
+            type: bullet-list
+            instruction: Which stakeholder groups and perspectives are represented
+      - id: methodology-framework
+        title: Requirements Methodology Framework
+        type: structured
+        instruction: |
+          Document the systematic approach used for requirements identification and prioritization.
+          Include analysis methods and validation processes.
+        options:
+          - "1. User story mapping with acceptance criteria"
+          - "2. Jobs-to-be-done outcome-driven requirements"
+          - "3. Use case analysis with scenario modeling"
+          - "4. MoSCoW prioritization framework"
+          - "5. Kano model satisfaction analysis"
+          - "6. Quality function deployment (QFD)"
+          - "7. Value stream mapping requirements"
+          - "8. Design thinking needs identification"
+          - "9. Other requirements methodology (specify approach)"
+      - id: validation-approach
+        title: Requirements Validation Approach
+        type: structured
+        instruction: |
+          How requirements will be validated with customers and stakeholders.
+          Include validation methods and acceptance criteria.
+        sections:
+          - id: validation-methods
+            title: Validation Methods
+            type: bullet-list
+            instruction: Approaches used to validate requirements with customers
+          - id: acceptance-criteria
+            title: Acceptance Criteria Framework
+            type: structured
+            instruction: How requirements acceptance will be determined and measured
+          - id: change-management
+            title: Requirements Change Management
+            type: structured
+            instruction: Process for managing requirements evolution and updates
+
+  - id: functional-requirements
+    title: Functional Requirements Analysis
+    instruction: |
+      Document all functional requirements derived from user research with clear traceability to source insights.
+      Organize by feature area and priority level with detailed specifications.
+    elicit: true
+    sections:
+      - id: core-functionality
+        title: Core Functional Requirements
+        type: structured
+        instruction: |
+          Essential functional capabilities required for minimum viable product or solution.
+          Include detailed specifications and acceptance criteria.
+        sections:
+          - id: core-requirements-matrix
+            title: Core Requirements Matrix
+            type: table
+            columns: [Requirement ID, Description, Research Source, User Story, Acceptance Criteria, Priority, Effort Estimate]
+            instruction: |
+              Complete matrix of core functional requirements with full traceability.
+              Each requirement must link to specific research insights and user needs.
+          - id: feature-grouping
+            title: Feature Grouping and Dependencies
+            type: structured
+            instruction: |
+              How core requirements group into features and their interdependencies.
+              Include feature hierarchy and implementation sequence considerations.
+            sections:
+              - id: feature-categories
+                title: Feature Categories
+                type: table
+                columns: [Category, Requirements Included, User Value, Technical Complexity, Dependencies]
+                instruction: Logical grouping of requirements into feature categories
+              - id: dependency-analysis
+                title: Requirement Dependencies
+                type: table
+                columns: [Requirement, Depends On, Dependency Type, Impact, Mitigation Strategy]
+                instruction: Analysis of dependencies between different requirements
+              - id: implementation-sequence
+                title: Implementation Sequence
+                type: numbered-list
+                instruction: Recommended order for implementing core requirements
+      - id: enhancement-functionality
+        title: Enhancement Functional Requirements
+        type: structured
+        instruction: |
+          Additional functional capabilities that provide competitive advantage or improved user experience.
+          Include nice-to-have features and advanced functionality.
+        options:
+          - "1. User experience enhancements improving usability and satisfaction"
+          - "2. Performance optimizations reducing time and effort"
+          - "3. Integration capabilities connecting with other systems"
+          - "4. Customization options enabling personalized experiences"
+          - "5. Automation features reducing manual effort"
+          - "6. Analytics and reporting capabilities providing insights"
+          - "7. Advanced workflow capabilities supporting complex use cases"
+          - "8. Collaboration features enabling team coordination"
+          - "9. Other enhancement requirements (specify and explain)"
+      - id: integration-requirements
+        title: Integration and Compatibility Requirements
+        type: structured
+        instruction: |
+          Requirements for system integration, data exchange, and compatibility with existing tools.
+          Include API requirements, data format specifications, and platform compatibility.
+        sections:
+          - id: system-integration
+            title: System Integration Requirements
+            type: table
+            columns: [Integration Point, System/Service, Integration Type, Data Exchange, Business Rationale, Technical Constraints]
+            instruction: Required integrations with existing systems and third-party services
+          - id: data-requirements
+            title: Data Exchange Requirements
+            type: table
+            columns: [Data Type, Source System, Target System, Format, Frequency, Quality Requirements]
+            instruction: Specifications for data exchange and synchronization
+          - id: compatibility-requirements
+            title: Platform Compatibility Requirements
+            type: bullet-list
+            instruction: Browser, device, and platform compatibility requirements
+
+  - id: non-functional-requirements
+    title: Non-Functional Requirements Analysis
+    instruction: |
+      Document quality attributes and constraints that affect user satisfaction and system success.
+      Include performance, security, usability, and scalability requirements.
+    elicit: true
+    sections:
+      - id: performance-requirements
+        title: Performance Requirements
+        type: structured
+        instruction: |
+          Specifications for system performance including speed, throughput, and resource usage.
+          Include user expectations and business requirements for performance.
+        sections:
+          - id: response-time-requirements
+            title: Response Time Requirements
+            type: table
+            columns: [Function/Feature, Expected Response Time, Peak Load Response, User Tolerance, Business Impact]
+            instruction: Response time specifications for key user interactions
+          - id: throughput-requirements
+            title: Throughput Requirements
+            type: table
+            columns: [System Function, Transactions/Hour, Peak Load Multiplier, Capacity Planning, Scaling Strategy]
+            instruction: System throughput and capacity requirements
+          - id: availability-requirements
+            title: Availability and Reliability Requirements
+            type: structured
+            instruction: Uptime expectations and disaster recovery requirements
+      - id: usability-requirements
+        title: Usability Requirements
+        type: structured
+        instruction: |
+          User experience requirements derived from user research and usability analysis.
+          Include accessibility, learnability, and satisfaction requirements.
+        options:
+          - "1. Learnability requirements for new user onboarding"
+          - "2. Efficiency requirements for experienced user productivity"
+          - "3. Memorability requirements for occasional user retention"
+          - "4. Error prevention and recovery requirements"
+          - "5. Satisfaction requirements for user delight and engagement"
+          - "6. Accessibility requirements for inclusive design"
+          - "7. Mobile usability requirements for device optimization"
+          - "8. Internationalization requirements for global users"
+          - "9. Other usability requirements (specify and explain)"
+      - id: security-requirements
+        title: Security and Privacy Requirements
+        type: structured
+        instruction: |
+          Security, privacy, and compliance requirements based on user concerns and regulatory needs.
+          Include data protection, access control, and audit requirements.
+        sections:
+          - id: data-protection
+            title: Data Protection Requirements
+            type: table
+            columns: [Data Type, Protection Level, Encryption Requirements, Access Controls, Retention Policy]
+            instruction: Requirements for protecting different types of user data
+          - id: access-control
+            title: Access Control Requirements
+            type: table
+            columns: [User Role, Access Level, Authentication Method, Authorization Rules, Audit Requirements]
+            instruction: User access and permission requirements
+          - id: compliance-requirements
+            title: Compliance Requirements
+            type: bullet-list
+            instruction: Regulatory and industry compliance requirements
+
+  - id: user-experience-requirements
+    title: User Experience Requirements
+    instruction: |
+      Detailed UX requirements derived from user research including interaction design and emotional requirements.
+      Connect UX specifications to user goals and satisfaction criteria.
+    elicit: true
+    sections:
+      - id: interaction-requirements
+        title: Interaction Design Requirements
+        type: structured
+        instruction: |
+          Specifications for user interface design and interaction patterns.
+          Include navigation, layout, and control requirements.
+        sections:
+          - id: navigation-requirements
+            title: Navigation Requirements
+            type: table
+            columns: [Navigation Element, User Need, Design Pattern, Accessibility, Mobile Considerations]
+            instruction: Requirements for site/app navigation and information architecture
+          - id: layout-requirements
+            title: Layout and Visual Requirements
+            type: table
+            columns: [Screen/Page, Layout Requirements, Visual Hierarchy, Responsive Behavior, Brand Considerations]
+            instruction: Requirements for visual design and layout structure
+          - id: control-requirements
+            title: Control and Input Requirements
+            type: table
+            columns: [Control Type, User Task, Interaction Pattern, Feedback Requirements, Error Handling]
+            instruction: Requirements for user interface controls and input methods
+      - id: content-requirements
+        title: Content and Information Requirements
+        type: structured
+        instruction: |
+          Requirements for content presentation, information architecture, and messaging.
+          Include help content, error messages, and educational materials.
+        options:
+          - "1. Information architecture and content organization"
+          - "2. Help and documentation content requirements"
+          - "3. Error message and feedback content specifications"
+          - "4. Onboarding and tutorial content requirements"
+          - "5. Notification and alert content guidelines"
+          - "6. Personalization and dynamic content requirements"
+          - "7. Multilingual content and localization needs"
+          - "8. Content accessibility and plain language requirements"
+          - "9. Other content requirements (specify and explain)"
+      - id: emotional-requirements
+        title: Emotional Design Requirements
+        type: structured
+        instruction: |
+          Requirements for emotional response and user satisfaction derived from research insights.
+          Include trust, confidence, and delight requirements.
+        sections:
+          - id: trust-requirements
+            title: Trust and Credibility Requirements
+            type: bullet-list
+            instruction: Design elements that build user trust and confidence
+          - id: satisfaction-requirements
+            title: User Satisfaction Requirements
+            type: bullet-list
+            instruction: Elements that contribute to user satisfaction and positive experience
+          - id: engagement-requirements
+            title: User Engagement Requirements
+            type: bullet-list
+            instruction: Features that encourage continued use and deeper engagement
+
+  - id: business-requirements
+    title: Business Requirements Analysis
+    instruction: |
+      Business requirements that support organizational objectives and constraint considerations.
+      Include revenue, operational, and strategic requirements derived from stakeholder analysis.
+    elicit: true
+    sections:
+      - id: revenue-requirements
+        title: Revenue and Monetization Requirements
+        type: structured
+        instruction: |
+          Requirements that support revenue generation and business model objectives.
+          Include pricing, billing, and conversion optimization requirements.
+        sections:
+          - id: monetization-features
+            title: Monetization Feature Requirements
+            type: table
+            columns: [Requirement, Revenue Impact, User Experience Consideration, Implementation Complexity, Success Metrics]
+            instruction: Features directly supporting revenue generation
+          - id: pricing-requirements
+            title: Pricing and Billing Requirements
+            type: bullet-list
+            instruction: Requirements for pricing models and billing functionality
+          - id: conversion-requirements
+            title: Conversion Optimization Requirements
+            type: bullet-list
+            instruction: Features and design elements that improve conversion rates
+      - id: operational-requirements
+        title: Operational Requirements
+        type: structured
+        instruction: |
+          Requirements that support day-to-day business operations and efficiency.
+          Include administrative, reporting, and management requirements.
+        options:
+          - "1. Administrative interface and management capabilities"
+          - "2. Reporting and analytics dashboard requirements"
+          - "3. Customer support tool integration and capabilities"
+          - "4. Content management and maintenance requirements"
+          - "5. User management and account administration"
+          - "6. System monitoring and health check requirements"
+          - "7. Backup and disaster recovery operational needs"
+          - "8. Compliance monitoring and audit trail requirements"
+          - "9. Other operational requirements (specify and explain)"
+      - id: strategic-requirements
+        title: Strategic Requirements
+        type: structured
+        instruction: |
+          Requirements that support long-term strategic objectives and competitive positioning.
+          Include scalability, extensibility, and market expansion requirements.
+        sections:
+          - id: scalability-requirements
+            title: Scalability Requirements
+            type: table
+            columns: [Scaling Dimension, Current Requirement, Future Requirement, Scaling Strategy, Investment Needed]
+            instruction: Requirements for system and business scaling
+          - id: extensibility-requirements
+            title: Extensibility Requirements
+            type: bullet-list
+            instruction: Requirements for future feature addition and platform extension
+          - id: competitive-requirements
+            title: Competitive Positioning Requirements
+            type: bullet-list
+            instruction: Requirements that support competitive advantage and differentiation
+
+  - id: requirements-prioritization
+    title: Requirements Prioritization Framework
+    instruction: |
+      Systematic prioritization of all requirements using multiple criteria and stakeholder input.
+      Include priority rankings, trade-off analysis, and implementation recommendations.
+    elicit: true
+    sections:
+      - id: prioritization-criteria
+        title: Prioritization Criteria Framework
+        type: structured
+        instruction: |
+          Define criteria used for evaluating and prioritizing requirements.
+          Include weighting factors and evaluation methodology.
+        sections:
+          - id: evaluation-criteria
+            title: Requirement Evaluation Criteria
+            type: table
+            columns: [Criteria, Weight, Definition, Measurement Method, Rationale]
+            instruction: |
+              Systematic criteria for evaluating requirement importance and feasibility.
+              Include both customer value and business value considerations.
+          - id: prioritization-method
+            title: Prioritization Methodology
+            type: structured
+            instruction: |
+              Step-by-step approach for evaluating and ranking requirements.
+              Include stakeholder input process and decision-making framework.
+            options:
+              - "1. MoSCoW method (Must have, Should have, Could have, Won't have)"
+              - "2. Weighted scoring with multiple criteria"
+              - "3. Kano model categorization (Basic, Performance, Excitement)"
+              - "4. Cost-benefit analysis with ROI calculation"
+              - "5. User story mapping with release planning"
+              - "6. Impact-effort matrix prioritization"
+              - "7. Business value vs. technical risk assessment"
+              - "8. Stakeholder voting and consensus building"
+              - "9. Other prioritization method (specify approach and rationale)"
+      - id: priority-rankings
+        title: Requirements Priority Rankings
+        type: structured
+        instruction: |
+          Complete priority ranking of all requirements with supporting rationale.
+          Include multiple priority categories and implementation recommendations.
+        sections:
+          - id: high-priority-requirements
+            title: High Priority Requirements
+            type: table
+            columns: [Requirement ID, Description, Priority Score, Rationale, Implementation Phase, Dependencies]
+            instruction: Must-have requirements for initial release or core functionality
+          - id: medium-priority-requirements
+            title: Medium Priority Requirements
+            type: table
+            columns: [Requirement ID, Description, Priority Score, Rationale, Implementation Phase, Dependencies]
+            instruction: Important requirements for enhanced functionality and user satisfaction
+          - id: low-priority-requirements
+            title: Low Priority Requirements
+            type: table
+            columns: [Requirement ID, Description, Priority Score, Rationale, Implementation Phase, Dependencies]
+            instruction: Nice-to-have requirements for future consideration
+      - id: trade-off-analysis
+        title: Requirements Trade-off Analysis
+        type: structured
+        instruction: |
+          Analysis of conflicts and trade-offs between different requirements.
+          Include resolution strategies and stakeholder impact assessment.
+        sections:
+          - id: requirement-conflicts
+            title: Requirement Conflicts
+            type: table
+            columns: [Conflict, Requirements Involved, Stakeholders Affected, Impact Assessment, Resolution Strategy]
+            instruction: Identified conflicts between requirements and resolution approaches
+          - id: resource-constraints
+            title: Resource Constraint Analysis
+            type: structured
+            instruction: How resource limitations affect requirement prioritization and implementation
+          - id: stakeholder-alignment
+            title: Stakeholder Alignment
+            type: structured
+            instruction: Level of stakeholder agreement on requirement priorities and resolution of conflicts
+
+  - id: implementation-planning
+    title: Requirements Implementation Planning
+    instruction: |
+      Detailed planning for implementing prioritized requirements including resource allocation and timeline.
+      Connect requirements to development phases and delivery milestones.
+    elicit: true
+    sections:
+      - id: release-planning
+        title: Release Planning Framework
+        type: structured
+        instruction: |
+          Organize requirements into logical release phases based on priorities and dependencies.
+          Include MVP definition and incremental value delivery strategy.
+        sections:
+          - id: mvp-definition
+            title: Minimum Viable Product (MVP) Definition
+            type: structured
+            instruction: |
+              Core requirements that constitute the minimum viable product or solution.
+              Include value proposition and success criteria for MVP.
+            sections:
+              - id: mvp-requirements
+                title: MVP Requirements List
+                type: table
+                columns: [Requirement ID, Description, User Value, Business Value, Implementation Effort]
+                instruction: Complete list of requirements included in MVP scope
+              - id: mvp-success-criteria
+                title: MVP Success Criteria
+                type: bullet-list
+                instruction: How MVP success will be measured and validated
+              - id: mvp-assumptions
+                title: MVP Assumptions and Risks
+                type: table
+                columns: [Assumption, Risk Level, Validation Method, Mitigation Strategy]
+                instruction: Key assumptions underlying MVP definition and risk mitigation
+          - id: release-phases
+            title: Release Phase Planning
+            type: structured
+            instruction: |
+              Planned release phases beyond MVP with incremental value delivery.
+              Include theme-based grouping and user value progression.
+            sections:
+              - id: phase-definitions
+                title: Release Phase Definitions
+                type: table
+                columns: [Phase, Theme, Requirements Included, User Value Added, Timeline, Success Metrics]
+                instruction: Definition of each release phase with clear value proposition
+              - id: phase-dependencies
+                title: Inter-Phase Dependencies
+                type: structured
+                instruction: Dependencies between release phases and sequencing considerations
+              - id: value-progression
+                title: User Value Progression
+                type: structured
+                instruction: How user value and capability builds across release phases
+      - id: resource-allocation
+        title: Resource Allocation Planning
+        type: structured
+        instruction: |
+          Allocation of development resources across requirements and implementation phases.
+          Include team assignments, skill requirements, and capacity planning.
+        options:
+          - "1. Development team capacity and skill assessment"
+          - "2. Cross-functional resource coordination (design, engineering, QA)"
+          - "3. External vendor and contractor requirements"
+          - "4. Technology infrastructure and tooling needs"
+          - "5. Budget allocation across requirement categories"
+          - "6. Timeline and milestone planning"
+          - "7. Risk management and contingency planning"
+          - "8. Quality assurance and testing resource allocation"
+          - "9. Other resource considerations (specify and explain)"
+      - id: implementation-timeline
+        title: Implementation Timeline
+        type: structured
+        instruction: |
+          Detailed timeline for implementing requirements with milestones and dependencies.
+          Include critical path analysis and schedule risk assessment.
+        sections:
+          - id: milestone-timeline
+            title: Implementation Milestones
+            type: table
+            columns: [Milestone, Requirements Delivered, Target Date, Dependencies, Success Criteria, Risk Factors]
+            instruction: Key milestones and deliverables throughout implementation timeline
+          - id: critical-path
+            title: Critical Path Analysis
+            type: structured
+            instruction: Identification of critical path activities and schedule dependencies
+          - id: schedule-risks
+            title: Schedule Risk Assessment
+            type: table
+            columns: [Risk, Probability, Impact, Mitigation Strategy, Contingency Plan]
+            instruction: Schedule risks and mitigation strategies
+
+  - id: validation-framework
+    title: Requirements Validation Framework
+    instruction: |
+      Framework for validating requirements implementation and measuring success.
+      Include testing strategies, user acceptance criteria, and success metrics.
+    elicit: true
+    sections:
+      - id: testing-strategy
+        title: Requirements Testing Strategy
+        type: structured
+        instruction: |
+          Comprehensive approach to testing requirements implementation.
+          Include functional testing, user acceptance testing, and performance validation.
+        sections:
+          - id: functional-testing
+            title: Functional Testing Approach
+            type: table
+            columns: [Requirement Type, Testing Method, Test Coverage, Automation Level, Success Criteria]
+            instruction: Testing approach for functional requirements validation
+          - id: user-acceptance-testing
+            title: User Acceptance Testing Framework
+            type: structured
+            instruction: How users will validate that requirements meet their needs
+          - id: performance-testing
+            title: Performance Testing Requirements
+            type: structured
+            instruction: Testing approach for non-functional requirements validation
+      - id: success-metrics
+        title: Requirements Success Metrics
+        type: structured
+        instruction: |
+          Metrics for measuring successful requirements implementation and user adoption.
+          Include both leading and lagging indicators of success.
+        options:
+          - "1. User adoption and engagement metrics"
+          - "2. Task completion and efficiency measurements"
+          - "3. User satisfaction and feedback scores"
+          - "4. Business outcome and ROI measurements"
+          - "5. Performance and reliability metrics"
+          - "6. Support ticket and issue tracking"
+          - "7. Competitive benchmark comparisons"
+          - "8. Long-term retention and loyalty indicators"
+          - "9. Other success metrics (specify and explain)"
+      - id: feedback-integration
+        title: User Feedback Integration Process
+        type: structured
+        instruction: |
+          Process for collecting and integrating user feedback on requirements implementation.
+          Include feedback channels, analysis methods, and iteration planning.
+        sections:
+          - id: feedback-collection
+            title: Feedback Collection Methods
+            type: bullet-list
+            instruction: How user feedback on requirements implementation will be collected
+          - id: feedback-analysis
+            title: Feedback Analysis Framework
+            type: structured
+            instruction: How feedback will be analyzed and prioritized for action
+          - id: iteration-planning
+            title: Requirements Iteration Planning
+            type: structured
+            instruction: How feedback will inform requirements refinement and future releases
+
+  - id: traceability-maintenance
+    title: Traceability Maintenance Framework
+    instruction: |
+      Framework for maintaining requirements traceability throughout development and evolution.
+      Include change management, version control, and audit processes.
+    elicit: true
+    sections:
+      - id: change-management
+        title: Requirements Change Management
+        type: structured
+        instruction: |
+          Process for managing changes to requirements throughout development lifecycle.
+          Include change approval, impact assessment, and stakeholder communication.
+        sections:
+          - id: change-process
+            title: Change Request Process
+            type: numbered-list
+            instruction: Step-by-step process for requesting and approving requirement changes
+          - id: impact-assessment
+            title: Change Impact Assessment
+            type: structured
+            instruction: How the impact of requirement changes will be evaluated
+          - id: stakeholder-communication
+            title: Change Communication Framework
+            type: structured
+            instruction: How requirement changes will be communicated to stakeholders
+      - id: version-control
+        title: Requirements Version Control
+        type: structured
+        instruction: |
+          System for tracking requirement versions and maintaining historical traceability.
+          Include documentation standards and archive management.
+        sections:
+          - id: versioning-strategy
+            title: Requirements Versioning Strategy
+            type: structured
+            instruction: How requirement versions will be tracked and managed
+          - id: documentation-standards
+            title: Documentation Standards
+            type: bullet-list
+            instruction: Standards for maintaining requirement documentation quality
+          - id: archive-management
+            title: Historical Archive Management
+            type: structured
+            instruction: How historical requirement versions will be preserved and accessed
+      - id: audit-framework
+        title: Requirements Audit Framework
+        type: structured
+        instruction: |
+          Framework for auditing requirements traceability and implementation compliance.
+          Include audit criteria, review processes, and quality assurance.
+        sections:
+          - id: audit-criteria
+            title: Traceability Audit Criteria
+            type: bullet-list
+            instruction: Criteria for evaluating requirements traceability completeness and accuracy
+          - id: review-process
+            title: Requirements Review Process
+            type: structured
+            instruction: Regular review process for maintaining requirements quality
+          - id: quality-assurance
+            title: Requirements Quality Assurance
+            type: structured
+            instruction: Quality standards and validation processes for requirements documentation
+
+  - id: matrix-summary
+    title: Requirements Matrix Summary
+    instruction: |
+      Executive summary of requirements analysis with key recommendations and next steps.
+      Provide clear guidance for stakeholders and decision-makers.
+    sections:
+      - id: executive-summary
+        title: Executive Summary
+        type: structured
+        instruction: |
+          High-level summary of requirements analysis findings and recommendations.
+          Include scope, priorities, and strategic implications.
+        sections:
+          - id: scope-summary
+            title: Requirements Scope Summary
+            type: paragraph
+            instruction: Overview of requirements covered and their strategic importance
+          - id: priority-summary
+            title: Priority Recommendations
+            type: numbered-list
+            instruction: Top priority requirements and implementation recommendations
+          - id: resource-summary
+            title: Resource Requirements Summary
+            type: structured
+            instruction: High-level resource and timeline requirements for implementation
+      - id: strategic-implications
+        title: Strategic Implications
+        type: structured
+        instruction: |
+          How requirements analysis affects business strategy and product direction.
+          Include competitive implications and market positioning considerations.
+        sections:
+          - id: business-impact
+            title: Business Impact Assessment
+            type: bullet-list
+            instruction: How implementing these requirements will affect business objectives
+          - id: competitive-positioning
+            title: Competitive Positioning Impact
+            type: bullet-list
+            instruction: How requirements support competitive advantage and market position
+          - id: market-opportunity
+            title: Market Opportunity Assessment
+            type: structured
+            instruction: Market opportunity size and timing considerations
+      - id: next-steps
+        title: Next Steps and Recommendations
+        type: structured
+        instruction: |
+          Immediate actions and longer-term planning recommendations.
+          Include decision points and approval requirements.
+        sections:
+          - id: immediate-actions
+            title: Immediate Actions (Next 30 Days)
+            type: numbered-list
+            instruction: Critical actions needed to begin requirements implementation
+          - id: planning-activities
+            title: Planning Activities (Next 90 Days)
+            type: numbered-list
+            instruction: Detailed planning and preparation activities
+          - id: decision-points
+            title: Key Decision Points
+            type: table
+            columns: [Decision, Timeline, Decision Makers, Information Needed, Impact]
+            instruction: Critical decisions needed to proceed with requirements implementation

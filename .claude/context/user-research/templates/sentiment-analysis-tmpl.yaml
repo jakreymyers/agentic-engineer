@@ -1,0 +1,440 @@
+# Sentiment Analysis Template
+# Comprehensive template for conducting sentiment analysis on research data
+
+template:
+  id: sentiment-analysis-template
+  name: Sentiment Analysis Report
+  version: 1.0
+  output:
+    format: markdown
+    filename: docs/research/sentiment-analysis-report.md
+    title: "{{project_name}} Sentiment Analysis Report"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  validation: human-in-loop
+
+sections:
+  - id: analysis-overview
+    title: Sentiment Analysis Overview
+    elicit: true
+    instruction: |
+      Define the purpose, scope, and approach for sentiment analysis.
+      Clarify what emotional and sentiment insights are sought.
+    sections:
+      - id: analysis-objectives
+        title: Analysis Objectives
+        type: numbered-list
+        instruction: |
+          List specific objectives for sentiment analysis (3-5).
+          Focus on actionable emotional insights needed.
+        examples:
+          - "Identify emotional triggers in user journey"
+          - "Measure satisfaction across product features"
+          - "Detect frustration patterns in support interactions"
+          - "Track sentiment evolution through research phases"
+          - "Compare emotional responses across segments"
+
+      - id: data-sources
+        title: Data Sources
+        type: table
+        columns: [Source Type, Volume, Time Period, Context Available]
+        instruction: |
+          Document all data sources for sentiment analysis.
+        examples:
+          - ["Interview transcripts", "20 interviews", "Jan-Feb 2024", "Full context"]
+          - ["Survey open-ends", "500 responses", "Q1 2024", "Question context"]
+          - ["Support tickets", "1000 tickets", "Past 6 months", "Issue type"]
+
+      - id: analysis-scope
+        title: Analysis Scope
+        type: structured
+        fields:
+          sentiment_dimensions: "Basic polarity | Emotions | Arousal-valence"
+          granularity: "Document | Paragraph | Sentence | Aspect-based"
+          temporal_analysis: "Static snapshot | Progression over time"
+          segment_comparison: "Overall | By segment | By context"
+          confidence_threshold: "Minimum confidence level (0.0-1.0)"
+
+  - id: sentiment-framework
+    title: Sentiment Framework
+    elicit: true
+    instruction: |
+      Define the sentiment and emotion categories to analyze.
+      Consider cultural context and domain-specific expressions.
+    sections:
+      - id: sentiment-categories
+        title: Sentiment Categories
+        type: structured-list
+        instruction: |
+          Define sentiment categories and their definitions.
+        format: |
+          **Basic Polarity:**
+          - Positive: {{definition}}
+          - Negative: {{definition}}
+          - Neutral: {{definition}}
+          - Mixed: {{definition}}
+
+          **Emotion Categories (if applicable):**
+          - Joy/Satisfaction: {{definition}}
+          - Frustration/Anger: {{definition}}
+          - Confusion/Uncertainty: {{definition}}
+          - Trust/Confidence: {{definition}}
+          - Fear/Anxiety: {{definition}}
+          [Additional as needed]
+
+      - id: intensity-scale
+        title: Intensity Scale
+        type: structured
+        fields:
+          scale_type: "3-point | 5-point | Continuous"
+          scale_definition: "How intensity is measured"
+          examples: "Sample expressions at each level"
+
+      - id: context-rules
+        title: Context-Specific Rules
+        type: bullet-list
+        instruction: |
+          Define domain or culture-specific interpretation rules.
+        examples:
+          - "Technical jargon sentiment mappings"
+          - "Sarcasm detection indicators"
+          - "Cultural expression variations"
+          - "Professional vs casual tone adjustments"
+
+  - id: automated-analysis
+    title: Automated Analysis Results
+    elicit: true
+    instruction: |
+      Present initial automated sentiment analysis results.
+      Include confidence metrics and areas needing validation.
+    sections:
+      - id: overall-distribution
+        title: Overall Sentiment Distribution
+        type: structured
+        fields:
+          positive_percentage: "XX% (n=XXX)"
+          negative_percentage: "XX% (n=XXX)"
+          neutral_percentage: "XX% (n=XXX)"
+          mixed_percentage: "XX% (n=XXX)"
+          average_confidence: "X.XX (0-1 scale)"
+
+      - id: emotion-frequencies
+        title: Emotion Frequency Analysis
+        type: table
+        columns: [Emotion, Frequency, Percentage, Top Context]
+        instruction: |
+          If analyzing emotions, show distribution and context.
+        validation:
+          total_percentage: 100
+
+      - id: confidence-analysis
+        title: Confidence Analysis
+        type: structured
+        fields:
+          high_confidence: "XX% of classifications"
+          medium_confidence: "XX% of classifications"
+          low_confidence: "XX% requiring review"
+          ambiguous_cases: "Number of edge cases"
+
+  - id: pattern-analysis
+    title: Sentiment Patterns
+    elicit: true
+    instruction: |
+      Identify and document sentiment patterns across different dimensions.
+      Focus on actionable insights and triggers.
+    sections:
+      - id: temporal-patterns
+        title: Temporal Patterns
+        type: structured-list
+        instruction: |
+          Describe how sentiment changes over time or sequence.
+        format: |
+          **Interview Progression:**
+          - Beginning: {{sentiment_description}}
+          - Middle: {{sentiment_description}}
+          - End: {{sentiment_description}}
+          - Key inflection points: {{descriptions}}
+
+          **Research Phase Evolution:**
+          - Phase 1: {{sentiment_summary}}
+          - Phase 2: {{sentiment_summary}}
+          - Trend: {{increasing/decreasing/stable}}
+
+      - id: topic-sentiment
+        title: Sentiment by Topic/Theme
+        type: table
+        columns: [Topic, Positive%, Negative%, Neutral%, Key Insights]
+        instruction: |
+          Map sentiment to specific topics or themes discussed.
+        validation:
+          row_total: 100
+
+      - id: segment-comparison
+        title: Segment Sentiment Comparison
+        type: structured-list
+        format: |
+          **Segment: {{segment_name}}**
+          - Dominant sentiment: {{type}}
+          - Unique patterns: {{description}}
+          - Emotional triggers: {{list}}
+          - Differentiation: {{vs_other_segments}}
+
+  - id: aspect-sentiment
+    title: Aspect-Based Sentiment
+    elicit: true
+    instruction: |
+      Analyze sentiment toward specific aspects of product/service.
+      Critical for targeted improvements.
+    sections:
+      - id: aspect-identification
+        title: Key Aspects Analyzed
+        type: bullet-list
+        instruction: |
+          List aspects extracted for sentiment analysis.
+        examples:
+          - "Usability/Ease of use"
+          - "Performance/Speed"
+          - "Features/Functionality"
+          - "Support/Service"
+          - "Value/Pricing"
+          - "Design/Aesthetics"
+
+      - id: aspect-sentiment-matrix
+        title: Aspect Sentiment Matrix
+        type: table
+        columns: [Aspect, Positive, Negative, Neutral, Net Sentiment, Priority]
+        instruction: |
+          Show sentiment distribution for each aspect.
+          Include priority for action based on impact.
+
+      - id: aspect-verbatims
+        title: Representative Verbatims by Aspect
+        type: structured-list
+        instruction: |
+          Provide example quotes for each aspect sentiment.
+        format: |
+          **{{Aspect}}: {{Sentiment}}**
+          - "{{positive_quote}}" - Participant X
+          - "{{negative_quote}}" - Participant Y
+          - "{{neutral_quote}}" - Participant Z
+
+  - id: sentiment-drivers
+    title: Sentiment Drivers and Triggers
+    elicit: true
+    instruction: |
+      Identify what drives positive and negative sentiment.
+      Focus on actionable triggers that can be influenced.
+    sections:
+      - id: positive-drivers
+        title: Positive Sentiment Drivers
+        type: numbered-list
+        instruction: |
+          List key factors driving positive sentiment.
+          Include frequency and impact assessment.
+        format: "{{Driver}}: {{Description}} (Impact: High/Medium/Low)"
+
+      - id: negative-triggers
+        title: Negative Sentiment Triggers
+        type: numbered-list
+        instruction: |
+          List key factors triggering negative sentiment.
+          Include severity and frequency.
+        format: "{{Trigger}}: {{Description}} (Severity: High/Medium/Low)"
+
+      - id: sentiment-transitions
+        title: Sentiment Transition Points
+        type: bullet-list
+        instruction: |
+          Identify moments where sentiment shifts significantly.
+        examples:
+          - "From positive to negative when encountering X"
+          - "Improvement after Y was explained"
+          - "Frustration peaks during Z process"
+
+  - id: validation-calibration
+    title: Human Validation and Calibration
+    elicit: true
+    instruction: |
+      Document human validation process and adjustments made.
+      Critical for ensuring accuracy and cultural sensitivity.
+    sections:
+      - id: validation-sample
+        title: Validation Sample
+        type: structured
+        fields:
+          sample_size: "Number of items reviewed"
+          sampling_method: "Random | Stratified | Focus on low-confidence"
+          validators: "Number of human reviewers"
+          agreement_rate: "Inter-rater reliability %"
+
+      - id: calibration-adjustments
+        title: Calibration Adjustments
+        type: bullet-list
+        instruction: |
+          List adjustments made based on validation.
+        examples:
+          - "Adjusted threshold for positive sentiment"
+          - "Added context rules for technical terms"
+          - "Corrected cultural expression interpretations"
+          - "Refined sarcasm detection"
+
+      - id: accuracy-metrics
+        title: Final Accuracy Metrics
+        type: structured
+        fields:
+          precision: "True positives / (True + False positives)"
+          recall: "True positives / (True positives + False negatives)"
+          f1_score: "Harmonic mean of precision and recall"
+          human_agreement: "% agreement with human coders"
+
+  - id: integrated-insights
+    title: Integrated Insights
+    elicit: true
+    instruction: |
+      Synthesize sentiment findings with other research insights.
+      Connect emotional patterns to behaviors and outcomes.
+    sections:
+      - id: theme-sentiment-alignment
+        title: Theme-Sentiment Alignment
+        type: structured-list
+        instruction: |
+          Connect major themes with their sentiment profiles.
+        format: |
+          **Theme: {{theme_name}}**
+          - Overall sentiment: {{positive/negative/mixed}}
+          - Emotional tone: {{emotions}}
+          - Behavioral correlation: {{observed_behaviors}}
+          - Business impact: {{implications}}
+
+      - id: journey-emotions
+        title: Emotional Journey Mapping
+        type: structured
+        instruction: |
+          Map emotions across user journey stages.
+        fields:
+          awareness: "Dominant emotions and sentiment"
+          consideration: "Dominant emotions and sentiment"
+          trial: "Dominant emotions and sentiment"
+          adoption: "Dominant emotions and sentiment"
+          advocacy: "Dominant emotions and sentiment"
+
+      - id: predictive-indicators
+        title: Predictive Indicators
+        type: bullet-list
+        instruction: |
+          Identify how sentiment predicts outcomes.
+        examples:
+          - "High frustration correlates with churn risk"
+          - "Delight moments predict advocacy"
+          - "Confusion leads to support contacts"
+
+  - id: visualizations
+    title: Sentiment Visualizations
+    elicit: true
+    instruction: |
+      Plan visual representations of sentiment data.
+      Focus on clear, actionable visualizations.
+    sections:
+      - id: visualization-inventory
+        title: Planned Visualizations
+        type: checklist
+        items:
+          - Sentiment distribution pie/donut chart
+          - Emotion wheel or radar chart
+          - Temporal sentiment line graph
+          - Aspect sentiment heat map
+          - Word clouds by sentiment
+          - Journey emotion map
+          - Segment comparison bars
+          - Sentiment flow diagram
+
+      - id: dashboard-metrics
+        title: Dashboard Metrics
+        type: bullet-list
+        instruction: |
+          Define key metrics for sentiment dashboard.
+        defaults:
+          - Overall sentiment score
+          - Sentiment trend over time
+          - Top positive drivers
+          - Top negative triggers
+          - Aspect sentiment scores
+          - Confidence intervals
+
+  - id: recommendations
+    title: Strategic Recommendations
+    elicit: true
+    instruction: |
+      Transform sentiment insights into actionable recommendations.
+      Prioritize based on impact and feasibility.
+    sections:
+      - id: quick-wins
+        title: Quick Wins
+        type: numbered-list
+        instruction: |
+          List immediate actions to improve sentiment.
+          Focus on high-impact, low-effort improvements.
+        format: |
+          1. {{Action}}: {{Expected sentiment impact}}
+          2. {{Action}}: {{Expected sentiment impact}}
+
+      - id: strategic-initiatives
+        title: Strategic Initiatives
+        type: table
+        columns: [Initiative, Sentiment Impact, Effort, Priority, Success Metric]
+        instruction: |
+          Define larger initiatives to address sentiment patterns.
+
+      - id: monitoring-plan
+        title: Ongoing Monitoring Plan
+        type: structured
+        fields:
+          metrics: "Key sentiment metrics to track"
+          frequency: "Monitoring cadence"
+          thresholds: "Alert thresholds"
+          reporting: "Dashboard and reporting approach"
+          iteration: "How insights feed back into action"
+
+  - id: limitations
+    title: Limitations and Considerations
+    instruction: |
+      Document limitations of the sentiment analysis.
+      Important for appropriate interpretation and use.
+    sections:
+      - id: technical-limitations
+        title: Technical Limitations
+        type: bullet-list
+        defaults:
+          - Sarcasm and irony detection challenges
+          - Context window limitations
+          - Language and cultural nuances
+          - Mixed sentiment complexity
+          - Small sample considerations
+
+      - id: interpretive-cautions
+        title: Interpretive Cautions
+        type: paragraphs
+        instruction: |
+          Describe important caveats for interpretation.
+          Include guidance on appropriate use of findings.
+
+quality_criteria:
+  analysis_quality:
+    - Sufficient data volume
+    - Context preserved
+    - Human validation completed
+    - Confidence thresholds appropriate
+
+  insight_quality:
+    - Patterns robust and repeated
+    - Insights actionable
+    - Links to outcomes clear
+    - Recommendations specific
+
+  technical_quality:
+    - Multiple methods triangulated
+    - Accuracy metrics acceptable
+    - Validation documented
+    - Limitations acknowledged

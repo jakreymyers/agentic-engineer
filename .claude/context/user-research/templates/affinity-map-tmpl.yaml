@@ -1,0 +1,406 @@
+# Affinity Map Template
+
+template:
+  name: affinity-map
+  version: 1.0.0
+  description: Template for organizing insights through affinity diagramming
+  author: Data Analyst Agent (Alex)
+  output_format: markdown
+
+metadata:
+  elicit: true
+  instruction: |
+    This template guides the creation of affinity diagrams to organize and cluster
+    research insights. Focus on letting patterns emerge naturally from the data.
+
+# Document Header
+header:
+  elicit: false
+  instruction: Generate document header
+  content: |
+    # Affinity Map
+    ## Project: [Project Name]
+    ## Created: [Date]
+    ## Analyst: [Name]
+    ## Data Sources: [Number of sources analyzed]
+
+# Section 1: Executive Overview
+executive_overview:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Provide high-level summary of the affinity mapping exercise including
+    scope, approach, and key outcomes.
+  content: |
+    ## 1. Executive Overview
+
+    ### Mapping Scope
+    - Total insights processed: [Number]
+    - Sources included: [List of transcript/document IDs]
+    - Mapping sessions: [Number and dates]
+    - Participants in mapping: [Who was involved]
+
+    ### Approach Used
+    - Method: [Physical/Digital/Hybrid]
+    - Clustering technique: [Bottom-up/Top-down/Mixed]
+    - Iteration rounds: [Number of refinement passes]
+
+    ### High-Level Outcomes
+    - Major themes identified: [Number]
+    - Clusters formed: [Number]
+    - Outlier insights: [Number]
+    - Key patterns: [Brief list]
+
+# Section 2: Insight Inventory
+insight_inventory:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Document all individual insights extracted from the data before clustering.
+    Each insight should be atomic and traceable to its source.
+  content: |
+    ## 2. Insight Inventory
+
+    ### Insight Extraction Summary
+    Total insights extracted: [Number]
+
+    Distribution by source:
+    - [Source 1]: [Number] insights
+    - [Source 2]: [Number] insights
+    - [Source 3]: [Number] insights
+
+    ### Sample Insights
+    (Showing representative examples)
+
+    | ID | Insight | Source | Context |
+    |----|---------|--------|---------|
+    | I001 | [Single insight statement] | [P01] | [Brief context] |
+    | I002 | [Single insight statement] | [P01] | [Brief context] |
+    | I003 | [Single insight statement] | [P02] | [Brief context] |
+    | I004 | [Single insight statement] | [P02] | [Brief context] |
+    | I005 | [Single insight statement] | [P03] | [Brief context] |
+
+    ### Insight Categories
+    Initial observation types:
+    - Behavioral insights: [Count]
+    - Attitudinal insights: [Count]
+    - Pain points: [Count]
+    - Needs/desires: [Count]
+    - Workarounds: [Count]
+
+# Section 3: Clustering Process
+clustering_process:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Document how insights were grouped into clusters, including rationale
+    for groupings and iterations made.
+  content: |
+    ## 3. Clustering Process
+
+    ### Round 1: Initial Grouping
+
+    **Natural Affinities Observed:**
+    - [Group type 1]: Insights seemed to connect around [concept]
+    - [Group type 2]: Pattern noticed regarding [topic]
+    - [Group type 3]: Common thread of [theme]
+
+    **Initial Clusters Formed:** [Number]
+    **Ungrouped Insights:** [Number]
+
+    ### Round 2: Refinement
+
+    **Adjustments Made:**
+    - Split: [Large cluster] → [New cluster 1] + [New cluster 2]
+    - Merged: [Small cluster A] + [Small cluster B] → [Combined cluster]
+    - Moved: [Number] insights relocated to better-fitting clusters
+
+    **Refined Clusters:** [Number]
+    **Remaining Singles:** [Number]
+
+    ### Round 3: Finalization
+
+    **Final Adjustments:**
+    - Created [Number] sub-clusters within larger groups
+    - Identified [Number] cross-cutting themes
+    - Designated [Number] as important outliers
+
+    ### Clustering Decisions Log
+
+    | Decision Point | Options Considered | Choice Made | Rationale |
+    |----------------|-------------------|-------------|-----------|
+    | [Where to place insight X] | [Cluster A or B] | [A] | [Why A fit better] |
+    | [Whether to split cluster Y] | [Keep together or divide] | [Divide] | [Why division needed] |
+
+# Section 4: Cluster Definitions
+cluster_definitions:
+  elicit: true
+  owner: data-analyst
+  editors: [data-analyst, insight-synthesizer]
+  instruction: |
+    Define each cluster with clear labels, descriptions, and constituent insights.
+    Show the hierarchy if clusters have sub-clusters.
+  content: |
+    ## 4. Cluster Definitions
+
+    ### Theme A: [High-Level Theme Name]
+
+    #### Cluster A1: [Cluster Label]
+    **Description:** [What unifies these insights]
+    **Insight Count:** [Number]
+
+    **Key Insights:**
+    - [I001]: [Insight text]
+    - [I007]: [Insight text]
+    - [I015]: [Insight text]
+
+    **Sub-clusters:**
+    - A1.1: [Sub-cluster label] ([n] insights)
+    - A1.2: [Sub-cluster label] ([n] insights)
+
+    #### Cluster A2: [Cluster Label]
+    **Description:** [What unifies these insights]
+    **Insight Count:** [Number]
+
+    **Key Insights:**
+    - [I003]: [Insight text]
+    - [I009]: [Insight text]
+
+    ### Theme B: [High-Level Theme Name]
+
+    #### Cluster B1: [Cluster Label]
+    **Description:** [What unifies these insights]
+    **Insight Count:** [Number]
+
+    **Key Insights:**
+    - [I002]: [Insight text]
+    - [I011]: [Insight text]
+    - [I023]: [Insight text]
+
+    [Continue for all themes and clusters]
+
+# Section 5: Visual Affinity Map
+visual_map:
+  elicit: false
+  owner: data-analyst
+  instruction: |
+    Create a visual representation of the affinity map showing relationships
+    and hierarchy. Use text-based visualization for markdown.
+  content: |
+    ## 5. Visual Affinity Map
+
+    ```
+    AFFINITY MAP: [Project Name]
+
+    ┌─────────────────────────────────────────────────────────┐
+    │ THEME A: [Theme Name]                                   │
+    ├─────────────────────────────────────────────────────────┤
+    │ ┌─────────────────┐  ┌─────────────────┐               │
+    │ │ Cluster A1      │  │ Cluster A2      │               │
+    │ │ [12 insights]   │  │ [8 insights]    │               │
+    │ │                 │  │                 │               │
+    │ │ • Sub A1.1 (5)  │  │ • Sub A2.1 (3)  │               │
+    │ │ • Sub A1.2 (7)  │  │ • Sub A2.2 (5)  │               │
+    │ └─────────────────┘  └─────────────────┘               │
+    └─────────────────────────────────────────────────────────┘
+
+    ┌─────────────────────────────────────────────────────────┐
+    │ THEME B: [Theme Name]                                   │
+    ├─────────────────────────────────────────────────────────┤
+    │ ┌─────────────────┐  ┌─────────────────┐               │
+    │ │ Cluster B1      │  │ Cluster B2      │               │
+    │ │ [15 insights]   │  │ [6 insights]    │               │
+    │ └─────────────────┘  └─────────────────┘               │
+    └─────────────────────────────────────────────────────────┘
+
+    Relationships:
+    A1 ←→ B1: Strong correlation observed
+    A2 → B2: Causal relationship identified
+    ```
+
+# Section 6: Cross-Cutting Insights
+cross_cutting:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Identify insights that span multiple clusters or represent connections
+    between different themes.
+  content: |
+    ## 6. Cross-Cutting Insights
+
+    ### Bridging Insights
+    Insights that connect multiple clusters:
+
+    | Insight ID | Primary Cluster | Related Clusters | Connection Type |
+    |------------|----------------|------------------|-----------------|
+    | [I045] | A1 | B1, B2 | Influences both areas |
+    | [I067] | B1 | A1, C1 | Common underlying factor |
+
+    ### Meta-Patterns
+    Patterns observed across clusters:
+    - [Pattern 1]: Appears in clusters [A1, B1, C2]
+    - [Pattern 2]: Consistent across [A2, B2]
+
+    ### Tension Points
+    Conflicts or contradictions between clusters:
+    - [Cluster A1] vs [Cluster B2]: [Nature of tension]
+    - [Cluster C1] vs [Cluster C2]: [Conflicting perspectives]
+
+# Section 7: Outliers and Unique Perspectives
+outliers:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Document important insights that didn't fit into clusters but represent
+    valuable unique perspectives or edge cases.
+  content: |
+    ## 7. Outliers and Unique Perspectives
+
+    ### Significant Outliers
+
+    **O1: [Insight Description]**
+    - Source: [Participant ID]
+    - Why Important: [Significance despite being unique]
+    - Potential Implications: [What this might mean]
+
+    **O2: [Insight Description]**
+    - Source: [Participant ID]
+    - Why Important: [Significance]
+    - Potential Implications: [Considerations]
+
+    ### Edge Cases
+    Insights representing extreme positions:
+    - [Extreme positive]: [Description]
+    - [Extreme negative]: [Description]
+    - [Unusual approach]: [Description]
+
+    ### Future Exploration
+    Outliers suggesting areas for investigation:
+    - [Topic needing research]
+    - [Emerging trend to monitor]
+
+# Section 8: Key Findings and Implications
+key_findings:
+  elicit: true
+  owner: data-analyst
+  editors: [insight-synthesizer]
+  instruction: |
+    Synthesize the most important findings from the affinity mapping and
+    their implications for the project.
+  content: |
+    ## 8. Key Findings and Implications
+
+    ### Primary Findings
+
+    **Finding 1: [Title]**
+    - Evidence: Clusters [A1, A2] strongly indicate [pattern]
+    - Strength: [High/Medium/Low] based on [n] insights
+    - Implication: [What this means for the project]
+
+    **Finding 2: [Title]**
+    - Evidence: Theme [B] reveals [pattern]
+    - Strength: [High/Medium/Low]
+    - Implication: [What this means]
+
+    **Finding 3: [Title]**
+    - Evidence: Cross-cutting pattern shows [insight]
+    - Strength: [High/Medium/Low]
+    - Implication: [What this means]
+
+    ### Opportunity Areas
+
+    Based on the affinity map, key opportunities include:
+
+    1. **[Opportunity Title]**
+       - Related clusters: [A1, B1]
+       - Potential impact: [High/Medium/Low]
+       - Recommended action: [Suggestion]
+
+    2. **[Opportunity Title]**
+       - Related clusters: [B2, C1]
+       - Potential impact: [High/Medium/Low]
+       - Recommended action: [Suggestion]
+
+    ### Strategic Recommendations
+
+    Priority recommendations from affinity analysis:
+    1. [Recommendation based on strongest patterns]
+    2. [Recommendation addressing main pain points]
+    3. [Recommendation leveraging opportunities]
+
+# Section 9: Methodological Notes
+methodological_notes:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Document the methodology, limitations, and quality considerations
+    for the affinity mapping process.
+  content: |
+    ## 9. Methodological Notes
+
+    ### Process Documentation
+
+    **Mapping Approach:**
+    - Physical/Digital: [Which used]
+    - Tools: [Software or materials]
+    - Time invested: [Hours]
+    - Team composition: [Roles involved]
+
+    **Quality Measures:**
+    - Multiple perspectives: [How ensured]
+    - Validation: [How clusters verified]
+    - Iteration: [Number of reviews]
+
+    ### Limitations
+
+    - Sample limitations: [Any gaps in data sources]
+    - Clustering subjectivity: [Decisions that could vary]
+    - Temporal factors: [Time-bound insights]
+
+    ### Confidence Assessment
+
+    | Cluster | Confidence Level | Rationale |
+    |---------|-----------------|-----------|
+    | A1 | High | Strong pattern, multiple sources |
+    | A2 | Medium | Clear pattern, fewer examples |
+    | B1 | High | Consistent across sources |
+    | B2 | Low | Limited evidence, needs validation |
+
+# Section 10: Next Steps
+next_steps:
+  elicit: true
+  owner: data-analyst
+  editors: [insight-synthesizer, research-reporter]
+  instruction: |
+    Define what should happen next with the affinity map results.
+  content: |
+    ## 10. Next Steps
+
+    ### Immediate Actions
+    - [ ] Validate key findings with stakeholders
+    - [ ] Develop detailed personas from clusters
+    - [ ] Create journey maps using temporal patterns
+    - [ ] Design solutions for main pain points
+
+    ### Further Analysis Needed
+    - [ ] Deep dive into [Cluster X] for nuances
+    - [ ] Explore relationship between [A1] and [B1]
+    - [ ] Validate outlier [O1] with additional data
+
+    ### Synthesis Integration
+    - Hand off to: [Insight Synthesizer]
+    - Key elements to preserve: [Critical patterns]
+    - Areas needing elaboration: [Specific clusters]
+
+    ### Reporting Priorities
+    Essential elements for final report:
+    1. [Visual affinity map]
+    2. [Top 3 findings]
+    3. [Key opportunity areas]
+    4. [Strategic recommendations]
+
+completion:
+  instruction: |
+    Package affinity map with all supporting documentation. Create summary
+    visualization for stakeholder presentation. Archive raw insight cards
+    for future reference.

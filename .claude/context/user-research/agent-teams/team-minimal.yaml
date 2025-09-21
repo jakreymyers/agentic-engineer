@@ -1,0 +1,11 @@
+# User Research Team - Minimal
+bundle:
+  name: Research Team Minimal
+  icon: ⚡
+  description: Lightweight team for quick discovery and rapid insights.
+agents:
+  - research-orchestrator
+  - interview-specialist
+  - data-analyst
+workflows:
+  - rapid-discovery.yaml

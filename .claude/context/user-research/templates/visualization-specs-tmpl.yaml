@@ -1,0 +1,448 @@
+# Visualization Specifications Template
+template:
+  id: visualization-specs-template-v1
+  name: Data Visualization Specifications
+  version: 1.0
+  output:
+    format: structured-specs
+    filename: docs/research/visualization-specs.md
+    title: "{{project_name}} Visualization Specifications"
+
+workflow:
+  mode: interactive
+  elicitation: design-review
+  validation: accessibility-required
+
+metadata:
+  created_by: research-reporter
+  reviewed_by: data-analyst
+  audience:
+    - designers
+    - developers
+    - data-analysts
+    - stakeholders
+  document_type: technical-specification
+  deliverables:
+    - chart-specifications
+    - style-guide
+    - production-files
+
+sections:
+  - id: visualization-strategy
+    title: Visualization Strategy
+    instruction: |
+      Define the overall visualization approach:
+      - Primary communication goals
+      - Target audience and their data literacy
+      - Distribution channels (print, web, presentation)
+      - Interactivity requirements
+      - Brand alignment needs
+      Set the strategic framework for all visualizations.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: communication-goals
+        title: Communication Goals
+        type: objective-list
+        instruction: What must viewers understand immediately
+      - id: audience-profile
+        title: Audience & Context
+        type: structured
+        components:
+          primary_audience: "[Role/level]"
+          data_literacy: "[Basic/Intermediate/Advanced]"
+          viewing_context: "[Presentation/Report/Dashboard]"
+          time_available: "[Seconds to minutes]"
+      - id: design-principles
+        title: Design Principles
+        type: principle-list
+        instruction: Guiding principles for all visualizations
+
+  - id: data-inventory
+    title: Data Inventory & Assessment
+    instruction: |
+      Catalog all data requiring visualization:
+      - Quantitative data sets
+      - Qualitative themes and patterns
+      - Temporal/time-series data
+      - Comparative data
+      - Relational/network data
+      Assess visualization potential and requirements for each.
+    elicit: true
+    owner: data-analyst
+    editors: [research-reporter]
+    sections:
+      - id: quantitative-data
+        title: Quantitative Data Sets
+        type: data-table
+        columns: [DataSet, Type, Size, VisualizationType, Priority]
+      - id: qualitative-data
+        title: Qualitative Data Sets
+        type: data-table
+        columns: [DataSet, Format, Elements, VisualizationType, Priority]
+      - id: data-relationships
+        title: Data Relationships
+        type: relationship-map
+        instruction: How data sets connect and interact
+
+  - id: chart-specifications
+    title: Individual Chart Specifications
+    instruction: |
+      For each visualization, provide detailed specifications:
+      - Chart type and rationale
+      - Data source and structure
+      - Visual encoding decisions
+      - Interaction requirements
+      - Annotation strategy
+      Create production-ready specifications.
+    elicit: true
+    owner: research-reporter
+    repeat_for_each: visualization
+    sections:
+      - id: chart-overview
+        title: Chart [#] Overview
+        type: specification-card
+        components:
+          name: "[Descriptive chart name]"
+          purpose: "[What it communicates]"
+          chart_type: "[Bar/Line/Scatter/etc]"
+          priority: "[Critical/High/Medium]"
+          placement: "[Report section/slide]"
+      - id: data-structure
+        title: Data Structure
+        type: data-schema
+        components:
+          source: "[Data file/table]"
+          dimensions: "[Variables plotted]"
+          measures: "[Values displayed]"
+          filters: "[Any data filtering]"
+          aggregations: "[Sum/Average/Count/etc]"
+      - id: visual-encoding
+        title: Visual Encoding
+        type: encoding-map
+        components:
+          x_axis: "[Variable and scale]"
+          y_axis: "[Variable and scale]"
+          color: "[Variable or semantic]"
+          size: "[If applicable]"
+          shape: "[If applicable]"
+          other: "[Additional encodings]"
+      - id: styling-details
+        title: Styling Details
+        type: style-specifications
+        components:
+          colors: "[Hex codes]"
+          fonts: "[Font families and sizes]"
+          line_weights: "[Pixel values]"
+          spacing: "[Margins and padding]"
+          grid: "[Show/hide, style]"
+      - id: annotations
+        title: Annotations & Labels
+        type: annotation-plan
+        components:
+          title: "[Chart title]"
+          subtitle: "[If needed]"
+          axis_labels: "[X and Y labels]"
+          data_labels: "[Direct labeling strategy]"
+          callouts: "[Key points to highlight]"
+          legend: "[Position and format]"
+
+  - id: color-system
+    title: Color System & Palette
+    instruction: |
+      Define comprehensive color strategy:
+      - Brand colors and adaptations
+      - Semantic color meanings
+      - Categorical color sets
+      - Sequential and diverging scales
+      - Accessibility considerations
+      Ensure consistency across all visualizations.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: primary-palette
+        title: Primary Color Palette
+        type: color-specification
+        components:
+          - color_name: "[Semantic name]"
+            hex_value: "#[RRGGBB]"
+            rgb_value: "rgb([R,G,B])"
+            usage: "[When to use]"
+            accessibility: "[Contrast ratio]"
+      - id: data-categories
+        title: Categorical Colors
+        type: color-mapping
+        instruction: Colors for different data categories
+      - id: semantic-colors
+        title: Semantic Colors
+        type: semantic-map
+        components:
+          positive: "#[Hex]"
+          negative: "#[Hex]"
+          neutral: "#[Hex]"
+          highlight: "#[Hex]"
+          warning: "#[Hex]"
+      - id: gradients-scales
+        title: Gradients & Scales
+        type: scale-definition
+        instruction: Sequential and diverging color scales
+
+  - id: typography-system
+    title: Typography System
+    instruction: |
+      Define text hierarchy and styling:
+      - Font families and weights
+      - Size hierarchy
+      - Label formatting
+      - Number formatting
+      - Readability standards
+    elicit: false
+    owner: research-reporter
+    sections:
+      - id: font-hierarchy
+        title: Font Hierarchy
+        type: type-scale
+        levels:
+          - level: "Chart Title"
+            font: "[Family]"
+            size: "[Points]"
+            weight: "[Weight]"
+            color: "#[Hex]"
+          - level: "Axis Labels"
+            font: "[Family]"
+            size: "[Points]"
+            weight: "[Weight]"
+            color: "#[Hex]"
+      - id: number-formatting
+        title: Number Formatting
+        type: format-rules
+        components:
+          percentages: "[0% or 0.0%]"
+          currency: "[$X,XXX or $XM]"
+          decimals: "[Decimal places]"
+          thousands: "[Separator character]"
+
+  - id: layout-composition
+    title: Layout & Composition
+    instruction: |
+      Design overall layout strategy:
+      - Grid system and alignment
+      - Spacing and margins
+      - Visual hierarchy
+      - Responsive considerations
+      - Print vs digital layouts
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: grid-system
+        title: Grid System
+        type: grid-specification
+        components:
+          columns: "[Number]"
+          gutters: "[Pixels]"
+          margins: "[Pixels]"
+          baseline: "[Pixels]"
+      - id: composition-patterns
+        title: Composition Patterns
+        type: layout-templates
+        instruction: Standard layouts for common scenarios
+      - id: responsive-behavior
+        title: Responsive Behavior
+        type: breakpoint-specs
+        instruction: How visualizations adapt to different sizes
+
+  - id: interaction-design
+    title: Interaction Design
+    condition: interactive visualizations required
+    instruction: |
+      Specify interactive behaviors:
+      - Hover states and tooltips
+      - Click actions and navigation
+      - Filtering and selection
+      - Animation and transitions
+      - Zoom and pan capabilities
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: hover-behavior
+        title: Hover Behavior
+        type: interaction-spec
+        components:
+          trigger: "[Mouse position]"
+          feedback: "[Visual change]"
+          tooltip: "[Content structure]"
+          timing: "[Delay/duration]"
+      - id: filtering
+        title: Filtering & Selection
+        type: control-spec
+        instruction: User controls for data manipulation
+      - id: animations
+        title: Animations & Transitions
+        type: animation-spec
+        components:
+          entrance: "[Type and duration]"
+          transitions: "[Between states]"
+          exit: "[Type and duration]"
+
+  - id: accessibility-specs
+    title: Accessibility Specifications
+    instruction: |
+      Ensure inclusive design:
+      - Color contrast requirements (WCAG AA)
+      - Alternative text descriptions
+      - Keyboard navigation
+      - Screen reader compatibility
+      - Colorblind-safe palettes
+      - Cognitive load considerations
+    elicit: true
+    owner: research-reporter
+    validation: wcag-compliance
+    sections:
+      - id: contrast-validation
+        title: Contrast Validation
+        type: accessibility-check
+        components:
+          - element: "[Element type]"
+            foreground: "#[Hex]"
+            background: "#[Hex]"
+            ratio: "[X:1]"
+            pass: "[Yes/No]"
+      - id: alt-text
+        title: Alternative Text
+        type: alt-descriptions
+        instruction: Text descriptions for each visualization
+      - id: colorblind-check
+        title: Colorblind Safety
+        type: validation-matrix
+        instruction: How visualizations appear to colorblind users
+
+  - id: production-specs
+    title: Production Specifications
+    instruction: |
+      Technical requirements for production:
+      - File formats and resolutions
+      - Export settings
+      - Version control
+      - Naming conventions
+      - Delivery requirements
+    elicit: false
+    owner: research-reporter
+    sections:
+      - id: file-formats
+        title: File Formats
+        type: format-matrix
+        columns: [Use Case, Format, Resolution, ColorSpace, Size]
+      - id: naming-convention
+        title: Naming Convention
+        type: convention-rules
+        pattern: "[project]_[type]_[version].[ext]"
+      - id: delivery-package
+        title: Delivery Package
+        type: checklist
+        items:
+          - Production files (all formats)
+          - Source files (editable)
+          - Style guide document
+          - Data files
+          - Documentation
+
+  - id: style-guide
+    title: Visual Style Guide
+    instruction: |
+      Create comprehensive style guide:
+      - All design decisions documented
+      - Examples of correct usage
+      - Common mistakes to avoid
+      - Templates for future use
+      Ensure consistency across team and time.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: dos-donts
+        title: Do's and Don'ts
+        type: comparison-examples
+        instruction: Best practices with visual examples
+      - id: templates
+        title: Reusable Templates
+        type: template-gallery
+        instruction: Starting points for common chart types
+      - id: checklist
+        title: Quality Checklist
+        type: validation-list
+        instruction: Final review before production
+
+quality_criteria:
+  design_excellence:
+    - Data-ink ratio maximized
+    - No chartjunk or decoration
+    - Clear visual hierarchy
+    - Consistent styling throughout
+    - Brand alignment maintained
+
+  data_integrity:
+    - No data distortion
+    - Accurate scales and proportions
+    - Appropriate chart types
+    - Clear data sources
+    - Honest representation
+
+  accessibility:
+    - WCAG AA compliance
+    - Colorblind safe
+    - Screen reader compatible
+    - Keyboard navigable
+    - Cognitive load appropriate
+
+  production_ready:
+    - All specifications complete
+    - Files properly formatted
+    - Documentation clear
+    - Version controlled
+    - Delivery ready
+
+validation_rules:
+  - rule: accessibility_compliance
+    description: Must meet WCAG AA standards
+    severity: critical
+
+  - rule: data_accuracy
+    description: No misleading visualizations
+    severity: critical
+
+  - rule: brand_consistency
+    description: Follows brand guidelines
+    severity: important
+
+  - rule: file_specifications
+    description: Correct formats and resolutions
+    severity: important
+
+deliverables:
+  specification_document:
+    format: pdf
+    includes:
+      - Complete specifications
+      - Style guide
+      - Examples
+      - Checklists
+
+  production_files:
+    formats:
+      - svg: vector graphics
+      - png: raster graphics
+      - pdf: print-ready
+      - html: interactive
+
+  source_files:
+    formats:
+      - ai: Adobe Illustrator
+      - sketch: Sketch files
+      - figma: Figma links
+      - code: D3.js/Plotly
+
+  style_assets:
+    includes:
+      - Color palettes
+      - Font files
+      - Icon sets
+      - Templates

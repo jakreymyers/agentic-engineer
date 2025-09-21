@@ -1,0 +1,338 @@
+# Workflow Error Handling Specification
+# Comprehensive error handling patterns for all research workflows
+
+error_handling:
+  version: 1.0
+  description: |
+    Standardized error handling patterns for research workflows.
+    Each workflow must implement these error handling mechanisms
+    to ensure resilience and graceful degradation.
+
+# Global Error Categories
+error_categories:
+  data_errors:
+    description: Errors related to data quality, format, or availability
+    severity: medium-high
+    types:
+      - missing_data: Required data not available
+      - invalid_format: Data format doesn't match expectations
+      - corrupted_data: Data integrity compromised
+      - insufficient_data: Data volume below minimum threshold
+
+  process_errors:
+    description: Errors in workflow execution or task processing
+    severity: high
+    types:
+      - task_failure: Individual task cannot complete
+      - dependency_failure: Required predecessor task failed
+      - timeout: Task exceeds time limit
+      - resource_unavailable: Required tool/agent not available
+
+  quality_errors:
+    description: Quality gate failures or validation issues
+    severity: medium
+    types:
+      - gate_failure: Quality gate criteria not met
+      - validation_failure: Output validation failed
+      - threshold_breach: Metric below acceptable threshold
+      - consistency_error: Cross-validation failure
+
+  integration_errors:
+    description: Errors in agent handoffs or tool integration
+    severity: high
+    types:
+      - handoff_failure: Agent cannot receive/send artifacts
+      - format_mismatch: Data format incompatible between tools
+      - schema_violation: Data doesn't match required schema
+      - api_failure: External service unavailable
+
+# Error Handling Patterns
+handling_patterns:
+
+  retry_with_backoff:
+    description: Retry failed operations with exponential backoff
+    applies_to:
+      - api_failure
+      - timeout
+      - resource_unavailable
+    configuration:
+      max_retries: 3
+      initial_delay: 1000ms
+      backoff_factor: 2
+      max_delay: 30000ms
+    implementation: |
+      retry_count = 0
+      delay = initial_delay
+      while retry_count < max_retries:
+        try:
+          execute_task()
+          break
+        except TransientError:
+          wait(delay)
+          delay = min(delay * backoff_factor, max_delay)
+          retry_count += 1
+      if retry_count == max_retries:
+        escalate_error()
+
+  fallback_to_manual:
+    description: Fallback to manual process when automation fails
+    applies_to:
+      - task_failure
+      - validation_failure
+      - quality_errors
+    configuration:
+      notification_required: true
+      manual_timeout: 24_hours
+      documentation_required: true
+    implementation: |
+      try:
+        automated_result = execute_task()
+      except AutomationError:
+        notify_human_operator()
+        manual_result = await_manual_completion()
+        document_manual_intervention()
+        return manual_result
+
+  graceful_degradation:
+    description: Continue with reduced functionality
+    applies_to:
+      - missing_data
+      - insufficient_data
+      - threshold_breach
+    configuration:
+      minimum_viable_data: 70%
+      quality_adjustment: true
+      stakeholder_notification: true
+    implementation: |
+      available_data = assess_data_availability()
+      if available_data >= minimum_viable_data:
+        adjust_quality_expectations()
+        notify_stakeholders()
+        proceed_with_reduced_scope()
+      else:
+        abort_with_explanation()
+
+  checkpoint_recovery:
+    description: Resume from last successful checkpoint
+    applies_to:
+      - process_errors
+      - dependency_failure
+      - handoff_failure
+    configuration:
+      checkpoint_frequency: per_phase
+      state_preservation: true
+      recovery_validation: true
+    implementation: |
+      checkpoint = load_last_checkpoint()
+      validate_checkpoint_integrity()
+      resume_from_checkpoint()
+      reprocess_failed_segments()
+
+# Workflow-Specific Error Handlers
+workflow_handlers:
+
+  user_interview_research:
+    phase_handlers:
+      project_setup:
+        errors:
+          - type: stakeholder_alignment_failure
+            handler: escalate_to_sponsor
+            fallback: defer_project_start
+
+      data_collection:
+        errors:
+          - type: insufficient_participants
+            handler: extend_recruitment
+            fallback: adjust_sample_size
+            notification: research_lead
+
+          - type: transcription_failure
+            handler: retry_with_backoff
+            fallback: manual_transcription
+            quality_check: required
+
+      data_analysis:
+        errors:
+          - type: coding_reliability_failure
+            handler: recalibrate_coders
+            fallback: single_coder_with_review
+            threshold_adjustment: "kappa from 0.7 to 0.6"
+
+          - type: format_conversion_failure
+            handler: use_data_format_converter
+            fallback: manual_format_adjustment
+            validation: strict
+
+      synthesis:
+        errors:
+          - type: pattern_validation_failure
+            handler: expand_analysis_scope
+            fallback: qualify_findings
+            documentation: limitations_section
+
+  rapid_discovery:
+    critical_errors:
+      - type: timeline_breach
+        handler: immediate_escalation
+        decision_required: continue_or_abort
+
+      - type: quality_compromise
+        handler: stakeholder_consultation
+        options:
+          - extend_timeline
+          - reduce_scope
+          - accept_limitations
+
+  conjoint_analysis:
+    statistical_errors:
+      - type: power_analysis_failure
+        handler: recalculate_sample
+        fallback: acknowledge_limitations
+
+      - type: model_convergence_failure
+        handler: adjust_parameters
+        fallback: simpler_model
+        expert_consultation: statistician
+
+# Error Notification Framework
+notification_framework:
+  channels:
+    - email:
+        recipients: [research_lead, project_manager]
+        template: error_notification_template
+    - slack:
+        channel: "#research-alerts"
+        urgency_based: true
+    - dashboard:
+        real_time: true
+        persistent: true
+
+  urgency_levels:
+    critical:
+      response_time: immediate
+      channels: [email, slack, dashboard, sms]
+      escalation: 15_minutes
+
+    high:
+      response_time: 1_hour
+      channels: [email, slack, dashboard]
+      escalation: 4_hours
+
+    medium:
+      response_time: 4_hours
+      channels: [email, dashboard]
+      escalation: 24_hours
+
+    low:
+      response_time: 24_hours
+      channels: [dashboard]
+      escalation: none
+
+# Error Recovery Procedures
+recovery_procedures:
+
+  pre_recovery_validation:
+    steps:
+      - Assess error impact
+      - Identify affected downstream tasks
+      - Calculate recovery cost
+      - Determine recovery strategy
+
+  recovery_execution:
+    steps:
+      - Create recovery checkpoint
+      - Execute recovery handler
+      - Validate recovery success
+      - Update workflow state
+      - Notify stakeholders
+
+  post_recovery_verification:
+    steps:
+      - Verify data integrity
+      - Confirm quality standards
+      - Document recovery actions
+      - Update risk register
+      - Adjust future planning
+
+# Error Logging Specification
+error_logging:
+  required_fields:
+    - timestamp: ISO-8601 format
+    - error_id: UUID
+    - workflow_id: Reference to workflow
+    - phase_id: Current phase
+    - task_id: Affected task
+    - error_type: From error_categories
+    - severity: critical/high/medium/low
+    - description: Detailed error message
+    - stack_trace: If applicable
+    - handler_invoked: Which handler was used
+    - resolution: How resolved
+    - impact: What was affected
+    - prevention: How to prevent recurrence
+
+  retention:
+    hot_storage: 30_days
+    cold_storage: 1_year
+    analysis_required: quarterly
+
+# Prevention Strategies
+prevention_strategies:
+
+  proactive_monitoring:
+    - Resource availability checks
+    - Data quality pre-validation
+    - Capacity planning
+    - Dependency verification
+
+  quality_checkpoints:
+    - Early validation gates
+    - Incremental quality checks
+    - Automated testing
+    - Peer review processes
+
+  redundancy_planning:
+    - Backup tools identified
+    - Alternative workflows documented
+    - Manual fallback procedures
+    - Cross-trained team members
+
+# Implementation Requirements
+implementation:
+  mandatory_handlers:
+    - Every task must have error handling
+    - Every phase must have checkpoint recovery
+    - Every workflow must have escalation path
+    - Every tool integration must have fallback
+
+  testing_requirements:
+    - Error injection testing
+    - Recovery procedure validation
+    - Notification system testing
+    - End-to-end failure scenarios
+
+  documentation:
+    - Error handling runbook
+    - Recovery procedures guide
+    - Escalation contact list
+    - Lessons learned repository
+
+# Metrics and Monitoring
+metrics:
+  error_metrics:
+    - Error rate by type
+    - Mean time to recovery (MTTR)
+    - Recovery success rate
+    - Escalation frequency
+
+  quality_metrics:
+    - Workflow completion rate
+    - Data integrity score
+    - Quality gate pass rate
+    - Manual intervention frequency
+
+  improvement_metrics:
+    - Error recurrence rate
+    - Prevention effectiveness
+    - Handler efficiency
+    - Recovery time trend

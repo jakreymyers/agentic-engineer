@@ -1,0 +1,429 @@
+# Participant Screening Criteria Template
+template:
+  id: screening-criteria-v1
+  name: Participant Screening Questionnaire
+  version: 1.0
+  output:
+    format: markdown
+    filename: research-outputs/screening-questionnaire.md
+    title: "{{project_name}} Participant Screening Questionnaire"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+
+sections:
+  - id: screener-overview
+    title: Screener Overview
+    instruction: |
+      Define the screening objectives and parameters.
+      Set expectations for qualification rates and process.
+    elicit: true
+    owner: research-strategist
+    sections:
+      - id: screening-goals
+        title: Screening Goals
+        type: bullet-list
+        instruction: |
+          What this screener aims to achieve:
+          - Identify target participants efficiently
+          - Ensure sample diversity
+          - Exclude confounding factors
+          - Meet quota requirements
+          - Minimize false positives/negatives
+      - id: target-metrics
+        title: Target Metrics
+        type: structured
+        instruction: |
+          Performance targets:
+          - Expected qualification rate: [X]%
+          - Target completion time: [3-5] minutes
+          - Maximum questions: [10-15]
+          - Dropout rate target: <10%
+      - id: qualification-summary
+        title: Qualification Summary
+        type: table
+        columns: [Criterion, Required, Nice-to-Have, Disqualifier]
+        instruction: High-level participant requirements
+
+  - id: screener-logic
+    title: Screening Logic Design
+    instruction: |
+      Design the logical flow to efficiently identify qualified participants.
+      Minimize time for both qualified and disqualified respondents.
+    elicit: true
+    sections:
+      - id: funnel-structure
+        title: Screening Funnel Structure
+        type: structured
+        instruction: |
+          Progressive filtering approach:
+          Level 1: Basic demographics (age, location)
+          Level 2: Behavioral qualifiers (usage, experience)
+          Level 3: Psychographic qualifiers (attitudes, role)
+          Level 4: Quota management (segments, diversity)
+      - id: branching-logic
+        title: Branching & Routing Logic
+        type: flowchart
+        instruction: |
+          Define routing rules:
+          - Immediate termination triggers
+          - Qualification pathways
+          - Quota full handling
+          - Waitlist routing
+          - Manual review flags
+      - id: scoring-algorithm
+        title: Qualification Scoring
+        type: structured
+        instruction: |
+          If using scoring vs. hard cuts:
+          - Point values per question
+          - Minimum qualification score
+          - Weighting for priority criteria
+          - Tie-breaker rules
+
+  - id: demographic-screening
+    title: Level 1: Demographic Screening
+    instruction: |
+      Basic demographic questions to quickly filter obvious non-matches.
+      These should be fastest to answer and process.
+    elicit: true
+    sections:
+      - id: location-screen
+        title: Geographic Location
+        type: question
+        instruction: |
+          Question: In which country/region do you currently reside?
+          Options: [List relevant locations]
+          Logic: TERMINATE if not in target geography
+      - id: age-screen
+        title: Age Range
+        type: question
+        instruction: |
+          Question: What is your age?
+          Options: Age ranges relevant to study
+          Logic: TERMINATE if outside target range
+      - id: industry-screen
+        title: Industry/Occupation Conflicts
+        type: question
+        instruction: |
+          Question: Are you employed in any of these industries?
+          Options: [Market research, Advertising, Competitors, etc.]
+          Logic: TERMINATE if conflict exists
+      - id: basic-demographics
+        title: Basic Demographics
+        type: questions
+        instruction: |
+          Additional demographic questions:
+          - Gender identity (if relevant)
+          - Education level (if relevant)
+          - Income range (if relevant)
+          Logic: For quota management, not termination
+
+  - id: behavioral-screening
+    title: Level 2: Behavioral Screening
+    instruction: |
+      Questions about relevant behaviors and experiences.
+      Identify people who match target user profile.
+    elicit: true
+    sections:
+      - id: usage-frequency
+        title: Usage/Behavior Frequency
+        type: question
+        instruction: |
+          Question: How often do you [target behavior]?
+          Options: Frequency scale from Never to Daily
+          Logic: TERMINATE if below minimum threshold
+      - id: recency-screen
+        title: Experience Recency
+        type: question
+        instruction: |
+          Question: When did you last [specific action]?
+          Options: Time periods from today to never
+          Logic: TERMINATE if too long ago or never
+      - id: role-involvement
+        title: Role/Involvement Level
+        type: question
+        instruction: |
+          Question: What is your role in [process/decision]?
+          Options: Decision maker to not involved
+          Logic: TERMINATE if insufficient involvement
+      - id: specific-experiences
+        title: Specific Experience Questions
+        type: questions
+        instruction: |
+          Additional behavioral questions:
+          - Tools/platforms used
+          - Specific scenarios experienced
+          - Problems encountered
+          Logic: Build participant profile
+
+  - id: psychographic-screening
+    title: Level 3: Psychographic Screening
+    instruction: |
+      Questions about attitudes, preferences, and mindsets.
+      Ensure participants will provide relevant perspectives.
+    elicit: true
+    sections:
+      - id: attitude-assessment
+        title: Attitude Assessment
+        type: question
+        instruction: |
+          Question: How would you describe your attitude toward [topic]?
+          Options: Scale from very negative to very positive
+          Logic: FLAG extremes for review
+      - id: comfort-level
+        title: Comfort/Confidence Level
+        type: question
+        instruction: |
+          Question: How comfortable are you with [activity/technology]?
+          Options: 5-point comfort scale
+          Logic: TERMINATE if below minimum threshold
+      - id: motivation-check
+        title: Participation Motivation
+        type: question
+        instruction: |
+          Question: Why are you interested in participating?
+          Options: Multiple motivations
+          Logic: FLAG suspicious responses
+      - id: availability-check
+        title: Availability Verification
+        type: question
+        instruction: |
+          Question: Are you available [dates/times]?
+          Options: Specific session slots
+          Logic: TERMINATE if unavailable
+
+  - id: quota-management
+    title: Level 4: Quota Management
+    instruction: |
+      Questions to ensure sample diversity and meet quotas.
+      Balance representation across key segments.
+    elicit: true
+    sections:
+      - id: segment-classification
+        title: Segment Classification
+        type: question
+        instruction: |
+          Question: Which best describes your [segment criterion]?
+          Options: Segment categories
+          Logic: CHECK quota, WAITLIST if full
+      - id: diversity-dimensions
+        title: Diversity Dimensions
+        type: questions
+        instruction: |
+          Questions for sample diversity:
+          - Professional level/seniority
+          - Organization size
+          - Technical expertise
+          - Other relevant dimensions
+          Logic: Monitor distribution
+      - id: quota-tracking
+        title: Quota Tracking Table
+        type: table
+        columns: [Segment, Target N, Current N, Remaining, Status]
+        instruction: Real-time quota monitoring
+
+  - id: validation-questions
+    title: Data Quality Validation
+    instruction: |
+      Questions to ensure response quality and catch fraudulent responses.
+      Include attention checks and consistency validation.
+    elicit: true
+    sections:
+      - id: attention-checks
+        title: Attention Check Questions
+        type: questions
+        instruction: |
+          Hidden attention checks:
+          - "Please select 'Somewhat agree' for this item"
+          - Reverse-coded items
+          - Impossible option detection
+          Logic: TERMINATE if failed
+      - id: consistency-validation
+        title: Consistency Validation
+        type: structured
+        instruction: |
+          Cross-check responses:
+          - Compare related questions
+          - Check logical consistency
+          - Identify contradictions
+          Logic: FLAG for manual review
+      - id: open-end-quality
+        title: Open-End Quality Check
+        type: question
+        instruction: |
+          Question: Briefly describe your experience with [topic]
+          Format: 1-2 sentence text field
+          Logic: Manual review for coherence and relevance
+      - id: red-herrings
+        title: Professional Respondent Detection
+        type: question
+        instruction: |
+          Question: Which of these have you used? [Include fake option]
+          Logic: TERMINATE if fake option selected
+
+  - id: contact-collection
+    title: Contact Information Collection
+    instruction: |
+      Collect contact details from qualified participants.
+      Ensure GDPR/privacy compliance.
+    sections:
+      - id: contact-fields
+        title: Contact Information Fields
+        type: form
+        fields:
+          - First Name (required)
+          - Last Name (required)
+          - Email (required, validated)
+          - Phone (optional)
+          - Preferred contact method (email/phone/text)
+          - Best time to reach (morning/afternoon/evening)
+          - Time zone (if applicable)
+      - id: consent-acknowledgment
+        title: Consent & Acknowledgment
+        type: checkboxes
+        items:
+          - I consent to be contacted for research
+          - I understand I may withdraw at any time
+          - I agree to the privacy policy
+          - I confirm my information is accurate
+      - id: scheduling-preferences
+        title: Scheduling Preferences
+        type: structured
+        instruction: |
+          If applicable, collect:
+          - Preferred days of week
+          - Preferred times
+          - Blackout dates
+          - Session format preference (in-person/remote)
+
+  - id: screener-messages
+    title: Screener Messages & Scripts
+    instruction: |
+      Define all messages participants will see throughout screening.
+      Ensure professional, clear, and respectful communication.
+    sections:
+      - id: introduction-message
+        title: Introduction Message
+        type: text
+        instruction: |
+          Welcome message explaining:
+          - Purpose of screening
+          - Estimated time (3-5 minutes)
+          - Confidentiality assurance
+          - Voluntary participation
+      - id: termination-messages
+        title: Termination Messages
+        type: structured
+        instruction: |
+          Different termination scenarios:
+          - Geographic: "This study requires participants from [location]"
+          - Demographic: "We're looking for participants with different characteristics"
+          - Behavioral: "This study requires specific experience with [topic]"
+          - Quota full: "We've filled spots for your profile, but may contact you for future research"
+          - Quality fail: "Thank you for your time"
+      - id: qualification-message
+        title: Qualification Success Message
+        type: text
+        instruction: |
+          Congratulations message including:
+          - Confirmation of qualification
+          - Next steps timeline
+          - Compensation details
+          - Session format and duration
+          - Contact for questions
+      - id: waitlist-message
+        title: Waitlist Message
+        type: text
+        instruction: |
+          For quota-full but qualified:
+          - Waitlist confirmation
+          - Potential for future contact
+          - No guarantee language
+          - Opt-out instructions
+
+  - id: implementation-specs
+    title: Implementation Specifications
+    instruction: |
+      Technical and operational details for screener deployment.
+      Ensure smooth integration with recruitment process.
+    sections:
+      - id: platform-requirements
+        title: Platform Requirements
+        type: structured
+        instruction: |
+          Technical specifications:
+          - Hosting platform (Qualtrics/TypeForm/etc.)
+          - Mobile responsiveness required
+          - Browser compatibility
+          - Accessibility standards (WCAG AA)
+          - Data export format
+      - id: integration-needs
+        title: Integration Requirements
+        type: bullet-list
+        instruction: |
+          System integrations:
+          - CRM integration for contact management
+          - Calendar integration for scheduling
+          - Email automation for follow-ups
+          - Analytics tracking
+          - Quota management system
+      - id: testing-plan
+        title: Testing & Validation Plan
+        type: structured
+        instruction: |
+          Pre-launch testing:
+          - Test with 5 qualified profiles
+          - Test with 5 disqualified profiles
+          - Test all branching paths
+          - Test on mobile devices
+          - Accessibility testing
+          - Time testing (<5 minutes)
+      - id: launch-plan
+        title: Launch & Monitoring Plan
+        type: structured
+        instruction: |
+          Deployment approach:
+          - Soft launch with limited distribution
+          - Monitor first 20 responses
+          - Adjust based on results
+          - Full launch criteria
+          - Daily monitoring plan
+
+  - id: analysis-reporting
+    title: Screening Analysis & Reporting
+    instruction: |
+      Define how screening data will be analyzed and reported.
+      Enable continuous optimization of recruitment.
+    sections:
+      - id: screening-metrics
+        title: Key Screening Metrics
+        type: table
+        columns: [Metric, Target, Actual, Status]
+        instruction: |
+          Track performance:
+          - Completion rate
+          - Qualification rate
+          - Time to complete
+          - Drop-off by question
+          - Channel performance
+      - id: optimization-plan
+        title: Optimization Plan
+        type: structured
+        instruction: |
+          Continuous improvement:
+          - A/B testing question wording
+          - Reordering for better flow
+          - Adjusting qualification criteria
+          - Channel optimization
+          - Incentive testing
+      - id: reporting-cadence
+        title: Reporting Cadence
+        type: structured
+        instruction: |
+          Stakeholder updates:
+          - Daily: Recruitment numbers
+          - Weekly: Quality metrics
+          - Post-study: Full analysis
+          - Lessons learned documentation

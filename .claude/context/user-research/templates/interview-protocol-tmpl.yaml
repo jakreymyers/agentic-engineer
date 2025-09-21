@@ -1,0 +1,370 @@
+# Interview Execution Protocol Template
+template:
+  id: interview-protocol-v1
+  name: Interview Execution Protocol
+  version: 1.0
+  output:
+    format: markdown
+    filename: research-outputs/interview-protocol.md
+    title: "{{project_name}} Interview Execution Protocol"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+
+sections:
+  - id: protocol-overview
+    title: Protocol Overview & Standards
+    instruction: |
+      Establish the comprehensive framework for interview execution.
+      Define standards, scope, and quality requirements.
+    elicit: true
+    owner: research-orchestrator
+    sections:
+      - id: protocol-scope
+        title: Protocol Scope & Coverage
+        type: structured
+        instruction: |
+          Protocol coverage definition:
+          - Interview phases covered (pre, during, post)
+          - Stakeholder roles and responsibilities
+          - Quality standards and compliance requirements
+          - Risk management and exception handling
+      - id: quality-framework
+        title: Quality Assurance Framework
+        type: structured
+        instruction: |
+          Quality standards:
+          - Data quality thresholds and indicators
+          - Interviewer competency requirements
+          - Participant experience standards
+          - Documentation and audit trail requirements
+
+  - id: pre-interview-phase
+    title: Pre-Interview Phase Protocol
+    instruction: |
+      Comprehensive preparation procedures for successful interviews.
+      Critical foundation for quality data collection.
+    elicit: true
+    sections:
+      - id: participant-preparation
+        title: Participant Preparation Timeline
+        type: timeline-table
+        columns: [Timeframe, Activity, Responsibility, Deliverable, Quality Check]
+        instruction: |
+          Participant preparation sequence:
+          - Initial contact and scheduling (1-2 weeks prior)
+          - Study information and consent sharing (3-5 days prior)
+          - Logistics confirmation and reminders (1 day prior)
+          - Day-of confirmation and tech check (2-4 hours prior)
+      - id: interviewer-preparation
+        title: Interviewer Preparation Checklist
+        type: comprehensive-checklist
+        instruction: |
+          Pre-interview interviewer requirements:
+          - Research context review and participant background
+          - Discussion guide and probe bank familiarization
+          - Technology setup and testing procedures
+          - Materials organization and backup planning
+          - Mental and emotional preparation protocols
+      - id: environment-setup
+        title: Environment Setup Standards
+        type: setup-matrix
+        dimensions: [In-Person, Remote Video, Phone]
+        instruction: |
+          Environment configuration by interview type:
+          - Physical space requirements and optimization
+          - Technology setup and backup systems
+          - Privacy and confidentiality measures
+          - Emergency procedures and contact access
+
+  - id: interview-execution
+    title: Interview Execution Protocol
+    instruction: |
+      Detailed procedures for conducting high-quality interviews.
+      Ensures consistency while maintaining flexibility for participant needs.
+    elicit: true
+    sections:
+      - id: opening-protocol
+        title: Interview Opening Protocol (First 10 minutes)
+        type: step-by-step
+        instruction: |
+          Standardized opening sequence:
+          1. Welcome and initial rapport building (2 min)
+          2. Study overview and purpose explanation (2 min)
+          3. Consent verification and recording initiation (3 min)
+          4. Interview process overview and expectations (2 min)
+          5. Transition to substantive content (1 min)
+      - id: flow-management
+        title: Interview Flow Management
+        type: decision-framework
+        instruction: |
+          Flow management procedures:
+          - Time allocation monitoring (25% checkpoints)
+          - Topic prioritization decision trees
+          - Depth vs. breadth management strategies
+          - Participant energy and engagement assessment
+          - Natural transition identification and execution
+      - id: probing-standards
+        title: Probing & Deep Dive Standards
+        type: structured-guidelines
+        instruction: |
+          Probing execution standards:
+          - Probe selection decision criteria
+          - Maximum probe sequences (3 consecutive limit)
+          - Participant comfort monitoring protocols
+          - Sensitive topic navigation procedures
+          - Information saturation recognition indicators
+
+  - id: crisis-management
+    title: Crisis & Exception Management
+    instruction: |
+      Procedures for handling difficult situations and unexpected events.
+      Prioritizes participant welfare while maintaining research integrity.
+    elicit: true
+    sections:
+      - id: participant-distress
+        title: Participant Distress Response Protocol
+        type: emergency-procedure
+        instruction: |
+          Distress response steps:
+          1. Immediate recognition and acknowledgment
+          2. Interview pause and participant check-in
+          3. Support provision and resource sharing
+          4. Continuation vs. termination decision
+          5. Follow-up care and documentation
+      - id: disclosure-management
+        title: Disclosure & Mandatory Reporting Protocol
+        type: legal-framework
+        instruction: |
+          Disclosure handling procedures:
+          - Recognition of reportable disclosures
+          - Legal obligation explanation to participant
+          - Reporting procedures and timelines
+          - Participant support during process
+          - Documentation and confidentiality balance
+      - id: technical-failures
+        title: Technical Failure Response Protocol
+        type: contingency-plan
+        instruction: |
+          Technology failure management:
+          - Equipment malfunction recognition and response
+          - Backup system activation procedures
+          - Data recovery and protection protocols
+          - Interview continuation vs. rescheduling decisions
+          - Participant communication and expectation management
+
+  - id: interview-closing
+    title: Interview Closing Protocol
+    instruction: |
+      Structured conclusion ensuring participant satisfaction and data integrity.
+      Sets appropriate expectations for follow-up and results sharing.
+    elicit: true
+    sections:
+      - id: closing-sequence
+        title: Structured Closing Sequence (Final 10 minutes)
+        type: step-by-step
+        instruction: |
+          Closing protocol steps:
+          1. Synthesis and final sharing opportunity (4 min)
+          2. Next steps and timeline communication (2 min)
+          3. Contact information and follow-up procedures (2 min)
+          4. Appreciation expression and relationship closure (2 min)
+      - id: immediate-post-interview
+        title: Immediate Post-Interview Protocol (First 30 minutes)
+        type: time-critical-checklist
+        instruction: |
+          Critical post-interview actions:
+          - Recording security and backup verification
+          - Initial reflection notes capture
+          - Quality assessment and flagging
+          - Participant welfare documentation
+          - Technical issues logging
+
+  - id: data-management
+    title: Data Management Protocol
+    instruction: |
+      Comprehensive data handling from collection through analysis preparation.
+      Ensures security, quality, and compliance throughout process.
+    elicit: true
+    sections:
+      - id: data-security
+        title: Data Security & Privacy Protocol
+        type: security-framework
+        instruction: |
+          Data protection procedures:
+          - File encryption and secure storage requirements
+          - Access control and permission management
+          - Anonymization and de-identification processes
+          - Retention period and deletion procedures
+          - Compliance verification (GDPR, CCPA, IRB)
+      - id: data-processing
+        title: Data Processing Initiation Protocol
+        type: workflow
+        instruction: |
+          Processing workflow standards:
+          - File naming and organization conventions
+          - Metadata capture requirements
+          - Transcription request and quality standards
+          - Initial analysis notes and observations
+          - Quality control flag identification and escalation
+
+  - id: quality-assurance
+    title: Quality Assurance & Monitoring
+    instruction: |
+      Continuous quality monitoring and improvement procedures.
+      Ensures research standards are maintained throughout data collection.
+    elicit: true
+    sections:
+      - id: session-quality-assessment
+        title: Session Quality Assessment Criteria
+        type: assessment-matrix
+        dimensions: [Research Coverage, Participant Experience, Data Quality, Protocol Adherence]
+        instruction: |
+          Quality assessment framework:
+          - Research objective coverage completeness
+          - Participant engagement and comfort levels
+          - Data richness and depth evaluation
+          - Protocol compliance verification
+          - Ethical standard maintenance assessment
+      - id: continuous-improvement
+        title: Continuous Improvement Process
+        type: feedback-loop
+        instruction: |
+          Improvement procedures:
+          - Session-by-session learning capture
+          - Pattern identification across interviews
+          - Protocol refinement recommendations
+          - Interviewer skill development planning
+          - Stakeholder feedback integration
+
+  - id: compliance-documentation
+    title: Compliance & Documentation Standards
+    instruction: |
+      Required documentation and audit trail maintenance.
+      Ensures full compliance and research transparency.
+    sections:
+      - id: required-documentation
+        title: Required Documentation Checklist
+        type: comprehensive-checklist
+        instruction: |
+          Documentation requirements:
+          - Informed consent forms and participant communications
+          - Session notes and quality assessments
+          - Incident reports and resolution documentation
+          - Protocol deviation logs with justifications
+          - Training completion and competency records
+      - id: audit-trail
+        title: Audit Trail Maintenance
+        type: documentation-framework
+        instruction: |
+          Audit trail components:
+          - Decision point documentation and rationale
+          - Change management and version control
+          - Quality review and approval records
+          - Stakeholder communication logs
+          - Compliance verification documentation
+
+  - id: training-competency
+    title: Training & Competency Requirements
+    instruction: |
+      Interviewer training standards and competency verification.
+      Ensures consistent, professional interview execution.
+    sections:
+      - id: competency-framework
+        title: Interviewer Competency Framework
+        type: competency-matrix
+        dimensions: [Technical Skills, Interpersonal Skills, Ethical Decision-Making, Crisis Management]
+        instruction: |
+          Required competencies:
+          - Technical interviewing skills (questioning, probing, listening)
+          - Interpersonal skills (rapport, empathy, boundary management)
+          - Ethical decision-making (consent, confidentiality, welfare)
+          - Crisis management (distress, disclosure, emergency response)
+      - id: training-requirements
+        title: Training Requirements & Certification
+        type: training-curriculum
+        instruction: |
+          Training components:
+          - Initial certification training (8-12 hours)
+          - Protocol-specific training and practice
+          - Simulation and role-play exercises
+          - Competency assessment and verification
+          - Ongoing development and recertification
+
+risk_management:
+  high_priority_risks:
+    - id: participant_distress
+      mitigation: Trained response protocols and support resources
+      escalation: Clinical professional consultation available
+    - id: data_breach
+      mitigation: Encryption and access controls
+      escalation: Immediate incident response team activation
+    - id: legal_disclosure
+      mitigation: Clear reporting procedures and legal consultation
+      escalation: Legal counsel and institutional support
+    - id: quality_degradation
+      mitigation: Real-time monitoring and feedback loops
+      escalation: Additional training and protocol refinement
+
+customization_guidelines:
+  by_research_type:
+    exploratory:
+      emphasis: Flexibility and depth exploration
+      modifications: Enhanced probe training and time allocation
+    confirmatory:
+      emphasis: Consistency and standardization
+      modifications: Stricter protocol adherence and measurement
+
+  by_participant_population:
+    vulnerable_populations:
+      enhancements:
+        - Additional consent procedures
+        - Enhanced welfare monitoring
+        - Specialized training requirements
+    expert_participants:
+      modifications:
+        - Technical language preparation
+        - Methodology question handling
+        - Time efficiency focus
+
+  by_interview_format:
+    remote:
+      additional_protocols:
+        - Technology backup and support
+        - Virtual rapport building techniques
+        - Screen sharing and material presentation
+    in_person:
+      additional_protocols:
+        - Physical space management
+        - Materials and equipment handling
+        - Environmental control procedures
+
+compliance_requirements:
+  regulatory:
+    - IRB or ethics committee approval
+    - GDPR/CCPA compliance verification
+    - Institutional policy adherence
+    - Professional standards maintenance
+
+  quality:
+    - Methodology standard compliance
+    - Data quality threshold achievement
+    - Participant experience standards
+    - Research transparency requirements
+
+implementation:
+  pilot_testing:
+    scope: 2-3 practice interviews with feedback incorporation
+    focus: Protocol feasibility and quality assessment
+    refinement: Based on pilot learning and stakeholder feedback
+
+  full_deployment:
+    training: Complete team certification before launch
+    monitoring: Enhanced quality monitoring for initial sessions
+    support: Real-time consultation and problem-solving availability
+
+  continuous_improvement:
+    review_cycle: Weekly quality and compliance review
+    updates: Protocol refinement based on learning and feedback
+    documentation: Change management and version control

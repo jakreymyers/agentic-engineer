@@ -1,0 +1,332 @@
+# Executive Summary Template
+template:
+  id: executive-summary-template-v1
+  name: Executive Summary for C-Level Stakeholders
+  version: 1.0
+  output:
+    format: markdown
+    filename: docs/research/executive-summary.md
+    title: "{{project_name}} Research Executive Summary"
+
+workflow:
+  mode: interactive
+  elicitation: required
+  validation: executive-ready
+
+metadata:
+  created_by: research-reporter
+  reviewed_by: research-orchestrator
+  audience:
+    - ceo
+    - cfo
+    - cpo
+    - cmo
+    - board-members
+  document_type: executive-brief
+  typical_length: 2-5 pages
+  reading_time: 5-10 minutes
+
+sections:
+  - id: bottom-line
+    title: The Bottom Line
+    instruction: |
+      Craft the single most important message in 2-3 sentences that captures:
+      - What we discovered
+      - Why it matters
+      - What we should do about it
+      - The value at stake
+      This should be memorable and quotable for board presentations.
+    elicit: true
+    owner: research-reporter
+    editors: [research-orchestrator]
+    priority: critical
+    style: executive-statement
+    max_words: 75
+
+  - id: research-context
+    title: Research Context
+    instruction: |
+      Brief context in one paragraph:
+      - What triggered this research
+      - Scope and investment (time, resources, participants)
+      - Connection to strategic priorities
+      - Validation approach used
+      Keep it concise - executives need context, not details.
+    elicit: false
+    owner: research-reporter
+    type: single-paragraph
+    max_words: 150
+
+  - id: key-findings
+    title: Three Key Findings
+    instruction: |
+      Present exactly three findings that matter most to the business:
+      Each finding should include:
+      - Compelling headline
+      - One-sentence description
+      - Most impressive data point
+      - Business implication
+      - Confidence level (High/Medium/Low)
+      Order by strategic impact, not research chronology.
+    elicit: true
+    owner: research-reporter
+    editors: [insight-synthesizer]
+    validation: business-impact-required
+    sections:
+      - id: finding-1
+        title: Finding 1
+        type: executive-finding
+        components:
+          headline: "[Action-oriented headline]"
+          description: "[One clear sentence]"
+          evidence: "[Most compelling stat or quote]"
+          impact: "[What this means for the business]"
+          confidence: "[H/M/L with reason]"
+      - id: finding-2
+        title: Finding 2
+        type: executive-finding
+        components: [same-as-above]
+      - id: finding-3
+        title: Finding 3
+        type: executive-finding
+        components: [same-as-above]
+
+  - id: strategic-implications
+    title: Strategic Implications
+    instruction: |
+      Frame findings in strategic business terms:
+      - Revenue opportunity or risk
+      - Cost implications
+      - Competitive positioning
+      - Market timing considerations
+      - Organizational readiness
+      Use specific numbers where possible, ranges where not.
+    elicit: true
+    owner: research-reporter
+    type: strategic-analysis
+    sections:
+      - id: opportunity-sizing
+        title: Opportunity Size
+        type: metrics-box
+        instruction: Quantify the upside potential
+      - id: risk-assessment
+        title: Risk If No Action
+        type: metrics-box
+        instruction: Cost of inaction
+      - id: competitive-angle
+        title: Competitive Advantage
+        type: statement
+        instruction: How this positions us vs competition
+
+  - id: recommendations
+    title: Recommended Actions
+    instruction: |
+      Present recommendations in three time horizons:
+      - Immediate (0-30 days): 1-2 quick wins
+      - Short-term (1-3 months): 2-3 initiatives
+      - Strategic (3-12 months): 1-2 transformations
+      Each with owner, investment, and expected return.
+      Focus on what, not how - executives delegate execution.
+    elicit: true
+    owner: research-reporter
+    validation: owner-required
+    sections:
+      - id: immediate-actions
+        title: Immediate Actions (This Month)
+        type: action-list
+        components:
+          - action: "[Specific action]"
+            owner: "[Executive or team]"
+            investment: "[$ or resources]"
+            impact: "[Expected outcome]"
+      - id: short-term
+        title: Short-term Initiatives (This Quarter)
+        type: action-list
+        components: [same-structure]
+      - id: strategic
+        title: Strategic Investments (This Year)
+        type: action-list
+        components: [same-structure]
+
+  - id: roi-business-case
+    title: Business Case
+    instruction: |
+      Present clear financial logic:
+      - Investment required (total)
+      - Expected return (3-year)
+      - Payback period
+      - Key assumptions
+      - Confidence range
+      Use conservative estimates to maintain credibility.
+    elicit: true
+    owner: research-reporter
+    type: financial-summary
+    format: executive-metrics
+    sections:
+      - id: investment
+        title: Investment Required
+        type: currency-range
+        instruction: Total cost over implementation
+      - id: expected-return
+        title: Expected Return
+        type: currency-range
+        instruction: 3-year benefit projection
+      - id: payback
+        title: Payback Period
+        type: timeframe
+        instruction: When we break even
+      - id: roi-percentage
+        title: ROI
+        type: percentage
+        instruction: Return on investment calculation
+
+  - id: success-metrics
+    title: How We'll Measure Success
+    instruction: |
+      Define 3-5 clear success metrics:
+      - Current baseline
+      - Target improvement
+      - Measurement method
+      - Reporting frequency
+      Executives need to know if it's working.
+    elicit: false
+    owner: research-reporter
+    type: metrics-table
+    columns: [Metric, Current, Target, Method, Frequency]
+    max_rows: 5
+
+  - id: next-steps
+    title: Next Steps & Decision Required
+    instruction: |
+      Be explicit about what you need from executives:
+      - Specific decision required
+      - Timeline for decision
+      - Resources needed
+      - Who should be involved
+      - When you'll report back
+      End with clear call-to-action.
+    elicit: true
+    owner: research-reporter
+    priority: critical
+    sections:
+      - id: decision-needed
+        title: Decision Required
+        type: decision-box
+        instruction: What approval or direction is needed
+      - id: by-when
+        title: Timeline
+        type: deadline
+        instruction: When decision is needed and why
+      - id: next-meeting
+        title: Next Update
+        type: commitment
+        instruction: When and how you'll report progress
+
+  - id: appendix
+    title: Supporting Information
+    condition: additional context needed
+    instruction: |
+      Optional single page with:
+      - Method credibility statement
+      - Additional findings (4-6)
+      - Detailed ROI calculation
+      - Risk mitigation details
+      Only include if adds significant value.
+    elicit: false
+    owner: research-reporter
+    optional: true
+    max_pages: 1
+
+visualization:
+  dashboard:
+    title: Executive Dashboard
+    instruction: |
+      Create one-page visual dashboard showing:
+      - Key metrics at a glance
+      - Opportunity size visualization
+      - Implementation timeline
+      - Confidence levels
+      Design for 10-second scanning.
+    components:
+      - type: big-number
+        metric: opportunity-value
+        label: "Opportunity"
+      - type: gauge
+        metric: confidence-level
+        label: "Confidence"
+      - type: timeline
+        metric: implementation
+        label: "Timeline"
+      - type: comparison
+        metric: roi-projection
+        label: "Investment vs Return"
+
+quality_criteria:
+  executive_readiness:
+    - Answers "So what?" immediately
+    - Clear ask and next steps
+    - ROI clearly articulated
+    - Fits executive attention span
+    - Uses business language, not research jargon
+
+  clarity:
+    - Bottom line in first 30 seconds
+    - No more than 3 main points
+    - Scannable in 60 seconds
+    - Readable at 30,000 feet
+
+  credibility:
+    - Evidence-backed claims
+    - Conservative projections
+    - Confidence levels shown
+    - Limitations acknowledged
+
+validation_rules:
+  - rule: length_limit
+    description: Must not exceed 5 pages
+    severity: critical
+
+  - rule: reading_time
+    description: 10 minute maximum read
+    severity: critical
+
+  - rule: jargon_free
+    description: No research or technical jargon
+    severity: important
+
+  - rule: action_clarity
+    description: Clear next steps defined
+    severity: critical
+
+  - rule: visual_support
+    description: At least one impactful visual
+    severity: recommended
+
+one_page_version:
+  instruction: |
+    Create ultra-condensed one-page version with:
+    - Bottom line (2 sentences)
+    - 3 findings (1 line each)
+    - 3 recommendations (1 line each)
+    - Investment & return (2 numbers)
+    - Decision needed (1 sentence)
+    - Next step (1 action)
+  layout: structured-brief
+  visual_hierarchy: strict
+  white_space: 30%
+
+export_formats:
+  - pdf:
+      layout: executive-brief
+      design: high-impact
+      print_ready: true
+  - powerpoint:
+      slides: 5
+      template: executive-template
+      animations: minimal
+  - one-pager:
+      format: infographic
+      orientation: portrait
+  - email:
+      format: html
+      mobile_responsive: true

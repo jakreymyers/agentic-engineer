@@ -1,0 +1,551 @@
+# Mixed Methods Research Workflow
+# Integrated qualitative and quantitative research approach
+
+workflow:
+  id: mixed-methods-research
+  name: Mixed Methods Research Study
+  version: 1.0
+  description: |
+    Comprehensive workflow integrating qualitative and quantitative
+    research methods for holistic understanding. Combines depth of
+    qualitative insights with breadth of quantitative validation.
+
+  estimated_duration: 4-6 weeks
+  team_size: 3-4 researchers
+  output_artifacts:
+    - Mixed methods research design
+    - Qualitative interview data
+    - Quantitative survey results
+    - Integrated analysis framework
+    - Convergence/divergence analysis
+    - Mixed methods insights report
+    - Validated findings presentation
+    - Meta-inferences documentation
+
+design_types:
+  convergent_parallel:
+    description: Collect qual and quant simultaneously, merge results
+    when_to_use: Equal priority, time-efficient, validation focus
+
+  explanatory_sequential:
+    description: Quant first, then qual to explain
+    when_to_use: Quant primary, need deeper understanding
+
+  exploratory_sequential:
+    description: Qual first, then quant to test/generalize
+    when_to_use: Theory building, scale development
+
+  embedded:
+    description: One method embedded within another
+    when_to_use: Supplementary insights needed
+
+  transformative:
+    description: Mixed methods with social justice lens
+    when_to_use: Advocacy and change focus
+
+phases:
+  - id: design-integration
+    name: Mixed Methods Design
+    duration: 2-3 days
+    agent: research-orchestrator
+    description: |
+      Design integrated research approach balancing
+      qualitative depth with quantitative breadth.
+
+    steps:
+      - id: define-purpose
+        task: establish-research-project
+        focus: mixed-methods
+        outputs:
+          - Research questions (qual & quant)
+          - Integration rationale
+          - Priority weighting
+        quality_gates:
+          - Questions complementary
+          - Rationale clear
+          - Priorities defined
+
+      - id: select-design
+        action: Choose mixed methods design
+        outputs:
+          - Design type selection
+          - Timing decisions
+          - Integration points
+        quality_gates:
+          - Design appropriate
+          - Timing feasible
+          - Integration planned
+
+      - id: develop-framework
+        action: Create integration framework
+        outputs:
+          - Joint display templates
+          - Integration protocol
+          - Quality criteria
+        quality_gates:
+          - Framework comprehensive
+          - Protocol clear
+          - Criteria measurable
+
+    handoff:
+      to: research-strategist
+      artifacts:
+        - Mixed methods design
+        - Integration framework
+        - Research questions
+
+  - id: parallel-planning
+    name: Dual Method Planning
+    duration: 3-4 days
+    agent: research-strategist
+    description: |
+      Develop parallel qualitative and quantitative
+      research protocols with integration points.
+
+    steps:
+      - id: qual-planning
+        action: Design qualitative component
+        outputs:
+          - Interview protocol
+          - Sampling strategy
+          - Analysis approach
+        quality_gates:
+          - Protocol comprehensive
+          - Sample appropriate
+          - Analysis rigorous
+
+      - id: quant-planning
+        action: Design quantitative component
+        outputs:
+          - Survey instrument
+          - Sampling plan
+          - Statistical approach
+        quality_gates:
+          - Instrument valid
+          - Sample powered
+          - Statistics appropriate
+
+      - id: alignment-check
+        action: Ensure method alignment
+        outputs:
+          - Construct mapping
+          - Question alignment
+          - Integration touchpoints
+        quality_gates:
+          - Constructs aligned
+          - Questions complementary
+          - Touchpoints defined
+
+    handoff:
+      to: interview-specialist
+      artifacts:
+        - Dual protocols
+        - Sampling plans
+        - Integration map
+
+  - id: qual-data-collection
+    name: Qualitative Data Collection
+    duration: 1-2 weeks
+    agent: interview-specialist
+    parallel: true
+    description: |
+      Conduct in-depth interviews to explore
+      phenomena and generate rich insights.
+
+    steps:
+      - id: recruit-qual-sample
+        action: Recruit interview participants
+        outputs:
+          - Participant pool (15-25)
+          - Screening completed
+          - Schedule confirmed
+        quality_gates:
+          - Diversity achieved
+          - Criteria met
+          - Availability confirmed
+
+      - id: conduct-interviews
+        task: create-discussion-guide
+        action: Execute interviews
+        outputs:
+          - Interview recordings
+          - Session notes
+          - Emerging themes
+        quality_gates:
+          - Depth achieved
+          - Saturation approaching
+          - Quality maintained
+
+      - id: initial-qual-analysis
+        action: Preliminary thematic analysis
+        outputs:
+          - Initial codes
+          - Emerging patterns
+          - Key quotes
+        quality_gates:
+          - Codes grounded
+          - Patterns emerging
+          - Quotes representative
+
+    handoff:
+      to: data-analyst
+      coordination: sync-point-1
+      artifacts:
+        - Interview data
+        - Initial themes
+        - Key insights
+
+  - id: quant-data-collection
+    name: Quantitative Data Collection
+    duration: 1-2 weeks
+    agent: research-strategist
+    parallel: true
+    description: |
+      Deploy survey to gather broad quantitative
+      data for statistical analysis.
+
+    steps:
+      - id: recruit-quant-sample
+        action: Recruit survey participants
+        tools:
+          - research-participant-manager
+        outputs:
+          - Sample recruited (n>200)
+          - Demographics balanced
+          - Response tracking
+        quality_gates:
+          - Sample size met
+          - Representation good
+          - Response rate >30%
+
+      - id: deploy-survey
+        action: Launch and monitor survey
+        outputs:
+          - Survey responses
+          - Completion metrics
+          - Data quality indicators
+        quality_gates:
+          - Responses valid
+          - Completion >70%
+          - Quality acceptable
+
+      - id: initial-quant-analysis
+        action: Preliminary statistical analysis
+        tools:
+          - research-stats-analyzer
+        outputs:
+          - Descriptive statistics
+          - Initial patterns
+          - Key findings
+        quality_gates:
+          - Data clean
+          - Patterns significant
+          - Findings robust
+
+    handoff:
+      to: data-analyst
+      coordination: sync-point-1
+      artifacts:
+        - Survey data
+        - Statistical results
+        - Key metrics
+
+  - id: integrated-analysis
+    name: Mixed Analysis & Integration
+    duration: 1 week
+    agent: data-analyst
+    description: |
+      Integrate qualitative and quantitative findings
+      using mixed methods analytical techniques.
+
+    steps:
+      - id: separate-analysis
+        action: Complete separate analyses
+        outputs:
+          - Qual findings finalized
+          - Quant results complete
+          - Separate insights documented
+        quality_gates:
+          - Analyses rigorous
+          - Findings clear
+          - Documentation complete
+
+      - id: convergence-analysis
+        action: Identify convergence/divergence
+        outputs:
+          - Convergence points
+          - Divergence areas
+          - Complementary insights
+        quality_gates:
+          - Patterns identified
+          - Differences explained
+          - Complementarity clear
+
+      - id: joint-displays
+        action: Create integrated displays
+        outputs:
+          - Joint display tables
+          - Mixed methods matrices
+          - Integration visuals
+        quality_gates:
+          - Displays clear
+          - Integration evident
+          - Story coherent
+
+      - id: meta-inference
+        action: Develop meta-inferences
+        outputs:
+          - Integrated insights
+          - Higher-order themes
+          - Theoretical propositions
+        quality_gates:
+          - Inferences justified
+          - Themes comprehensive
+          - Theory grounded
+
+    handoff:
+      to: insight-synthesizer
+      artifacts:
+        - Integrated analysis
+        - Joint displays
+        - Meta-inferences
+
+  - id: synthesis-validation
+    name: Synthesis & Validation
+    duration: 3-4 days
+    agent: insight-synthesizer
+    description: |
+      Synthesize mixed findings and validate
+      through triangulation and member checking.
+
+    steps:
+      - id: triangulation
+        action: Triangulate findings
+        outputs:
+          - Triangulation matrix
+          - Validation summary
+          - Confidence assessment
+        quality_gates:
+          - Sources converge
+          - Validation strong
+          - Confidence justified
+
+      - id: develop-model
+        action: Create integrated model
+        outputs:
+          - Conceptual model
+          - Causal pathways
+          - Boundary conditions
+        quality_gates:
+          - Model coherent
+          - Pathways logical
+          - Boundaries clear
+
+      - id: member-validation
+        action: Validate with participants
+        outputs:
+          - Participant feedback
+          - Validation results
+          - Refinements made
+        quality_gates:
+          - Feedback positive
+          - Validity confirmed
+          - Voice preserved
+
+      - id: final-synthesis
+        task: synthesize-cross-interview
+        focus: mixed-methods
+        outputs:
+          - Final synthesis
+          - Integrated insights
+          - Recommendations
+        quality_gates:
+          - Synthesis complete
+          - Insights actionable
+          - Recommendations clear
+
+    handoff:
+      to: research-reporter
+      artifacts:
+        - Validated findings
+        - Integrated model
+        - Final recommendations
+
+  - id: mixed-reporting
+    name: Mixed Methods Reporting
+    duration: 3-4 days
+    agent: research-reporter
+    description: |
+      Create comprehensive mixed methods report
+      showcasing integration and rich insights.
+
+    steps:
+      - id: integrated-report
+        task: generate-research-report
+        style: mixed-methods
+        outputs:
+          - Mixed methods report
+          - Method integration chapter
+          - Joint displays appendix
+        quality_gates:
+          - Integration clear
+          - Methods transparent
+          - Quality demonstrated
+
+      - id: dual-visualization
+        task: design-visualizations
+        approach: qual-quant
+        tools:
+          - research-viz-generator
+        outputs:
+          - Qualitative visuals
+          - Quantitative charts
+          - Integrated graphics
+        quality_gates:
+          - Visuals balanced
+          - Data accurate
+          - Story unified
+
+      - id: executive-communication
+        task: create-executive-summary
+        focus: validated-insights
+        outputs:
+          - Executive presentation
+          - Confidence indicators
+          - Action priorities
+        quality_gates:
+          - Story compelling
+          - Confidence clear
+          - Actions prioritized
+
+    handoff:
+      to: research-orchestrator
+      artifacts:
+        - Mixed methods report
+        - Executive presentation
+        - Supporting materials
+
+  - id: implementation-planning
+    name: Implementation & Action
+    duration: 2-3 days
+    agent: research-orchestrator
+    description: |
+      Plan implementation based on validated
+      mixed methods insights.
+
+    steps:
+      - id: present-findings
+        action: Stakeholder presentation
+        outputs:
+          - Presentation delivered
+          - Q&A addressed
+          - Feedback captured
+        quality_gates:
+          - Understanding achieved
+          - Buy-in secured
+          - Actions agreed
+
+      - id: confidence-planning
+        action: Risk-adjusted planning
+        outputs:
+          - Confidence-based priorities
+          - Risk mitigation plan
+          - Phased approach
+        quality_gates:
+          - Priorities justified
+          - Risks addressed
+          - Phases logical
+
+      - id: measurement-plan
+        action: Define success metrics
+        outputs:
+          - KPI definitions
+          - Measurement protocol
+          - Review schedule
+        quality_gates:
+          - KPIs measurable
+          - Protocol feasible
+          - Schedule agreed
+
+integration_strategies:
+  data_transformation:
+    - Qualitizing: Convert quant to qual
+    - Quantitizing: Convert qual to quant
+    - Data consolidation
+    - Data comparison
+
+  analysis_integration:
+    - Sequential explanatory
+    - Sequential exploratory
+    - Concurrent triangulation
+    - Concurrent nested
+
+  interpretation_integration:
+    - Narrative weaving
+    - Joint displays
+    - Data matrices
+    - Mixed methods tables
+
+  reporting_integration:
+    - Integrated narrative
+    - Contiguous approach
+    - Staged approach
+    - Interactive approach
+
+quality_criteria:
+  inference_quality:
+    - Design quality
+    - Interpretive rigor
+    - Inference transferability
+
+  integration_quality:
+    - Design suitability
+    - Design fidelity
+    - Within-design consistency
+    - Analytic adequacy
+
+  legitimation_types:
+    - Sample integration
+    - Inside-outside
+    - Weakness minimization
+    - Sequential
+    - Conversion
+    - Paradigmatic mixing
+    - Commensurability
+    - Multiple validities
+
+validation_strategies:
+  - Triangulation
+  - Complementarity
+  - Development
+  - Initiation
+  - Expansion
+
+deliverables:
+  required:
+    - Mixed methods research report
+    - Integrated findings presentation
+    - Joint display tables
+    - Meta-inferences document
+    - Executive summary
+
+  optional:
+    - Method comparison analysis
+    - Convergence/divergence matrix
+    - Integrated conceptual model
+    - Validity assessment
+    - Lessons learned
+
+tools_required:
+  - research-participant-manager
+  - intelligent-transcription-service
+  - research-stats-analyzer
+  - research-viz-generator
+  - digital-affinity-mapper
+
+configuration:
+  qual_sample: 15-25 participants
+  quant_sample: 200-500 respondents
+  integration: convergent_parallel
+  priority: equal_weight
+  timeline: concurrent

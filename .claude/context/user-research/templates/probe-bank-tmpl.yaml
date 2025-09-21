@@ -1,0 +1,390 @@
+# Interview Probe Bank Template
+template:
+  id: probe-bank-v1
+  name: Interview Probe Bank & Follow-up Questions
+  version: 1.0
+  output:
+    format: markdown
+    filename: research-outputs/probe-bank.md
+    title: "{{project_name}} Interview Probe Bank"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+
+sections:
+  - id: probe-strategy
+    title: Probe Strategy & Framework
+    instruction: |
+      Establish the strategic approach to probing and follow-up questioning.
+      Define when and how to use different probe types effectively.
+    elicit: true
+    owner: interview-specialist
+    sections:
+      - id: probing-philosophy
+        title: Probing Philosophy & Objectives
+        type: structured
+        instruction: |
+          Strategic probing approach:
+          - Research objectives that require deep exploration
+          - Participant populations and communication considerations
+          - Balance between depth and participant comfort
+          - Integration with main discussion guide flow
+      - id: probe-selection-framework
+        title: Probe Selection Decision Framework
+        type: decision-tree
+        instruction: |
+          When to use which probes:
+          - Response completeness assessment criteria
+          - Participant readiness indicators
+          - Topic sensitivity considerations
+          - Time and energy management factors
+
+  - id: core-probe-categories
+    title: Core Probe Categories
+    instruction: |
+      Comprehensive collection of probe types organized by purpose.
+      Each category serves specific cognitive and research functions.
+    elicit: true
+    sections:
+      - id: clarification-probes
+        title: Clarification Probes
+        type: probe-collection
+        cognitive_function: Address ambiguity and ensure shared understanding
+        usage_strategy: Use when participants use unclear terms or concepts
+        instruction: |
+          Clarification probe bank:
+          - "What do you mean by [specific term]?"
+          - "When you say [X], help me understand..."
+          - "Can you define [concept] in your own words?"
+          - "I want to make sure I understand - are you saying that..."
+          - "Help me picture what [X] looks like..."
+          - "What would [term] include and not include?"
+          - "How would you explain [concept] to someone unfamiliar?"
+
+      - id: elaboration-probes
+        title: Elaboration Probes
+        type: probe-collection
+        cognitive_function: Encourage expansion while maintaining participant's frame
+        usage_strategy: Use when responses seem incomplete or surface-level
+        instruction: |
+          Elaboration probe bank:
+          - "Can you tell me more about that?"
+          - "What else can you share about [topic]?"
+          - "Help me understand the full picture of..."
+          - "What other aspects of [X] are important?"
+          - "Dive deeper into [specific aspect]..."
+          - "What am I missing about [topic]?"
+          - "Keep going with that thought..."
+
+      - id: example-probes
+        title: Example & Story Probes
+        type: probe-collection
+        cognitive_function: Access episodic memory and concrete experiences
+        usage_strategy: Ground abstract concepts in real experiences
+        instruction: |
+          Example-seeking probe bank:
+          - "Can you give me a specific example of that?"
+          - "Tell me about a recent time when..."
+          - "Walk me through a typical [process/experience]..."
+          - "Paint me a picture of what that looked like..."
+          - "What's a story that illustrates [concept]?"
+          - "Think of the last time [situation] happened..."
+          - "Can you describe a specific instance where..."
+
+      - id: contrast-probes
+        title: Contrast & Comparison Probes
+        type: probe-collection
+        cognitive_function: Reveal boundaries, preferences, and relative importance
+        usage_strategy: Understand decision criteria and evaluative frameworks
+        instruction: |
+          Comparison probe bank:
+          - "How does that compare to [alternative]?"
+          - "What's different about [X] versus [Y]?"
+          - "How has that changed over time?"
+          - "What would the opposite of that look like?"
+          - "How does your experience differ from others you know?"
+          - "What makes [X] better or worse than [Y]?"
+          - "If you had to choose between [A] and [B]..."
+
+      - id: sequence-probes
+        title: Sequence & Process Probes
+        type: probe-collection
+        cognitive_function: Access procedural memory and reveal behavioral patterns
+        usage_strategy: Understand workflows, decisions, and temporal relationships
+        instruction: |
+          Process probe bank:
+          - "Walk me through that step by step..."
+          - "What happens before/during/after [event]?"
+          - "Take me through your typical [process]..."
+          - "What's the first thing you do when..."
+          - "How does that sequence usually unfold?"
+          - "What comes next in that process?"
+          - "At what point do you decide to [action]?"
+
+  - id: advanced-probe-types
+    title: Advanced Probe Types
+    instruction: |
+      Sophisticated probing techniques for complex research objectives.
+      Require careful timing and participant rapport.
+    elicit: true
+    sections:
+      - id: emotion-probes
+        title: Emotion & Feeling Probes
+        type: probe-collection
+        cognitive_function: Access affective responses and emotional associations
+        usage_strategy: Use after rapport established; essential for motivation understanding
+        cultural_sensitivity: High - some cultures less comfortable with direct emotional expression
+        instruction: |
+          Emotional probe bank:
+          - "How did that make you feel?"
+          - "What was going through your mind when..."
+          - "What emotions come up around [topic]?"
+          - "How do you feel about [situation] now versus then?"
+          - "What's your gut reaction to [scenario]?"
+          - "What feelings does [X] bring up for you?"
+          - "How would you describe your emotional response to..."
+
+      - id: hypothetical-probes
+        title: Hypothetical & Scenario Probes
+        type: probe-collection
+        cognitive_function: Explore possibilities and reveal values/priorities
+        usage_strategy: Understand aspirations and constraints; note these reveal attitudes not behavior
+        instruction: |
+          Hypothetical probe bank:
+          - "What would need to change for [X] to happen?"
+          - "Imagine if [constraint] weren't an issue..."
+          - "How would you handle [hypothetical situation]?"
+          - "What's your ideal [experience/outcome]?"
+          - "If you could wave a magic wand..."
+          - "In a perfect world, what would [X] look like?"
+          - "What would have to be different for you to [action]?"
+
+      - id: devils-advocate-probes
+        title: Devil's Advocate Probes
+        type: probe-collection
+        cognitive_function: Reveal strength of conviction and counter-arguments
+        usage_strategy: Use sparingly with confident participants; can reveal doubts
+        instruction: |
+          Challenge probe bank:
+          - "Some people might say [opposing view]... how would you respond?"
+          - "What would someone who disagrees argue?"
+          - "How would you convince a skeptic about [position]?"
+          - "What are the downsides or challenges with [approach]?"
+          - "Play devil's advocate with your own view for a moment..."
+          - "What would be the strongest argument against [position]?"
+          - "How might [X] not work in some situations?"
+
+  - id: specialized-probes
+    title: Specialized Probe Categories
+    instruction: |
+      Targeted probes for specific research needs and contexts.
+      Address particular analytical or methodological requirements.
+    elicit: true
+    sections:
+      - id: contextual-probes
+        title: Contextual & Environmental Probes
+        type: probe-collection
+        cognitive_function: Reveal environmental and social influences
+        usage_strategy: Understand broader context shaping experiences
+        instruction: |
+          Context probe bank:
+          - "What else was happening in your life then?"
+          - "How did the environment/setting affect [experience]?"
+          - "Who else was involved in that situation?"
+          - "What external factors influenced [decision]?"
+          - "How did [context] shape your perspective?"
+          - "What was the broader situation around [event]?"
+          - "How did [external factor] play into [decision]?"
+
+      - id: metacognitive-probes
+        title: Meta-Cognitive Probes
+        type: probe-collection
+        cognitive_function: Access metacognition - thinking about thinking
+        usage_strategy: Use with thoughtful participants to understand mental models
+        instruction: |
+          Meta-cognitive probe bank:
+          - "How do you usually think about [topic]?"
+          - "What goes through your decision-making process?"
+          - "How do you know when you've made the right choice?"
+          - "What helps you learn about [subject]?"
+          - "How has your thinking about [X] evolved?"
+          - "What framework do you use to evaluate [situation]?"
+          - "How do you approach problems like [X]?"
+
+      - id: social-probes
+        title: Social & Relational Probes
+        type: probe-collection
+        cognitive_function: Reveal social influences and relationship dynamics
+        usage_strategy: Understand social context and peer influence
+        instruction: |
+          Social probe bank:
+          - "How do others in your life view [topic]?"
+          - "What would your [family/friends/colleagues] say about this?"
+          - "How does [topic] affect your relationships?"
+          - "Who influences your thinking about [subject]?"
+          - "How do you talk about [X] with others?"
+          - "What do people in your [community/field] generally think about [topic]?"
+          - "How does [social context] influence your [behavior/opinion]?"
+
+  - id: topic-specific-probes
+    title: Topic-Specific Probe Banks
+    instruction: |
+      Customized probes tailored to specific research topics and domains.
+      Adapted language and examples for target population and subject matter.
+    elicit: true
+    sections:
+      - id: primary-topic-probes
+        title: "{{primary_topic}} Specific Probes"
+        type: customized-probe-bank
+        instruction: |
+          Topic-specific probe development:
+          - Vocabulary adapted to domain and population
+          - Examples relevant to participant experiences
+          - Depth appropriate to research objectives
+          - Cultural and accessibility considerations
+      - id: secondary-topic-probes
+        title: "{{secondary_topic}} Specific Probes"
+        type: customized-probe-bank
+        instruction: |
+          Secondary topic probe customization:
+          - Connection probes to primary topic
+          - Comparison and contrast opportunities
+          - Transition-appropriate language
+      - id: sensitive-topic-probes
+        title: Sensitive Topic Probes
+        type: trauma-informed-probes
+        condition: Research includes sensitive content
+        instruction: |
+          Sensitive topic probe guidelines:
+          - Trauma-informed language and approach
+          - Participant agency and control emphasis
+          - Support resource integration
+          - De-escalation and safety prioritization
+
+  - id: probe-usage-strategy
+    title: Probe Usage Strategy & Timing
+    instruction: |
+      Strategic framework for deploying probes effectively during interviews.
+      Balances research needs with participant experience and energy.
+    elicit: true
+    sections:
+      - id: timing-strategy
+        title: Probe Timing Strategy
+        type: timing-framework
+        instruction: |
+          Strategic probe deployment:
+          - Early interview: Rapport-building and clarification probes
+          - Mid-interview: Depth exploration and example probes
+          - Late interview: Synthesis and reflection probes
+          - Emergency probes: When interviews stall or lose focus
+      - id: probe-sequencing
+        title: Probe Sequencing & Chaining
+        type: sequencing-guide
+        instruction: |
+          Effective probe sequences:
+          - Maximum 3 consecutive probes before topic shift
+          - Logical progression from general to specific
+          - Emotional probes after comfort established
+          - Meta-cognitive probes with reflective participants
+      - id: participant-adaptation
+        title: Participant-Adapted Probing
+        type: adaptation-matrix
+        dimensions: [Communication Style, Comfort Level, Energy, Cultural Background]
+        instruction: |
+          Probe adaptation strategies:
+          - Verbose participants: Focus and redirect probes
+          - Quiet participants: Encouraging and elaboration probes
+          - Emotional participants: Support and validation probes
+          - Technical participants: Clarification and example probes
+
+  - id: digital-integration
+    title: Digital Probe Bank Integration
+    instruction: |
+      Technology-enabled probe management for real-time interview support.
+      Seamless integration with interview workflow and tools.
+    sections:
+      - id: real_time_access
+        title: Real-Time Probe Access System
+        type: technical-specification
+        instruction: |
+          Digital probe bank features:
+          - Searchable probe database by topic/type
+          - Quick access during live interviews
+          - Mobile-friendly interface for remote interviews
+          - Integration with note-taking and transcription tools
+      - id: usage_tracking
+        title: Probe Usage Tracking & Analytics
+        type: analytics-framework
+        instruction: |
+          Probe effectiveness measurement:
+          - Track which probes generate richest responses
+          - Identify most effective probe sequences
+          - Monitor probe timing and participant response
+          - Generate insights for continuous improvement
+
+probe_quality_standards:
+  design_principles:
+    - Open-ended design encouraging elaboration
+    - Neutral language without leading or loaded terms
+    - Single purpose per probe with clear intent
+    - Natural conversational flow and connection
+    - Appropriate cognitive demand for participant
+
+  cultural_adaptation:
+    considerations:
+      - Direct vs. indirect communication preferences
+      - Authority relationship dynamics
+      - Emotional expression comfort levels
+      - Storytelling vs. analytical response traditions
+      - Time orientation (linear vs. circular)
+
+  accessibility_guidelines:
+    - Clear, simple language appropriate to education level
+    - Consideration of cognitive load and processing time
+    - Visual or auditory accommodation options
+    - Cultural and linguistic sensitivity
+    - Trauma-informed approaches for sensitive topics
+
+common_mistakes:
+  avoid:
+    - Multiple concepts in single probe
+    - Leading or suggestive language
+    - Overwhelming participants with excessive probing
+    - Using probes as primary questions (they're follow-ups)
+    - Interrupting natural storytelling flow
+
+  best_practices:
+    - Listen for natural pause points before probing
+    - Match probe intensity to participant energy
+    - Use silence effectively before additional probing
+    - Acknowledge responses before probing further
+    - Maintain empathy and genuine curiosity
+
+training_materials:
+  interviewer_development:
+    - Probe selection decision tree
+    - Practice scenarios and role-plays
+    - Video examples of effective probing
+    - Common mistake identification and correction
+    - Cultural adaptation workshops
+
+  quick_reference:
+    - Probe category quick cards
+    - Topic-specific probe lists
+    - Emergency probe bank for difficult situations
+    - Transition and recovery phrases
+    - Cultural sensitivity reminders
+
+implementation:
+  pilot_testing:
+    - Test probe effectiveness with practice participants
+    - Validate clarity and neutrality across populations
+    - Assess integration with main discussion guide
+    - Refine based on interviewer feedback and experience
+
+  full_deployment:
+    - Complete interviewer training on probe usage
+    - Digital system setup and testing
+    - Quality monitoring and feedback loops
+    - Continuous refinement based on real-world usage

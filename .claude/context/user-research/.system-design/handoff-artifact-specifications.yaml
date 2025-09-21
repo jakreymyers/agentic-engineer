@@ -1,0 +1,466 @@
+# Handoff Artifact Specifications
+# Ensures clean data transfer between agents with format validation
+
+version: 1.0
+description: |
+  Standardized specifications for all agent-to-agent handoffs.
+  Each artifact has defined format, schema, validation rules, and storage location.
+
+# Orchestrator → Strategist Handoff
+orchestrator_to_strategist:
+  artifacts:
+    research_brief:
+      format: markdown
+      schema:
+        required_sections:
+          - project_overview
+          - research_objectives
+          - success_criteria
+          - constraints
+          - timeline
+      location: /docs/research/briefs/
+      filename_pattern: "{project_id}-research-brief.md"
+      validation:
+        - SMART objectives validated
+        - All sections present
+        - Stakeholder list included
+      size_limit: 10MB
+
+    methodology_selection:
+      format: yaml
+      schema:
+        required_fields:
+          - selected_method: string
+          - rationale: string
+          - alternatives_considered: array
+          - resource_requirements: object
+      location: /docs/research/methodology/
+      filename_pattern: "{project_id}-methodology.yaml"
+      validation:
+        - Valid methodology type
+        - Rationale >100 words
+        - Resources quantified
+
+    project_timeline:
+      format: json
+      schema:
+        required_fields:
+          - phases: array
+          - milestones: array
+          - dependencies: array
+          - critical_path: array
+      location: /docs/project/
+      filename_pattern: "{project_id}-timeline.json"
+      validation:
+        - Dates in ISO format
+        - Dependencies valid
+        - No circular references
+
+# Strategist → Specialist Handoff
+strategist_to_specialist:
+  artifacts:
+    study_design:
+      format: markdown
+      schema:
+        required_sections:
+          - research_approach
+          - sampling_strategy
+          - data_collection_plan
+          - analysis_framework
+      location: /docs/research/design/
+      filename_pattern: "{project_id}-study-design.md"
+      validation:
+        - Sample size justified
+        - Methods appropriate
+        - Timeline realistic
+
+    participant_criteria:
+      format: json
+      schema:
+        required_fields:
+          - inclusion_criteria: array
+          - exclusion_criteria: array
+          - quotas: object
+          - screening_questions: array
+      location: /data/participants/
+      filename_pattern: "{project_id}-criteria.json"
+      validation:
+        - Criteria specific
+        - Quotas sum to total
+        - Questions unbiased
+
+    recruitment_plan:
+      format: yaml
+      schema:
+        required_fields:
+          - channels: array
+          - timeline: object
+          - budget: number
+          - contingency: string
+      location: /docs/recruitment/
+      filename_pattern: "{project_id}-recruitment.yaml"
+      validation:
+        - Channels specified
+        - Budget within limits
+        - Timeline achievable
+
+# Specialist → Analyst Handoff
+specialist_to_analyst:
+  artifacts:
+    interview_transcripts:
+      format: json
+      schema:
+        required_fields:
+          - transcript_id: string
+          - participant_id: string
+          - interview_date: string
+          - duration_minutes: number
+          - segments: array
+            - speaker: string
+            - start_time: string
+            - end_time: string
+            - text: string
+            - confidence: number
+      location: /data/transcripts/
+      filename_pattern: "{participant_id}-transcript.json"
+      validation:
+        - JSON schema valid
+        - Speaker diarization present
+        - Confidence scores included
+        - Text not empty
+
+    session_notes:
+      format: markdown
+      schema:
+        required_sections:
+          - session_context
+          - key_observations
+          - technical_issues
+          - follow_up_items
+      location: /data/notes/
+      filename_pattern: "{participant_id}-notes.md"
+      validation:
+        - All sections present
+        - Observations specific
+        - Issues documented
+
+    recording_metadata:
+      format: json
+      schema:
+        required_fields:
+          - file_path: string
+          - format: string
+          - duration: number
+          - quality_score: number
+          - environment: string
+      location: /data/metadata/
+      filename_pattern: "{participant_id}-metadata.json"
+      validation:
+        - File exists
+        - Format supported
+        - Quality assessed
+
+# Analyst → Synthesizer Handoff (CRITICAL - REQUIRES FORMAT CONVERSION)
+analyst_to_synthesizer:
+  artifacts:
+    coded_data:
+      format: json  # CONVERTED from markdown
+      schema:
+        required_fields:
+          - analysis_id: string
+          - segments: array
+            - segment_id: string
+            - text: string
+            - codes: array
+            - theme: string
+            - confidence: number
+          - themes: array
+            - theme_name: string
+            - definition: string
+            - segment_count: number
+      location: /data/analysis/coded/
+      filename_pattern: "{participant_id}-coded.json"
+      validation:
+        - JSON schema valid
+        - All segments coded
+        - Themes defined
+      conversion:
+        from: markdown
+        to: json
+        tool: data-format-converter
+
+    theme_analysis:
+      format: json
+      schema:
+        required_fields:
+          - themes: array
+            - name: string
+            - prevalence: number
+            - evidence: array
+            - strength: string
+      location: /data/analysis/themes/
+      filename_pattern: "{project_id}-themes.json"
+      validation:
+        - Themes have evidence
+        - Prevalence calculated
+        - Strength justified
+
+    affinity_diagram:
+      format: json
+      schema:
+        required_fields:
+          - insights: array
+            - card_id: string
+            - insight: string
+            - evidence: string
+            - theme: string
+            - tags: array
+            - participant: string
+            - confidence: number
+            - sentiment: string
+          - clusters: array
+            - cluster_id: string
+            - name: string
+            - insights: array
+      location: /data/analysis/affinity/
+      filename_pattern: "{project_id}-affinity.json"
+      validation:
+        - All insights clustered
+        - Evidence linked
+        - Sentiment analyzed
+
+    sentiment_analysis:
+      format: json
+      schema:
+        required_fields:
+          - overall_sentiment: object
+          - aspect_sentiments: array
+          - temporal_patterns: array
+          - emotion_distribution: object
+      location: /data/analysis/sentiment/
+      filename_pattern: "{project_id}-sentiment.json"
+      validation:
+        - Confidence scores present
+        - Aspects identified
+        - Patterns documented
+
+# Synthesizer → Reporter Handoff
+synthesizer_to_reporter:
+  artifacts:
+    synthesis_document:
+      format: markdown
+      schema:
+        required_sections:
+          - executive_summary
+          - key_insights
+          - patterns_themes
+          - user_needs
+          - opportunities
+      location: /docs/synthesis/
+      filename_pattern: "{project_id}-synthesis.md"
+      validation:
+        - Insights actionable
+        - Evidence cited
+        - Patterns validated
+
+    personas:
+      format: json
+      schema:
+        required_fields:
+          - personas: array
+            - id: string
+            - name: string
+            - demographics: object
+            - behaviors: array
+            - needs: array
+            - pain_points: array
+            - quotes: array
+      location: /data/personas/
+      filename_pattern: "{project_id}-personas.json"
+      validation:
+        - Evidence-based
+        - Distinct personas
+        - Quotes authentic
+
+    journey_maps:
+      format: json
+      schema:
+        required_fields:
+          - stages: array
+            - name: string
+            - actions: array
+            - thoughts: array
+            - emotions: array
+            - pain_points: array
+            - opportunities: array
+      location: /data/journeys/
+      filename_pattern: "{project_id}-journey.json"
+      validation:
+        - Stages complete
+        - Emotions tracked
+        - Opportunities identified
+
+    requirements:
+      format: json
+      schema:
+        required_fields:
+          - functional: array
+          - non_functional: array
+          - priority_matrix: object
+          - traceability: array
+      location: /data/requirements/
+      filename_pattern: "{project_id}-requirements.json"
+      validation:
+        - Requirements specific
+        - Priorities assigned
+        - Traceability complete
+
+# Reporter → Orchestrator Handoff (Final)
+reporter_to_orchestrator:
+  artifacts:
+    research_report:
+      format: markdown
+      schema:
+        required_sections:
+          - executive_summary
+          - methodology
+          - findings
+          - insights
+          - recommendations
+          - appendices
+      location: /docs/reports/
+      filename_pattern: "{project_id}-report.md"
+      validation:
+        - All sections complete
+        - Evidence included
+        - Recommendations actionable
+
+    executive_presentation:
+      format: pptx/pdf
+      schema:
+        required_slides:
+          - title
+          - objectives
+          - methodology
+          - key_findings
+          - recommendations
+          - next_steps
+      location: /docs/presentations/
+      filename_pattern: "{project_id}-presentation.{format}"
+      validation:
+        - Within page limit
+        - Visuals included
+        - Story coherent
+
+    visualization_package:
+      format: mixed
+      schema:
+        required_items:
+          - charts: array
+          - infographics: array
+          - dashboards: array
+      location: /docs/visuals/
+      filename_pattern: "{project_id}-visuals/"
+      validation:
+        - High resolution
+        - Accessible
+        - Source files included
+
+    recommendations_matrix:
+      format: json
+      schema:
+        required_fields:
+          - recommendations: array
+            - id: string
+            - description: string
+            - priority: string
+            - effort: string
+            - impact: string
+            - owner: string
+            - timeline: string
+      location: /docs/recommendations/
+      filename_pattern: "{project_id}-recommendations.json"
+      validation:
+        - Priorities justified
+        - Owners assigned
+        - Timelines realistic
+
+# Global Standards
+standards:
+  file_naming:
+    pattern: "{project_id}-{artifact_type}-{version}.{extension}"
+    project_id: "PROJ-YYYY-NNN"
+    version: "v1.0"
+    case: lowercase
+    separators: hyphens
+
+  directory_structure:
+    root: /research/
+    structure:
+      - /docs
+        - /briefs
+        - /design
+        - /reports
+        - /presentations
+      - /data
+        - /raw
+        - /processed
+        - /analysis
+      - /artifacts
+        - /templates
+        - /tools
+
+  metadata:
+    required:
+      - created_date
+      - created_by
+      - last_modified
+      - version
+      - status
+      - quality_check
+
+  versioning:
+    strategy: semantic
+    format: "major.minor.patch"
+    tracking: git
+
+# Validation Rules
+validation:
+  automatic:
+    - schema_compliance
+    - format_validity
+    - required_fields
+    - size_limits
+
+  manual:
+    - content_quality
+    - completeness
+    - accuracy
+    - actionability
+
+  quality_gates:
+    - pre_handoff: validation_required
+    - post_handoff: receipt_confirmed
+    - exceptions: documented
+
+# Error Handling
+error_handling:
+  invalid_format:
+    action: convert_if_possible
+    fallback: reject_with_details
+    notification: sender_and_receiver
+
+  missing_fields:
+    action: request_completion
+    fallback: use_defaults
+    notification: sender
+
+  size_exceeded:
+    action: compress
+    fallback: split_files
+    notification: both_parties
+
+  validation_failure:
+    action: detailed_report
+    fallback: manual_review
+    notification: quality_team

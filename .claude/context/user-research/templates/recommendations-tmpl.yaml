@@ -1,0 +1,466 @@
+# Strategic Recommendations Template
+template:
+  id: recommendations-template-v1
+  name: Strategic Recommendations Framework
+  version: 1.0
+  output:
+    format: markdown
+    filename: docs/research/strategic-recommendations.md
+    title: "{{project_name}} Strategic Recommendations"
+
+workflow:
+  mode: interactive
+  elicitation: prioritization-required
+  validation: action-oriented
+
+metadata:
+  created_by: research-reporter
+  reviewed_by: research-orchestrator
+  audience:
+    - executive-team
+    - product-leadership
+    - implementation-teams
+  document_type: action-framework
+  typical_length: 10-15 pages
+  outcome: prioritized-roadmap
+
+sections:
+  - id: recommendations-overview
+    title: Recommendations Overview
+    instruction: |
+      Provide executive overview of all recommendations:
+      - Total number of recommendations
+      - Distribution across priority levels
+      - Investment summary
+      - Expected impact summary
+      - Implementation timeline overview
+      Create clear picture of what's being proposed.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: executive-summary
+        title: Executive Summary
+        type: overview-metrics
+        components:
+          total_recommendations: "[Number]"
+          critical: "[Count]"
+          high_priority: "[Count]"
+          medium_priority: "[Count]"
+          quick_wins: "[Count]"
+      - id: investment-overview
+        title: Investment Overview
+        type: financial-summary
+        components:
+          total_investment: "$[Amount]"
+          by_phase: "[Breakdown]"
+          expected_return: "$[Amount]"
+          roi_percentage: "[%]"
+      - id: impact-summary
+        title: Impact Summary
+        type: impact-metrics
+        instruction: Key improvements expected
+
+  - id: critical-recommendations
+    title: Critical Recommendations
+    instruction: |
+      Document 3-5 critical recommendations that must be addressed:
+      - Direct connection to major pain points
+      - Significant business impact if not addressed
+      - Clear competitive disadvantage without action
+      - Regulatory or compliance requirements
+      These are non-negotiable for success.
+    elicit: true
+    owner: research-reporter
+    editors: [insight-synthesizer, research-orchestrator]
+    priority: critical
+    validation: evidence-required
+    repeat_for_each: critical_recommendation
+    sections:
+      - id: recommendation-header
+        title: "Recommendation #[X]: [Action Title]"
+        type: recommendation-card
+        components:
+          priority: "CRITICAL"
+          impact: "[High/Transformational]"
+          effort: "[High/Medium/Low]"
+          timeline: "[X months]"
+          confidence: "[High/Medium/Low]"
+      - id: opportunity-statement
+        title: The Opportunity
+        type: structured-narrative
+        components:
+          current_state: "[Problem description]"
+          desired_state: "[Vision of success]"
+          gap_analysis: "[What's preventing success]"
+          value_at_stake: "$[Amount] or [Metric]"
+      - id: recommendation-details
+        title: Recommended Action
+        type: action-plan
+        components:
+          what: "[Specific actions to take]"
+          how: "[Implementation approach]"
+          who: "[Owner and team]"
+          when: "[Timeline with milestones]"
+          where: "[Scope and boundaries]"
+      - id: success-metrics
+        title: Success Metrics
+        type: metrics-table
+        columns: [Metric, Baseline, Target, Timeline, Owner]
+      - id: evidence-base
+        title: Supporting Evidence
+        type: evidence-list
+        components:
+          - finding: "[Research finding #]"
+            strength: "[Evidence strength]"
+            quote: "[Supporting quote if applicable]"
+      - id: investment-return
+        title: Investment & Return
+        type: roi-calculation
+        components:
+          investment:
+            one_time: "$[Amount]"
+            ongoing: "$[Amount/year]"
+            resources: "[FTEs]"
+          returns:
+            year_1: "$[Amount]"
+            year_2: "$[Amount]"
+            year_3: "$[Amount]"
+          payback_period: "[Months]"
+      - id: risks-dependencies
+        title: Risks & Dependencies
+        type: risk-matrix
+        components:
+          risks:
+            - risk: "[Description]"
+              probability: "[H/M/L]"
+              impact: "[H/M/L]"
+              mitigation: "[Strategy]"
+          dependencies:
+            - dependency: "[Description]"
+              owner: "[Team/system]"
+              status: "[Current state]"
+
+  - id: high-priority-recommendations
+    title: High Priority Recommendations
+    instruction: |
+      Document 5-10 high priority recommendations:
+      - Important for competitive advantage
+      - Significant user experience improvements
+      - Meaningful efficiency gains
+      - Strategic capability building
+      These should be done but can be sequenced.
+    elicit: true
+    owner: research-reporter
+    priority: high
+    sections:
+      - id: recommendation-summary
+        title: High Priority Actions
+        type: recommendation-table
+        columns: [Recommendation, Impact, Effort, Timeline, Owner, Status]
+      - id: detailed-recommendations
+        title: Recommendation Details
+        type: expandable-cards
+        instruction: Each with same structure as critical but condensed
+
+  - id: quick-wins
+    title: Quick Wins
+    instruction: |
+      Identify 5-10 quick wins for immediate implementation:
+      - Can be done in <30 days
+      - Minimal investment required (<$10K)
+      - High visibility improvements
+      - Build momentum and trust
+      - Demonstrate research value
+      These create early success and buy-in.
+    elicit: true
+    owner: research-reporter
+    validation: feasibility-check
+    sections:
+      - id: quick-win-list
+        title: Immediate Actions
+        type: action-checklist
+        components:
+          - action: "[Specific quick win]"
+            impact: "[User/business benefit]"
+            effort: "[Days/resources]"
+            owner: "[Who implements]"
+            deadline: "[Date]"
+      - id: implementation-sprint
+        title: 30-Day Sprint Plan
+        type: sprint-timeline
+        instruction: Week-by-week quick win execution
+
+  - id: innovation-opportunities
+    title: Innovation Opportunities
+    condition: transformational recommendations exist
+    instruction: |
+      Present longer-term innovation opportunities:
+      - New product/service possibilities
+      - Market expansion opportunities
+      - Technology transformation potential
+      - Business model innovations
+      Frame as future competitive advantages.
+    elicit: true
+    owner: insight-synthesizer
+    editors: [research-reporter]
+    sections:
+      - id: innovation-portfolio
+        title: Innovation Portfolio
+        type: opportunity-matrix
+        axes: [Impact vs Feasibility]
+      - id: strategic-initiatives
+        title: Strategic Initiatives
+        type: initiative-cards
+        instruction: 2-3 transformational opportunities
+
+  - id: prioritization-framework
+    title: Prioritization Framework
+    instruction: |
+      Apply systematic prioritization:
+      - Impact/Effort matrix placement
+      - RICE scoring calculation
+      - MoSCoW classification
+      - Strategic alignment scoring
+      - Resource availability consideration
+      Make trade-offs transparent.
+    elicit: true
+    owner: research-reporter
+    validation: methodology-documented
+    sections:
+      - id: priority-matrix
+        title: Priority Matrix
+        type: 2x2-matrix
+        axes:
+          x: "Implementation Effort"
+          y: "Business Impact"
+        quadrants:
+          - "Do First (High Impact, Low Effort)"
+          - "Do Next (High Impact, High Effort)"
+          - "Do Later (Low Impact, Low Effort)"
+          - "Don't Do (Low Impact, High Effort)"
+      - id: scoring-table
+        title: Prioritization Scores
+        type: scoring-matrix
+        columns: [Recommendation, Reach, Impact, Confidence, Effort, RICE Score, Priority]
+      - id: trade-offs
+        title: Key Trade-offs
+        type: decision-points
+        instruction: What we're choosing not to do and why
+
+  - id: implementation-roadmap
+    title: Implementation Roadmap
+    instruction: |
+      Create phased implementation plan:
+      - Phase 1: Foundation (0-3 months)
+      - Phase 2: Core Value (3-9 months)
+      - Phase 3: Enhancement (9-18 months)
+      - Phase 4: Transformation (18+ months)
+      Include dependencies, milestones, and decision gates.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: roadmap-visualization
+        title: Implementation Timeline
+        type: gantt-chart
+        components:
+          phases: "[Phase definitions]"
+          milestones: "[Key deliverables]"
+          dependencies: "[Critical paths]"
+          decision_gates: "[Go/no-go points]"
+      - id: phase-details
+        title: Implementation Phases
+        type: phase-breakdown
+        repeat_for_each: phase
+        components:
+          objectives: "[Phase goals]"
+          deliverables: "[Specific outputs]"
+          resources: "[Team and budget]"
+          success_criteria: "[Completion definition]"
+      - id: resource-plan
+        title: Resource Allocation
+        type: resource-timeline
+        instruction: FTEs and budget by phase
+
+  - id: success-measurement
+    title: Success Measurement Framework
+    instruction: |
+      Define comprehensive measurement approach:
+      - Leading indicators (early signals)
+      - Lagging indicators (outcomes)
+      - North Star metric
+      - Baseline measurements
+      - Reporting cadence
+      Enable progress tracking.
+    elicit: true
+    owner: research-reporter
+    editors: [data-analyst]
+    sections:
+      - id: north-star
+        title: North Star Metric
+        type: metric-definition
+        components:
+          metric: "[Primary success measure]"
+          current: "[Baseline]"
+          target: "[Goal]"
+          timeline: "[Achievement date]"
+      - id: metrics-dashboard
+        title: Success Metrics Dashboard
+        type: metrics-framework
+        categories:
+          - category: "User Metrics"
+            metrics: "[List with targets]"
+          - category: "Business Metrics"
+            metrics: "[List with targets]"
+          - category: "Operational Metrics"
+            metrics: "[List with targets]"
+      - id: measurement-plan
+        title: Measurement Plan
+        type: measurement-schedule
+        instruction: What, when, how, and who measures
+
+  - id: change-management
+    title: Change Management Considerations
+    instruction: |
+      Address organizational readiness:
+      - Stakeholder buy-in requirements
+      - Training and enablement needs
+      - Communication plan
+      - Resistance points and mitigation
+      - Cultural shifts required
+      Ensure successful adoption.
+    elicit: false
+    owner: research-reporter
+    sections:
+      - id: stakeholder-impact
+        title: Stakeholder Impact Analysis
+        type: impact-matrix
+        columns: [Stakeholder, Impact, Concerns, Engagement Strategy]
+      - id: enablement-plan
+        title: Enablement Plan
+        type: training-framework
+        instruction: Training and support requirements
+      - id: communication-strategy
+        title: Communication Strategy
+        type: comms-plan
+        instruction: How to build awareness and buy-in
+
+  - id: risk-mitigation
+    title: Risk Mitigation Strategy
+    instruction: |
+      Comprehensive risk management:
+      - Implementation risks
+      - Market risks
+      - Technical risks
+      - Organizational risks
+      - Mitigation strategies for each
+      - Contingency plans
+      Proactively address potential failures.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: risk-register
+        title: Risk Register
+        type: risk-table
+        columns: [Risk, Category, Probability, Impact, Mitigation, Owner, Status]
+      - id: contingency-plans
+        title: Contingency Plans
+        type: scenario-planning
+        instruction: Plan B for critical risks
+
+  - id: next-steps
+    title: Next Steps & Commitments
+    instruction: |
+      Define immediate next actions:
+      - Decisions needed (by whom, by when)
+      - Resources to be allocated
+      - Teams to be formed
+      - Kickoff activities
+      - First milestone
+      - Success celebration plan
+      Create momentum and accountability.
+    elicit: true
+    owner: research-reporter
+    priority: critical
+    sections:
+      - id: immediate-actions
+        title: Immediate Next Steps
+        type: action-list
+        timeline: "Next 2 weeks"
+        components:
+          - action: "[Specific action]"
+            owner: "[Person/role]"
+            deadline: "[Date]"
+            deliverable: "[Output]"
+      - id: decision-required
+        title: Decisions Required
+        type: decision-matrix
+        components:
+          - decision: "[What needs deciding]"
+            decider: "[Who decides]"
+            deadline: "[When]"
+            impact: "[What it unlocks]"
+      - id: commitment-tracker
+        title: Commitment Tracker
+        type: commitment-table
+        instruction: Who committed to what
+
+quality_criteria:
+  actionability:
+    - Specific actions defined
+    - Clear ownership assigned
+    - Realistic timelines set
+    - Resources identified
+    - Success metrics defined
+
+  evidence:
+    - All recommendations traced to findings
+    - Confidence levels stated
+    - Assumptions documented
+    - Validation approach defined
+
+  feasibility:
+    - Resource requirements realistic
+    - Technical feasibility confirmed
+    - Organizational readiness assessed
+    - Dependencies identified
+
+  value:
+    - ROI calculations provided
+    - Impact quantified
+    - Risks assessed
+    - Trade-offs transparent
+
+validation_rules:
+  - rule: action_specificity
+    description: Each recommendation has specific actions
+    severity: critical
+
+  - rule: ownership_clarity
+    description: Every action has an owner
+    severity: critical
+
+  - rule: evidence_traceability
+    description: Recommendations linked to research findings
+    severity: critical
+
+  - rule: roi_justification
+    description: Investment justified by returns
+    severity: important
+
+  - rule: risk_mitigation
+    description: Major risks have mitigation plans
+    severity: important
+
+export_formats:
+  - pdf:
+      layout: professional-framework
+      includes: cover, toc, appendices
+  - excel:
+      format: recommendation-tracker
+      includes: priorities, timeline, resources
+  - presentation:
+      slides: 15-20
+      focus: priorities-and-roadmap
+  - project-plan:
+      format: mpp/smartsheet
+      includes: tasks, dependencies, resources

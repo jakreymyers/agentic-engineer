@@ -1,0 +1,545 @@
+# Coding Framework Template
+
+template:
+  name: coding-framework
+  version: 1.0.0
+  description: Structured coding framework for systematic qualitative analysis
+  author: Data Analyst Agent (Alex)
+  output_format: markdown
+
+metadata:
+  elicit: true
+  instruction: |
+    This template establishes a comprehensive coding framework for qualitative analysis.
+    Each code must be clearly defined with boundaries and examples.
+    The framework should enable consistent application across multiple coders.
+
+# Document Header
+header:
+  elicit: false
+  instruction: Generate framework header with metadata
+  content: |
+    # Coding Framework
+    ## Project: [Project Name]
+    ## Version: [Version Number]
+    ## Created: [Date]
+    ## Last Updated: [Date]
+    ## Primary Coder: [Name]
+
+# Section 1: Framework Overview
+framework_overview:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Establish the theoretical foundation and approach for this coding framework.
+    Define whether inductive, deductive, or hybrid approach is used.
+  content: |
+    ## 1. Framework Overview
+
+    ### Coding Approach
+    - Type: [Inductive/Deductive/Hybrid]
+    - Theoretical Foundation: [If deductive, what theory guides coding]
+    - Development Method: [How codes were developed]
+
+    ### Framework Scope
+    This framework is designed to capture:
+    - [Type of phenomena 1]
+    - [Type of phenomena 2]
+    - [Type of phenomena 3]
+
+    ### Research Questions Addressed
+    1. [Primary RQ this framework helps answer]
+    2. [Secondary RQ]
+    3. [Additional RQ if applicable]
+
+    ### Coding Principles
+    - Mutual Exclusivity: [How to handle overlapping concepts]
+    - Exhaustiveness: [How to ensure comprehensive coverage]
+    - Granularity: [Level of detail for coding]
+    - Unit of Analysis: [What constitutes a codeable segment]
+
+# Section 2: Code Hierarchy Structure
+code_hierarchy:
+  elicit: true
+  owner: data-analyst
+  editors: [data-analyst, insight-synthesizer]
+  instruction: |
+    Present the complete hierarchical structure of codes showing parent-child
+    relationships and organizational logic.
+  content: |
+    ## 2. Code Hierarchy Structure
+
+    ### Hierarchical Overview
+    ```
+    FRAMEWORK ROOT
+    ├── DOMAIN A: [Domain Name]
+    │   ├── Category A1: [Category Name]
+    │   │   ├── Code A1.1: [Code Name]
+    │   │   ├── Code A1.2: [Code Name]
+    │   │   └── Code A1.3: [Code Name]
+    │   └── Category A2: [Category Name]
+    │       ├── Code A2.1: [Code Name]
+    │       └── Code A2.2: [Code Name]
+    ├── DOMAIN B: [Domain Name]
+    │   ├── Category B1: [Category Name]
+    │   │   ├── Code B1.1: [Code Name]
+    │   │   └── Code B1.2: [Code Name]
+    │   └── Category B2: [Category Name]
+    │       └── Code B2.1: [Code Name]
+    └── DOMAIN C: [Domain Name]
+        └── Category C1: [Category Name]
+            ├── Code C1.1: [Code Name]
+            └── Code C1.2: [Code Name]
+    ```
+
+    ### Coding Levels
+    - **Level 1 (Domains):** Broadest organizational categories
+    - **Level 2 (Categories):** Conceptual groupings within domains
+    - **Level 3 (Codes):** Specific codeable phenomena
+    - **Level 4 (Sub-codes):** Optional granular distinctions
+
+# Section 3: Domain Definitions
+domain_definitions:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Define each domain with clear boundaries and scope. Domains are the
+    highest level of organization in the framework.
+  content: |
+    ## 3. Domain Definitions
+
+    ### DOMAIN A: [Domain Name]
+
+    **Definition:** [Comprehensive description of what this domain encompasses]
+
+    **Scope Includes:**
+    - [What falls within this domain]
+    - [Types of content coded here]
+    - [Phenomena captured]
+
+    **Scope Excludes:**
+    - [What does NOT belong in this domain]
+    - [Common misconceptions to avoid]
+
+    **Decision Rules:**
+    - If [condition], then code in this domain
+    - If [alternative condition], then code elsewhere
+
+    ### DOMAIN B: [Domain Name]
+
+    **Definition:** [Comprehensive description of what this domain encompasses]
+
+    **Scope Includes:**
+    - [What falls within this domain]
+    - [Types of content coded here]
+
+    **Scope Excludes:**
+    - [What does NOT belong in this domain]
+
+    **Decision Rules:**
+    - If [condition], then code in this domain
+
+    [Continue for all domains]
+
+# Section 4: Detailed Code Definitions
+code_definitions:
+  elicit: true
+  owner: data-analyst
+  editors: [data-analyst]
+  instruction: |
+    Provide detailed definitions for each code including inclusion/exclusion
+    criteria, examples, and counter-examples for clarity.
+  content: |
+    ## 4. Detailed Code Definitions
+
+    ### Domain A: [Domain Name]
+
+    #### Category A1: [Category Name]
+
+    **A1.1 - [Code Name]**
+    - **Brief Label:** [2-4 words]
+    - **Full Definition:** [Complete description of what this code captures]
+    - **When to Apply:** [Specific conditions for using this code]
+    - **When NOT to Apply:** [Conditions where this code is inappropriate]
+    - **Example Quote:** "[Actual or hypothetical example that fits]"
+    - **Counter Example:** "[Example that seems similar but doesn't fit]"
+    - **Related Codes:** [Other codes that might be confused with this]
+    - **Notes:** [Special considerations or edge cases]
+
+    **A1.2 - [Code Name]**
+    - **Brief Label:** [2-4 words]
+    - **Full Definition:** [Complete description]
+    - **When to Apply:** [Specific conditions]
+    - **When NOT to Apply:** [Exclusion criteria]
+    - **Example Quote:** "[Example text]"
+    - **Counter Example:** "[What doesn't qualify]"
+    - **Related Codes:** [Similar codes to distinguish from]
+    - **Notes:** [Special considerations]
+
+    #### Category A2: [Category Name]
+
+    **A2.1 - [Code Name]**
+    - **Brief Label:** [2-4 words]
+    - **Full Definition:** [Complete description]
+    - **When to Apply:** [Specific conditions]
+    - **When NOT to Apply:** [Exclusion criteria]
+    - **Example Quote:** "[Example text]"
+    - **Counter Example:** "[What doesn't qualify]"
+    - **Related Codes:** [Similar codes]
+    - **Notes:** [Special considerations]
+
+    [Continue for all codes in all categories and domains]
+
+# Section 5: Coding Decision Rules
+coding_rules:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Establish clear rules for common coding decisions and ambiguous situations.
+    These rules ensure consistency across coders and over time.
+  content: |
+    ## 5. Coding Decision Rules
+
+    ### Segment Boundary Rules
+
+    **Rule 1: Meaning Unit Completion**
+    - A segment ends when a complete thought/idea is expressed
+    - New segment begins with topic shift or speaker change
+    - Example: [Show where to split a complex passage]
+
+    **Rule 2: Multiple Codes per Segment**
+    - Segments can receive multiple codes if multiple phenomena present
+    - Limit to [X] codes maximum per segment
+    - Priority order: [Which codes take precedence]
+
+    **Rule 3: Overlapping Content**
+    When content could fit multiple codes:
+    1. Check primary intent/focus
+    2. Consider context
+    3. Apply most specific applicable code
+    4. Document in notes if ambiguous
+
+    ### Special Situations
+
+    **Metaphors and Analogies:**
+    - Code both literal meaning and implied meaning
+    - Flag with "METAPHOR" notation
+
+    **Contradictions:**
+    - Code both positions expressed
+    - Add "CONTRADICTION" flag
+
+    **Uncertainty/Hedging:**
+    - Code the uncertain statement
+    - Add "UNCERTAIN" modifier
+
+    **Off-Topic Content:**
+    - Mark as "OFF-TOPIC" but don't code
+    - Unless reveals important contextual information
+
+    ### Hierarchy Application Rules
+
+    1. **Always code at most specific level**
+       - Don't code at category level if specific code applies
+       - Use parent code only when specificity unclear
+
+    2. **Exhaustive Coding**
+       - Every meaningful segment gets at least one code
+       - "UNCODEABLE" used only for truly incomprehensible content
+
+    3. **Context Consideration**
+       - Review surrounding text before coding
+       - Consider participant's overall narrative
+       - Note when context changes interpretation
+
+# Section 6: Code Frequency Tracking
+frequency_tracking:
+  elicit: false
+  owner: data-analyst
+  instruction: |
+    Create structure for tracking code frequency and distribution across data.
+  content: |
+    ## 6. Code Frequency Tracking
+
+    ### Frequency Table Template
+
+    | Code | Domain | Category | Frequency | % of Segments | # of Sources |
+    |------|---------|----------|-----------|---------------|--------------|
+    | A1.1 | A | A1 | [n] | [%] | [n sources] |
+    | A1.2 | A | A1 | [n] | [%] | [n sources] |
+    | A1.3 | A | A1 | [n] | [%] | [n sources] |
+
+    ### Co-occurrence Matrix
+
+    | Code | A1.1 | A1.2 | A1.3 | B1.1 | B1.2 |
+    |------|------|------|------|------|------|
+    | A1.1 | - | [n] | [n] | [n] | [n] |
+    | A1.2 | [n] | - | [n] | [n] | [n] |
+    | A1.3 | [n] | [n] | - | [n] | [n] |
+
+    ### Distribution Patterns
+    - Most frequent code: [Code name] ([n] occurrences)
+    - Least used code: [Code name] ([n] occurrences)
+    - Universal codes (all sources): [List]
+    - Rare codes (<3 occurrences): [List]
+
+# Section 7: Inter-Rater Reliability
+reliability_protocol:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Establish protocol for ensuring and measuring coding reliability when
+    multiple coders are involved.
+  content: |
+    ## 7. Inter-Rater Reliability Protocol
+
+    ### Reliability Standards
+    - Target Agreement: ≥80% simple agreement
+    - Target Kappa: ≥0.70 (substantial agreement)
+    - Resolution Method: Consensus through discussion
+
+    ### Calibration Process
+
+    **Phase 1: Initial Training**
+    1. All coders review framework together
+    2. Code same practice transcript
+    3. Discuss all discrepancies
+    4. Refine code definitions as needed
+
+    **Phase 2: Reliability Testing**
+    1. Independently code [n] test segments
+    2. Calculate agreement statistics
+    3. Discuss disagreements
+    4. Recode if below threshold
+
+    **Phase 3: Ongoing Monitoring**
+    1. Overlap [%] of all transcripts
+    2. Weekly reliability checks
+    3. Document and resolve discrepancies
+    4. Update framework as needed
+
+    ### Disagreement Resolution
+
+    | Disagreement Type | Resolution Approach | Documentation |
+    |-------------------|-------------------|---------------|
+    | Code choice | Discuss intent, check definition | Note in log |
+    | Segment boundary | Review context, agree on break | Update rules |
+    | Multiple codes | Verify all applicable codes | Clarify hierarchy |
+    | Interpretation | Return to raw data, seek consensus | Refine definition |
+
+    ### Reliability Tracking
+
+    | Coder Pair | Date | Segments | Agreement % | Kappa | Notes |
+    |------------|------|----------|-------------|-------|-------|
+    | [A-B] | [Date] | [n] | [%] | [κ] | [Issues] |
+    | [A-C] | [Date] | [n] | [%] | [κ] | [Issues] |
+
+# Section 8: Framework Evolution
+framework_evolution:
+  elicit: true
+  owner: data-analyst
+  editors: [data-analyst, insight-synthesizer]
+  instruction: |
+    Document how the framework can evolve during analysis including criteria
+    for adding, modifying, or retiring codes.
+  content: |
+    ## 8. Framework Evolution
+
+    ### Modification Triggers
+
+    **Adding New Codes:**
+    Criteria for code addition:
+    - Phenomenon appears ≥[3] times
+    - Not captured by existing codes
+    - Relevant to research questions
+    - Team consensus achieved
+
+    **Modifying Existing Codes:**
+    Criteria for modification:
+    - Consistent misapplication noted
+    - Definition lacks clarity
+    - Scope too broad/narrow
+    - Better terminology identified
+
+    **Retiring Codes:**
+    Criteria for removal:
+    - Never or rarely used (<[2] instances)
+    - Redundant with other code
+    - Not relevant to analysis
+    - Conceptually problematic
+
+    ### Change Management Process
+
+    1. **Proposal:** Document proposed change with rationale
+    2. **Review:** Team discusses impact on existing coding
+    3. **Decision:** Consensus or majority vote
+    4. **Implementation:** Update framework and recode if needed
+    5. **Documentation:** Log change with date and reason
+
+    ### Version Control
+
+    | Version | Date | Changes Made | Rationale | Impact |
+    |---------|------|--------------|-----------|---------|
+    | 1.0 | [Date] | Initial framework | Baseline | N/A |
+    | 1.1 | [Date] | Added code X.X | [Why needed] | [What recoded] |
+    | 1.2 | [Date] | Modified definition Y.Y | [Why changed] | [Effect on analysis] |
+
+# Section 9: Application Guidelines
+application_guidelines:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Provide practical guidance for coders applying this framework including
+    tips, common mistakes, and best practices.
+  content: |
+    ## 9. Application Guidelines
+
+    ### Pre-Coding Preparation
+    - [ ] Read entire transcript once without coding
+    - [ ] Note initial impressions
+    - [ ] Review research questions
+    - [ ] Have framework readily accessible
+    - [ ] Set up coding environment
+
+    ### During Coding Process
+
+    **Best Practices:**
+    - Code in consistent time blocks (e.g., 2-hour sessions)
+    - Take breaks to maintain focus
+    - Review previous coding before starting new session
+    - Keep memos of coding decisions
+    - Flag uncertainties for team discussion
+
+    **Common Mistakes to Avoid:**
+    - ❌ Coding while reading first time
+    - ❌ Forcing text into inappropriate codes
+    - ❌ Ignoring context around segments
+    - ❌ Over-coding (too many codes per segment)
+    - ❌ Under-coding (missing important content)
+
+    ### Quality Checks
+
+    **Self-Review Questions:**
+    1. Would another coder make the same decision?
+    2. Is this the most specific applicable code?
+    3. Have I considered alternative interpretations?
+    4. Is my coding consistent with earlier decisions?
+    5. Am I staying true to participant's meaning?
+
+    ### Efficiency Tips
+    - Create keyboard shortcuts for frequent codes
+    - Use consistent naming for memos
+    - Batch similar decisions
+    - Review framework regularly to internalize
+    - Keep example quotes handy for reference
+
+# Section 10: Memo Template
+memo_template:
+  elicit: false
+  owner: data-analyst
+  instruction: |
+    Provide template for analytical memos that coders should maintain
+    during the coding process.
+  content: |
+    ## 10. Memo Template
+
+    ### Coding Session Memo
+
+    **Date:** [Date]
+    **Coder:** [Name]
+    **Document:** [Transcript ID]
+    **Session Duration:** [Time]
+
+    #### Coding Decisions
+    | Segment | Decision | Rationale | Confidence |
+    |---------|----------|-----------|------------|
+    | [Location] | [What decided] | [Why] | [High/Med/Low] |
+
+    #### Emerging Patterns Noticed
+    - [Pattern observation 1]
+    - [Pattern observation 2]
+
+    #### Framework Issues
+    - [Any codes that don't quite fit]
+    - [Suggested modifications needed]
+
+    #### Questions for Team
+    - [Uncertainty 1]
+    - [Uncertainty 2]
+
+    #### Reflexivity Notes
+    [How coder's perspective might be influencing coding]
+
+# Section 11: Export Format
+export_format:
+  elicit: false
+  owner: data-analyst
+  instruction: |
+    Define how coded data should be exported for further analysis.
+  content: |
+    ## 11. Export Format
+
+    ### Standard Export Structure
+
+    ```csv
+    SegmentID,TranscriptID,StartLine,EndLine,Text,Code1,Code2,Code3,Memo
+    001,P001,10,12,"Quote text",A1.1,B2.1,,Note
+    002,P001,13,15,"Quote text",A1.2,,,Note
+    ```
+
+    ### Export Fields
+    - **SegmentID:** Unique identifier
+    - **TranscriptID:** Source document
+    - **StartLine/EndLine:** Location in transcript
+    - **Text:** Actual coded text
+    - **Code1-3:** Applied codes (expandable)
+    - **Memo:** Any notes or flags
+
+    ### Export Options
+    - Format: CSV, Excel, SPSS, NVivo Exchange
+    - Grouping: By transcript, by code, by category
+    - Inclusions: With/without memos, with/without context
+
+# Section 12: Quality Assurance
+quality_assurance:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Final quality checks to ensure framework is comprehensive and usable.
+  content: |
+    ## 12. Quality Assurance Checklist
+
+    ### Framework Completeness
+    - [ ] All domains clearly defined
+    - [ ] All categories properly nested
+    - [ ] All codes have full definitions
+    - [ ] Examples provided for each code
+    - [ ] Counter-examples included
+    - [ ] Decision rules specified
+
+    ### Framework Usability
+    - [ ] Codes mutually exclusive where intended
+    - [ ] Exhaustive coverage of phenomena
+    - [ ] Appropriate granularity level
+    - [ ] Clear hierarchical structure
+    - [ ] Consistent naming conventions
+
+    ### Documentation Quality
+    - [ ] Version control established
+    - [ ] Change process defined
+    - [ ] Reliability protocol clear
+    - [ ] Application guidelines practical
+    - [ ] Export format specified
+
+    ### Ready for Use
+    - [ ] Team trained on framework
+    - [ ] Practice coding completed
+    - [ ] Reliability tested
+    - [ ] Framework validated against data
+    - [ ] All materials accessible to coders
+
+completion:
+  instruction: |
+    Finalize framework document and create quick reference guide for coders.
+    Ensure all team members have access and understanding before beginning
+    full-scale coding.

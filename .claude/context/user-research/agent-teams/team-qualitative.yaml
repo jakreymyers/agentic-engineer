@@ -1,0 +1,13 @@
+# User Research Team - Qualitative
+bundle:
+  name: Research Team Qualitative
+  icon: 💬
+  description: Specialized team for interviews, ethnography, and qualitative analysis.
+agents:
+  - research-orchestrator
+  - interview-specialist
+  - data-analyst
+  - insight-synthesizer
+workflows:
+  - user-interview-research.yaml
+  - ethnographic-research.yaml

@@ -1,0 +1,460 @@
+# Transcript Analysis Framework Template
+
+template:
+  name: transcript-analysis-framework
+  version: 1.0.0
+  description: Comprehensive framework for systematic transcript analysis with multi-pass coding
+  author: Data Analyst Agent (Alex)
+  output_format: markdown
+
+metadata:
+  elicit: true
+  instruction: |
+    This template guides systematic transcript analysis through multiple coding passes.
+    Each section requires careful consideration and user validation.
+    Document all analytical decisions for transparency and reproducibility.
+
+# Document Header
+header:
+  elicit: false
+  instruction: Generate document header with metadata
+  content: |
+    # Transcript Analysis Framework
+    ## Project: [Project Name]
+    ## Participant: [ID]
+    ## Analysis Date: [Date]
+    ## Analyst: [Name]
+
+# Section 1: Analysis Context
+analysis_context:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Establish the context for this transcript analysis including research objectives,
+    participant background, and interview circumstances. This grounds the analysis
+    in its proper context.
+  content: |
+    ## 1. Analysis Context
+
+    ### Research Questions
+    This analysis addresses the following research questions:
+    1. [Primary research question]
+    2. [Secondary research question]
+    3. [Additional questions if applicable]
+
+    ### Participant Profile
+    - Participant ID: [Identifier]
+    - Demographics: [Relevant characteristics]
+    - Recruitment criteria met: [How qualified]
+    - Interview context: [When, where, how conducted]
+
+    ### Interview Dynamics
+    - Rapport level: [High/Medium/Low]
+    - Participant engagement: [Engaged/Reserved/Variable]
+    - Notable circumstances: [Any affecting factors]
+    - Interview duration: [Length in minutes]
+
+# Section 2: Initial Immersion
+initial_immersion:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Document first impressions from initial read-through without formal coding.
+    Capture gut reactions, emotional tone, and emergent observations.
+  content: |
+    ## 2. Initial Immersion (Pass 1)
+
+    ### Overall Impressions
+    [First reactions to the transcript as a whole]
+
+    ### Emotional Tone
+    - Dominant emotions expressed: [List]
+    - Emotional trajectory: [How emotions changed]
+    - Intensity levels: [High/moderate/low affect]
+
+    ### Key Topics Surfaced
+    Initial topics noticed (unstructured):
+    - [Topic 1 - frequency noted]
+    - [Topic 2 - frequency noted]
+    - [Topic 3 - frequency noted]
+
+    ### Surprising Elements
+    Unexpected findings or statements:
+    - [Surprising element 1]
+    - [Surprising element 2]
+
+    ### Initial Questions
+    Questions arising from first read:
+    - [Question about meaning or context]
+    - [Area needing exploration]
+
+# Section 3: Open Coding Results
+open_coding:
+  elicit: true
+  owner: data-analyst
+  editors: [data-analyst, insight-synthesizer]
+  instruction: |
+    Present results from line-by-line open coding. Include code definitions,
+    frequencies, and examples. This forms the foundation for pattern identification.
+  content: |
+    ## 3. Open Coding Results (Pass 2)
+
+    ### Coding Statistics
+    - Total segments coded: [Number]
+    - Unique codes created: [Number]
+    - Code density: [Codes per page/minute]
+
+    ### Code Inventory
+
+    | Code | Definition | Frequency | Example Quote |
+    |------|------------|-----------|---------------|
+    | [Code_Name_1] | [What this code represents] | [n] | "[Representative excerpt]" |
+    | [Code_Name_2] | [What this code represents] | [n] | "[Representative excerpt]" |
+    | [Code_Name_3] | [What this code represents] | [n] | "[Representative excerpt]" |
+
+    ### In-Vivo Codes
+    Codes using participant's exact words:
+    - "[Participant phrase]" - used for [concept]
+    - "[Participant phrase]" - used for [concept]
+
+    ### Coding Decisions Log
+    Key decisions made during coding:
+    - [Boundary decision: where one code ended and another began]
+    - [Ambiguous passage: how interpretation was resolved]
+    - [New code creation: why needed beyond existing codes]
+
+# Section 4: Category Development
+category_development:
+  elicit: true
+  owner: data-analyst
+  editors: [data-analyst, insight-synthesizer]
+  instruction: |
+    Document how codes were organized into categories through axial coding.
+    Show the hierarchical structure and relationships between categories.
+  content: |
+    ## 4. Category Development (Pass 3)
+
+    ### Category Framework
+
+    #### Category A: [Category Name]
+    Definition: [What this category encompasses]
+    Properties: [Key characteristics]
+
+    Constituent Codes:
+    - [Code 1] - [Why included]
+    - [Code 2] - [Why included]
+    - [Code 3] - [Why included]
+
+    Dimensional Range: [Low end] ← → [High end]
+
+    #### Category B: [Category Name]
+    Definition: [What this category encompasses]
+    Properties: [Key characteristics]
+
+    Constituent Codes:
+    - [Code 4] - [Why included]
+    - [Code 5] - [Why included]
+
+    Dimensional Range: [Low end] ← → [High end]
+
+    ### Category Relationships
+
+    | Category 1 | Relationship Type | Category 2 | Evidence |
+    |------------|------------------|------------|----------|
+    | [Cat A] | [Causes/Enables/Conflicts] | [Cat B] | [Supporting quote] |
+    | [Cat B] | [Precedes/Follows] | [Cat C] | [Supporting quote] |
+
+    ### Conceptual Model
+    ```
+    [Visual representation of category relationships]
+    ```
+
+# Section 5: Theme Integration
+theme_integration:
+  elicit: true
+  owner: data-analyst
+  editors: [data-analyst, insight-synthesizer]
+  instruction: |
+    Present integrated themes from selective coding. Show how categories
+    combine into coherent themes with clear narratives.
+  content: |
+    ## 5. Theme Integration (Pass 4)
+
+    ### Core Theme
+    **[Central Phenomenon Name]**
+
+    Narrative: [2-3 paragraphs explaining the core story that emerges
+    from the data, how different categories relate to this central
+    phenomenon, and what it means for understanding the research topic]
+
+    ### Supporting Themes
+
+    #### Theme 1: [Theme Name]
+    Definition: [One sentence capturing essence]
+
+    Supporting Categories:
+    - [Category A] - [How it supports theme]
+    - [Category C] - [How it supports theme]
+
+    Key Evidence:
+    > "[Powerful supporting quote 1]" (Line X)
+    > "[Powerful supporting quote 2]" (Line Y)
+
+    #### Theme 2: [Theme Name]
+    Definition: [One sentence capturing essence]
+
+    Supporting Categories:
+    - [Category B] - [How it supports theme]
+    - [Category D] - [How it supports theme]
+
+    Key Evidence:
+    > "[Powerful supporting quote 1]" (Line X)
+    > "[Powerful supporting quote 2]" (Line Y)
+
+    ### Theme Validation
+    - [ ] Themes appear across transcript
+    - [ ] Multiple supporting quotes per theme
+    - [ ] Themes address research questions
+    - [ ] Negative cases examined
+    - [ ] Saturation assessed
+
+# Section 6: Theoretical Development
+theoretical_development:
+  elicit: true
+  owner: data-analyst
+  editors: [data-analyst, insight-synthesizer]
+  instruction: |
+    Develop theoretical insights from the analysis. Connect patterns to
+    existing theory or propose new theoretical contributions.
+  content: |
+    ## 6. Theoretical Development (Pass 5)
+
+    ### Theoretical Model
+
+    #### Antecedents
+    Conditions leading to phenomenon:
+    - [Condition 1]: [How it triggers phenomenon]
+    - [Condition 2]: [How it enables phenomenon]
+
+    #### Core Process
+    How the phenomenon unfolds:
+    1. [Stage 1]: [What happens first]
+    2. [Stage 2]: [What follows]
+    3. [Stage 3]: [Resolution or outcome]
+
+    #### Outcomes
+    Results of the phenomenon:
+    - [Outcome 1]: [Immediate effect]
+    - [Outcome 2]: [Longer-term impact]
+
+    #### Moderating Factors
+    What influences the process:
+    - [Factor 1]: [How it strengthens/weakens]
+    - [Factor 2]: [When it applies]
+
+    ### Pattern Confirmation
+
+    | Pattern | Frequency | Strength | Exceptions |
+    |---------|-----------|----------|------------|
+    | [Pattern 1] | [How often] | [Strong/Moderate/Weak] | [When doesn't apply] |
+    | [Pattern 2] | [How often] | [Strong/Moderate/Weak] | [When doesn't apply] |
+
+    ### Theoretical Contribution
+    This analysis contributes to understanding by:
+    - [New insight about phenomenon]
+    - [Challenge to existing assumption]
+    - [Extension of current theory]
+
+# Section 7: Key Quotes Repository
+quotes_repository:
+  elicit: false
+  owner: data-analyst
+  instruction: |
+    Compile powerful quotes organized by theme for use in reporting.
+    Include line numbers for traceability.
+  content: |
+    ## 7. Key Quotes Repository
+
+    ### Theme: [Theme Name]
+
+    #### Illustrative Quotes
+    > "[Complete quote that perfectly captures theme]"
+    > - Participant [ID], Line [X]
+
+    > "[Another powerful example]"
+    > - Participant [ID], Line [Y]
+
+    #### Contrasting Perspective
+    > "[Quote showing different view or exception]"
+    > - Participant [ID], Line [Z]
+
+    ### Theme: [Theme Name]
+
+    #### Illustrative Quotes
+    > "[Complete quote that perfectly captures theme]"
+    > - Participant [ID], Line [X]
+
+    [Continue for all themes]
+
+# Section 8: Analytical Memos
+analytical_memos:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Document analytical decisions, reflexivity, and methodological notes.
+    This creates transparency and allows others to understand your process.
+  content: |
+    ## 8. Analytical Memos
+
+    ### Analytical Decisions
+
+    #### Decision Point 1: [Decision needed]
+    Options considered:
+    - Option A: [Description]
+    - Option B: [Description]
+
+    Decision made: [Which option]
+    Rationale: [Why this choice]
+
+    #### Decision Point 2: [Decision needed]
+    Options considered:
+    - Option A: [Description]
+    - Option B: [Description]
+
+    Decision made: [Which option]
+    Rationale: [Why this choice]
+
+    ### Reflexivity Statement
+
+    #### Researcher Position
+    [How your background/assumptions might influence analysis]
+
+    #### Bias Mitigation
+    Steps taken to ensure analytical rigor:
+    - [Mitigation strategy 1]
+    - [Mitigation strategy 2]
+
+    ### Methodological Notes
+
+    #### Coding Approach
+    - Framework used: [Inductive/Deductive/Hybrid]
+    - Software used: [Manual/NVivo/Atlas.ti/Other]
+    - Collaboration: [Solo/Team approach]
+
+    #### Quality Measures
+    - Inter-rater reliability: [If applicable]
+    - Member checking: [If conducted]
+    - Peer debriefing: [If conducted]
+
+# Section 9: Saturation Assessment
+saturation_assessment:
+  elicit: false
+  owner: data-analyst
+  instruction: |
+    Assess and document whether data saturation was achieved and when
+    new information stopped emerging from the analysis.
+  content: |
+    ## 9. Saturation Assessment
+
+    ### Information Richness Tracking
+
+    | Analysis Stage | New Codes | New Categories | New Themes |
+    |----------------|-----------|----------------|------------|
+    | First 25% | [n] | [n] | [n] |
+    | Second 25% | [n] | [n] | [n] |
+    | Third 25% | [n] | [n] | [n] |
+    | Final 25% | [n] | [n] | [n] |
+
+    ### Saturation Indicators
+    - Point of code saturation: [When no new codes emerged]
+    - Point of thematic saturation: [When themes stabilized]
+    - Confidence in completeness: [High/Medium/Low]
+
+    ### Recommendation
+    - [ ] Saturation achieved - analysis complete
+    - [ ] Near saturation - one more transcript recommended
+    - [ ] Not saturated - additional data needed
+
+# Section 10: Integration Notes
+integration_notes:
+  elicit: true
+  owner: data-analyst
+  editors: [insight-synthesizer, research-reporter]
+  instruction: |
+    Document how this analysis connects to other project components and
+    what should be carried forward to synthesis and reporting.
+  content: |
+    ## 10. Integration Notes
+
+    ### Cross-Case Comparison Points
+    Elements to compare across participants:
+    - [Theme/pattern to track]
+    - [Unique perspective to explore]
+    - [Contradiction to investigate]
+
+    ### Synthesis Priorities
+    Key findings for synthesis phase:
+    1. [Most important finding]
+    2. [Second priority finding]
+    3. [Third priority finding]
+
+    ### Reporting Highlights
+    Elements that must appear in final report:
+    - [Critical insight]
+    - [Powerful quote]
+    - [Important pattern]
+
+    ### Further Analysis Needed
+    - [ ] [Additional analysis required]
+    - [ ] [Follow-up question to explore]
+    - [ ] [Validation needed]
+
+    ### Handoff to Next Phase
+    - Files created: [List of outputs]
+    - Next analyst: [Who continues work]
+    - Special notes: [Anything unusual to flag]
+
+# Section 11: Quality Checklist
+quality_checklist:
+  elicit: false
+  owner: data-analyst
+  instruction: |
+    Final quality assurance checklist to ensure comprehensive analysis.
+  content: |
+    ## 11. Quality Checklist
+
+    ### Coding Quality
+    - [ ] All relevant segments coded
+    - [ ] Code definitions clear and distinct
+    - [ ] Coding decisions documented
+    - [ ] Consistency maintained throughout
+
+    ### Analysis Depth
+    - [ ] All five passes completed
+    - [ ] Patterns validated in data
+    - [ ] Negative cases examined
+    - [ ] Alternative explanations considered
+
+    ### Documentation
+    - [ ] Clear audit trail present
+    - [ ] Key decisions explained
+    - [ ] Quotes properly attributed
+    - [ ] Memos comprehensive
+
+    ### Research Alignment
+    - [ ] Research questions addressed
+    - [ ] Theoretical contribution identified
+    - [ ] Practical implications noted
+    - [ ] Limitations acknowledged
+
+    ### Ready for Next Phase
+    - [ ] All sections complete
+    - [ ] Quality standards met
+    - [ ] Integration notes provided
+    - [ ] Files properly saved
+
+completion:
+  instruction: |
+    Save completed analysis framework and prepare handoff package for
+    synthesis phase. Ensure all supporting documents are organized and
+    accessible for the next stage of analysis.

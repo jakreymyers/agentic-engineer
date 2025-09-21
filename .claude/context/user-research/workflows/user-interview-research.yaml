@@ -1,0 +1,624 @@
+# User Interview Research Workflow
+# Complete end-to-end workflow for conducting user interview research
+
+workflow:
+  id: user-interview-research
+  name: End-to-End User Interview Research
+  version: 1.0
+  description: |
+    Comprehensive workflow for conducting user research through interviews,
+    from project establishment through report generation and delivery.
+    Coordinates all 6 specialized research agents to deliver insights.
+
+  estimated_duration: 3-6 weeks
+  team_size: 2-4 researchers
+  output_artifacts:
+    - Research brief and methodology documentation
+    - Participant screener and recruitment materials
+    - Discussion guides and interview protocols
+    - Interview transcripts and recordings
+    - Coded data and thematic analysis
+    - User personas and journey maps
+    - Research report and executive summary
+    - Recommendations and implementation roadmap
+
+phases:
+  - id: project-setup
+    name: Project Establishment & Planning
+    duration: 2-3 days
+    agent: research-orchestrator
+    description: |
+      Establish research project foundation, define objectives,
+      and select appropriate methodology for the research context.
+
+    error_handling:
+      stakeholder_misalignment:
+        detection: Approval score <75%
+        handler: escalate_to_sponsor
+        fallback: defer_project_start
+        notification: immediate
+
+      resource_shortage:
+        detection: Available resources <80% of required
+        handler: negotiate_scope_reduction
+        fallback: extend_timeline
+        documentation: risk_register
+
+    steps:
+      - id: establish-project
+        task: establish-research-project
+        template: research-brief-tmpl
+        outputs:
+          - Research brief document
+          - Stakeholder map
+          - Success criteria
+        quality_gates:
+          - Objectives clearly defined
+          - Stakeholders identified and aligned
+          - Resources allocated
+
+      - id: select-methodology
+        task: select-research-methodology
+        template: methodology-matrix-tmpl
+        outputs:
+          - Methodology selection matrix
+          - Research approach documentation
+          - Timeline and milestones
+        quality_gates:
+          - Method appropriate for objectives
+          - Resources sufficient for approach
+          - Stakeholder approval received
+
+    handoff:
+      to: research-strategist
+      artifacts:
+        - Research brief
+        - Methodology selection
+        - Project timeline
+
+  - id: study-design
+    name: Research Study Design
+    duration: 3-4 days
+    agent: research-strategist
+    description: |
+      Design the research study, define participant criteria,
+      and create screening questionnaire for recruitment.
+
+    steps:
+      - id: design-study
+        task: design-research-study
+        template: study-design-tmpl
+        outputs:
+          - Study design document
+          - Sampling strategy
+          - Research protocol
+        quality_gates:
+          - Sample size justified
+          - Recruitment feasible
+          - Protocol comprehensive
+
+      - id: create-screener
+        task: create-screening-questionnaire
+        template: screening-criteria-tmpl
+        outputs:
+          - Screening questionnaire
+          - Participant criteria
+          - Recruitment materials
+        quality_gates:
+          - Criteria align with objectives
+          - Screener unbiased
+          - Consent process defined
+
+    handoff:
+      to: interview-specialist
+      artifacts:
+        - Study design
+        - Screening criteria
+        - Participant requirements
+
+  - id: interview-preparation
+    name: Interview Guide Development
+    duration: 2-3 days
+    agent: interview-specialist
+    description: |
+      Create discussion guides, interview protocols, and
+      prepare for data collection phase.
+
+    steps:
+      - id: create-guide
+        task: create-discussion-guide
+        template: discussion-guide-tmpl
+        outputs:
+          - Discussion guide
+          - Question flow
+          - Time allocations
+        quality_gates:
+          - Questions align with objectives
+          - No leading questions
+          - Logical flow established
+
+      - id: generate-probes
+        task: generate-interview-probes
+        template: probe-bank-tmpl
+        outputs:
+          - Follow-up probe bank
+          - Clarification questions
+          - Deep-dive topics
+        quality_gates:
+          - Probes non-biasing
+          - Coverage comprehensive
+          - Flexibility maintained
+
+      - id: create-protocol
+        task: create-interview-protocol
+        template: interview-protocol-tmpl
+        outputs:
+          - Interview protocol
+          - Logistics checklist
+          - Recording setup
+        quality_gates:
+          - Protocol complete
+          - Consent process clear
+          - Technical setup tested
+
+    handoff:
+      to: data-analyst
+      artifacts:
+        - Discussion guide
+        - Interview protocol
+        - Recording files (post-interviews)
+
+  - id: data-collection
+    name: Interview Execution
+    duration: 5-10 days
+    agent: interview-specialist
+    description: |
+      Conduct interviews with participants, manage recordings,
+      and prepare transcripts for analysis.
+
+    error_handling:
+      insufficient_participants:
+        detection: Recruited <80% of target
+        handler: extend_recruitment_period
+        fallback: adjust_sample_size_with_justification
+        quality_impact: document_limitations
+
+      transcription_failure:
+        detection: Service unavailable or accuracy <85%
+        handler: retry_with_exponential_backoff
+        fallback: manual_transcription_service
+        max_retries: 3
+
+      recording_quality_issue:
+        detection: Audio quality score <6/10
+        handler: apply_audio_enhancement
+        fallback: partial_transcript_with_notes
+        notification: analyst_team
+
+    checkpoint:
+      frequency: per_interview
+      state_saved: [completed_interviews, pending_list, quality_scores]
+      recovery: resume_from_last_completed
+
+    steps:
+      - id: conduct-interviews
+        action: Execute interview sessions
+        outputs:
+          - Audio/video recordings
+          - Session notes
+          - Initial observations
+        quality_gates:
+          - Target sample achieved
+          - Recording quality verified
+          - Consent documented
+
+      - id: manage-transcripts
+        action: Process recordings to transcripts
+        tools:
+          - intelligent-transcription-service
+        outputs:
+          - Interview transcripts
+          - Speaker identification
+          - Timestamp markers
+        quality_gates:
+          - Transcription accuracy >95%
+          - Speaker separation clear
+          - All interviews processed
+
+    handoff:
+      to: data-analyst
+      artifacts:
+        - Interview transcripts
+        - Session notes
+        - Recording metadata
+
+  - id: data-analysis
+    name: Transcript Analysis & Coding
+    duration: 4-5 days
+    agent: data-analyst
+    description: |
+      Analyze interview transcripts, extract themes,
+      and create affinity diagrams from the data.
+
+    error_handling:
+      coding_reliability_failure:
+        detection: Cohen's kappa <0.7
+        handler: recalibrate_coding_framework
+        fallback: single_coder_with_expert_review
+        threshold_adjustment: Accept kappa ≥0.6 with documentation
+
+      format_conversion_error:
+        detection: Markdown to JSON conversion fails
+        handler: invoke_data_format_converter
+        fallback: manual_json_creation
+        validation: strict_schema_check
+
+      affinity_mapper_failure:
+        detection: Tool unavailable or clustering errors
+        handler: retry_with_alternative_algorithm
+        fallback: manual_affinity_mapping
+        preservation: save_intermediate_results
+
+    checkpoint:
+      frequency: per_transcript
+      state_saved: [coded_segments, themes, progress_tracker]
+      recovery: continue_from_last_coded
+
+    steps:
+      - id: analyze-transcripts
+        task: analyze-transcript
+        template: transcript-analysis-tmpl
+        outputs:
+          - Coded transcripts
+          - Initial themes
+          - Quote bank
+        quality_gates:
+          - Coding framework applied
+          - Inter-rater reliability >80%
+          - All transcripts coded
+
+      - id: extract-themes
+        task: extract-themes
+        template: coding-framework-tmpl
+        outputs:
+          - Theme hierarchy
+          - Pattern analysis
+          - Theme frequencies
+        quality_gates:
+          - Themes evidence-based
+          - Saturation achieved
+          - Patterns validated
+
+      - id: create-affinity
+        task: create-affinity-diagram
+        template: affinity-map-tmpl
+        tools:
+          - digital-affinity-mapper
+        outputs:
+          - Affinity diagram
+          - Insight clusters
+          - Relationship maps
+        quality_gates:
+          - All data represented
+          - Clusters logical
+          - Insights traceable
+
+      - id: sentiment-analysis
+        task: conduct-sentiment-analysis
+        template: sentiment-analysis-tmpl
+        tools:
+          - research-sentiment-analyzer
+        outputs:
+          - Sentiment patterns
+          - Emotional journey
+          - Pain point analysis
+        quality_gates:
+          - Sentiment validated
+          - Context preserved
+          - Patterns consistent
+
+    handoff:
+      to: insight-synthesizer
+      artifacts:
+        - Coded data
+        - Theme analysis
+        - Affinity diagram
+        - Sentiment analysis
+
+  - id: synthesis
+    name: Insight Synthesis & Sensemaking
+    duration: 3-4 days
+    agent: insight-synthesizer
+    description: |
+      Synthesize findings across interviews, create personas,
+      and extract actionable insights and requirements.
+
+    error_handling:
+      pattern_validation_failure:
+        detection: Pattern frequency <30% of data
+        handler: expand_analysis_window
+        fallback: report_as_emerging_pattern
+        documentation: add_to_limitations
+
+      persona_validation_error:
+        detection: Insufficient evidence for distinct personas
+        handler: consolidate_similar_personas
+        fallback: create_provisional_personas
+        review: expert_validation_required
+
+      requirement_ambiguity:
+        detection: Specificity score <60%
+        handler: stakeholder_clarification_session
+        fallback: mark_as_needs_refinement
+        tracking: follow_up_actions_list
+
+    steps:
+      - id: synthesize-findings
+        task: synthesize-cross-interview
+        template: synthesis-framework-tmpl
+        outputs:
+          - Cross-interview patterns
+          - Key insights
+          - Opportunity areas
+        quality_gates:
+          - Patterns validated across data
+          - Insights actionable
+          - Evidence chain complete
+
+      - id: create-personas
+        task: create-user-personas
+        template: persona-profile-tmpl
+        outputs:
+          - User personas (3-5)
+          - Persona validation
+          - Use scenarios
+        quality_gates:
+          - Personas evidence-based
+          - Distinct and meaningful
+          - Scenarios realistic
+
+      - id: map-journey
+        task: map-customer-journey
+        template: journey-map-tmpl
+        outputs:
+          - Customer journey maps
+          - Touchpoint analysis
+          - Opportunity identification
+        quality_gates:
+          - Journey comprehensive
+          - Pain points identified
+          - Opportunities clear
+
+      - id: extract-requirements
+        task: extract-user-requirements
+        template: requirements-matrix-tmpl
+        outputs:
+          - User requirements
+          - Priority matrix
+          - Traceability matrix
+        quality_gates:
+          - Requirements specific
+          - Priorities justified
+          - Traceability complete
+
+      - id: identify-jtbd
+        task: identify-jobs-to-be-done
+        template: jtbd-framework-tmpl
+        outputs:
+          - Jobs-to-be-done
+          - Job stories
+          - Solution opportunities
+        quality_gates:
+          - Jobs validated
+          - Stories complete
+          - Opportunities feasible
+
+    handoff:
+      to: research-reporter
+      artifacts:
+        - Synthesis document
+        - Personas
+        - Journey maps
+        - Requirements
+        - Jobs-to-be-done
+
+  - id: reporting
+    name: Report Generation & Communication
+    duration: 3-4 days
+    agent: research-reporter
+    description: |
+      Create comprehensive research report, executive summary,
+      and deliver findings to stakeholders.
+
+    steps:
+      - id: generate-report
+        task: generate-research-report
+        template: research-report-tmpl
+        outputs:
+          - Full research report
+          - Supporting evidence
+          - Appendices
+        quality_gates:
+          - Report comprehensive
+          - Evidence included
+          - Quality standards met
+
+      - id: create-summary
+        task: create-executive-summary
+        template: executive-summary-tmpl
+        outputs:
+          - Executive summary
+          - One-pager
+          - Key insights deck
+        quality_gates:
+          - Summary concise
+          - Actions clear
+          - ROI articulated
+
+      - id: design-visuals
+        task: design-visualizations
+        template: visualization-specs-tmpl
+        tools:
+          - research-viz-generator
+        outputs:
+          - Data visualizations
+          - Infographics
+          - Dashboard
+        quality_gates:
+          - Visuals clear
+          - Data accurate
+          - Accessible (WCAG AA)
+
+      - id: formulate-recommendations
+        task: formulate-recommendations
+        template: recommendations-tmpl
+        outputs:
+          - Strategic recommendations
+          - Implementation roadmap
+          - Success metrics
+        quality_gates:
+          - Recommendations actionable
+          - Roadmap realistic
+          - Metrics measurable
+
+    handoff:
+      to: research-orchestrator
+      artifacts:
+        - Research report
+        - Executive summary
+        - Visualizations
+        - Recommendations
+        - Presentation materials
+
+  - id: delivery
+    name: Stakeholder Delivery & Closeout
+    duration: 1-2 days
+    agent: research-orchestrator
+    description: |
+      Present findings to stakeholders, gather feedback,
+      and close out the research project.
+
+    steps:
+      - id: prepare-presentation
+        action: Prepare stakeholder presentation
+        outputs:
+          - Presentation deck
+          - Speaker notes
+          - Q&A preparation
+        quality_gates:
+          - Presentation polished
+          - Time within limits
+          - Key messages clear
+
+      - id: deliver-findings
+        action: Present to stakeholders
+        outputs:
+          - Presentation delivered
+          - Feedback captured
+          - Actions assigned
+        quality_gates:
+          - Stakeholders engaged
+          - Questions answered
+          - Next steps defined
+
+      - id: project-closeout
+        action: Close research project
+        outputs:
+          - Final deliverables package
+          - Lessons learned
+          - Archive materials
+        quality_gates:
+          - All deliverables complete
+          - Knowledge transferred
+          - Materials archived
+
+quality_framework:
+  checkpoints:
+    - phase: project-setup
+      gate: Stakeholder approval of objectives and approach
+    - phase: study-design
+      gate: IRB/ethics approval if required
+    - phase: interview-preparation
+      gate: Pilot interview successful
+    - phase: data-collection
+      gate: Target sample size achieved
+    - phase: data-analysis
+      gate: Coding reliability validated
+    - phase: synthesis
+      gate: Insights validated with data
+    - phase: reporting
+      gate: Quality review passed
+    - phase: delivery
+      gate: Stakeholder acceptance
+
+  success_metrics:
+    - Objectives achieved: >90%
+    - Sample targets met: 100%
+    - Data quality high: >95%
+    - Stakeholder satisfaction: >4.5/5
+    - Actionable insights: >10
+    - Implementation commitment: >75%
+
+escalation_path:
+  - level: Task
+    owner: Assigned agent
+    resolution: Task-specific quality gates
+    response_time: 1_hour
+    retry_allowed: true
+  - level: Phase
+    owner: Research orchestrator
+    resolution: Phase review and adjustment
+    response_time: 4_hours
+    requires_documentation: true
+  - level: Project
+    owner: Research lead
+    resolution: Stakeholder consultation
+    response_time: immediate
+    decision_authority: continue_abort_modify
+
+error_recovery:
+  checkpoint_strategy:
+    save_frequency: per_phase_completion
+    retention: 30_days
+    format: json_with_metadata
+
+  rollback_capability:
+    enabled: true
+    granularity: phase_level
+    validation_required: true
+
+  data_preservation:
+    critical_data: always_preserved
+    intermediate_results: checkpoint_based
+    logs: comprehensive_audit_trail
+
+tools_required:
+  - intelligent-transcription-service
+  - digital-affinity-mapper
+  - research-sentiment-analyzer
+  - research-viz-generator
+  - research-participant-manager
+
+configuration:
+  interview_count: 12-20
+  interview_duration: 45-60 minutes
+  analysis_depth: comprehensive
+  output_format: formal
+  stakeholder_updates: weekly
+
+error_monitoring:
+  real_time_alerts: true
+  dashboard_integration: true
+  notification_channels:
+    - email: research-team@company.com
+    - slack: '#research-alerts'
+
+  alert_thresholds:
+    critical_errors: immediate
+    quality_gate_failures: 15_minutes
+    warning_conditions: 1_hour
+
+  reporting:
+    error_summary: daily
+    recovery_metrics: weekly
+    prevention_analysis: monthly

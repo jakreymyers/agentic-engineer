@@ -1,0 +1,360 @@
+# Research Report Template
+template:
+  id: research-report-template-v1
+  name: Comprehensive Research Report
+  version: 1.0
+  output:
+    format: markdown
+    filename: docs/research/research-report.md
+    title: "{{project_name}} User Research Report"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  validation: required
+
+metadata:
+  created_by: research-reporter
+  reviewed_by: research-orchestrator
+  audience:
+    - product-teams
+    - design-teams
+    - engineering-teams
+    - leadership
+  document_type: comprehensive-report
+  typical_length: 20-50 pages
+
+sections:
+  - id: executive-summary
+    title: Executive Summary
+    instruction: |
+      Create a compelling 2-3 page executive summary that can stand alone. Include:
+      - Research overview (objectives, methods, participants, timeline)
+      - Top 3-5 key findings with evidence strength indicators
+      - Strategic recommendations with priority levels
+      - Expected impact and ROI projections
+      - Clear next steps and decision points
+      Format for C-level consumption with emphasis on business value.
+    elicit: true
+    owner: research-reporter
+    editors: [research-orchestrator]
+    sections:
+      - id: research-overview
+        title: Research Overview
+        type: structured
+        instruction: Brief paragraph covering scope, methods, and participants
+      - id: key-findings
+        title: Key Findings
+        type: numbered-list
+        instruction: 3-5 most impactful findings with evidence strength
+      - id: recommendations-summary
+        title: Strategic Recommendations
+        type: priority-list
+        instruction: Top recommendations with implementation timeline
+      - id: impact-summary
+        title: Expected Impact
+        type: metrics
+        instruction: Quantified benefits and success metrics
+
+  - id: introduction
+    title: Introduction & Context
+    instruction: |
+      Establish the research context and motivation. Include:
+      - Business context and market pressures
+      - Research genesis and stakeholder involvement
+      - Connection to strategic objectives
+      - Previous related research
+      - Success criteria definition
+      Create compelling narrative for why this research matters now.
+    elicit: true
+    owner: research-reporter
+    editors: [research-orchestrator, research-strategist]
+    sections:
+      - id: business-context
+        title: Business Context
+        type: paragraphs
+        instruction: Current state, challenges, and opportunities
+      - id: research-objectives
+        title: Research Objectives
+        type: bullet-list
+        instruction: Specific questions the research aimed to answer
+      - id: success-criteria
+        title: Success Criteria
+        type: metrics-table
+        instruction: How we measure research success
+
+  - id: methodology
+    title: Research Methodology
+    instruction: |
+      Document the research approach comprehensively:
+      - Research design and rationale
+      - Methods selection justification
+      - Participant recruitment and screening
+      - Data collection procedures
+      - Analysis approaches
+      - Quality controls and validation
+      - Limitations and constraints
+      Include visual timeline and method comparison table.
+    elicit: false
+    owner: research-strategist
+    editors: [research-reporter]
+    sections:
+      - id: research-design
+        title: Research Design
+        type: structured
+        instruction: Overall approach and design decisions
+      - id: methods-employed
+        title: Methods Employed
+        type: comparison-table
+        columns: [Method, Purpose, Participants, Duration, Output]
+      - id: participant-profile
+        title: Participant Profile
+        type: demographics-table
+        instruction: Participant demographics and characteristics
+      - id: limitations
+        title: Limitations & Constraints
+        type: bullet-list
+        instruction: Acknowledged limitations and their implications
+
+  - id: key-findings
+    title: Key Findings
+    instruction: |
+      Present 5-10 major findings with comprehensive evidence:
+      For each finding include:
+      - Clear finding statement
+      - Quantitative evidence (statistics, frequencies)
+      - Qualitative evidence (quotes, observations)
+      - Visual representation (chart, diagram)
+      - Business implications
+      - Confidence level
+      Order by impact and strategic importance.
+    elicit: true
+    owner: insight-synthesizer
+    editors: [research-reporter, data-analyst]
+    validation: evidence-required
+    sections:
+      - id: finding-details
+        title: Finding [#]
+        type: structured-finding
+        repeat: true
+        components:
+          - finding-statement
+          - evidence-quantitative
+          - evidence-qualitative
+          - visualization
+          - implications
+          - confidence-level
+
+  - id: user-insights
+    title: User Insights & Synthesis
+    instruction: |
+      Synthesize findings into higher-order insights:
+      - Cross-cutting themes and patterns
+      - User mental models and beliefs
+      - Behavioral patterns and motivations
+      - Unmet needs and desires
+      - Journey pain points and delighters
+      Show connections between findings and strategic implications.
+    elicit: true
+    owner: insight-synthesizer
+    editors: [research-reporter]
+    sections:
+      - id: themes-patterns
+        title: Major Themes & Patterns
+        type: theme-hierarchy
+        instruction: Hierarchical presentation of themes
+      - id: user-needs
+        title: User Needs Analysis
+        type: needs-matrix
+        instruction: Functional, emotional, and social needs
+      - id: behavioral-insights
+        title: Behavioral Insights
+        type: insights-list
+        instruction: Why users do what they do
+
+  - id: personas-journeys
+    title: Personas & User Journeys
+    condition: personas or journeys were created
+    instruction: |
+      Present user personas and journey maps:
+      - 2-3 primary personas with evidence base
+      - Current state journey with pain points
+      - Opportunity areas mapped to journey stages
+      - Future state vision
+      Include visual persona cards and journey diagrams.
+    elicit: true
+    owner: insight-synthesizer
+    editors: [research-reporter, interview-specialist]
+    sections:
+      - id: user-personas
+        title: User Personas
+        type: persona-cards
+        instruction: Evidence-based persona profiles
+      - id: journey-maps
+        title: Customer Journey Maps
+        type: journey-visualization
+        instruction: Current state with opportunities marked
+
+  - id: recommendations
+    title: Strategic Recommendations
+    instruction: |
+      Present prioritized recommendations:
+      - 3-5 critical recommendations
+      - 5-10 important recommendations
+      - Quick wins (30-day implementations)
+      For each include:
+      - Specific actions required
+      - Priority and impact assessment
+      - Resource requirements
+      - Success metrics
+      - Implementation timeline
+      Use prioritization matrix and roadmap visualization.
+    elicit: true
+    owner: research-reporter
+    editors: [research-orchestrator, insight-synthesizer]
+    validation: action-oriented
+    sections:
+      - id: critical-recommendations
+        title: Critical Recommendations
+        type: recommendation-cards
+        priority: critical
+        instruction: Must-do recommendations with highest impact
+      - id: important-recommendations
+        title: Important Recommendations
+        type: recommendation-list
+        priority: high
+        instruction: Should-do recommendations
+      - id: quick-wins
+        title: Quick Wins
+        type: action-list
+        priority: immediate
+        instruction: Low effort, high visibility improvements
+
+  - id: implementation-roadmap
+    title: Implementation Roadmap
+    instruction: |
+      Create phased implementation plan:
+      - Phase 1: Foundation (0-3 months)
+      - Phase 2: Core Value (3-9 months)
+      - Phase 3: Enhancement (9-18 months)
+      - Phase 4: Transformation (18+ months)
+      Include dependencies, milestones, and decision gates.
+    elicit: true
+    owner: research-reporter
+    editors: [research-orchestrator]
+    sections:
+      - id: roadmap-visual
+        title: Implementation Timeline
+        type: gantt-chart
+        instruction: Visual roadmap with phases and milestones
+      - id: phase-details
+        title: Phase Details
+        type: phase-cards
+        instruction: Detailed breakdown of each phase
+
+  - id: success-metrics
+    title: Success Metrics & Measurement
+    instruction: |
+      Define how to measure success:
+      - North Star metric
+      - Primary KPIs with targets
+      - Leading and lagging indicators
+      - Measurement methodology
+      - Reporting cadence and ownership
+      Create metrics dashboard template.
+    elicit: true
+    owner: research-reporter
+    editors: [research-orchestrator, data-analyst]
+    sections:
+      - id: metrics-framework
+        title: Metrics Framework
+        type: metrics-hierarchy
+        instruction: Structured metrics with relationships
+      - id: measurement-plan
+        title: Measurement Plan
+        type: implementation-table
+        columns: [Metric, Current, Target, Method, Frequency, Owner]
+
+  - id: appendices
+    title: Appendices
+    instruction: |
+      Include supporting documentation:
+      - Detailed methodology
+      - Discussion guides and instruments
+      - Participant profiles
+      - Additional quotes and observations
+      - Statistical analyses
+      - Raw data summaries
+      Organize for easy reference without disrupting main narrative.
+    elicit: false
+    owner: research-reporter
+    editors: [all-agents]
+    sections:
+      - id: methodology-detail
+        title: Appendix A: Detailed Methodology
+        type: reference
+      - id: research-instruments
+        title: Appendix B: Research Instruments
+        type: reference
+      - id: participant-details
+        title: Appendix C: Participant Profiles
+        type: reference-table
+      - id: additional-data
+        title: Appendix D: Additional Data & Quotes
+        type: reference
+
+quality_criteria:
+  evidence:
+    - All findings must have supporting data
+    - Minimum 3 data points per pattern
+    - Quotes must include participant attribution
+    - Statistics must include confidence levels
+
+  clarity:
+    - Executive summary must stand alone
+    - Technical terms defined on first use
+    - Complex concepts explained simply
+    - Visual aids support understanding
+
+  actionability:
+    - Recommendations must be specific
+    - Success metrics must be measurable
+    - Timeline must be realistic
+    - Ownership must be defined
+
+  completeness:
+    - All research questions answered
+    - All participant segments represented
+    - Limitations acknowledged
+    - Next steps clearly defined
+
+validation_rules:
+  - rule: evidence_requirement
+    description: Every claim must have evidence
+    severity: critical
+
+  - rule: action_orientation
+    description: Recommendations must be actionable
+    severity: critical
+
+  - rule: stakeholder_alignment
+    description: Addresses stakeholder priorities
+    severity: important
+
+  - rule: visual_support
+    description: Complex data visualized
+    severity: recommended
+
+export_formats:
+  - pdf:
+      layout: professional-report
+      includes: cover, toc, page-numbers
+  - word:
+      template: corporate-template
+      editable: true
+  - html:
+      responsive: true
+      navigation: sidebar
+  - presentation:
+      slides: 20-30
+      style: executive

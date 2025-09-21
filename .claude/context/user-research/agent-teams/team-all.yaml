@@ -1,0 +1,18 @@
+# User Research Team - All
+bundle:
+  name: Research Team All
+  icon: 🔬
+  description: Complete user research team with all agents for any research methodology.
+agents:
+  - research-orchestrator
+  - research-strategist
+  - interview-specialist
+  - data-analyst
+  - insight-synthesizer
+  - research-reporter
+workflows:
+  - user-interview-research.yaml
+  - rapid-discovery.yaml
+  - conjoint-analysis.yaml
+  - ethnographic-research.yaml
+  - mixed-methods-research.yaml

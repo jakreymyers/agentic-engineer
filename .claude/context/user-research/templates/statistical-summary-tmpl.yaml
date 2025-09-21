@@ -1,0 +1,349 @@
+# Statistical Summary Template
+
+template:
+  name: statistical-summary
+  version: 1.0.0
+  description: Template for comprehensive statistical analysis reporting
+  author: Data Analyst Agent (Alex)
+  output_format: markdown
+
+metadata:
+  elicit: true
+  instruction: |
+    This template structures the reporting of quantitative analysis results.
+    Focus on both statistical significance and practical importance.
+
+# Document Header
+header:
+  elicit: false
+  instruction: Generate report header
+  content: |
+    # Statistical Analysis Report
+    ## Project: [Project Name]
+    ## Analysis Date: [Date]
+    ## Analyst: [Name]
+    ## Report Version: [Version]
+
+# Section 1: Executive Summary
+executive_summary:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Provide non-technical summary of key statistical findings for stakeholders.
+  content: |
+    ## 1. Executive Summary
+
+    ### Key Statistical Findings
+    In plain language, the analysis revealed:
+    1. [Main finding with practical interpretation]
+    2. [Secondary finding with real-world meaning]
+    3. [Additional important result]
+
+    ### Bottom Line
+    [One paragraph explaining what the numbers mean for decision-making]
+
+    ### Confidence in Results
+    Overall confidence level: [High/Medium/Low]
+    Based on: [sample size, data quality, analysis rigor]
+
+# Section 2: Data Overview
+data_overview:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Describe the dataset analyzed including sample characteristics and data quality.
+  content: |
+    ## 2. Data Overview
+
+    ### Sample Description
+    - Total sample size: n = [number]
+    - Data collection period: [dates]
+    - Response rate: [%]
+    - Geographic scope: [coverage]
+
+    ### Demographics
+    | Variable | Category | n | % |
+    |----------|----------|---|---|
+    | Gender | Male | [n] | [%] |
+    |        | Female | [n] | [%] |
+    |        | Other | [n] | [%] |
+    | Age | 18-24 | [n] | [%] |
+    |     | 25-34 | [n] | [%] |
+    |     | 35-44 | [n] | [%] |
+    |     | 45+ | [n] | [%] |
+
+    ### Data Quality Assessment
+    - Missing data: [% and pattern]
+    - Outliers identified: [number and treatment]
+    - Data cleaning performed: [actions taken]
+
+# Section 3: Descriptive Statistics
+descriptive_stats:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Present descriptive statistics for all key variables analyzed.
+  content: |
+    ## 3. Descriptive Statistics
+
+    ### Continuous Variables
+
+    | Variable | n | Mean | SD | Median | Min | Max | Skew |
+    |----------|---|------|----|----- --|-----|-----|------|
+    | [Var 1] | [n] | [M] | [SD] | [Mdn] | [min] | [max] | [skew] |
+    | [Var 2] | [n] | [M] | [SD] | [Mdn] | [min] | [max] | [skew] |
+
+    ### Categorical Variables
+
+    | Variable | Category | Frequency | Percentage |
+    |----------|----------|-----------|------------|
+    | [Var 1] | [Cat A] | [n] | [%] |
+    |         | [Cat B] | [n] | [%] |
+    | [Var 2] | [Cat A] | [n] | [%] |
+    |         | [Cat B] | [n] | [%] |
+
+    ### Distribution Characteristics
+    - Normality tests performed: [Results]
+    - Transformations applied: [If any]
+
+# Section 4: Primary Analyses
+primary_analyses:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Report main statistical tests addressing primary research questions.
+  content: |
+    ## 4. Primary Analyses
+
+    ### Research Question 1: [Question]
+
+    **Analysis:** [Test name]
+
+    **Results:**
+    - Test statistic: [t/F/χ²/r] = [value]
+    - Degrees of freedom: df = [value]
+    - p-value: p = [value]
+    - Effect size: [measure] = [value]
+    - 95% CI: [[lower], [upper]]
+
+    **Interpretation:**
+    [Plain language explanation of what this means]
+
+    ### Research Question 2: [Question]
+
+    **Analysis:** [Test name]
+
+    **Results:**
+    - Test statistic: [value]
+    - p-value: p = [value]
+    - Effect size: [value]
+
+    **Interpretation:**
+    [Plain language explanation]
+
+# Section 5: Advanced Analyses
+advanced_analyses:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Present any regression, moderation, mediation, or other advanced analyses.
+  content: |
+    ## 5. Advanced Analyses
+
+    ### Regression Analysis
+
+    **Model Summary:**
+    - R² = [value] ([%] variance explained)
+    - F([df1], [df2]) = [value], p < [value]
+
+    **Predictors:**
+    | Variable | β | SE | t | p | 95% CI |
+    |----------|---|----|----|---|--------|
+    | [Predictor 1] | [β] | [SE] | [t] | [p] | [CI] |
+    | [Predictor 2] | [β] | [SE] | [t] | [p] | [CI] |
+
+    **Interpretation:**
+    [What the model tells us about relationships]
+
+    ### Moderation/Mediation
+    [If applicable, present interaction effects or indirect effects]
+
+# Section 6: Assumptions and Diagnostics
+assumptions:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Document all assumption testing and diagnostic checks performed.
+  content: |
+    ## 6. Assumptions and Diagnostics
+
+    ### Assumptions Tested
+
+    | Test | Assumption | Result | Action Taken |
+    |------|------------|--------|--------------|
+    | [Test 1] | Normality | [Pass/Fail] | [If failed, what done] |
+    | [Test 2] | Homogeneity | [Pass/Fail] | [Action] |
+    | [Test 3] | Independence | [Pass/Fail] | [Action] |
+
+    ### Diagnostic Checks
+    - Influential cases: [Identified and treatment]
+    - Multicollinearity: [VIF values and assessment]
+    - Residual analysis: [Patterns observed]
+
+    ### Robustness Checks
+    - Alternative analyses performed: [List]
+    - Sensitivity to outliers: [Result]
+    - Bootstrap validation: [If performed]
+
+# Section 7: Visualizations
+visualizations:
+  elicit: false
+  owner: data-analyst
+  instruction: |
+    Include descriptions of key visualizations to be created.
+  content: |
+    ## 7. Key Visualizations
+
+    ### Figure 1: [Distribution Plot Title]
+    Type: Histogram/Box plot
+    Variables: [What's shown]
+    Key Finding: [What it reveals]
+
+    ### Figure 2: [Relationship Plot Title]
+    Type: Scatter/Line plot
+    Variables: [X and Y]
+    Key Finding: [Pattern shown]
+
+    ### Figure 3: [Comparison Plot Title]
+    Type: Bar chart with error bars
+    Groups: [What's compared]
+    Key Finding: [Differences shown]
+
+    ### Figure 4: [Effect Size Forest Plot]
+    Effects displayed with confidence intervals
+    Overall pattern: [What it shows]
+
+# Section 8: Practical Significance
+practical_significance:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Translate statistical findings into practical, real-world implications.
+  content: |
+    ## 8. Practical Significance
+
+    ### Effect Size Interpretation
+
+    | Finding | Statistical Significance | Effect Size | Practical Importance |
+    |---------|-------------------------|-------------|---------------------|
+    | [Finding 1] | p < .001 | Large (d=0.8) | Substantial real impact |
+    | [Finding 2] | p < .05 | Small (d=0.2) | Minimal practical impact |
+    | [Finding 3] | p = .08 | Medium (d=0.5) | Trending, worth monitoring |
+
+    ### Real-World Impact
+    - [Finding 1] translates to: [Concrete example]
+    - [Finding 2] means: [Practical implication]
+
+    ### Cost-Benefit Considerations
+    Given the effect sizes:
+    - Worth implementing: [Which changes]
+    - Not worth cost: [Which changes]
+    - Need more data: [Which decisions]
+
+# Section 9: Limitations
+limitations:
+  elicit: true
+  owner: data-analyst
+  instruction: |
+    Honestly assess limitations that affect interpretation and generalizability.
+  content: |
+    ## 9. Limitations
+
+    ### Statistical Limitations
+    - Sample size: [Adequate for which analyses, underpowered for which]
+    - Multiple comparisons: [How addressed or not]
+    - Assumption violations: [Impact on conclusions]
+
+    ### Data Limitations
+    - Missing data: [Extent and likely impact]
+    - Measurement issues: [Any concerns]
+    - Temporal factors: [Cross-sectional limitations]
+
+    ### Generalizability
+    - Population validity: [Who findings apply to]
+    - Contextual factors: [Setting-specific elements]
+    - External validity: [Confidence in broader application]
+
+# Section 10: Conclusions and Recommendations
+conclusions:
+  elicit: true
+  owner: data-analyst
+  editors: [insight-synthesizer, research-reporter]
+  instruction: |
+    Synthesize findings into clear conclusions and actionable recommendations.
+  content: |
+    ## 10. Conclusions and Recommendations
+
+    ### Main Conclusions
+    Based on the statistical evidence:
+    1. [Strong conclusion with high confidence]
+    2. [Moderate conclusion with medium confidence]
+    3. [Tentative conclusion needing validation]
+
+    ### Recommendations
+
+    **Immediate Actions:**
+    - [Action based on strong evidence]
+    - [Low-risk change supported by data]
+
+    **Consider Implementation:**
+    - [Action with good evidence but needs planning]
+    - [Change worth testing in pilot]
+
+    **Future Research Needed:**
+    - [Question raised but not answered]
+    - [Area needing larger sample]
+    - [Longitudinal follow-up required]
+
+    ### Statistical Power for Decision-Making
+    Our analysis provides:
+    - [Strong/Moderate/Weak] evidence for [decision 1]
+    - [Strong/Moderate/Weak] evidence for [decision 2]
+
+# Section 11: Technical Appendix
+technical_appendix:
+  elicit: false
+  owner: data-analyst
+  instruction: |
+    Include technical details for statistical reviewers and reproducibility.
+  content: |
+    ## 11. Technical Appendix
+
+    ### Analysis Software
+    - Software used: [R/Python/SPSS/SAS]
+    - Version: [Version number]
+    - Packages/Libraries: [List]
+
+    ### Statistical Code Snippets
+    ```
+    # Example analysis code
+    [Key analysis commands for reproducibility]
+    ```
+
+    ### Full Statistical Output
+    [Detailed output tables for review]
+
+    ### Data Dictionary
+    | Variable Name | Type | Description | Values |
+    |--------------|------|-------------|---------|
+    | [var_name] | [Continuous/Categorical] | [Description] | [Range/Categories] |
+
+    ### Power Analysis
+    - Achieved power: [Calculated post-hoc]
+    - Sample size for 80% power: [n needed]
+
+completion:
+  instruction: |
+    Finalize statistical report with all tables, figures, and technical details.
+    Create executive briefing version for non-technical stakeholders.
+    Archive analysis scripts and data for reproducibility.

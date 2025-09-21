@@ -1,0 +1,12 @@
+# User Research Team - Quantitative
+bundle:
+  name: Research Team Quantitative
+  icon: 📊
+  description: Specialized team for surveys, experiments, and statistical analysis.
+agents:
+  - research-orchestrator
+  - research-strategist
+  - data-analyst
+  - research-reporter
+workflows:
+  - conjoint-analysis.yaml

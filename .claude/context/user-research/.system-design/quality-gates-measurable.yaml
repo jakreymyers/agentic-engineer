@@ -1,0 +1,235 @@
+# Measurable Quality Gates for User Research Workflows
+# Fixing the critical QA finding: All quality gates must have measurable criteria
+
+quality_gates:
+  version: 2.0
+  description: |
+    Redesigned quality gates with specific, measurable criteria.
+    Each gate includes pass/fail thresholds and automated validation where possible.
+
+# Phase 1: Project Setup Quality Gates
+project_setup:
+  objectives_defined:
+    old: "Objectives clearly defined"
+    new:
+      criteria: "Research objectives documented and SMART"
+      measurement:
+        - specific: "Contains who, what, when, where"
+        - measurable: "Includes success metrics"
+        - achievable: "Feasibility score >70%"
+        - relevant: "Alignment score with business goals >80%"
+        - time_bound: "Timeline specified in weeks/days"
+      validation: "Automated SMART criteria checker"
+      pass_threshold: "5/5 SMART criteria met"
+
+  stakeholders_aligned:
+    old: "Stakeholders identified and aligned"
+    new:
+      criteria: "Stakeholder approval documented"
+      measurement:
+        - identified: "Minimum 3 stakeholders listed"
+        - raci_matrix: "Completed for all stakeholders"
+        - approval: "Written approval from >75% stakeholders"
+        - sla_defined: "Response time SLA documented"
+      validation: "Approval tracking system"
+      pass_threshold: ">75% approval rate"
+
+  resources_allocated:
+    old: "Resources allocated"
+    new:
+      criteria: "Resources sufficient for scope"
+      measurement:
+        - budget: "Allocated budget ≥ estimated cost"
+        - team: "Required FTEs assigned ≥ minimum"
+        - tools: "100% required tools available"
+        - timeline: "Buffer ≥ 20% of estimated duration"
+      validation: "Resource allocation calculator"
+      pass_threshold: "All 4 resource checks pass"
+
+# Phase 2: Study Design Quality Gates
+study_design:
+  sample_size_adequate:
+    old: "Sample size justified"
+    new:
+      criteria: "Statistical power achieved"
+      measurement:
+        - qualitative: "n ≥ 12 for interviews"
+        - quantitative: "Power analysis shows >0.8"
+        - saturation: "Estimated saturation at n"
+        - representation: "All key segments ≥ 3 participants"
+      validation: "Power analysis calculator"
+      pass_threshold: "Power ≥ 0.8 or saturation estimate documented"
+
+  recruitment_feasible:
+    old: "Recruitment feasible"
+    new:
+      criteria: "Recruitment pipeline viable"
+      measurement:
+        - source_capacity: "Sources can provide 150% of need"
+        - timeline: "Days to recruit ≤ allocated days"
+        - cost: "Cost per participant ≤ budget/n"
+        - quality: "Screening accuracy >85%"
+      validation: "Recruitment feasibility calculator"
+      pass_threshold: "All 4 metrics within bounds"
+
+# Phase 3: Data Collection Quality Gates
+data_collection:
+  pilot_successful:
+    old: "Pilot interview successful"
+    new:
+      criteria: "Pilot metrics meet standards"
+      measurement:
+        - duration: "Within ±15% of target"
+        - coverage: ">80% of questions asked"
+        - quality: "Audio quality score >7/10"
+        - feedback: "Participant understanding >8/10"
+      validation: "Pilot evaluation form"
+      pass_threshold: "3/4 metrics pass"
+
+  target_sample_achieved:
+    old: "Target sample size achieved"
+    new:
+      criteria: "Recruitment targets met"
+      measurement:
+        - total_n: "≥ 90% of target"
+        - segments: "All segments ≥ 80% of quota"
+        - quality: "Qualified participants ≥ 95%"
+        - completion: "Completion rate ≥ 85%"
+      validation: "Recruitment tracker"
+      pass_threshold: "All metrics above threshold"
+
+# Phase 4: Analysis Quality Gates
+analysis:
+  coding_reliability:
+    old: "Coding reliability validated"
+    new:
+      criteria: "Inter-rater reliability established"
+      measurement:
+        - agreement: "Cohen's kappa ≥ 0.7"
+        - coverage: "≥ 95% of transcript coded"
+        - consistency: "Code drift < 10%"
+        - saturation: "New codes per transcript < 2"
+      validation: "Reliability calculator"
+      pass_threshold: "Kappa ≥ 0.7 AND coverage ≥ 95%"
+
+  themes_validated:
+    old: "Themes evidence-based"
+    new:
+      criteria: "Themes meet validity criteria"
+      measurement:
+        - support: "≥ 3 quotes per theme"
+        - prevalence: "Theme appears in ≥ 30% of data"
+        - distinction: "Theme overlap < 20%"
+        - saturation: "No new themes in last 20% of data"
+      validation: "Theme validation matrix"
+      pass_threshold: "All themes meet 3/4 criteria"
+
+# Phase 5: Synthesis Quality Gates
+synthesis:
+  insights_actionable:
+    old: "Insights actionable"
+    new:
+      criteria: "Insights meet ACTIONABLE framework"
+      measurement:
+        - actionable: "Specific action identified"
+        - connected: "Linked to business objective"
+        - testable: "Success metric defined"
+        - impactful: "Impact score ≥ 7/10"
+        - owned: "Owner assigned"
+        - novel: "Not previously known"
+        - achievable: "Feasibility score ≥ 6/10"
+        - backed: "≥ 3 data points supporting"
+        - lucid: "Clarity score ≥ 8/10"
+        - expedient: "Implementation < 6 months"
+      validation: "ACTIONABLE scorecard"
+      pass_threshold: "≥ 7/10 criteria met per insight"
+
+  patterns_validated:
+    old: "Patterns validated across data"
+    new:
+      criteria: "Pattern strength verified"
+      measurement:
+        - frequency: "Pattern occurs ≥ 5 times"
+        - distribution: "Across ≥ 40% participants"
+        - consistency: "Variation < 30%"
+        - significance: "Statistical significance if applicable"
+      validation: "Pattern strength calculator"
+      pass_threshold: "3/4 metrics pass"
+
+# Phase 6: Reporting Quality Gates
+reporting:
+  report_complete:
+    old: "Report comprehensive"
+    new:
+      criteria: "Report completeness score"
+      measurement:
+        - sections: "100% required sections present"
+        - evidence: "≥ 2 data points per finding"
+        - visuals: "≥ 1 visual per 3 pages"
+        - length: "Within ±20% of target"
+      validation: "Report completeness checker"
+      pass_threshold: "Completeness score ≥ 95%"
+
+  quality_review_passed:
+    old: "Quality standards met"
+    new:
+      criteria: "Quality metrics achieved"
+      measurement:
+        - accuracy: "Fact check score = 100%"
+        - clarity: "Readability score ≥ 60"
+        - structure: "Logical flow score ≥ 8/10"
+        - actionability: "≥ 5 specific recommendations"
+      validation: "Quality review checklist"
+      pass_threshold: "All metrics pass"
+
+# Phase 7: Delivery Quality Gates
+delivery:
+  stakeholder_acceptance:
+    old: "Stakeholder acceptance"
+    new:
+      criteria: "Formal acceptance received"
+      measurement:
+        - understanding: "Comprehension test ≥ 80%"
+        - satisfaction: "Satisfaction score ≥ 4/5"
+        - commitment: "≥ 50% recommendations accepted"
+        - timeline: "Implementation timeline agreed"
+      validation: "Acceptance tracking form"
+      pass_threshold: "3/4 metrics achieved"
+
+# Automation Specifications
+automation:
+  automated_gates:
+    - objectives_defined: "SMART criteria checker"
+    - resources_allocated: "Resource calculator"
+    - sample_size_adequate: "Power analysis"
+    - coding_reliability: "Kappa calculator"
+    - report_complete: "Completeness checker"
+
+  manual_gates:
+    - stakeholders_aligned: "Approval tracker"
+    - pilot_successful: "Evaluation form"
+    - insights_actionable: "ACTIONABLE scorecard"
+
+  hybrid_gates:
+    - themes_validated: "Automated count + manual review"
+    - quality_review_passed: "Automated metrics + peer review"
+
+# Implementation Guide
+implementation:
+  rollout_phases:
+    phase_1: "Automated calculators and checkers"
+    phase_2: "Tracking forms and scorecards"
+    phase_3: "Integration with orchestrator"
+    phase_4: "Real-time dashboard"
+
+  training_required:
+    - "Quality gate interpretation"
+    - "Tool usage for validation"
+    - "Threshold adjustment process"
+    - "Override procedures"
+
+  monitoring:
+    - "Gate pass/fail rates by phase"
+    - "Time to pass each gate"
+    - "Override frequency and reasons"
+    - "Correlation with project success"

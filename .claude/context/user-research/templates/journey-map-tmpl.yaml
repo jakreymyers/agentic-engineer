@@ -1,0 +1,808 @@
+# Customer Journey Map Template
+template:
+  id: journey-map-v1
+  name: Customer Journey Visualization Template
+  version: 1.0
+  output:
+    format: markdown
+    filename: research-outputs/journey-map-{{persona_name}}.md
+    title: "{{persona_name}} Customer Journey Map"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+
+sections:
+  - id: journey-overview
+    title: Journey Map Overview
+    instruction: |
+      Create comprehensive overview of the customer journey mapping scope and methodology.
+      Establish context for stakeholders and define the journey boundaries.
+    elicit: true
+    owner: journey-architect
+    sections:
+      - id: journey-scope
+        title: Journey Scope Definition
+        type: structured
+        instruction: |
+          Define the specific journey being mapped including boundaries, persona focus, and timeframe.
+          Ensure clarity on what is included and excluded from this journey analysis.
+        sections:
+          - id: persona-focus
+            title: Primary Persona Focus
+            type: structured
+            instruction: Which persona this journey map represents and their key characteristics
+          - id: journey-boundaries
+            title: Journey Boundaries
+            type: structured
+            instruction: Start and end points of the journey being mapped
+          - id: timeframe-scope
+            title: Timeframe and Duration
+            type: structured
+            instruction: Typical duration of this journey and any time variations
+          - id: context-constraints
+            title: Context and Constraints
+            type: bullet-list
+            instruction: Situational factors that affect this journey experience
+      - id: mapping-methodology
+        title: Journey Mapping Methodology
+        type: structured
+        instruction: |
+          Document the approach and sources used to create this journey map.
+          Include research methods, data sources, and validation approach.
+        options:
+          - "1. Interview-based journey reconstruction"
+          - "2. Observational research and shadowing"
+          - "3. Analytics data and behavioral tracking"
+          - "4. Customer feedback and survey data"
+          - "5. Stakeholder workshops and collaborative mapping"
+          - "6. Existing customer journey audit"
+          - "7. Competitive journey benchmarking"
+          - "8. Service design and touchpoint analysis"
+          - "9. Mixed methods triangulation approach"
+      - id: key-insights-preview
+        title: Key Journey Insights Preview
+        type: numbered-list
+        instruction: |
+          Highlight the most significant insights discovered through journey mapping.
+          Focus on actionable findings that inform strategy and improvement priorities.
+        examples:
+          - "1. 67% of journey friction occurs during the handoff between sales and onboarding"
+          - "2. Emotional peak occurs at first successful outcome, not initial purchase"
+          - "3. Support channel preference shifts dramatically after 90 days of usage"
+
+  - id: journey-stages
+    title: Journey Stage Framework
+    instruction: |
+      Define the stages that comprise this customer journey with clear stage objectives and success criteria.
+      Ensure stages reflect customer perspective rather than internal organizational structure.
+    elicit: true
+    sections:
+      - id: stage-definition
+        title: Journey Stage Definitions
+        type: structured
+        instruction: |
+          Define each stage of the customer journey with clear objectives and boundaries.
+          Focus on customer goals and mindset rather than internal business processes.
+        sections:
+          - id: stage-overview
+            title: Stage Overview Table
+            type: table
+            columns: [Stage Name, Customer Objective, Duration, Success Criteria, Failure Modes]
+            instruction: Comprehensive overview of all journey stages with key characteristics
+          - id: stage-transitions
+            title: Stage Transition Triggers
+            type: structured
+            instruction: What causes customers to move from one stage to the next
+          - id: stage-variations
+            title: Stage Variations by Context
+            type: structured
+            instruction: How stages differ based on customer segment, use case, or situation
+      - id: stage-deep-dive
+        title: Detailed Stage Analysis
+        type: structured
+        instruction: |
+          In-depth analysis of each journey stage including all touchpoints, emotions, and opportunities.
+          Provide comprehensive view of customer experience at each stage.
+        sections:
+          - id: pre-awareness-stage
+            title: Pre-Awareness Stage
+            type: structured
+            instruction: |
+              Before customer recognizes problem or need. Focus on context and triggers.
+              Include environmental factors and status quo satisfaction.
+            sections:
+              - id: pre-awareness-context
+                title: Contextual Situation
+                type: paragraph
+                instruction: Customer's situation before recognizing problem or opportunity
+              - id: pre-awareness-triggers
+                title: Awareness Triggers
+                type: bullet-list
+                instruction: Events or conditions that spark problem recognition
+              - id: pre-awareness-mindset
+                title: Customer Mindset
+                type: paragraph
+                instruction: Emotional and psychological state during this stage
+          - id: awareness-stage
+            title: Awareness Stage
+            type: structured
+            instruction: |
+              Customer recognizes problem and begins initial research. Focus on information gathering.
+              Include pain point recognition and initial solution exploration.
+            sections:
+              - id: awareness-objectives
+                title: Stage Objectives
+                type: bullet-list
+                instruction: What customer is trying to accomplish in awareness stage
+              - id: awareness-activities
+                title: Customer Activities
+                type: numbered-list
+                instruction: Specific actions customer takes during awareness stage
+              - id: awareness-touchpoints
+                title: Key Touchpoints
+                type: table
+                columns: [Touchpoint, Channel, Purpose, Satisfaction, Improvement Opportunity]
+                instruction: Main interaction points during awareness stage
+              - id: awareness-emotions
+                title: Emotional Journey
+                type: structured
+                instruction: Emotional progression and key feeling states
+              - id: awareness-pain-points
+                title: Pain Points and Friction
+                type: bullet-list
+                instruction: Obstacles and frustrations during awareness stage
+              - id: awareness-opportunities
+                title: Improvement Opportunities
+                type: bullet-list
+                instruction: Specific ways to enhance awareness stage experience
+          - id: consideration-stage
+            title: Consideration Stage
+            type: structured
+            instruction: |
+              Customer evaluates options and narrows choices. Focus on comparison and evaluation.
+              Include decision criteria development and option assessment.
+            sections:
+              - id: consideration-objectives
+                title: Stage Objectives
+                type: bullet-list
+                instruction: What customer is trying to accomplish in consideration stage
+              - id: consideration-activities
+                title: Customer Activities
+                type: numbered-list
+                instruction: Specific actions customer takes during consideration stage
+              - id: consideration-touchpoints
+                title: Key Touchpoints
+                type: table
+                columns: [Touchpoint, Channel, Purpose, Satisfaction, Improvement Opportunity]
+                instruction: Main interaction points during consideration stage
+              - id: consideration-emotions
+                title: Emotional Journey
+                type: structured
+                instruction: Emotional progression and key feeling states
+              - id: consideration-pain-points
+                title: Pain Points and Friction
+                type: bullet-list
+                instruction: Obstacles and frustrations during consideration stage
+              - id: consideration-opportunities
+                title: Improvement Opportunities
+                type: bullet-list
+                instruction: Specific ways to enhance consideration stage experience
+          - id: decision-stage
+            title: Decision Stage
+            type: structured
+            instruction: |
+              Customer makes final choice and commits to solution. Focus on decision factors and commitment.
+              Include risk mitigation and confidence building.
+            sections:
+              - id: decision-objectives
+                title: Stage Objectives
+                type: bullet-list
+                instruction: What customer is trying to accomplish in decision stage
+              - id: decision-activities
+                title: Customer Activities
+                type: numbered-list
+                instruction: Specific actions customer takes during decision stage
+              - id: decision-touchpoints
+                title: Key Touchpoints
+                type: table
+                columns: [Touchpoint, Channel, Purpose, Satisfaction, Improvement Opportunity]
+                instruction: Main interaction points during decision stage
+              - id: decision-emotions
+                title: Emotional Journey
+                type: structured
+                instruction: Emotional progression and key feeling states
+              - id: decision-pain-points
+                title: Pain Points and Friction
+                type: bullet-list
+                instruction: Obstacles and frustrations during decision stage
+              - id: decision-opportunities
+                title: Improvement Opportunities
+                type: bullet-list
+                instruction: Specific ways to enhance decision stage experience
+          - id: onboarding-stage
+            title: Onboarding Stage
+            type: structured
+            instruction: |
+              Customer begins using solution and achieving initial value. Focus on implementation success.
+              Include setup, training, and early wins.
+            sections:
+              - id: onboarding-objectives
+                title: Stage Objectives
+                type: bullet-list
+                instruction: What customer is trying to accomplish in onboarding stage
+              - id: onboarding-activities
+                title: Customer Activities
+                type: numbered-list
+                instruction: Specific actions customer takes during onboarding stage
+              - id: onboarding-touchpoints
+                title: Key Touchpoints
+                type: table
+                columns: [Touchpoint, Channel, Purpose, Satisfaction, Improvement Opportunity]
+                instruction: Main interaction points during onboarding stage
+              - id: onboarding-emotions
+                title: Emotional Journey
+                type: structured
+                instruction: Emotional progression and key feeling states
+              - id: onboarding-pain-points
+                title: Pain Points and Friction
+                type: bullet-list
+                instruction: Obstacles and frustrations during onboarding stage
+              - id: onboarding-opportunities
+                title: Improvement Opportunities
+                type: bullet-list
+                instruction: Specific ways to enhance onboarding stage experience
+          - id: active-usage-stage
+            title: Active Usage Stage
+            type: structured
+            instruction: |
+              Customer regularly uses solution and realizes ongoing value. Focus on optimization and mastery.
+              Include routine usage patterns and advanced feature adoption.
+            sections:
+              - id: usage-objectives
+                title: Stage Objectives
+                type: bullet-list
+                instruction: What customer is trying to accomplish in active usage stage
+              - id: usage-activities
+                title: Customer Activities
+                type: numbered-list
+                instruction: Specific actions customer takes during active usage stage
+              - id: usage-touchpoints
+                title: Key Touchpoints
+                type: table
+                columns: [Touchpoint, Channel, Purpose, Satisfaction, Improvement Opportunity]
+                instruction: Main interaction points during active usage stage
+              - id: usage-emotions
+                title: Emotional Journey
+                type: structured
+                instruction: Emotional progression and key feeling states
+              - id: usage-pain-points
+                title: Pain Points and Friction
+                type: bullet-list
+                instruction: Obstacles and frustrations during active usage stage
+              - id: usage-opportunities
+                title: Improvement Opportunities
+                type: bullet-list
+                instruction: Specific ways to enhance active usage stage experience
+          - id: expansion-stage
+            title: Expansion Stage
+            type: structured
+            instruction: |
+              Customer explores additional capabilities and increases investment. Focus on growth and optimization.
+              Include feature expansion and deeper integration.
+            sections:
+              - id: expansion-objectives
+                title: Stage Objectives
+                type: bullet-list
+                instruction: What customer is trying to accomplish in expansion stage
+              - id: expansion-activities
+                title: Customer Activities
+                type: numbered-list
+                instruction: Specific actions customer takes during expansion stage
+              - id: expansion-touchpoints
+                title: Key Touchpoints
+                type: table
+                columns: [Touchpoint, Channel, Purpose, Satisfaction, Improvement Opportunity]
+                instruction: Main interaction points during expansion stage
+              - id: expansion-emotions
+                title: Emotional Journey
+                type: structured
+                instruction: Emotional progression and key feeling states
+              - id: expansion-pain-points
+                title: Pain Points and Friction
+                type: bullet-list
+                instruction: Obstacles and frustrations during expansion stage
+              - id: expansion-opportunities
+                title: Improvement Opportunities
+                type: bullet-list
+                instruction: Specific ways to enhance expansion stage experience
+          - id: advocacy-stage
+            title: Advocacy Stage
+            type: structured
+            instruction: |
+              Customer promotes solution to others and becomes brand ambassador. Focus on sharing and referral.
+              Include word-of-mouth activities and community participation.
+            sections:
+              - id: advocacy-objectives
+                title: Stage Objectives
+                type: bullet-list
+                instruction: What customer is trying to accomplish in advocacy stage
+              - id: advocacy-activities
+                title: Customer Activities
+                type: numbered-list
+                instruction: Specific actions customer takes during advocacy stage
+              - id: advocacy-touchpoints
+                title: Key Touchpoints
+                type: table
+                columns: [Touchpoint, Channel, Purpose, Satisfaction, Improvement Opportunity]
+                instruction: Main interaction points during advocacy stage
+              - id: advocacy-emotions
+                title: Emotional Journey
+                type: structured
+                instruction: Emotional progression and key feeling states
+              - id: advocacy-pain-points
+                title: Pain Points and Friction
+                type: bullet-list
+                instruction: Obstacles and frustrations during advocacy stage
+              - id: advocacy-opportunities
+                title: Improvement Opportunities
+                type: bullet-list
+                instruction: Specific ways to enhance advocacy stage experience
+
+  - id: emotional-journey
+    title: Emotional Journey Analysis
+    instruction: |
+      Map the emotional progression throughout the customer journey with specific attention to emotional peaks and valleys.
+      Connect emotions to business outcomes and identify emotional intervention opportunities.
+    elicit: true
+    sections:
+      - id: emotional-framework
+        title: Emotional Mapping Framework
+        type: structured
+        instruction: |
+          Define the emotional dimensions and measurement approach used for journey mapping.
+          Include both positive and negative emotional states with clear definitions.
+        options:
+          - "1. Satisfaction-based emotional scale (very unsatisfied to very satisfied)"
+          - "2. Arousal-based emotional scale (calm to excited)"
+          - "3. Confidence-based emotional scale (uncertain to confident)"
+          - "4. Control-based emotional scale (helpless to empowered)"
+          - "5. Effort-based emotional scale (stressed to effortless)"
+          - "6. Connection-based emotional scale (isolated to supported)"
+          - "7. Achievement-based emotional scale (frustrated to accomplished)"
+          - "8. Trust-based emotional scale (skeptical to trusting)"
+          - "9. Custom emotional framework (specify dimensions and rationale)"
+      - id: emotional-progression
+        title: Emotional State Progression
+        type: structured
+        instruction: |
+          Document how emotional states change throughout the journey with specific triggers and transitions.
+          Include both expected and unexpected emotional shifts.
+        sections:
+          - id: emotional-baseline
+            title: Emotional Baseline
+            type: structured
+            instruction: Customer's typical emotional state before journey begins
+          - id: emotional-peaks
+            title: Emotional Peaks (Positive)
+            type: table
+            columns: [Journey Stage, Peak Description, Trigger Event, Intensity, Duration, Business Impact]
+            instruction: Moments of highest positive emotion and their characteristics
+          - id: emotional-valleys
+            title: Emotional Valleys (Negative)
+            type: table
+            columns: [Journey Stage, Valley Description, Trigger Event, Intensity, Duration, Business Impact]
+            instruction: Moments of lowest emotion and their characteristics
+          - id: emotional-transitions
+            title: Emotional Transition Points
+            type: structured
+            instruction: Key moments where emotions shift significantly
+      - id: moments-that-matter
+        title: Moments That Matter Analysis
+        type: structured
+        instruction: |
+          Identify critical moments that disproportionately impact customer perception and loyalty.
+          Focus on moments with highest emotional impact and business consequences.
+        sections:
+          - id: critical-moments
+            title: Critical Emotional Moments
+            type: table
+            columns: [Moment, Description, Emotional Impact, Memory Formation, Loyalty Effect, Intervention Opportunity]
+            instruction: Moments with outsized impact on customer relationship
+          - id: truth-moments
+            title: Moments of Truth
+            type: structured
+            instruction: When customers evaluate whether solution delivers on promises
+          - id: delight-opportunities
+            title: Delight Opportunities
+            type: bullet-list
+            instruction: Unexpected positive experiences that could exceed expectations
+          - id: recovery-moments
+            title: Service Recovery Moments
+            type: structured
+            instruction: How negative experiences are addressed and resolved
+
+  - id: touchpoint-analysis
+    title: Comprehensive Touchpoint Analysis
+    instruction: |
+      Detail analysis of all customer interaction points including digital, human, and physical touchpoints.
+      Evaluate touchpoint performance and identify optimization opportunities.
+    elicit: true
+    sections:
+      - id: touchpoint-inventory
+        title: Complete Touchpoint Inventory
+        type: structured
+        instruction: |
+          Comprehensive catalog of all customer interaction points throughout the journey.
+          Include both planned touchpoints and spontaneous interaction moments.
+        sections:
+          - id: digital-touchpoints
+            title: Digital Touchpoints
+            type: table
+            columns: [Touchpoint, Platform, Journey Stage, Purpose, Frequency, Satisfaction, Optimization Opportunity]
+            instruction: All digital interaction points and their performance assessment
+          - id: human-touchpoints
+            title: Human Touchpoints
+            type: table
+            columns: [Touchpoint, Role/Department, Journey Stage, Purpose, Frequency, Satisfaction, Optimization Opportunity]
+            instruction: All human interaction points and their performance assessment
+          - id: physical-touchpoints
+            title: Physical Touchpoints
+            type: table
+            columns: [Touchpoint, Location/Format, Journey Stage, Purpose, Frequency, Satisfaction, Optimization Opportunity]
+            instruction: All physical interaction points and their performance assessment
+          - id: system-touchpoints
+            title: System/Process Touchpoints
+            type: table
+            columns: [Touchpoint, System/Process, Journey Stage, Purpose, Frequency, Satisfaction, Optimization Opportunity]
+            instruction: Backend systems and processes that affect customer experience
+      - id: touchpoint-performance
+        title: Touchpoint Performance Analysis
+        type: structured
+        instruction: |
+          Evaluate how well each touchpoint serves customer needs and contributes to journey success.
+          Include both quantitative metrics and qualitative assessment.
+        options:
+          - "1. Customer satisfaction scoring by touchpoint"
+          - "2. Task completion and success rate analysis"
+          - "3. Effort and time investment assessment"
+          - "4. Emotional impact and satisfaction measurement"
+          - "5. Channel preference and usage patterns"
+          - "6. Conversion and progression rate analysis"
+          - "7. Support ticket and issue generation tracking"
+          - "8. Net Promoter Score impact by touchpoint"
+          - "9. Other performance metrics (specify and explain)"
+      - id: channel-integration
+        title: Cross-Channel Integration Analysis
+        type: structured
+        instruction: |
+          Evaluate how well different channels and touchpoints work together to create seamless experience.
+          Include handoffs, data continuity, and omnichannel effectiveness.
+        sections:
+          - id: channel-handoffs
+            title: Channel Handoff Analysis
+            type: table
+            columns: [From Channel, To Channel, Handoff Trigger, Information Transfer, Success Rate, Friction Points]
+            instruction: How customers move between different interaction channels
+          - id: data-continuity
+            title: Customer Data Continuity
+            type: structured
+            instruction: How customer information flows between touchpoints and channels
+          - id: experience-consistency
+            title: Experience Consistency Across Channels
+            type: structured
+            instruction: Consistency of branding, messaging, and functionality across touchpoints
+
+  - id: pain-point-analysis
+    title: Journey Pain Point Analysis
+    instruction: |
+      Systematic identification and analysis of friction points throughout the customer journey.
+      Prioritize pain points by impact and feasibility of resolution.
+    elicit: true
+    sections:
+      - id: pain-point-inventory
+        title: Pain Point Inventory
+        type: structured
+        instruction: |
+          Comprehensive catalog of all friction points, obstacles, and sources of customer frustration.
+          Organize by journey stage and impact severity.
+        sections:
+          - id: functional-pain-points
+            title: Functional Pain Points
+            type: table
+            columns: [Pain Point, Journey Stage, Description, Frequency, Impact, Root Cause, Solution Complexity]
+            instruction: Task-related obstacles and functional frustrations
+          - id: emotional-pain-points
+            title: Emotional Pain Points
+            type: table
+            columns: [Pain Point, Journey Stage, Description, Frequency, Impact, Root Cause, Solution Complexity]
+            instruction: Emotional frustrations and psychological barriers
+          - id: informational-pain-points
+            title: Informational Pain Points
+            type: table
+            columns: [Pain Point, Journey Stage, Description, Frequency, Impact, Root Cause, Solution Complexity]
+            instruction: Information gaps and communication issues
+      - id: pain-point-impact
+        title: Pain Point Impact Assessment
+        type: structured
+        instruction: |
+          Analyze the business and customer impact of different pain points.
+          Include both immediate effects and long-term relationship consequences.
+        options:
+          - "1. Customer satisfaction and NPS impact analysis"
+          - "2. Conversion rate and revenue impact assessment"
+          - "3. Customer retention and churn correlation"
+          - "4. Support cost and operational impact evaluation"
+          - "5. Brand perception and reputation effect analysis"
+          - "6. Competitive vulnerability and switching risk"
+          - "7. Word-of-mouth and referral impact assessment"
+          - "8. Customer lifetime value effect calculation"
+          - "9. Other impact metrics (specify and explain)"
+      - id: pain-point-prioritization
+        title: Pain Point Prioritization Matrix
+        type: table
+        columns: [Pain Point, Customer Impact, Business Impact, Solution Effort, Priority Score, Recommended Action]
+        instruction: |
+          Prioritize pain points using systematic evaluation criteria.
+          Focus on high-impact, achievable improvements for immediate action.
+
+  - id: opportunity-identification
+    title: Journey Improvement Opportunities
+    instruction: |
+      Identify specific opportunities to enhance the customer journey based on pain points and emotional analysis.
+      Develop actionable recommendations with implementation guidance.
+    elicit: true
+    sections:
+      - id: improvement-categories
+        title: Improvement Opportunity Categories
+        type: structured
+        instruction: |
+          Organize improvement opportunities by type and implementation approach.
+          Include both incremental improvements and transformational changes.
+        options:
+          - "1. Quick wins requiring minimal resources and immediate impact"
+          - "2. Process optimization improving efficiency and reducing friction"
+          - "3. Technology enhancement leveraging digital capabilities"
+          - "4. Communication improvement clarifying expectations and guidance"
+          - "5. Training and enablement building customer capability"
+          - "6. Service design innovation creating new touchpoint experiences"
+          - "7. Channel integration connecting disparate interaction points"
+          - "8. Personalization creating tailored experiences for different segments"
+          - "9. Other improvement approaches (specify and explain)"
+      - id: opportunity-portfolio
+        title: Prioritized Opportunity Portfolio
+        type: structured
+        instruction: |
+          Present specific improvement opportunities with business case and implementation guidance.
+          Include resource requirements and expected outcomes.
+        sections:
+          - id: immediate-opportunities
+            title: Immediate Opportunities (0-3 months)
+            type: table
+            columns: [Opportunity, Description, Expected Impact, Resource Required, Owner, Success Metrics]
+            instruction: Quick wins that can be implemented immediately
+          - id: short-term-opportunities
+            title: Short-term Opportunities (3-6 months)
+            type: table
+            columns: [Opportunity, Description, Expected Impact, Resource Required, Owner, Success Metrics]
+            instruction: Medium-effort improvements with significant impact
+          - id: strategic-opportunities
+            title: Strategic Opportunities (6+ months)
+            type: table
+            columns: [Opportunity, Description, Expected Impact, Resource Required, Owner, Success Metrics]
+            instruction: Major initiatives requiring significant investment
+      - id: innovation-opportunities
+        title: Innovation and Breakthrough Opportunities
+        type: structured
+        instruction: |
+          Identify opportunities for breakthrough innovation that could transform the customer experience.
+          Focus on unmet needs and emerging customer expectations.
+        sections:
+          - id: unmet-needs
+            title: Unmet Customer Needs
+            type: bullet-list
+            instruction: Customer needs not currently addressed by any solution
+          - id: emerging-expectations
+            title: Emerging Customer Expectations
+            type: bullet-list
+            instruction: New expectations based on experiences in other industries
+          - id: technology-enablers
+            title: Technology Innovation Enablers
+            type: bullet-list
+            instruction: New technologies that could transform journey experience
+
+  - id: measurement-framework
+    title: Journey Success Measurement Framework
+    instruction: |
+      Establish metrics and KPIs for tracking journey performance and improvement success.
+      Include both quantitative metrics and qualitative indicators.
+    elicit: true
+    sections:
+      - id: journey-metrics
+        title: Journey Performance Metrics
+        type: structured
+        instruction: |
+          Define metrics that track overall journey health and customer success.
+          Include leading and lagging indicators of journey effectiveness.
+        sections:
+          - id: quantitative-metrics
+            title: Quantitative Journey Metrics
+            type: table
+            columns: [Metric, Definition, Measurement Method, Target Value, Reporting Frequency]
+            instruction: Measurable indicators of journey performance
+          - id: qualitative-indicators
+            title: Qualitative Journey Indicators
+            type: bullet-list
+            instruction: Non-quantitative signals of journey health and customer satisfaction
+          - id: stage-specific-metrics
+            title: Stage-Specific Metrics
+            type: table
+            columns: [Journey Stage, Key Metrics, Current Performance, Target Performance, Improvement Strategy]
+            instruction: Metrics that track performance at each journey stage
+      - id: emotional-metrics
+        title: Emotional Journey Metrics
+        type: structured
+        instruction: |
+          Track emotional progression and satisfaction throughout the journey.
+          Include both point-in-time and longitudinal emotional measurement.
+        options:
+          - "1. Customer Satisfaction (CSAT) scores by journey stage"
+          - "2. Net Promoter Score (NPS) progression tracking"
+          - "3. Customer Effort Score (CES) for key interactions"
+          - "4. Emotional state surveys and sentiment analysis"
+          - "5. Behavioral indicators of satisfaction and engagement"
+          - "6. Retention and loyalty metric correlation"
+          - "7. Word-of-mouth and referral behavior tracking"
+          - "8. Customer lifetime value progression measurement"
+          - "9. Other emotional metrics (specify and explain)"
+      - id: improvement-tracking
+        title: Improvement Initiative Tracking
+        type: structured
+        instruction: |
+          Framework for tracking the success of journey improvement initiatives.
+          Include both implementation success and customer impact measurement.
+        sections:
+          - id: implementation-metrics
+            title: Implementation Success Metrics
+            type: table
+            columns: [Initiative, Implementation Metric, Target Value, Current Status, Completion Timeline]
+            instruction: Track successful deployment of improvement initiatives
+          - id: impact-metrics
+            title: Customer Impact Metrics
+            type: table
+            columns: [Initiative, Impact Metric, Baseline Value, Current Value, Target Value, Trend]
+            instruction: Measure customer experience improvement from initiatives
+          - id: roi-measurement
+            title: ROI and Business Impact Measurement
+            type: structured
+            instruction: How to measure business return on journey improvement investments
+
+  - id: implementation-roadmap
+    title: Journey Improvement Implementation Roadmap
+    instruction: |
+      Create actionable roadmap for implementing journey improvements with clear priorities and timelines.
+      Include resource requirements, dependencies, and risk considerations.
+    elicit: true
+    sections:
+      - id: implementation-phases
+        title: Implementation Phase Planning
+        type: structured
+        instruction: |
+          Organize improvement initiatives into logical implementation phases.
+          Consider dependencies, resource constraints, and impact sequencing.
+        sections:
+          - id: phase-1-initiatives
+            title: Phase 1: Foundation (0-3 months)
+            type: table
+            columns: [Initiative, Description, Resources Required, Success Criteria, Risk Mitigation]
+            instruction: Foundational improvements that enable future enhancements
+          - id: phase-2-initiatives
+            title: Phase 2: Optimization (3-9 months)
+            type: table
+            columns: [Initiative, Description, Resources Required, Success Criteria, Risk Mitigation]
+            instruction: Process and experience optimization initiatives
+          - id: phase-3-initiatives
+            title: Phase 3: Innovation (9+ months)
+            type: table
+            columns: [Initiative, Description, Resources Required, Success Criteria, Risk Mitigation]
+            instruction: Breakthrough innovation and transformation initiatives
+      - id: resource-planning
+        title: Resource Planning and Allocation
+        type: structured
+        instruction: |
+          Plan human, financial, and technical resources required for journey improvement implementation.
+          Include cross-functional coordination and capability development needs.
+        options:
+          - "1. Cross-functional team formation and governance structure"
+          - "2. Budget allocation and financial planning across initiatives"
+          - "3. Technology infrastructure and platform requirements"
+          - "4. Skills development and training needs assessment"
+          - "5. External vendor and partnership requirements"
+          - "6. Change management and organizational readiness"
+          - "7. Performance monitoring and measurement system setup"
+          - "8. Risk management and contingency planning"
+          - "9. Other resource considerations (specify and explain)"
+      - id: success-criteria
+        title: Implementation Success Criteria
+        type: structured
+        instruction: |
+          Define clear success criteria for journey improvement implementation.
+          Include both process success and outcome success measures.
+        sections:
+          - id: milestone-criteria
+            title: Implementation Milestone Criteria
+            type: table
+            columns: [Milestone, Success Criteria, Measurement Method, Timeline, Dependencies]
+            instruction: Key implementation milestones and their success definitions
+          - id: outcome-criteria
+            title: Customer Outcome Success Criteria
+            type: bullet-list
+            instruction: How improved customer experience will be measured and validated
+          - id: business-impact-criteria
+            title: Business Impact Success Criteria
+            type: bullet-list
+            instruction: Expected business benefits and how they will be measured
+
+  - id: journey-validation
+    title: Journey Map Validation and Maintenance
+    instruction: |
+      Establish process for validating journey map accuracy and maintaining currency over time.
+      Include stakeholder validation, customer feedback, and update protocols.
+    sections:
+      - id: validation-methodology
+        title: Journey Map Validation Methodology
+        type: structured
+        instruction: |
+          Systematic approach to validating journey map accuracy and completeness.
+          Include both internal stakeholder validation and customer confirmation.
+        sections:
+          - id: stakeholder-validation
+            title: Internal Stakeholder Validation
+            type: bullet-list
+            instruction: How customer-facing teams will validate journey map accuracy
+          - id: customer-validation
+            title: Customer Validation Process
+            type: bullet-list
+            instruction: How customers will be involved in validating journey representation
+          - id: data-validation
+            title: Data and Analytics Validation
+            type: bullet-list
+            instruction: How quantitative data will be used to validate journey insights
+      - id: maintenance-framework
+        title: Journey Map Maintenance Framework
+        type: structured
+        instruction: |
+          Ongoing process for keeping journey map current and relevant.
+          Include update triggers, review cycles, and change management.
+        sections:
+          - id: update-triggers
+            title: Update Triggers and Criteria
+            type: bullet-list
+            instruction: What changes would require journey map updates
+          - id: review-schedule
+            title: Regular Review Schedule
+            type: structured
+            instruction: Planned review and refresh cycles for journey map
+          - id: change-management
+            title: Change Management Process
+            type: numbered-list
+            instruction: How journey map changes will be communicated and implemented
+      - id: continuous-improvement
+        title: Continuous Journey Improvement
+        type: structured
+        instruction: |
+          Framework for ongoing journey monitoring and improvement.
+          Include feedback loops, iteration cycles, and innovation processes.
+        sections:
+          - id: feedback-loops
+            title: Customer Feedback Integration
+            type: structured
+            instruction: How ongoing customer feedback will inform journey improvements
+          - id: performance-monitoring
+            title: Journey Performance Monitoring
+            type: structured
+            instruction: Continuous monitoring of journey metrics and health indicators
+          - id: innovation-pipeline
+            title: Journey Innovation Pipeline
+            type: structured
+            instruction: Process for identifying and testing new journey improvement ideas

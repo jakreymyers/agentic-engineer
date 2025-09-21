@@ -1,0 +1,253 @@
+# User Research Multi-Agent System Configuration
+# Version 1.0.0
+
+system:
+  name: User Research Multi-Agent System
+  version: 1.0.0
+  description: End-to-end user research workflow orchestration system
+  bundle: user-research
+
+agents:
+  research-orchestrator:
+    file: agents/research-orchestrator.md
+    title: Chief Research Orchestrator
+    description: Master coordinator for all research activities
+
+  research-strategist:
+    file: agents/research-strategist.md
+    title: Senior Research Strategist
+    description: Study design and methodology specialist
+
+  interview-specialist:
+    file: agents/interview-specialist.md
+    title: Lead Interview Specialist
+    description: Interview guide creation and execution expert
+
+  data-analyst:
+    file: agents/data-analyst.md
+    title: Senior Research Analyst
+    description: Qualitative and quantitative analysis expert
+
+  insight-synthesizer:
+    file: agents/insight-synthesizer.md
+    title: Principal Insight Synthesizer
+    description: Pattern recognition and insight generation specialist
+
+  research-reporter:
+    file: agents/research-reporter.md
+    title: Lead Research Reporter
+    description: Report generation and communication expert
+
+workflows:
+  user-interview-research:
+    file: workflows/user-interview-research.yaml
+    description: Complete user interview research workflow from planning to reporting
+
+  rapid-discovery:
+    file: workflows/rapid-discovery.yaml
+    description: 5-day rapid discovery sprint for quick insights
+
+  conjoint-analysis:
+    file: workflows/conjoint-analysis.yaml
+    description: Quantitative preference research and trade-off analysis
+
+  ethnographic-research:
+    file: workflows/ethnographic-research.yaml
+    description: In-depth observational and cultural research
+
+  mixed-methods-research:
+    file: workflows/mixed-methods-research.yaml
+    description: Integrated qualitative and quantitative research approach
+
+tasks:
+  # Project Establishment
+  establish-research-project:
+    file: tasks/establish-research-project.md
+    description: Define objectives, stakeholders, and resources
+
+  select-research-methodology:
+    file: tasks/select-research-methodology.md
+    description: Choose appropriate research methods
+
+  # Study Design
+  design-research-study:
+    file: tasks/design-research-study.md
+    description: Comprehensive study planning
+
+  create-screening-questionnaire:
+    file: tasks/create-screening-questionnaire.md
+    description: Participant recruitment criteria
+
+  # Interview
+  create-discussion-guide:
+    file: tasks/create-discussion-guide.md
+    description: Interview guide generation
+
+  generate-interview-probes:
+    file: tasks/generate-interview-probes.md
+    description: Follow-up questions creation
+
+  simulate-interview-session:
+    file: tasks/simulate-interview-session.md
+    description: Interview practice and simulation
+
+  create-interview-protocol:
+    file: tasks/create-interview-protocol.md
+    description: Interview execution protocol development
+
+  # Analysis
+  analyze-transcript:
+    file: tasks/analyze-transcript.md
+    description: Process interview transcripts
+
+  extract-themes:
+    file: tasks/extract-themes.md
+    description: Identify recurring patterns
+
+  # Synthesis
+  synthesize-cross-interview:
+    file: tasks/synthesize-cross-interview.md
+    description: Integrate findings across interviews
+
+  create-user-personas:
+    file: tasks/create-user-personas.md
+    description: Evidence-based persona development
+
+  # Reporting
+  generate-research-report:
+    file: tasks/generate-research-report.md
+    description: Comprehensive report creation
+
+  create-executive-summary:
+    file: tasks/create-executive-summary.md
+    description: Strategic summary for stakeholders
+
+templates:
+  # Project Templates
+  research-brief:
+    file: templates/research-brief-tmpl.yaml
+    description: Research project brief template
+
+  methodology-matrix:
+    file: templates/methodology-matrix-tmpl.yaml
+    description: Research method selection framework
+
+  # Study Design Templates
+  study-design:
+    file: templates/study-design-tmpl.yaml
+    description: Complete study design template
+
+  screening-criteria:
+    file: templates/screening-criteria-tmpl.yaml
+    description: Participant screening template
+
+  # Interview Templates
+  discussion-guide:
+    file: templates/discussion-guide-tmpl.yaml
+    description: Interview discussion guide template
+
+  interview-protocol:
+    file: templates/interview-protocol-tmpl.yaml
+    description: Interview execution protocol
+
+  probe-bank:
+    file: templates/probe-bank-tmpl.yaml
+    description: Interview probe bank template
+
+  consent-form:
+    file: templates/consent-form-tmpl.yaml
+    description: Participant consent form template
+
+  # Analysis Templates
+  transcript-analysis:
+    file: templates/transcript-analysis-tmpl.yaml
+    description: Transcript coding framework
+
+  coding-framework:
+    file: templates/coding-framework-tmpl.yaml
+    description: Qualitative coding template
+
+  # Synthesis Templates
+  persona-profile:
+    file: templates/persona-profile-tmpl.yaml
+    description: User persona template
+
+  journey-map:
+    file: templates/journey-map-tmpl.yaml
+    description: Customer journey mapping template
+
+  # Reporting Templates
+  research-report:
+    file: templates/research-report-tmpl.yaml
+    description: Full research report template
+
+  executive-summary:
+    file: templates/executive-summary-tmpl.yaml
+    description: Executive summary template
+
+data:
+  research-methods-kb:
+    file: data/research-methods-kb.md
+    description: Comprehensive research methods knowledge base
+
+  interview-techniques:
+    file: data/interview-techniques.md
+    description: Interview strategies and techniques
+
+  cognitive-biases:
+    file: data/cognitive-biases.md
+    description: Research bias reference guide
+
+  rapport-building:
+    file: data/rapport-building.md
+    description: Rapport building techniques guide
+
+  sampling-methods:
+    file: data/sampling-methods.md
+    description: Sampling strategies guide
+
+  ethical-guidelines:
+    file: data/ethical-guidelines.md
+    description: Research ethics and compliance
+
+checklists:
+  research-quality:
+    file: checklists/research-quality-checklist.md
+    description: Overall research quality checklist
+
+  interview-quality:
+    file: checklists/interview-quality-checklist.md
+    description: Interview quality validation
+
+  analysis-quality:
+    file: checklists/analysis-quality-checklist.md
+    description: Analysis rigor checklist
+
+tools:
+  transcription-service:
+    name: intelligent-transcription-service
+    description: Audio/video transcription with speaker diarization
+
+  stats-analyzer:
+    name: research-stats-analyzer
+    description: Statistical analysis toolkit
+
+  affinity-mapper:
+    name: digital-affinity-mapper
+    description: Insight clustering tool
+
+  sentiment-analyzer:
+    name: research-sentiment-analyzer
+    description: Emotion and sentiment analysis
+
+  viz-generator:
+    name: research-viz-generator
+    description: Data visualization generator
+
+settings:
+  default_workflow: user-interview-research
+  default_agent: research-orchestrator
+  elicitation_required: true
+  quality_gates_enabled: true
+  auto_save_enabled: true
+  output_directory: ./research-outputs/

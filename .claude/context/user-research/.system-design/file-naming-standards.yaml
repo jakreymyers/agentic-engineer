@@ -1,0 +1,335 @@
+# File Naming Standards for User Research System
+# Comprehensive naming conventions for consistency and AI readability
+
+naming_standards:
+  version: 1.0
+  description: |
+    Standardized file naming conventions for all artifacts in the
+    User Research Multi-Agent System. Designed for consistency,
+    searchability, and AI agent processing efficiency.
+
+# Global Rules
+global_rules:
+  case: lowercase_with_hyphens
+  separators: hyphens_only
+  no_spaces: true
+  no_special_characters: true
+  date_format: YYYY-MM-DD
+  versioning: semantic_versioning
+  max_length: 255_characters
+  encoding: utf8
+
+# Component Naming Patterns
+naming_patterns:
+
+  # Agent Definitions
+  agents:
+    pattern: "{agent-type}-agent.yaml"
+    examples:
+      - research-orchestrator-agent.yaml
+      - interview-specialist-agent.yaml
+      - data-analyst-agent.yaml
+      - insight-synthesizer-agent.yaml
+      - research-strategist-agent.yaml
+      - research-reporter-agent.yaml
+    location: /agents/
+
+  # Workflow Files
+  workflows:
+    pattern: "{methodology}-workflow.yaml"
+    examples:
+      - user-interview-research-workflow.yaml
+      - rapid-discovery-workflow.yaml
+      - conjoint-analysis-workflow.yaml
+      - ethnographic-research-workflow.yaml
+      - mixed-methods-workflow.yaml
+    location: /workflows/
+
+  # Task Specifications
+  tasks:
+    pattern: "{action-verb}-{object}.md"
+    examples:
+      - establish-research-project.md
+      - create-discussion-guide.md
+      - analyze-transcript.md
+      - synthesize-cross-interview.md
+      - generate-research-report.md
+    location: /tasks/
+    naming_rules:
+      - Start with action verb
+      - Use singular object
+      - Keep under 5 words
+
+  # Templates
+  templates:
+    pattern: "{template-purpose}-tmpl.yaml"
+    examples:
+      - research-brief-tmpl.yaml
+      - discussion-guide-tmpl.yaml
+      - coding-framework-tmpl.yaml
+      - persona-profile-tmpl.yaml
+      - research-report-tmpl.yaml
+    location: /templates/
+    suffix: Always end with -tmpl
+
+  # Tool Specifications
+  tools:
+    pattern: "{tool-function}-{tool-type}.md"
+    examples:
+      - intelligent-transcription-service.md
+      - digital-affinity-mapper.md
+      - research-sentiment-analyzer.md
+      - research-viz-generator.md
+      - data-format-converter.md
+    location: /tools/
+    naming_rules:
+      - Descriptive function first
+      - Tool type second
+      - No redundant words
+
+  # Quality Gates
+  quality_gates:
+    pattern: "quality-gates-{aspect}.yaml"
+    examples:
+      - quality-gates-measurable.yaml
+      - quality-gates-automated.yaml
+      - quality-gates-workflow.yaml
+    location: /quality/
+
+  # Test Files
+  test_files:
+    pattern: "{test-type}-test-{scope}.{ext}"
+    examples:
+      - integration-test-cases.md
+      - unit-test-agents.yaml
+      - e2e-test-workflows.yaml
+      - validation-test-data.json
+    location: /tests/
+
+# Project Artifact Naming
+project_artifacts:
+
+  # Research Briefs
+  research_briefs:
+    pattern: "{project-id}-research-brief-{version}.md"
+    example: "PROJ-2024-001-research-brief-v1.0.md"
+    components:
+      project_id: PROJ-YYYY-NNN
+      artifact_type: research-brief
+      version: v{major}.{minor}
+
+  # Interview Data
+  interview_data:
+    transcripts:
+      pattern: "{project-id}-{participant-id}-transcript.json"
+      example: "PROJ-2024-001-P012-transcript.json"
+
+    recordings:
+      pattern: "{project-id}-{participant-id}-{date}-recording.{ext}"
+      example: "PROJ-2024-001-P012-2024-03-15-recording.mp4"
+
+    notes:
+      pattern: "{project-id}-{participant-id}-notes.md"
+      example: "PROJ-2024-001-P012-notes.md"
+
+  # Analysis Artifacts
+  analysis_artifacts:
+    coded_data:
+      pattern: "{project-id}-{participant-id}-coded.json"
+      example: "PROJ-2024-001-P012-coded.json"
+
+    themes:
+      pattern: "{project-id}-themes-{date}.json"
+      example: "PROJ-2024-001-themes-2024-03-20.json"
+
+    affinity_map:
+      pattern: "{project-id}-affinity-map-{version}.json"
+      example: "PROJ-2024-001-affinity-map-v1.0.json"
+
+  # Synthesis Outputs
+  synthesis_outputs:
+    personas:
+      pattern: "{project-id}-personas-{version}.json"
+      example: "PROJ-2024-001-personas-v1.0.json"
+
+    journey_maps:
+      pattern: "{project-id}-journey-{persona-name}.json"
+      example: "PROJ-2024-001-journey-sarah.json"
+
+    requirements:
+      pattern: "{project-id}-requirements-{version}.json"
+      example: "PROJ-2024-001-requirements-v1.0.json"
+
+  # Reports
+  reports:
+    full_report:
+      pattern: "{project-id}-research-report-{date}.md"
+      example: "PROJ-2024-001-research-report-2024-03-25.md"
+
+    executive_summary:
+      pattern: "{project-id}-executive-summary-{date}.pdf"
+      example: "PROJ-2024-001-executive-summary-2024-03-25.pdf"
+
+    presentation:
+      pattern: "{project-id}-presentation-{date}.pptx"
+      example: "PROJ-2024-001-presentation-2024-03-25.pptx"
+
+# Directory Structure
+directory_structure:
+  root: ~docs/research/
+  organization:
+    by_project:
+      pattern: /{project-id}/
+      subdirs:
+        - /data
+        - /analysis
+        - /synthesis
+        - /reports
+        - /artifacts
+
+    by_type:
+      pattern: /{artifact-type}/
+      subdirs:
+        - /briefs
+        - /transcripts
+        - /analysis
+        - /personas
+        - /reports
+
+    recommended: by_project
+
+# Versioning Rules
+versioning:
+  strategy: semantic
+  format: "v{major}.{minor}.{patch}"
+  examples:
+    - v1.0.0 - Initial version
+    - v1.1.0 - Minor feature addition
+    - v1.1.1 - Bug fix
+    - v2.0.0 - Breaking change
+
+  when_to_version:
+    - Document iterations
+    - Template updates
+    - Workflow modifications
+    - Major analysis revisions
+
+# Special Cases
+special_cases:
+
+  temporary_files:
+    pattern: "tmp-{purpose}-{timestamp}.{ext}"
+    example: "tmp-analysis-20240315-143022.json"
+    retention: 7_days
+    location: /tmp/
+
+  backup_files:
+    pattern: "{original-name}-backup-{date}-{time}.{ext}"
+    example: "research-brief-backup-20240315-1430.md"
+    location: /backups/
+
+  archived_files:
+    pattern: "archive-{original-name}-{archive-date}.{ext}"
+    example: "archive-research-report-20240315.md"
+    location: /archive/
+
+  error_logs:
+    pattern: "error-{workflow}-{date}-{time}.log"
+    example: "error-user-interview-20240315-143022.log"
+    location: /logs/errors/
+
+# Migration Guide
+migration:
+  from_existing:
+    identify_files:
+      - List all current files
+      - Categorize by type
+      - Map to new conventions
+
+    rename_strategy:
+      - Create mapping file
+      - Batch rename scripts
+      - Update references
+      - Verify integrity
+
+    validation:
+      - Check all references updated
+      - Verify no broken links
+      - Test workflow execution
+      - Audit file accessibility
+
+# Validation Rules
+validation:
+  automated_checks:
+    - No spaces in names
+    - Lowercase enforcement
+    - Pattern compliance
+    - Length limits
+    - Character restrictions
+
+  pre_commit_hooks:
+    - Filename validation
+    - Convention compliance
+    - Reference integrity
+    - Duplicate detection
+
+# Implementation Checklist
+implementation:
+  phase_1:
+    - [ ] Document current naming
+    - [ ] Create mapping table
+    - [ ] Build rename scripts
+    - [ ] Test on sample files
+
+  phase_2:
+    - [ ] Rename system files
+    - [ ] Update workflow references
+    - [ ] Update task references
+    - [ ] Update tool specifications
+
+  phase_3:
+    - [ ] Rename project artifacts
+    - [ ] Update templates
+    - [ ] Update documentation
+    - [ ] Train team
+
+  phase_4:
+    - [ ] Deploy validation hooks
+    - [ ] Monitor compliance
+    - [ ] Address violations
+    - [ ] Continuous improvement
+
+# Quick Reference Card
+quick_reference:
+  agents: "{name}-agent.yaml"
+  workflows: "{method}-workflow.yaml"
+  tasks: "{verb}-{object}.md"
+  templates: "{purpose}-tmpl.yaml"
+  tools: "{function}-{type}.md"
+  projects: "PROJ-YYYY-NNN"
+  dates: "YYYY-MM-DD"
+  versions: "v{major}.{minor}.{patch}"
+
+# Enforcement
+enforcement:
+  automated:
+    - Pre-commit hooks
+    - CI/CD validation
+    - Automated renaming
+    - Error reporting
+
+  manual:
+    - Code review checks
+    - Documentation updates
+    - Training sessions
+    - Regular audits
+
+# Benefits
+benefits:
+  - Consistent file organization
+  - Improved searchability
+  - AI-friendly parsing
+  - Reduced confusion
+  - Easier automation
+  - Better collaboration
+  - Simplified maintenance

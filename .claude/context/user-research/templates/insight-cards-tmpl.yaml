@@ -1,0 +1,523 @@
+# Insight Cards Template
+template:
+  id: insight-cards-template-v1
+  name: Research Insight Cards
+  version: 1.0
+  output:
+    format: structured-cards
+    filename: docs/research/insight-cards.md
+    title: "{{project_name}} Research Insight Cards"
+
+workflow:
+  mode: interactive
+  elicitation: insight-validation
+  validation: evidence-required
+
+metadata:
+  created_by: insight-synthesizer
+  reviewed_by: research-reporter
+  audience:
+    - product-teams
+    - design-teams
+    - development-teams
+    - stakeholders
+  document_type: insight-collection
+  card_format: portable-insights
+  usage: reference-and-planning
+
+sections:
+  - id: insight-collection-overview
+    title: Insight Collection Overview
+    instruction: |
+      Define the insight collection strategy and structure:
+      - Insight categorization framework
+      - Priority and impact classification
+      - Evidence strength indicators
+      - Usage and application guidance
+      Set foundation for individual insight cards.
+    elicit: true
+    owner: insight-synthesizer
+    sections:
+      - id: collection-strategy
+        title: Collection Strategy
+        type: strategic-framework
+        components:
+          insight_scope: "[Breadth and depth of insights]"
+          categorization: "[How insights are grouped]"
+          prioritization: "[Impact vs Actionability matrix]"
+          evidence_levels: "[Confidence and validation criteria]"
+          update_frequency: "[How often insights are refreshed]"
+      - id: usage-framework
+        title: Usage Framework
+        type: application-guide
+        components:
+          primary_users: "[Who uses these insights]"
+          use_cases: "[How insights inform decisions]"
+          integration_points: "[Where insights fit in workflows]"
+          success_metrics: "[How insight value is measured]"
+          sharing_guidelines: "[Distribution and access protocols]"
+      - id: quality_standards
+        title: Quality Standards
+        type: validation-criteria
+        components:
+          evidence_requirements: "[What constitutes valid support]"
+          clarity_standards: "[Communication effectiveness criteria]"
+          actionability_criteria: "[What makes insights useful]"
+          relevance_filters: "[How to assess insight value]"
+          review_process: "[Quality assurance workflow]"
+
+  - id: insight-categorization
+    title: Insight Categorization System
+    instruction: |
+      Establish systematic categorization of insights:
+      - Thematic categories and subcategories
+      - Impact classification system
+      - Evidence strength indicators
+      - Actionability and timeline mapping
+      Create consistent organization framework.
+    elicit: true
+    owner: insight-synthesizer
+    sections:
+      - id: thematic-categories
+        title: Thematic Categories
+        type: category-hierarchy
+        components:
+          user_behavior: "[Insights about user actions and patterns]"
+          user_needs: "[Unmet needs and desires identified]"
+          pain_points: "[Friction and frustration areas]"
+          opportunities: "[Innovation and improvement potential]"
+          business_impact: "[Strategic and operational implications]"
+          technical_requirements: "[System and capability needs]"
+          market_context: "[Competitive and industry insights]"
+      - id: impact-classification
+        title: Impact Classification
+        type: impact-matrix
+        components:
+          transformational: "[Game-changing insights]"
+          significant: "[Major improvement opportunities]"
+          meaningful: "[Notable enhancement potential]"
+          incremental: "[Useful optimization areas]"
+          informational: "[Context and background insights]"
+      - id: evidence-strength
+        title: Evidence Strength Indicators
+        type: confidence-scale
+        components:
+          very_high: "[Multiple sources, statistical significance]"
+          high: "[Clear patterns, strong qualitative evidence]"
+          medium: "[Consistent themes, moderate validation]"
+          low: "[Emerging patterns, limited validation]"
+          exploratory: "[Initial observations, needs validation]"
+      - id: actionability-timeline
+        title: Actionability Timeline
+        type: implementation-scale
+        components:
+          immediate: "[Can act within 30 days]"
+          short_term: "[Action within 3 months]"
+          medium_term: "[Implementation within 12 months]"
+          long_term: "[Strategic, 12+ month timeline]"
+          contextual: "[Depends on other factors]"
+
+  - id: individual-insight-cards
+    title: Individual Insight Cards
+    instruction: |
+      Create detailed cards for each significant insight:
+      - Clear insight statement and description
+      - Supporting evidence and data sources
+      - Business implications and impact
+      - Recommended actions and ownership
+      - Implementation guidance and timeline
+      Develop actionable insight documentation.
+    elicit: true
+    owner: insight-synthesizer
+    repeat_for_each: significant_insight
+    validation: evidence-and-action-required
+    sections:
+      - id: insight-header
+        title: Insight Card Header
+        type: card-identification
+        components:
+          insight_id: "[Unique identifier: INS-001]"
+          insight_title: "[Compelling, action-oriented headline]"
+          category: "[Primary thematic category]"
+          subcategory: "[Specific area within category]"
+          impact_level: "[Transformational/Significant/Meaningful/Incremental]"
+          evidence_strength: "[Very High/High/Medium/Low/Exploratory]"
+          actionability: "[Immediate/Short/Medium/Long-term/Contextual]"
+          created_date: "[When insight was identified]"
+          last_updated: "[Most recent validation or update]"
+      - id: insight-statement
+        title: Core Insight Statement
+        type: insight-definition
+        components:
+          primary_statement: "[Clear, one-sentence insight]"
+          detailed_description: "[2-3 paragraph elaboration]"
+          context: "[Situational factors and boundaries]"
+          assumptions: "[Key assumptions underlying insight]"
+          scope: "[Who/what this applies to]"
+      - id: supporting-evidence
+        title: Supporting Evidence
+        type: evidence-compilation
+        components:
+          quantitative_evidence:
+            - statistic: "[Specific numbers and percentages]"
+              source: "[Data source and methodology]"
+              confidence: "[Statistical significance level]"
+              sample_size: "[N and representativeness]"
+          qualitative_evidence:
+            - quote: "[Representative participant quote]"
+              attribution: "[Participant context]"
+              frequency: "[How often this was observed]"
+              supporting_observations: "[Related behavioral evidence]"
+          validation_sources:
+            - source_type: "[Interview/Survey/Observation/Analytics]"
+              participants: "[Number and characteristics]"
+              methodology: "[How evidence was collected]"
+              reliability: "[Confidence in source quality]"
+      - id: business-implications
+        title: Business Implications
+        type: impact-analysis
+        components:
+          strategic_impact: "[How this affects business strategy]"
+          operational_impact: "[Day-to-day business implications]"
+          financial_impact: "[Revenue/cost implications]"
+          competitive_impact: "[Market position effects]"
+          user_experience_impact: "[Customer satisfaction effects]"
+          risk_factors: "[Potential negative consequences]"
+          opportunity_size: "[Quantified potential if acted upon]"
+      - id: recommended-actions
+        title: Recommended Actions
+        type: action-framework
+        components:
+          immediate_actions:
+            - action: "[Specific step to take]"
+              owner: "[Who should do this]"
+              timeline: "[When to complete]"
+              resources: "[What's needed]"
+              success_criteria: "[How to measure completion]"
+          strategic_initiatives:
+            - initiative: "[Longer-term project or program]"
+              rationale: "[Why this addresses the insight]"
+              scope: "[What would be included]"
+              investment: "[Resource requirements]"
+              expected_return: "[Anticipated benefits]"
+          dependencies: "[What needs to happen first]"
+          success_metrics: "[How to measure impact]"
+      - id: implementation-guidance
+        title: Implementation Guidance
+        type: execution-support
+        components:
+          quick_wins: "[Low-effort, high-impact actions]"
+          pilot_opportunities: "[Ways to test and validate]"
+          scaling_strategy: "[How to expand successful actions]"
+          change_management: "[Adoption and communication needs]"
+          measurement_approach: "[Tracking and optimization]"
+          risk_mitigation: "[How to minimize potential downsides]"
+      - id: related-insights
+        title: Related Insights & Connections
+        type: insight-network
+        components:
+          supporting_insights: "[Other insights that reinforce this]"
+          conflicting_insights: "[Contradictory findings to reconcile]"
+          prerequisite_insights: "[Foundational insights needed]"
+          consequent_insights: "[What this insight enables]"
+          thematic_connections: "[Broader patterns and themes]"
+
+  - id: insight-collections
+    title: Curated Insight Collections
+    instruction: |
+      Create thematic collections of related insights:
+      - User experience insights compilation
+      - Business strategy insights grouping
+      - Quick wins and immediate opportunities
+      - Long-term transformation insights
+      Enable focused insight consumption by theme.
+    elicit: true
+    owner: insight-synthesizer
+    sections:
+      - id: user-experience-collection
+        title: User Experience Insights
+        type: thematic-collection
+        components:
+          collection_overview: "[What this collection covers]"
+          key_themes: "[Major UX patterns identified]"
+          priority_insights: "[Most impactful UX insights]"
+          design_implications: "[What this means for design]"
+          user_journey_impacts: "[Journey stage insights]"
+          accessibility_considerations: "[Inclusive design insights]"
+          interaction_patterns: "[Interface and interaction findings]"
+      - id: business-strategy-collection
+        title: Business Strategy Insights
+        type: strategic-collection
+        components:
+          strategic_themes: "[High-level business patterns]"
+          market_opportunities: "[Business growth insights]"
+          competitive_advantages: "[Differentiation opportunities]"
+          revenue_implications: "[Financial impact insights]"
+          operational_insights: "[Process and efficiency findings]"
+          risk_assessments: "[Strategic risk factors identified]"
+      - id: quick-wins-collection
+        title: Quick Wins & Immediate Opportunities
+        type: action-collection
+        components:
+          immediate_impact: "[30-day implementation opportunities]"
+          low_effort_high_value: "[Easy wins with big impact]"
+          pilot_candidates: "[Test-and-learn opportunities]"
+          resource_efficient: "[High ROI actions]"
+          confidence_builders: "[Success demonstration opportunities]"
+      - id: transformation-collection
+        title: Long-term Transformation Insights
+        type: vision-collection
+        components:
+          transformation_themes: "[Major change opportunities]"
+          capability_requirements: "[What we need to develop]"
+          market_positioning: "[Long-term competitive position]"
+          user_evolution: "[How user needs will change]"
+          technology_implications: "[Platform and system needs]"
+          organizational_change: "[Cultural and process evolution]"
+
+  - id: insight-prioritization
+    title: Insight Prioritization Framework
+    instruction: |
+      Establish prioritization methodology for insights:
+      - Multi-criteria evaluation framework
+      - Stakeholder impact assessment
+      - Resource requirement analysis
+      - Timeline and dependency mapping
+      Guide decision-making and resource allocation.
+    elicit: true
+    owner: insight-synthesizer
+    editors: [research-reporter]
+    sections:
+      - id: prioritization-criteria
+        title: Prioritization Criteria
+        type: evaluation-framework
+        components:
+          business_impact: "[Revenue/cost/strategic value]"
+          user_impact: "[Experience improvement potential]"
+          implementation_effort: "[Resource and complexity requirements]"
+          confidence_level: "[Evidence strength and validation]"
+          strategic_alignment: "[Fit with business objectives]"
+          competitive_advantage: "[Differentiation potential]"
+          risk_level: "[Implementation and business risks]"
+          timing_sensitivity: "[Urgency and market timing]"
+      - id: scoring_methodology
+        title: Scoring Methodology
+        type: evaluation-process
+        components:
+          criteria_weighting: "[Relative importance of factors]"
+          scoring_scale: "[1-10 or other evaluation scale]"
+          evaluation_process: "[How scores are determined]"
+          stakeholder_input: "[How different perspectives are included]"
+          validation_approach: "[How scores are verified]"
+      - id: priority_matrix
+        title: Priority Matrix
+        type: decision-framework
+        components:
+          critical_insights: "[Must-act-on insights]"
+          high_priority: "[Should-act-on insights]"
+          medium_priority: "[Could-act-on insights]"
+          low_priority: "[Watch-and-monitor insights]"
+          future_consideration: "[Interesting but not current]"
+
+  - id: insight-validation
+    title: Insight Validation & Quality Assurance
+    instruction: |
+      Establish validation methodology for insights:
+      - Evidence verification processes
+      - Stakeholder review and feedback
+      - Insight accuracy and relevance checks
+      - Update and refinement procedures
+      Ensure insight quality and reliability.
+    elicit: true
+    owner: insight-synthesizer
+    sections:
+      - id: validation-process
+        title: Validation Process
+        type: quality-framework
+        components:
+          evidence_review: "[How supporting evidence is verified]"
+          expert_validation: "[Subject matter expert input process]"
+          stakeholder_feedback: "[User and business stakeholder review]"
+          data_verification: "[Statistical and analytical validation]"
+          logical_consistency: "[Internal consistency checks]"
+          bias_assessment: "[Researcher and confirmation bias checks]"
+      - id: quality_gates
+        title: Quality Gates
+        type: checkpoint-system
+        components:
+          evidence_sufficiency: "[Minimum evidence requirements]"
+          clarity_standards: "[Communication effectiveness criteria]"
+          actionability_check: "[Practical utility assessment]"
+          relevance_validation: "[Current applicability verification]"
+          stakeholder_approval: "[Required sign-offs and endorsements]"
+      - id: update_maintenance
+        title: Update & Maintenance
+        type: lifecycle-management
+        components:
+          review_schedule: "[How often insights are reviewed]"
+          update_triggers: "[What prompts insight revision]"
+          versioning_system: "[How changes are tracked]"
+          archive_criteria: "[When insights become obsolete]"
+          refresh_methodology: "[How to validate ongoing relevance]"
+
+  - id: usage-guidelines
+    title: Usage Guidelines & Best Practices
+    instruction: |
+      Provide guidance for effective insight utilization:
+      - How to select relevant insights
+      - Integration with planning processes
+      - Communication and sharing protocols
+      - Action planning and follow-through
+      Maximize insight value and application.
+    elicit: false
+    owner: research-reporter
+    sections:
+      - id: selection-guidance
+        title: Insight Selection Guidance
+        type: usage-framework
+        components:
+          context_matching: "[How to find relevant insights]"
+          priority_filtering: "[Using priority levels effectively]"
+          combination_strategies: "[Working with multiple insights]"
+          evidence_interpretation: "[Understanding confidence levels]"
+          scope_application: "[Applying insights appropriately]"
+      - id: integration_processes
+        title: Integration with Planning
+        type: process-integration
+        components:
+          product_planning: "[How insights inform product decisions]"
+          design_process: "[Integration with design workflows]"
+          development_planning: "[Technical decision support]"
+          business_strategy: "[Strategic planning integration]"
+          marketing_planning: "[Customer communication insights]"
+      - id: communication_protocols
+        title: Communication Protocols
+        type: sharing-framework
+        components:
+          stakeholder_mapping: "[Who needs which insights]"
+          communication_formats: "[How to present insights]"
+          timing_guidelines: "[When to share insights]"
+          feedback_collection: "[Gathering insight utility feedback]"
+          success_stories: "[Documenting insight impact]"
+
+card_design:
+  visual_format:
+    card_size: standard_business_card
+    orientation: landscape
+    sections:
+      header: insight_title_and_metadata
+      body: core_insight_and_evidence
+      footer: actions_and_connections
+    color_coding:
+      impact_level: border_color
+      evidence_strength: background_intensity
+      actionability: icon_indicators
+
+  information_hierarchy:
+    primary: insight_statement
+    secondary: supporting_evidence
+    tertiary: recommended_actions
+    supporting: metadata_and_connections
+
+  accessibility:
+    contrast_ratio: "4.5:1 minimum"
+    font_size: "12pt minimum"
+    color_independence: "Information not dependent on color alone"
+    screen_reader: "Alt text for visual elements"
+
+quality_criteria:
+  insight_quality:
+    - evidence_based: "All insights supported by research data"
+    - actionable: "Clear steps can be taken based on insight"
+    - relevant: "Directly applicable to business decisions"
+    - clear: "Easily understood by target audience"
+    - unique: "Provides new or non-obvious information"
+    - validated: "Reviewed and confirmed by stakeholders"
+
+  card_quality:
+    - comprehensive: "All required information included"
+    - consistent: "Follows template structure and standards"
+    - concise: "Information presented efficiently"
+    - visual: "Appropriate use of design elements"
+    - accessible: "Meets accessibility requirements"
+    - actionable: "Clear next steps provided"
+
+  collection_quality:
+    - organized: "Logical grouping and categorization"
+    - prioritized: "Clear importance indicators"
+    - connected: "Relationships between insights shown"
+    - current: "Information is up-to-date"
+    - complete: "All significant insights captured"
+    - usable: "Practical for decision-making"
+
+validation_rules:
+  - rule: evidence_requirement
+    description: Every insight must have supporting evidence
+    severity: critical
+
+  - rule: action_orientation
+    description: Insights must suggest clear actions
+    severity: critical
+
+  - rule: business_relevance
+    description: Must connect to business objectives
+    severity: important
+
+  - rule: clarity_standard
+    description: Understandable by target audience
+    severity: important
+
+  - rule: uniqueness_check
+    description: Provides non-obvious information
+    severity: recommended
+
+export_formats:
+  digital_cards:
+    format: html
+    interactive: true
+    searchable: true
+    filterable: true
+  print_cards:
+    format: pdf
+    layout: business_card_grid
+    print_ready: true
+    perforated: optional
+  presentation_deck:
+    format: powerpoint
+    one_insight_per_slide: true
+    speaker_notes: included
+  database_export:
+    format: json
+    structured_data: complete
+    api_compatible: true
+
+distribution:
+  stakeholder_packages:
+    product_team:
+      focus: user_experience_insights
+      format: [digital_cards, presentation_deck]
+    executive_team:
+      focus: strategic_insights
+      format: [summary_cards, one_pager]
+    design_team:
+      focus: ux_and_interaction_insights
+      format: [digital_cards, visual_cards]
+    development_team:
+      focus: technical_requirement_insights
+      format: [digital_cards, structured_data]
+
+tools_integration:
+  project_management:
+    - jira: "Insight IDs linked to tickets"
+    - asana: "Actions converted to tasks"
+    - trello: "Insight cards become board items"
+
+  design_tools:
+    - figma: "Insights embedded in design files"
+    - sketch: "Insight references in artboards"
+    - abstract: "Version control for insight updates"
+
+  communication:
+    - slack: "Insight sharing and discussion"
+    - confluence: "Insight knowledge base"
+    - notion: "Collaborative insight development"

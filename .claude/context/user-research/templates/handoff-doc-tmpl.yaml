@@ -1,0 +1,801 @@
+# Handoff Documentation Template
+template:
+  id: handoff-doc-template-v1
+  name: Research Project Handoff Documentation
+  version: 1.0
+  output:
+    format: comprehensive-documentation
+    filename: docs/research/project-handoff.md
+    title: "{{project_name}} Research Project Handoff Documentation"
+
+workflow:
+  mode: interactive
+  elicitation: knowledge-transfer
+  validation: completeness-check
+
+metadata:
+  created_by: research-reporter
+  reviewed_by: research-orchestrator
+  audience:
+    - receiving-teams
+    - product-managers
+    - stakeholders
+    - future-researchers
+  document_type: knowledge-transfer
+  purpose: complete-project-handoff
+  retention_period: long-term-reference
+
+sections:
+  - id: handoff-overview
+    title: Handoff Overview & Executive Summary
+    instruction: |
+      Provide comprehensive overview of research project and handoff:
+      - Project scope, objectives, and outcomes achieved
+      - Key stakeholders and their ongoing roles
+      - Critical decisions made and rationale
+      - Immediate actions required from receiving teams
+      - Timeline and transition expectations
+      Set clear context for knowledge transfer.
+    elicit: true
+    owner: research-reporter
+    priority: critical
+    sections:
+      - id: project-summary
+        title: Project Summary
+        type: executive-overview
+        components:
+          project_scope: "[What was researched and why]"
+          timeline: "[Duration and key milestones achieved]"
+          methodology: "[Research approach and validation]"
+          participants: "[Sample size and characteristics]"
+          key_outcomes: "[Major findings and deliverables]"
+          business_impact: "[Value delivered and implications]"
+      - id: handoff-context
+        title: Handoff Context
+        type: transition-framework
+        components:
+          handoff_reason: "[Why project is being transferred]"
+          receiving_teams: "[Who is taking ownership]"
+          transition_timeline: "[Handoff schedule and milestones]"
+          support_availability: "[Ongoing researcher availability]"
+          critical_deadlines: "[Time-sensitive dependencies]"
+      - id: immediate-actions
+        title: Immediate Actions Required
+        type: action-checklist
+        priority: urgent
+        components:
+          decision_points:
+            - decision: "[Specific choice needed]"
+              owner: "[Who must decide]"
+              deadline: "[When decision needed]"
+              context: "[Background for decision]"
+              impact: "[Consequences of delay]"
+          implementation_tasks:
+            - task: "[Specific action required]"
+              owner: "[Responsible party]"
+              deadline: "[Completion date]"
+              dependencies: "[What else must happen first]"
+              resources: "[What's needed to complete]"
+
+  - id: research-deliverables
+    title: Research Deliverables & Assets
+    instruction: |
+      Comprehensive inventory of all research outputs:
+      - Final reports and documentation
+      - Data files and analysis artifacts
+      - Presentation materials and visualizations
+      - Tools, templates, and methodological assets
+      - Stakeholder communications and approvals
+      Ensure complete asset transfer.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: primary-deliverables
+        title: Primary Research Deliverables
+        type: deliverable-inventory
+        components:
+          research_report:
+            location: "[File path or URL]"
+            format: "[PDF, Word, etc.]"
+            version: "[Current version number]"
+            last_updated: "[Date of final update]"
+            access_permissions: "[Who can access]"
+            review_status: "[Approval and sign-off status]"
+          executive_summary:
+            location: "[File path or URL]"
+            format: "[PDF, PowerPoint, etc.]"
+            versions: "[Executive, technical, board variants]"
+            presentation_ready: "[Yes/No and any modifications needed]"
+          data_analysis:
+            location: "[File path or URL]"
+            format: "[Excel, R files, Python notebooks]"
+            reproducibility: "[Can analysis be rerun]"
+            documentation: "[Analysis explanation and notes]"
+      - id: supporting-assets
+        title: Supporting Assets & Resources
+        type: asset-catalog
+        components:
+          presentation_materials:
+            - asset: "[Slide decks, infographics]"
+              purpose: "[Stakeholder presentations, workshops]"
+              location: "[File path or URL]"
+              customization: "[Editable vs final versions]"
+              usage_rights: "[Internal only, can be shared]"
+          data_files:
+            - asset: "[Raw data, processed data, analysis files]"
+              format: "[CSV, JSON, database files]"
+              size: "[File size and storage requirements]"
+              sensitivity: "[Privacy and confidentiality level]"
+              backup_location: "[Secondary storage location]"
+          methodological_assets:
+            - asset: "[Interview guides, survey instruments]"
+              reusability: "[Can be used for future research]"
+              customization: "[How to adapt for other projects]"
+              validation: "[Testing and refinement notes]"
+      - id: access-permissions
+        title: Access & Permissions Management
+        type: security-framework
+        components:
+          file_access:
+            storage_location: "[Cloud storage, network drives]"
+            permission_levels: "[Read, write, admin access]"
+            sharing_protocols: "[How to grant new access]"
+            backup_access: "[Alternative access methods]"
+          stakeholder_permissions:
+            - stakeholder: "[Name/Role]"
+              access_level: "[Full, limited, view-only]"
+              justification: "[Why this level of access]"
+              review_date: "[When to reassess access]"
+          confidentiality_levels:
+            public: "[What can be shared externally]"
+            internal: "[Company-only information]"
+            restricted: "[Limited stakeholder access]"
+            confidential: "[Highly sensitive information]"
+
+  - id: key-findings-insights
+    title: Key Findings & Strategic Insights
+    instruction: |
+      Detailed summary of research discoveries and implications:
+      - Major findings with evidence strength
+      - Strategic insights and business implications
+      - User needs and behavioral patterns
+      - Market opportunities and competitive insights
+      - Risk factors and mitigation strategies
+      Transfer critical knowledge for decision-making.
+    elicit: true
+    owner: insight-synthesizer
+    editors: [research-reporter]
+    sections:
+      - id: critical-findings
+        title: Critical Findings Summary
+        type: findings-synthesis
+        components:
+          finding_hierarchy:
+            transformational_insights:
+              - finding: "[Game-changing discovery]"
+                evidence: "[Supporting data and confidence level]"
+                implication: "[What this means for business]"
+                urgency: "[Timeline for action]"
+                stakeholder_impact: "[Who needs to know/act]"
+            significant_insights:
+              - finding: "[Important discovery]"
+                evidence: "[Supporting validation]"
+                implication: "[Business or user impact]"
+                recommended_action: "[Suggested next steps]"
+            supporting_insights:
+              - finding: "[Contextual or confirming discovery]"
+                value: "[How this supports other findings]"
+                application: "[Where this is useful]"
+      - id: user-insights
+        title: User Insights & Behavioral Patterns
+        type: user-knowledge
+        components:
+          user_needs:
+            - need: "[Functional, emotional, or social need]"
+              evidence: "[How this was discovered]"
+              priority: "[Relative importance to users]"
+              satisfaction_gap: "[Current vs desired state]"
+              design_implications: "[What this means for product]"
+          behavioral_patterns:
+            - pattern: "[Consistent user behavior observed]"
+              frequency: "[How often this occurs]"
+              context: "[When and why this happens]"
+              variation: "[Differences across user segments]"
+              implications: "[What this reveals about users]"
+          mental_models:
+            - model: "[How users think about the domain]"
+              accuracy: "[How well this matches reality]"
+              prevalence: "[How widespread this mental model]"
+              design_consideration: "[How to work with or change this]"
+      - id: strategic-implications
+        title: Strategic Implications & Opportunities
+        type: business-intelligence
+        components:
+          market_opportunities:
+            - opportunity: "[Business growth potential]"
+              size: "[Market size or revenue potential]"
+              feasibility: "[Difficulty and resource requirements]"
+              timeline: "[When opportunity is available]"
+              competitive_advantage: "[How this differentiates us]"
+          capability_requirements:
+            - capability: "[What we need to develop]"
+              current_state: "[What we have today]"
+              gap_analysis: "[What's missing]"
+              development_approach: "[How to build capability]"
+              investment_required: "[Resources needed]"
+          risk_factors:
+            - risk: "[Potential negative outcome]"
+              probability: "[Likelihood of occurrence]"
+              impact: "[Severity if it happens]"
+              mitigation: "[How to prevent or minimize]"
+              monitoring: "[Early warning indicators]"
+
+  - id: recommendations-roadmap
+    title: Recommendations & Implementation Roadmap
+    instruction: |
+      Comprehensive guidance for acting on research insights:
+      - Prioritized recommendations with rationale
+      - Implementation roadmap and timeline
+      - Resource requirements and ownership
+      - Success metrics and measurement approach
+      - Dependencies and risk management
+      Provide actionable path forward.
+    elicit: true
+    owner: research-reporter
+    validation: action-oriented
+    sections:
+      - id: recommendation-framework
+        title: Recommendation Framework
+        type: strategic-guidance
+        components:
+          prioritization_criteria: "[How recommendations were ranked]"
+          decision_framework: "[How to choose between options]"
+          success_definition: "[What constitutes successful implementation]"
+          measurement_approach: "[How to track progress and outcomes]"
+      - id: critical-recommendations
+        title: Critical Recommendations (Must Do)
+        type: priority-actions
+        components:
+          - recommendation: "[Specific action or initiative]"
+            rationale: "[Why this is critical]"
+            business_impact: "[Expected outcomes and value]"
+            urgency: "[Timeline pressure and consequences of delay]"
+            owner: "[Who should lead implementation]"
+            resources: "[Budget, people, technology needed]"
+            timeline: "[Implementation schedule]"
+            dependencies: "[What must happen first]"
+            success_metrics: "[How to measure success]"
+            risk_mitigation: "[How to handle potential issues]"
+      - id: implementation-roadmap
+        title: Implementation Roadmap
+        type: execution-plan
+        components:
+          phase_1_foundation:
+            timeline: "[0-3 months]"
+            objectives: "[What to accomplish in this phase]"
+            deliverables: "[Specific outputs expected]"
+            milestones: "[Key checkpoints and decisions]"
+            resource_allocation: "[Team and budget needs]"
+          phase_2_expansion:
+            timeline: "[3-9 months]"
+            objectives: "[Building on foundation phase]"
+            deliverables: "[Expanded capabilities and features]"
+            milestones: "[Progress markers and reviews]"
+            resource_scaling: "[Additional resource needs]"
+          phase_3_optimization:
+            timeline: "[9-18 months]"
+            objectives: "[Refinement and scaling]"
+            deliverables: "[Optimized and mature capabilities]"
+            milestones: "[Full implementation markers]"
+            success_measurement: "[Final outcome assessment]"
+      - id: quick-wins
+        title: Quick Wins & Immediate Opportunities
+        type: rapid-value
+        components:
+          - quick_win: "[Low-effort, high-impact action]"
+            implementation_time: "[Days/weeks to complete]"
+            resource_requirement: "[Minimal resources needed]"
+            expected_impact: "[Immediate benefits]"
+            measurement: "[How to verify success]"
+            scaling_potential: "[How this leads to bigger changes]"
+
+  - id: stakeholder-context
+    title: Stakeholder Context & Relationships
+    instruction: |
+      Comprehensive stakeholder information for ongoing engagement:
+      - Key stakeholder profiles and interests
+      - Communication preferences and schedules
+      - Decision-making authority and influence
+      - Historical context and relationship dynamics
+      - Ongoing engagement requirements
+      Enable effective stakeholder management.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: stakeholder-directory
+        title: Stakeholder Directory
+        type: relationship-map
+        components:
+          executive_stakeholders:
+            - name: "[Name and title]"
+              role: "[Organizational position]"
+              interest: "[What they care about most]"
+              influence: "[Decision-making authority]"
+              communication_preference: "[Email, meeting, report format]"
+              frequency: "[How often to update]"
+              key_concerns: "[What keeps them up at night]"
+              success_criteria: "[How they measure success]"
+          operational_stakeholders:
+            - name: "[Name and title]"
+              role: "[Day-to-day responsibilities]"
+              involvement: "[How they use research insights]"
+              expertise: "[Domain knowledge they bring]"
+              collaboration_style: "[How they prefer to work]"
+              resource_authority: "[What they can approve/allocate]"
+          user_representatives:
+            - name: "[Name and role]"
+              representation: "[Which user segments they speak for]"
+              credibility: "[Why their input is valuable]"
+              availability: "[Ongoing consultation potential]"
+              insights: "[Unique perspectives they provide]"
+      - id: communication-history
+        title: Communication History & Context
+        type: relationship-context
+        components:
+          key_meetings:
+            - meeting: "[Important meeting or presentation]"
+              date: "[When it occurred]"
+              attendees: "[Who was involved]"
+              decisions: "[What was decided]"
+              follow_up: "[Outstanding commitments]"
+              sentiment: "[How stakeholders responded]"
+          communication_patterns:
+            formal_updates: "[Scheduled reporting and reviews]"
+            informal_check_ins: "[Ad-hoc communication frequency]"
+            escalation_paths: "[How issues get raised]"
+            feedback_mechanisms: "[How stakeholders provide input]"
+          relationship_dynamics:
+            champions: "[Strong supporters of research insights]"
+            skeptics: "[Those who need more convincing]"
+            influencers: "[Those who sway others' opinions]"
+            blockers: "[Potential obstacles to implementation]"
+      - id: ongoing_engagement
+        title: Ongoing Engagement Plan
+        type: relationship-maintenance
+        components:
+          regular_touchpoints:
+            - stakeholder: "[Name/group]"
+              frequency: "[Weekly/monthly/quarterly]"
+              format: "[Meeting/email/report]"
+              content: "[What to cover]"
+              owner: "[Who maintains this relationship]"
+          milestone_communication:
+            - milestone: "[Implementation checkpoint]"
+              stakeholders: "[Who needs to be informed]"
+              communication_method: "[How to update them]"
+              lead_time: "[How far in advance to communicate]"
+          feedback_collection:
+            mechanism: "[Surveys, interviews, meetings]"
+            frequency: "[How often to collect feedback]"
+            analysis: "[How to process and respond to feedback]"
+            follow_up: "[How to close the feedback loop]"
+
+  - id: technical-documentation
+    title: Technical Documentation & Resources
+    instruction: |
+      Complete technical context for research methodology and tools:
+      - Research methodology documentation
+      - Data collection and analysis procedures
+      - Tools, software, and technical requirements
+      - Quality assurance and validation methods
+      - Reproducibility and replication guidance
+      Enable methodology understanding and replication.
+    elicit: true
+    owner: research-orchestrator
+    editors: [data-analyst, research-strategist]
+    sections:
+      - id: methodology-documentation
+        title: Research Methodology Documentation
+        type: methodological-record
+        components:
+          research_design:
+            approach: "[Qualitative/Quantitative/Mixed methods]"
+            rationale: "[Why this approach was chosen]"
+            alternatives_considered: "[Other methods evaluated]"
+            limitations: "[Known constraints and biases]"
+            validity_measures: "[How quality was ensured]"
+          data_collection:
+            procedures: "[Step-by-step data collection process]"
+            instruments: "[Surveys, interview guides, observation protocols]"
+            training: "[Researcher preparation and calibration]"
+            quality_controls: "[Consistency and accuracy measures]"
+            ethical_considerations: "[IRB approval, consent processes]"
+          analysis_methodology:
+            approach: "[Statistical methods, coding frameworks]"
+            software_tools: "[R, Python, SPSS, NVivo, etc.]"
+            validation: "[Inter-rater reliability, significance testing]"
+            interpretation: "[How conclusions were drawn]"
+      - id: data_documentation
+        title: Data Documentation
+        type: data-governance
+        components:
+          data_structure:
+            - dataset: "[Name and description]"
+              format: "[File type and structure]"
+              size: "[Records and file size]"
+              variables: "[Key fields and definitions]"
+              quality: "[Completeness and accuracy notes]"
+              transformations: "[Processing steps applied]"
+          data_dictionary:
+            - variable: "[Field name]"
+              type: "[Numeric, categorical, text]"
+              definition: "[What this measures]"
+              values: "[Possible values or ranges]"
+              missing_data: "[How missing values are handled]"
+              notes: "[Special considerations or quirks]"
+          privacy_security:
+            anonymization: "[How personal data was protected]"
+            storage: "[Where data is kept and access controls]"
+            retention: "[How long data will be kept]"
+            destruction: "[When and how data will be deleted]"
+      - id: tool_requirements
+        title: Tools & Technical Requirements
+        type: technical-specifications
+        components:
+          software_requirements:
+            - tool: "[Software name and version]"
+              purpose: "[What it was used for]"
+              license: "[Cost and licensing requirements]"
+              alternatives: "[Other tools that could work]"
+              learning_curve: "[Training needed to use effectively]"
+          hardware_requirements:
+            computing_power: "[Processing and memory needs]"
+            storage: "[Data storage requirements]"
+            network: "[Bandwidth and connectivity needs]"
+            peripherals: "[Recording equipment, displays, etc.]"
+          infrastructure_needs:
+            cloud_services: "[AWS, Google Cloud, etc.]"
+            security_requirements: "[VPN, encryption, etc.]"
+            backup_systems: "[Data protection measures]"
+            collaboration_tools: "[Team coordination software]"
+
+  - id: quality-assurance
+    title: Quality Assurance & Validation
+    instruction: |
+      Documentation of quality measures and validation approaches:
+      - Research quality criteria and checkpoints
+      - Validation methods and results
+      - Peer review and expert consultation
+      - Limitations and potential biases
+      - Confidence levels and uncertainty
+      Establish credibility and reliability context.
+    elicit: true
+    owner: research-orchestrator
+    sections:
+      - id: quality_framework
+        title: Quality Framework & Standards
+        type: quality-system
+        components:
+          quality_criteria:
+            validity: "[How well research measures what it claims]"
+            reliability: "[Consistency and repeatability]"
+            representativeness: "[How well sample represents population]"
+            completeness: "[Thoroughness of investigation]"
+            objectivity: "[Bias minimization and neutrality]"
+          quality_checkpoints:
+            - checkpoint: "[Design review, data quality check, etc.]"
+              criteria: "[What was evaluated]"
+              method: "[How evaluation was conducted]"
+              results: "[Outcome of quality check]"
+              actions: "[Improvements made based on review]"
+      - id: validation_results
+        title: Validation Results & Confidence
+        type: validation-summary
+        components:
+          internal_validation:
+            inter_rater_reliability: "[Agreement between researchers]"
+            member_checking: "[Participant validation of findings]"
+            triangulation: "[Multiple method/source confirmation]"
+            audit_trail: "[Documentation of decision-making]"
+          external_validation:
+            expert_review: "[Subject matter expert feedback]"
+            peer_review: "[Academic or professional review]"
+            stakeholder_validation: "[Business stakeholder confirmation]"
+            literature_comparison: "[Consistency with prior research]"
+          confidence_assessment:
+            - finding: "[Specific research conclusion]"
+              confidence_level: "[High/Medium/Low]"
+              rationale: "[Why this confidence level]"
+              caveats: "[Important limitations or conditions]"
+              further_validation: "[Additional validation recommended]"
+      - id: limitations_biases
+        title: Limitations & Potential Biases
+        type: transparency-documentation
+        components:
+          methodological_limitations:
+            - limitation: "[Constraint or weakness in method]"
+              impact: "[How this affects findings]"
+              mitigation: "[Steps taken to minimize impact]"
+              implications: "[What this means for interpretation]"
+          potential_biases:
+            - bias: "[Selection, confirmation, researcher bias, etc.]"
+              source: "[Where this bias could come from]"
+              detection: "[How we identified this potential]"
+              mitigation: "[Steps taken to reduce bias]"
+              residual_risk: "[Remaining bias potential]"
+          generalizability:
+            population: "[Who findings apply to]"
+            context: "[Situations where findings are valid]"
+            time: "[How long findings are likely to remain true]"
+            conditions: "[Circumstances that affect applicability]"
+
+  - id: ongoing-support
+    title: Ongoing Support & Resources
+    instruction: |
+      Framework for continued research support and knowledge management:
+      - Post-handoff support availability
+      - Knowledge preservation and access
+      - Future research recommendations
+      - Community and expert networks
+      - Continuous learning and updates
+      Ensure sustainable research capability.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: support_availability
+        title: Post-Handoff Support Availability
+        type: support-framework
+        components:
+          immediate_support:
+            duration: "[How long full support is available]"
+            availability: "[Hours/days when researcher available]"
+            contact_methods: "[Email, phone, Slack, etc.]"
+            response_time: "[Expected response timeframe]"
+            scope: "[What types of questions covered]"
+          transition_support:
+            duration: "[Reduced support period]"
+            availability: "[Limited availability schedule]"
+            focus: "[Priority support areas]"
+            escalation: "[When to contact for urgent issues]"
+          long_term_consultation:
+            availability: "[Ongoing consultation potential]"
+            scope: "[What future help is possible]"
+            terms: "[How future support is arranged]"
+            alternatives: "[Other resources when researcher unavailable]"
+      - id: knowledge_preservation
+        title: Knowledge Preservation & Access
+        type: knowledge-management
+        components:
+          documentation_maintenance:
+            owner: "[Who keeps documentation current]"
+            update_schedule: "[How often documentation reviewed]"
+            version_control: "[How changes are tracked]"
+            access_management: "[Who can update documentation]"
+          institutional_memory:
+            knowledge_repositories: "[Where information is stored]"
+            search_capability: "[How to find information later]"
+            cross_referencing: "[Links between related information]"
+            backup_procedures: "[Protection against information loss]"
+          expertise_development:
+            skill_transfer: "[Training for team members]"
+            mentoring: "[Ongoing guidance for junior researchers]"
+            community_building: "[Internal research community]"
+            external_connections: "[Professional networks and resources]"
+      - id: future_research
+        title: Future Research Recommendations
+        type: research-roadmap
+        components:
+          follow_up_studies:
+            - study: "[Recommended future research]"
+              priority: "[High/Medium/Low importance]"
+              rationale: "[Why this research is needed]"
+              methodology: "[Suggested approach]"
+              timeline: "[When this should be conducted]"
+              resources: "[Estimated requirements]"
+          monitoring_research:
+            - metric: "[What to track over time]"
+              frequency: "[How often to measure]"
+              method: "[How to collect data]"
+              triggers: "[When to investigate further]"
+              owner: "[Who monitors this metric]"
+          emerging_opportunities:
+            - opportunity: "[New research area or method]"
+              potential: "[Value if pursued]"
+              feasibility: "[Difficulty and requirements]"
+              timeline: "[When opportunity available]"
+              preparation: "[How to get ready]"
+
+  - id: transition_checklist
+    title: Transition Checklist & Sign-off
+    instruction: |
+      Comprehensive checklist for complete project handoff:
+      - Deliverable transfer verification
+      - Knowledge transfer confirmation
+      - Stakeholder notification completion
+      - System access and permissions
+      - Final sign-offs and approvals
+      Ensure nothing is missed in transition.
+    elicit: true
+    owner: research-reporter
+    priority: critical
+    sections:
+      - id: deliverable_verification
+        title: Deliverable Transfer Verification
+        type: completion-checklist
+        components:
+          document_transfer:
+            - [ ] "Research report finalized and accessible"
+            - [ ] "Executive summary completed and approved"
+            - [ ] "Presentation materials ready for use"
+            - [ ] "Data files transferred and validated"
+            - [ ] "Analysis scripts and tools documented"
+            - [ ] "Appendices and supporting materials complete"
+          access_verification:
+            - [ ] "File permissions verified for receiving team"
+            - [ ] "Backup access confirmed"
+            - [ ] "Version control access transferred"
+            - [ ] "Shared drive organization complete"
+            - [ ] "Cloud storage access granted"
+          quality_confirmation:
+            - [ ] "Final quality review completed"
+            - [ ] "Stakeholder approval obtained"
+            - [ ] "Technical review passed"
+            - [ ] "Legal/compliance review passed"
+            - [ ] "Brand/communication review passed"
+      - id: knowledge_transfer_verification
+        title: Knowledge Transfer Verification
+        type: understanding-checklist
+        components:
+          methodology_transfer:
+            - [ ] "Research approach explained and understood"
+            - [ ] "Data collection methods documented"
+            - [ ] "Analysis techniques transferred"
+            - [ ] "Quality assurance measures explained"
+            - [ ] "Limitations and biases communicated"
+          insight_transfer:
+            - [ ] "Key findings thoroughly explained"
+            - [ ] "Implications and recommendations clear"
+            - [ ] "Priority levels understood"
+            - [ ] "Implementation guidance provided"
+            - [ ] "Success metrics defined"
+          stakeholder_context:
+            - [ ] "Stakeholder map shared and explained"
+            - [ ] "Communication preferences documented"
+            - [ ] "Relationship dynamics explained"
+            - [ ] "Ongoing engagement plan clear"
+            - [ ] "Escalation procedures defined"
+      - id: system_transition
+        title: System & Access Transition
+        type: technical-checklist
+        components:
+          account_management:
+            - [ ] "User accounts transferred or created"
+            - [ ] "Permissions and access levels set"
+            - [ ] "Security protocols explained"
+            - [ ] "Password management transferred"
+            - [ ] "Two-factor authentication configured"
+          tool_access:
+            - [ ] "Software licenses transferred"
+            - [ ] "Cloud service access granted"
+            - [ ] "Database permissions configured"
+            - [ ] "API keys and credentials transferred"
+            - [ ] "Backup system access confirmed"
+          communication_setup:
+            - [ ] "Email distribution lists updated"
+            - [ ] "Slack/Teams channels transferred"
+            - [ ] "Calendar access granted"
+            - [ ] "Meeting schedules transferred"
+            - [ ] "Contact information updated"
+      - id: final_signoffs
+        title: Final Sign-offs & Approvals
+        type: approval-checklist
+        components:
+          stakeholder_approvals:
+            - stakeholder: "[Executive Sponsor]"
+              approval: "[ ] Signed off on handoff completion"
+              date: "[Date of approval]"
+              conditions: "[Any conditions or concerns]"
+            - stakeholder: "[Product Manager]"
+              approval: "[ ] Confirmed receipt of deliverables"
+              date: "[Date of approval]"
+              conditions: "[Implementation commitments]"
+            - stakeholder: "[Technical Lead]"
+              approval: "[ ] Technical review and acceptance"
+              date: "[Date of approval]"
+              conditions: "[Technical implementation notes]"
+          project_closure:
+            - [ ] "All deliverables marked complete"
+            - [ ] "Budget and resource accounting finalized"
+            - [ ] "Lessons learned documented"
+            - [ ] "Team feedback collected"
+            - [ ] "Success metrics baseline established"
+            - [ ] "Project officially closed"
+
+handoff_success_criteria:
+  knowledge_transfer:
+    receiving_team_confidence: "Team feels confident proceeding with recommendations"
+    documentation_completeness: "All necessary information available and accessible"
+    stakeholder_alignment: "Key stakeholders understand and support next steps"
+    methodology_understanding: "Research approach and limitations clearly understood"
+
+  operational_readiness:
+    access_functional: "All systems and files accessible to receiving team"
+    processes_documented: "Clear procedures for ongoing work"
+    support_available: "Adequate support during transition period"
+    quality_maintained: "Standards and quality measures in place"
+
+  strategic_continuity:
+    vision_preserved: "Research insights and recommendations intact"
+    momentum_maintained: "Implementation can proceed without delay"
+    relationships_intact: "Stakeholder relationships successfully transferred"
+    value_realized: "Research investment positioned for maximum impact"
+
+quality_criteria:
+  completeness:
+    - all_deliverables: "Every project output accounted for"
+    - stakeholder_coverage: "All relevant stakeholders addressed"
+    - knowledge_comprehensive: "Full context and understanding transferred"
+    - process_documented: "All procedures and methods explained"
+
+  clarity:
+    - documentation_clear: "All information easily understood"
+    - actions_specific: "Next steps clearly defined"
+    - ownership_explicit: "Responsibilities clearly assigned"
+    - timelines_realistic: "Schedules achievable and agreed"
+
+  usability:
+    - immediately_actionable: "Receiving team can act immediately"
+    - sustainably_managed: "Long-term maintenance plan in place"
+    - easily_referenced: "Information organized for future use"
+    - continuously_improved: "Framework for ongoing refinement"
+
+validation_rules:
+  - rule: completeness_check
+    description: All required handoff elements present
+    severity: critical
+
+  - rule: stakeholder_approval
+    description: Key stakeholders approve handoff
+    severity: critical
+
+  - rule: access_verification
+    description: Receiving team can access all resources
+    severity: critical
+
+  - rule: understanding_confirmation
+    description: Receiving team understands methodology and findings
+    severity: important
+
+  - rule: continuity_planning
+    description: Clear plan for ongoing work
+    severity: important
+
+export_formats:
+  comprehensive_package:
+    format: multi_format
+    includes:
+      - handoff_document_pdf
+      - quick_reference_guide
+      - stakeholder_contact_list
+      - access_credentials_secure
+      - transition_timeline
+
+  digital_handoff:
+    format: interactive_website
+    features:
+      - searchable_documentation
+      - linked_resources
+      - progress_tracking
+      - feedback_collection
+
+  executive_summary:
+    format: presentation
+    focus: strategic_overview
+    audience: senior_leadership
+    duration: 15_minutes
+
+retention_schedule:
+  active_reference: 2_years
+  archived_storage: 7_years
+  final_disposition: secure_deletion
+  review_schedule: annual

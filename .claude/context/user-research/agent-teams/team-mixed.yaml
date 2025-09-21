@@ -1,0 +1,15 @@
+# User Research Team - Mixed Methods
+bundle:
+  name: Research Team Mixed
+  icon: 🔄
+  description: Comprehensive team for combined qualitative and quantitative research.
+agents:
+  - research-orchestrator
+  - research-strategist
+  - interview-specialist
+  - data-analyst
+  - insight-synthesizer
+  - research-reporter
+workflows:
+  - mixed-methods-research.yaml
+  - user-interview-research.yaml

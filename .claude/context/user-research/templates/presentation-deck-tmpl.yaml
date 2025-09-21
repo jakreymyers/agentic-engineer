@@ -1,0 +1,598 @@
+# Presentation Deck Template
+template:
+  id: presentation-deck-template-v1
+  name: Research Presentation Deck
+  version: 1.0
+  output:
+    format: presentation
+    filename: docs/research/presentation-deck.pptx
+    title: "{{project_name}} Research Insights Presentation"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  validation: stakeholder-ready
+
+metadata:
+  created_by: research-reporter
+  reviewed_by: research-orchestrator
+  audience:
+    - executives
+    - product-teams
+    - design-teams
+    - stakeholders
+  document_type: presentation-deck
+  typical_length: 15-30 slides
+  presentation_time: 20-45 minutes
+
+sections:
+  - id: presentation-strategy
+    title: Presentation Strategy & Context
+    instruction: |
+      Define presentation strategy and audience context:
+      - Target audience and their priorities
+      - Presentation format and setting
+      - Time allocation and objectives
+      - Key messages and outcomes desired
+      - Narrative framework selection
+      Set strategic foundation for entire presentation.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: audience-analysis
+        title: Audience Analysis
+        type: structured
+        components:
+          primary_audience: "[Executive/Product/Technical/Mixed]"
+          audience_size: "[5-15/15-50/50+ people]"
+          format: "[In-person/Virtual/Hybrid]"
+          duration: "[15/30/45/60 minutes]"
+          setting: "[Boardroom/Conference/Auditorium]"
+          decision_authority: "[High/Medium/Low]"
+      - id: message-architecture
+        title: Message Architecture
+        type: hierarchy
+        components:
+          central_thesis: "[Core message in 30 seconds]"
+          supporting_pillars: "[3-5 key points]"
+          evidence_foundation: "[Data types to emphasize]"
+          call_to_action: "[Specific desired outcome]"
+      - id: narrative_framework
+        title: Narrative Framework
+        type: selection
+        options:
+          - problem_solution: "Problem-Solution Arc"
+          - three_act: "Three-Act Structure"
+          - hero_journey: "Hero's Journey"
+          - data_driven: "Data-Driven Discovery"
+          - transformation: "Transformation Story"
+        instruction: Choose optimal storytelling approach
+
+  - id: opening-sequence
+    title: Opening Sequence (Slides 1-3)
+    instruction: |
+      Create compelling presentation opening:
+      - Title slide with impact hook
+      - Agenda with time allocation
+      - Research credibility and context
+      Establish engagement and set expectations.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: title-slide
+        title: Title Slide Design
+        type: slide-specification
+        components:
+          title: "[Compelling presentation title]"
+          subtitle: "[Value proposition preview]"
+          hook_element: "[Statistic/Quote/Visual]"
+          presenter_info: "[Name, title, date]"
+          confidentiality: "[Level and markings]"
+          visual_treatment: "[Design approach]"
+      - id: agenda-slide
+        title: Agenda & Expectations
+        type: structured-agenda
+        components:
+          presentation_flow: "[Section breakdown with timing]"
+          interaction_points: "[Q&A timing and breaks]"
+          expected_outcome: "[Clear decision/next steps]"
+          handout_reference: "[Available materials]"
+      - id: credibility-slide
+        title: Research Foundation
+        type: credibility-statement
+        components:
+          methodology: "[Approach and rigor]"
+          participants: "[N participants, segments]"
+          timeline: "[Duration and recency]"
+          scope: "[Geographic/demographic coverage]"
+          confidence: "[Evidence strength level]"
+
+  - id: context-setting
+    title: Context Setting (Slides 4-6)
+    instruction: |
+      Establish business and research context:
+      - Current business challenges
+      - Research questions and approach
+      - Participant overview and methodology
+      Build foundation for findings presentation.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: business-context
+        title: Business Context & Challenge
+        type: context-slide
+        components:
+          current_state: "[Business situation description]"
+          market_pressures: "[Competitive/industry forces]"
+          strategic_priorities: "[Organizational objectives]"
+          urgency_factors: "[Why research needed now]"
+          stakes: "[What's at risk/opportunity cost]"
+      - id: research-approach
+        title: Research Questions & Approach
+        type: methodology-overview
+        components:
+          primary_questions: "[3-5 key research questions]"
+          method_selection: "[Qualitative/Quantitative/Mixed]"
+          approach_rationale: "[Why this methodology]"
+          quality_measures: "[Validation and rigor]"
+      - id: participant-overview
+        title: Participant Overview
+        type: participant-profile
+        components:
+          sample_size: "[Total N and breakdown]"
+          demographics: "[Key characteristics]"
+          recruitment: "[How participants selected]"
+          representation: "[Target audience coverage]"
+          data_collection: "[Interview/survey methods]"
+
+  - id: core-findings
+    title: Core Findings (Slides 7-14)
+    instruction: |
+      Present key research findings with evidence:
+      - 5-8 major findings with supporting data
+      - Mix of quantitative and qualitative evidence
+      - Progressive revelation building to insights
+      - Visual proof and user voice integration
+      Create compelling evidence-based narrative.
+    elicit: true
+    owner: insight-synthesizer
+    editors: [research-reporter, data-analyst]
+    validation: evidence-required
+    sections:
+      - id: finding-slides
+        title: Finding [#]: [Impact Headline]
+        type: finding-presentation
+        repeat: true
+        max_iterations: 8
+        components:
+          headline: "[Action-oriented finding statement]"
+          evidence_quantitative: "[Key statistics and metrics]"
+          evidence_qualitative: "[Representative quotes]"
+          visualization: "[Chart, diagram, or image]"
+          business_implication: "[What this means strategically]"
+          confidence_level: "[High/Medium/Low with rationale]"
+          transition: "[Bridge to next finding]"
+      - id: synthesis-slide
+        title: Cross-Finding Synthesis
+        type: insight-synthesis
+        components:
+          patterns: "[Recurring themes across findings]"
+          root_causes: "[Underlying drivers identified]"
+          user_needs: "[Unmet needs revealed]"
+          opportunities: "[Innovation and improvement areas]"
+          implications: "[Strategic and tactical impacts]"
+
+  - id: personas-journeys
+    title: Personas & User Journeys (Slides 15-17)
+    condition: personas or journeys created
+    instruction: |
+      Present user insights through personas and journeys:
+      - 2-3 evidence-based persona profiles
+      - Current state journey with pain points
+      - Future state vision and opportunities
+      Make research findings tangible and actionable.
+    elicit: true
+    owner: insight-synthesizer
+    sections:
+      - id: persona-slides
+        title: User Persona: [Name]
+        type: persona-presentation
+        repeat: true
+        max_iterations: 3
+        components:
+          persona_overview: "[Demographics and context]"
+          goals_motivations: "[What they're trying to achieve]"
+          pain_points: "[Current frustrations and barriers]"
+          behaviors: "[How they currently work/interact]"
+          quotes: "[Representative voice from research]"
+          evidence_base: "[Research participant mapping]"
+      - id: journey-map
+        title: Customer Journey Insights
+        type: journey-visualization
+        components:
+          journey_stages: "[Key phases of user experience]"
+          pain_points: "[Friction and frustration points]"
+          emotional_journey: "[Feelings throughout process]"
+          opportunities: "[Improvement areas identified]"
+          future_vision: "[Enhanced experience potential]"
+
+  - id: strategic-implications
+    title: Strategic Implications (Slides 18-20)
+    instruction: |
+      Frame findings in strategic business terms:
+      - Market opportunity sizing
+      - Competitive positioning implications
+      - Organizational readiness assessment
+      - Resource and capability requirements
+      Connect insights to business strategy.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: opportunity-sizing
+        title: Market Opportunity
+        type: business-metrics
+        components:
+          market_size: "[Total addressable market]"
+          revenue_potential: "[Quantified upside]"
+          user_segments: "[Addressable user groups]"
+          growth_projections: "[Expansion possibilities]"
+          competitive_advantage: "[Differentiation opportunities]"
+      - id: organizational-readiness
+        title: Organizational Readiness
+        type: capability-assessment
+        components:
+          current_capabilities: "[What we have today]"
+          capability_gaps: "[What we need to develop]"
+          resource_requirements: "[People, technology, budget]"
+          change_readiness: "[Cultural and process factors]"
+          risk_factors: "[Implementation challenges]"
+
+  - id: recommendations
+    title: Recommendations (Slides 21-25)
+    instruction: |
+      Present prioritized strategic recommendations:
+      - Critical recommendations (must-do)
+      - Important recommendations (should-do)
+      - Quick wins (immediate opportunities)
+      - Implementation roadmap and timeline
+      Provide clear, actionable path forward.
+    elicit: true
+    owner: research-reporter
+    validation: action-oriented
+    sections:
+      - id: recommendation-overview
+        title: Recommendation Framework
+        type: prioritization-matrix
+        components:
+          total_recommendations: "[Number of recommendations]"
+          prioritization_criteria: "[Impact vs Effort analysis]"
+          timeline_phases: "[Short/Medium/Long-term]"
+          resource_allocation: "[Investment distribution]"
+          success_metrics: "[How to measure progress]"
+      - id: critical-recommendations
+        title: Critical Recommendations
+        type: recommendation-cards
+        priority: critical
+        components:
+          - recommendation: "[Specific action required]"
+            rationale: "[Why this is critical]"
+            impact: "[Expected business outcome]"
+            effort: "[Resource requirements]"
+            timeline: "[Implementation duration]"
+            owner: "[Responsible party]"
+            success_metrics: "[How to measure success]"
+      - id: quick-wins
+        title: Quick Wins (30-90 Days)
+        type: action-list
+        components:
+          - quick_win: "[Low effort, high visibility action]"
+            implementation: "[How to execute]"
+            impact: "[Expected immediate benefit]"
+            resources: "[What's needed]"
+            timeline: "[Completion timeframe]"
+
+  - id: implementation-roadmap
+    title: Implementation Roadmap (Slides 26-28)
+    instruction: |
+      Create detailed implementation plan:
+      - Phased approach with milestones
+      - Resource allocation and ownership
+      - Dependencies and decision gates
+      - Success metrics and measurement
+      Provide execution framework.
+    elicit: true
+    owner: research-reporter
+    sections:
+      - id: roadmap-timeline
+        title: Implementation Timeline
+        type: gantt-visualization
+        components:
+          phase_1: "[Foundation - 0-3 months]"
+          phase_2: "[Core Value - 3-9 months]"
+          phase_3: "[Enhancement - 9-18 months]"
+          phase_4: "[Transformation - 18+ months]"
+          milestones: "[Key decision and delivery points]"
+          dependencies: "[Critical path relationships]"
+      - id: resource-plan
+        title: Resource & Investment Plan
+        type: resource-matrix
+        components:
+          team_structure: "[Roles and responsibilities]"
+          budget_allocation: "[Investment by phase]"
+          technology_needs: "[Platform and tool requirements]"
+          external_resources: "[Vendors and partners]"
+          capability_development: "[Training and hiring]"
+      - id: success-framework
+        title: Success Measurement Framework
+        type: metrics-dashboard
+        components:
+          north_star_metric: "[Primary success indicator]"
+          leading_indicators: "[Early warning metrics]"
+          lagging_indicators: "[Outcome measurements]"
+          measurement_cadence: "[Reporting frequency]"
+          accountability: "[Ownership and governance]"
+
+  - id: closing-sequence
+    title: Closing & Call-to-Action (Slides 29-30)
+    instruction: |
+      Create compelling presentation conclusion:
+      - Vision of future state benefits
+      - Clear call-to-action and next steps
+      - Decision requirements and timeline
+      - Q&A and discussion facilitation
+      Drive commitment and action.
+    elicit: true
+    owner: research-reporter
+    priority: critical
+    sections:
+      - id: vision-slide
+        title: Future State Vision
+        type: transformation-vision
+        components:
+          user_experience: "[Improved user outcomes]"
+          business_benefits: "[Quantified value creation]"
+          competitive_position: "[Market advantage gained]"
+          organizational_impact: "[Internal transformation]"
+          timeline_to_value: "[When benefits realize]"
+      - id: call-to-action
+        title: Call-to-Action & Next Steps
+        type: decision-framework
+        components:
+          immediate_decisions: "[What needs approval now]"
+          next_30_days: "[Specific actions required]"
+          resource_commitment: "[Investment needed]"
+          timeline_pressure: "[Why urgency matters]"
+          success_criteria: "[How to measure progress]"
+          next_meeting: "[Follow-up schedule]"
+
+  - id: appendix-slides
+    title: Appendix & Supporting Material
+    instruction: |
+      Include supporting documentation for Q&A:
+      - Detailed methodology
+      - Additional findings and data
+      - Statistical analyses
+      - Participant quotes and testimonials
+      - Risk mitigation strategies
+      Provide backup information for questions.
+    elicit: false
+    owner: research-reporter
+    optional: true
+    sections:
+      - id: methodology-details
+        title: Appendix A: Detailed Methodology
+        type: reference-slides
+        components:
+          research_design: "[Comprehensive approach description]"
+          sampling_strategy: "[Participant selection rationale]"
+          data_collection: "[Interview and survey processes]"
+          analysis_methods: "[Coding and statistical approaches]"
+          quality_controls: "[Validation and reliability measures]"
+      - id: additional-findings
+        title: Appendix B: Additional Findings
+        type: extended-data
+        components:
+          supporting_insights: "[Secondary findings]"
+          detailed_statistics: "[Comprehensive data analysis]"
+          participant_quotes: "[Extended testimonials]"
+          comparative_analysis: "[Benchmark comparisons]"
+          edge_cases: "[Outliers and exceptions]"
+      - id: implementation-details
+        title: Appendix C: Implementation Support
+        type: detailed-planning
+        components:
+          risk_mitigation: "[Challenge response strategies]"
+          resource_estimates: "[Detailed cost breakdowns]"
+          technology_requirements: "[Platform specifications]"
+          change_management: "[Adoption strategies]"
+          measurement_tools: "[Analytics and tracking]"
+
+speaker_support:
+  speaker_notes:
+    instruction: |
+      Create comprehensive speaker notes for each slide:
+      - Key message (30-second version)
+      - Talking points (2-3 minutes)
+      - Anticipated questions and responses
+      - Transition cues to next slide
+      - Time management guidance
+    components:
+      - slide_objective: "[What this slide accomplishes]"
+      - key_message: "[Core point to communicate]"
+      - talking_points: "[Detailed narrative points]"
+      - evidence_references: "[Data and quotes to mention]"
+      - interaction_cues: "[When to pause for questions]"
+      - timing_guidance: "[Target duration]"
+      - backup_information: "[Additional details if needed]"
+      - transition_bridge: "[Connection to next slide]"
+
+  presentation_variants:
+    executive_version:
+      duration: 20_minutes
+      slides: 15
+      focus: strategic_impact
+      emphasis: roi_and_decisions
+    product_version:
+      duration: 45_minutes
+      slides: 25
+      focus: user_insights
+      emphasis: features_and_requirements
+    technical_version:
+      duration: 30_minutes
+      slides: 20
+      focus: implementation
+      emphasis: architecture_and_resources
+
+visual_design:
+  design_principles:
+    - clarity_first: "One key message per slide"
+    - visual_hierarchy: "Guide attention with design"
+    - brand_consistency: "Align with organizational identity"
+    - accessibility: "WCAG AA compliant design"
+    - data_integrity: "Honest and accurate visualization"
+
+  slide_templates:
+    title_slide:
+      layout: centered
+      elements: [title, subtitle, presenter, date, confidentiality]
+    content_slide:
+      layout: header_body
+      elements: [title, main_content, supporting_visual]
+    data_slide:
+      layout: split_screen
+      elements: [title, chart, interpretation, source]
+    quote_slide:
+      layout: featured_quote
+      elements: [title, quote, attribution, context]
+    action_slide:
+      layout: call_to_action
+      elements: [title, action_items, timeline, ownership]
+
+  typography:
+    hierarchy:
+      - level: slide_title
+        font: "[Brand/Professional font]"
+        size: "44pt"
+        weight: "bold"
+        color: "#[Primary color]"
+      - level: section_header
+        font: "[Brand/Professional font]"
+        size: "36pt"
+        weight: "medium"
+        color: "#[Secondary color]"
+      - level: body_text
+        font: "[Readable sans-serif]"
+        size: "24pt"
+        weight: "regular"
+        color: "#[Text color]"
+      - level: caption
+        font: "[Readable sans-serif]"
+        size: "18pt"
+        weight: "regular"
+        color: "#[Light text color]"
+
+  color_strategy:
+    primary_palette: "[Brand colors]"
+    data_visualization: "[Accessible color scales]"
+    emphasis_colors: "[High contrast accents]"
+    background_colors: "[Professional neutrals]"
+    semantic_colors:
+      positive: "#[Success color]"
+      negative: "#[Warning color]"
+      neutral: "#[Neutral color]"
+      highlight: "#[Attention color]"
+
+quality_criteria:
+  content_excellence:
+    - evidence_based: "All claims supported by research data"
+    - audience_appropriate: "Language and detail fit audience"
+    - action_oriented: "Clear next steps and decisions"
+    - time_appropriate: "Fits allocated presentation time"
+    - engaging_narrative: "Compelling story arc maintained"
+
+  visual_excellence:
+    - professional_design: "Publication-ready appearance"
+    - consistent_branding: "Organizational identity maintained"
+    - accessible_design: "WCAG AA compliance"
+    - data_integrity: "Accurate and honest visualization"
+    - cognitive_load: "Information density appropriate"
+
+  delivery_readiness:
+    - speaker_prepared: "Comprehensive notes and practice"
+    - technology_tested: "All systems functional"
+    - contingency_planned: "Backup options available"
+    - interaction_designed: "Q&A and discussion ready"
+    - follow_up_clear: "Next steps defined"
+
+validation_rules:
+  - rule: message_clarity
+    description: Core message clear in 30 seconds
+    severity: critical
+
+  - rule: evidence_support
+    description: All findings have supporting evidence
+    severity: critical
+
+  - rule: action_orientation
+    description: Clear next steps and decisions
+    severity: critical
+
+  - rule: time_management
+    description: Content fits allocated time
+    severity: important
+
+  - rule: audience_alignment
+    description: Appropriate for target stakeholders
+    severity: important
+
+  - rule: visual_consistency
+    description: Professional and branded design
+    severity: recommended
+
+export_formats:
+  powerpoint:
+    format: pptx
+    template: corporate_template
+    animations: minimal
+    speaker_notes: included
+  pdf:
+    format: pdf
+    layout: presentation_format
+    print_ready: true
+    handout_version: available
+  html:
+    format: html
+    responsive: true
+    navigation: sidebar
+    interactive_elements: enabled
+  keynote:
+    format: key
+    template: professional
+    animations: subtle
+    remote_compatible: true
+
+distribution:
+  stakeholder_packages:
+    executive_package:
+      includes: [executive_version, one_pager, handouts]
+      format: [pdf, powerpoint]
+    product_team_package:
+      includes: [product_version, detailed_appendix, data_files]
+      format: [powerpoint, pdf, html]
+    complete_package:
+      includes: [all_versions, speaker_notes, source_files]
+      format: [powerpoint, pdf, html, keynote]
+
+  delivery_options:
+    live_presentation:
+      setup: projector_optimized
+      backup: offline_capable
+      interaction: real_time_qa
+    virtual_presentation:
+      setup: screen_share_optimized
+      fonts: web_safe
+      interaction: chat_polls
+    self_guided:
+      setup: detailed_notes
+      navigation: clear_structure
+      interaction: contact_information

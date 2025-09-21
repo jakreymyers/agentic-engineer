@@ -1,0 +1,450 @@
+# Conjoint Analysis Setup Template
+# Comprehensive template for designing conjoint analysis studies
+
+template:
+  id: conjoint-setup-template
+  name: Conjoint Analysis Study Design
+  version: 1.0
+  output:
+    format: markdown
+    filename: docs/research/conjoint-study-design.md
+    title: "{{project_name}} Conjoint Analysis Study Design"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  validation: technical
+
+sections:
+  - id: study-overview
+    title: Study Overview
+    elicit: true
+    instruction: |
+      Define the conjoint study purpose, business decisions to be informed, and success criteria.
+      Include stakeholder alignment on what trade-offs need to be understood.
+    sections:
+      - id: business-context
+        title: Business Context
+        type: paragraphs
+        instruction: |
+          Describe the business decisions this conjoint will inform (2-3 paragraphs).
+          What product/service configurations are being considered?
+          What market scenarios need testing?
+        validation:
+          required: true
+          min_length: 200
+
+      - id: research-objectives
+        title: Research Objectives
+        type: numbered-list
+        instruction: |
+          List specific research objectives (3-5 items).
+          Each should be measurable and actionable.
+        examples:
+          - "Determine optimal price points for feature bundles"
+          - "Identify must-have vs nice-to-have features"
+          - "Understand segment-specific preferences"
+          - "Quantify willingness to pay for premium features"
+
+      - id: success-criteria
+        title: Success Criteria
+        type: bullet-list
+        instruction: |
+          Define what success looks like for this study.
+          Include both process and outcome metrics.
+        examples:
+          - "Sample size >300 with segment representation"
+          - "Model prediction accuracy >70%"
+          - "Clear feature prioritization achieved"
+          - "Pricing strategy validated"
+
+  - id: methodology-selection
+    title: Conjoint Methodology
+    elicit: true
+    instruction: |
+      Select and justify the appropriate conjoint methodology based on study objectives.
+    sections:
+      - id: method-type
+        title: Selected Method
+        type: choice
+        options:
+          - Choice-Based Conjoint (CBC)
+          - Adaptive Conjoint Analysis (ACA)
+          - Menu-Based Choice (MBC)
+          - MaxDiff Scaling
+          - Best-Worst Scaling
+        instruction: |
+          Select the conjoint method and provide detailed rationale.
+          Consider complexity, respondent burden, and analytical needs.
+
+      - id: design-approach
+        title: Design Approach
+        type: structured
+        fields:
+          design_type: "Full factorial | Fractional factorial | Optimal design"
+          efficiency_target: "Minimum D-efficiency (typically >0.85)"
+          interactions: "Main effects only | Two-way interactions | Selected interactions"
+          blocks: "Number of blocks if rotation needed"
+          prohibitions: "List any impossible combinations"
+
+      - id: analysis-plan
+        title: Analysis Plan
+        type: structured
+        fields:
+          primary_method: "Hierarchical Bayes | Latent Class | Mixed Logit"
+          segmentation: "Planned segmentation approach"
+          simulation: "Market simulation scenarios"
+          validation: "Holdout task validation approach"
+
+  - id: attributes-levels
+    title: Attributes and Levels
+    elicit: true
+    instruction: |
+      Define the product/service attributes and their levels for the conjoint study.
+      Ensure independence and actionability of all attributes.
+    sections:
+      - id: attribute-definition
+        title: Attribute Definitions
+        type: table
+        columns: [Attribute, Definition, Rationale, Measurement]
+        instruction: |
+          Define 4-7 attributes that are:
+          - Meaningful to respondents
+          - Actionable by the organization
+          - Independent (no logical dependencies)
+          - Clearly measurable
+        validation:
+          min_rows: 4
+          max_rows: 7
+
+      - id: level-specification
+        title: Level Specifications
+        type: structured-list
+        instruction: |
+          For each attribute, specify 2-5 levels with clear descriptions.
+          Levels should cover realistic range and be clearly differentiated.
+        format: |
+          **Attribute: {{attribute_name}}**
+          - Level 1: {{description}} ({{specification}})
+          - Level 2: {{description}} ({{specification}})
+          - Level 3: {{description}} ({{specification}})
+          [Additional levels as needed]
+
+          Rationale: {{why_these_levels}}
+          Range justification: {{market_coverage}}
+
+      - id: independence-check
+        title: Attribute Independence Matrix
+        type: matrix
+        instruction: |
+          Verify attributes are truly independent.
+          Mark any logical dependencies or correlations.
+        validation:
+          check: "No strong dependencies identified"
+
+  - id: experimental-design
+    title: Experimental Design
+    elicit: true
+    instruction: |
+      Specify the experimental design parameters and validate efficiency.
+    sections:
+      - id: design-parameters
+        title: Design Parameters
+        type: structured
+        fields:
+          total_profiles: "Total possible combinations"
+          design_size: "Number of profiles in design"
+          tasks_per_respondent: "Number of choice tasks (12-20 typical)"
+          alternatives_per_task: "Options per choice task (2-4 typical)"
+          none_option: "Include 'none' option? (Yes/No)"
+          holdout_tasks: "Number of validation tasks (2-3 typical)"
+
+      - id: design-efficiency
+        title: Design Efficiency Metrics
+        type: table
+        columns: [Metric, Target, Actual, Pass/Fail]
+        rows:
+          - ["D-efficiency", ">0.85", "{{calculated}}", "{{status}}"]
+          - ["A-efficiency", ">0.80", "{{calculated}}", "{{status}}"]
+          - ["Orthogonality", "Maintained", "{{status}}", "{{pass}}"]
+          - ["Level balance", "Within 10%", "{{balance}}", "{{status}}"]
+          - ["Minimal overlap", "<20%", "{{overlap}}", "{{status}}"]
+
+      - id: choice-sets
+        title: Example Choice Sets
+        type: formatted
+        instruction: |
+          Provide 3 example choice sets to illustrate the design.
+          Show how attributes and levels combine in realistic scenarios.
+        format: |
+          **Choice Set {{number}}:**
+          | Feature | Option A | Option B | Option C | None |
+          |---------|----------|----------|----------|------|
+          | {{attr1}} | {{level}} | {{level}} | {{level}} | - |
+          | {{attr2}} | {{level}} | {{level}} | {{level}} | - |
+          [Continue for all attributes]
+
+  - id: sample-planning
+    title: Sample Planning
+    elicit: true
+    instruction: |
+      Define sample requirements and recruitment strategy.
+    sections:
+      - id: sample-size
+        title: Sample Size Calculation
+        type: structured
+        fields:
+          minimum_overall: "Minimum total sample"
+          recommended_overall: "Recommended total sample"
+          per_segment: "Sample per key segment"
+          power_analysis: "Statistical power achieved"
+          margin_of_error: "Expected margin of error"
+        formula: |
+          Base calculation: n = 500 / (levels × tasks)
+          Adjusted for segments: n × number_of_segments
+          Final recommendation: {{final_n}}
+
+      - id: recruitment-criteria
+        title: Recruitment Criteria
+        type: structured
+        fields:
+          target_population: "Description of target respondents"
+          inclusion_criteria: "Must-have characteristics"
+          exclusion_criteria: "Disqualifying factors"
+          quotas: "Demographic or behavioral quotas"
+          screening_questions: "Key screening items"
+
+      - id: recruitment-strategy
+        title: Recruitment Strategy
+        type: paragraphs
+        instruction: |
+          Describe how participants will be recruited.
+          Include timeline, incentives, and quality controls.
+
+  - id: survey-instrument
+    title: Survey Instrument Design
+    elicit: true
+    instruction: |
+      Design the complete survey instrument including instructions and supplementary questions.
+    sections:
+      - id: survey-flow
+        title: Survey Flow
+        type: numbered-list
+        instruction: |
+          Outline the complete survey flow from start to finish.
+        template:
+          - Welcome and consent
+          - Screening questions
+          - Category familiarity questions
+          - Instructions and example
+          - Practice choice task
+          - Main choice tasks ({{n}} tasks)
+          - Follow-up questions
+          - Demographics
+          - Thank you
+
+      - id: instructions
+        title: Participant Instructions
+        type: text
+        instruction: |
+          Write clear instructions for participants.
+          Include context, task explanation, and example.
+        template: |
+          "Imagine you are selecting a {{product/service}}.
+          You'll see several options with different features and prices.
+          Please choose the option you would most likely select,
+          or choose 'none' if none appeal to you.
+
+          Consider each choice as if it were a real purchase decision."
+
+      - id: supplementary-questions
+        title: Supplementary Questions
+        type: structured-list
+        instruction: |
+          List additional questions beyond choice tasks.
+        categories:
+          - Category usage and familiarity
+          - Current solution/product used
+          - Purchase influence factors
+          - Satisfaction with current solution
+          - Future purchase intentions
+
+  - id: visual-design
+    title: Visual Design Specifications
+    elicit: true
+    instruction: |
+      Specify how choice tasks will be presented visually.
+    sections:
+      - id: layout-design
+        title: Choice Task Layout
+        type: choice
+        options:
+          - Grid/table format
+          - Card-based layout
+          - Side-by-side comparison
+          - Mobile-optimized cards
+        instruction: |
+          Select layout and describe visual presentation approach.
+
+      - id: visual-elements
+        title: Visual Elements
+        type: checklist
+        items:
+          - Icons for attributes
+          - Color coding for levels
+          - Progress indicator
+          - Hover tooltips
+          - Visual separators
+          - Highlight on selection
+          - Mobile responsiveness
+        instruction: |
+          Check all visual elements to include.
+
+      - id: accessibility
+        title: Accessibility Requirements
+        type: bullet-list
+        instruction: |
+          List accessibility requirements and compliance needs.
+        defaults:
+          - WCAG AA compliance
+          - Screen reader compatible
+          - Keyboard navigation
+          - High contrast mode
+          - Text size adjustable
+
+  - id: pilot-testing
+    title: Pilot Testing Plan
+    elicit: true
+    instruction: |
+      Define pilot testing approach and success criteria.
+    sections:
+      - id: pilot-protocol
+        title: Pilot Protocol
+        type: structured
+        fields:
+          sample_size: "10-20 respondents"
+          recruitment: "Pilot participant source"
+          timeline: "Pilot duration"
+          data_collection: "Collection method"
+          feedback_method: "How feedback gathered"
+
+      - id: pilot-metrics
+        title: Pilot Success Metrics
+        type: table
+        columns: [Metric, Target, Method]
+        rows:
+          - ["Completion rate", ">90%", "Tracking"]
+          - ["Average time", "<15 minutes", "Timer"]
+          - ["Comprehension", ">95%", "Follow-up questions"]
+          - ["Task difficulty", "<3 on 5-point", "Self-report"]
+          - ["Technical issues", "<5%", "Error logs"]
+
+      - id: refinement-plan
+        title: Refinement Plan
+        type: paragraphs
+        instruction: |
+          Describe how pilot feedback will be incorporated.
+          Include decision criteria for changes.
+
+  - id: analysis-specifications
+    title: Analysis Specifications
+    elicit: true
+    instruction: |
+      Detail the analysis approach and expected outputs.
+    sections:
+      - id: utility-estimation
+        title: Utility Estimation
+        type: structured
+        fields:
+          estimation_method: "HB, Latent Class, or Mixed Logit"
+          iterations: "Number of iterations for convergence"
+          priors: "Prior distributions used"
+          convergence_criteria: "Convergence assessment"
+          individual_utilities: "Individual-level utilities computed"
+
+      - id: importance-calculation
+        title: Importance Calculation
+        type: text
+        instruction: |
+          Describe how attribute importance will be calculated.
+        template: |
+          Importance = (Range of utilities for attribute) / (Sum of ranges)
+          Normalized to sum to 100%
+
+      - id: segmentation-approach
+        title: Segmentation Approach
+        type: structured
+        fields:
+          method: "Cluster analysis on utilities"
+          number_segments: "Expected 3-5 segments"
+          validation: "Segment stability testing"
+          profiling: "Segment characterization approach"
+
+      - id: simulation-scenarios
+        title: Market Simulation Scenarios
+        type: table
+        columns: [Scenario, Products, Expected Share, Strategic Question]
+        instruction: |
+          Define 3-5 simulation scenarios to test.
+
+  - id: deliverables
+    title: Deliverables and Timeline
+    elicit: true
+    sections:
+      - id: deliverable-list
+        title: Project Deliverables
+        type: checklist
+        items:
+          - Study design document
+          - Programmed survey
+          - Raw data file
+          - Individual utilities
+          - Importance scores
+          - Segment analysis
+          - Market simulator
+          - Technical report
+          - Executive presentation
+          - Decision support tool
+
+      - id: timeline
+        title: Project Timeline
+        type: table
+        columns: [Phase, Duration, Deliverable]
+        rows:
+          - ["Design finalization", "3 days", "Design document"]
+          - ["Survey programming", "2 days", "Online survey"]
+          - ["Pilot testing", "3 days", "Pilot report"]
+          - ["Data collection", "5-7 days", "Raw data"]
+          - ["Analysis", "3-4 days", "Results"]
+          - ["Reporting", "2-3 days", "Final reports"]
+
+      - id: success-measures
+        title: Project Success Measures
+        type: bullet-list
+        instruction: |
+          Define how project success will be measured.
+        items:
+          - Model fit statistics acceptable
+          - Prediction accuracy >65%
+          - Clear strategic insights generated
+          - Decisions enabled by results
+          - Stakeholder satisfaction achieved
+
+quality_validation:
+  technical_review:
+    - Design efficiency calculated
+    - Orthogonality verified
+    - Sample size adequate
+    - Power analysis completed
+
+  content_review:
+    - Attributes meaningful
+    - Levels realistic
+    - Instructions clear
+    - Visual design approved
+
+  stakeholder_review:
+    - Business objectives aligned
+    - Deliverables meet needs
+    - Timeline acceptable
+    - Budget approved

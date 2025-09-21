@@ -1,0 +1,467 @@
+# Research Study Design Template
+template:
+  id: study-design-v1
+  name: Comprehensive Research Study Design
+  version: 1.0
+  output:
+    format: markdown
+    filename: research-outputs/study-design.md
+    title: "{{project_name}} Research Study Design"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+
+sections:
+  - id: study-overview
+    title: Study Overview
+    instruction: |
+      Create executive summary of the research study design.
+      This should give stakeholders complete understanding of the study approach.
+    elicit: true
+    owner: research-strategist
+    sections:
+      - id: study-title
+        title: Study Title & Identifier
+        type: structured
+        instruction: Formal study name and tracking ID
+      - id: study-type
+        title: Study Type & Methodology
+        type: paragraph
+        instruction: Primary research type (exploratory/descriptive/explanatory) and methodology
+      - id: duration-timeline
+        title: Duration & Key Milestones
+        type: table
+        columns: [Phase, Start Date, End Date, Key Deliverable]
+        instruction: High-level project timeline
+      - id: team-roles
+        title: Research Team & Roles
+        type: table
+        columns: [Name, Role, Responsibility, Time Commitment]
+        instruction: Complete research team structure
+
+  - id: research-design
+    title: Research Design Framework
+    instruction: |
+      Define the comprehensive research design linking objectives to methods.
+      Ensure every research question has a clear path to answers.
+    elicit: true
+    sections:
+      - id: objectives-mapping
+        title: Research Objectives to Methods Mapping
+        type: table
+        columns: [Research Question, Method, Data Type, Analysis Approach, Expected Insight]
+        instruction: |
+          Map each research question to specific methods and analysis.
+          Ensure complete coverage of all objectives.
+      - id: design-rationale
+        title: Design Rationale
+        type: structured
+        instruction: |
+          Explain why this design approach was chosen:
+          - Theoretical framework or model
+          - Precedent studies or benchmarks
+          - Trade-offs considered and accepted
+      - id: success-metrics
+        title: Study Success Metrics
+        type: bullet-list
+        instruction: |
+          How will we measure if the study succeeded:
+          - Participant recruitment targets
+          - Data quality thresholds
+          - Insight generation goals
+          - Stakeholder satisfaction measures
+
+  - id: participant-strategy
+    title: Participant Strategy
+    instruction: |
+      Define comprehensive participant recruitment and management approach.
+      Ensure sample will yield valid, generalizable insights.
+    elicit: true
+    sections:
+      - id: target-population
+        title: Target Population Definition
+        type: structured
+        instruction: |
+          Define the population in detail:
+          - Demographics (age, gender, location, income)
+          - Psychographics (attitudes, values, lifestyle)
+          - Behaviors (usage patterns, purchase behavior)
+          - Exclusions (conflicts, bias risks)
+      - id: sampling-framework
+        title: Sampling Framework
+        type: structured
+        instruction: |
+          Sampling approach and justification:
+          - Sampling method (probability/purposive/convenience)
+          - Sample size calculation or saturation logic
+          - Stratification or quota requirements
+          - Geographic distribution needs
+      - id: recruitment-plan
+        title: Detailed Recruitment Plan
+        type: table
+        columns: [Channel, Target N, Timeline, Cost, Owner]
+        instruction: |
+          Multi-channel recruitment strategy:
+          - Primary recruitment channels
+          - Backup channels if needed
+          - Screening and qualification process
+          - Incentive structure ($X per session)
+      - id: inclusion-exclusion
+        title: Inclusion & Exclusion Criteria
+        type: structured
+        instruction: |
+          Specific criteria for participation:
+          - Must have (required characteristics)
+          - Should have (preferred for diversity)
+          - Must not have (disqualifying factors)
+          - Edge cases (how to handle)
+
+  - id: data-collection-protocol
+    title: Data Collection Protocol
+    instruction: |
+      Define detailed protocols for all data collection activities.
+      Ensure consistency and quality across all sessions.
+    elicit: true
+    sections:
+      - id: collection-methods-detail
+        title: Collection Methods Detail
+        type: repeatable
+        instruction: |
+          For each data collection method, specify:
+          - Method name and type
+          - Number of sessions/participants
+          - Duration per session
+          - Setting/environment requirements
+          - Materials and tools needed
+          - Recording approach (audio/video/notes)
+      - id: session-structure
+        title: Session Structure & Flow
+        type: structured
+        instruction: |
+          Standard session protocol:
+          1. Pre-session (5 min): Setup, tech check
+          2. Introduction (5 min): Welcome, consent, rapport
+          3. Warm-up (10 min): Context setting, background
+          4. Core exploration (40 min): Main research topics
+          5. Deep dives (20 min): Specific areas, exercises
+          6. Wrap-up (10 min): Final thoughts, next steps
+      - id: discussion-guides
+        title: Discussion Guides & Instruments
+        type: structured
+        instruction: |
+          Data collection instruments:
+          - Interview discussion guide sections
+          - Survey questionnaire overview
+          - Observation protocol checklist
+          - Stimulus materials description
+      - id: pilot-testing
+        title: Pilot Testing Plan
+        type: structured
+        instruction: |
+          Pilot test before full launch:
+          - Number of pilot sessions (minimum 2)
+          - Pilot participant criteria
+          - Feedback incorporation process
+          - Go/no-go decision criteria
+
+  - id: data-management
+    title: Data Management Plan
+    instruction: |
+      Define how data will be collected, stored, processed, and protected.
+      Ensure compliance with privacy regulations and ethical standards.
+    elicit: true
+    sections:
+      - id: data-types
+        title: Data Types & Formats
+        type: table
+        columns: [Data Type, Format, Volume Estimate, Storage Location]
+        instruction: All data to be collected and stored
+      - id: data-security
+        title: Data Security & Privacy
+        type: structured
+        instruction: |
+          Security measures:
+          - Anonymization procedures
+          - Encryption standards
+          - Access controls
+          - Retention period
+          - Deletion process
+      - id: data-processing
+        title: Data Processing Workflow
+        type: structured
+        instruction: |
+          How raw data becomes insights:
+          - Transcription process and timeline
+          - Data cleaning procedures
+          - Coding or categorization approach
+          - Quality assurance checks
+      - id: tools-platforms
+        title: Tools & Platforms
+        type: table
+        columns: [Tool, Purpose, Data Type, Access Control]
+        instruction: All tools for data collection and analysis
+
+  - id: analysis-framework
+    title: Analysis Framework
+    instruction: |
+      Define comprehensive approach to analyzing collected data.
+      Ensure analysis will answer research questions effectively.
+    elicit: true
+    sections:
+      - id: qualitative-analysis-plan
+        title: Qualitative Analysis Plan
+        condition: Study includes qualitative data
+        type: structured
+        instruction: |
+          Qualitative analysis approach:
+          - Analysis method (thematic/content/narrative/grounded theory)
+          - Coding strategy (inductive/deductive/hybrid)
+          - Coding phases (open → axial → selective)
+          - Software tools (NVivo/Atlas.ti/Dedoose)
+          - Inter-rater reliability approach
+          - Saturation assessment method
+      - id: quantitative-analysis-plan
+        title: Quantitative Analysis Plan
+        condition: Study includes quantitative data
+        type: structured
+        instruction: |
+          Quantitative analysis approach:
+          - Descriptive statistics plan
+          - Inferential tests to be used
+          - Significance levels (α = 0.05)
+          - Effect size calculations
+          - Missing data handling
+          - Statistical software (SPSS/R/Python)
+      - id: mixed-integration
+        title: Mixed Methods Integration
+        condition: Study uses mixed methods
+        type: structured
+        instruction: |
+          Integration strategy:
+          - Integration points in analysis
+          - Triangulation approach
+          - Convergence/divergence handling
+          - Joint display planning
+      - id: validation-strategy
+        title: Analysis Validation Strategy
+        type: bullet-list
+        instruction: |
+          How to ensure analysis validity:
+          - Member checking approach
+          - Peer debriefing sessions
+          - Triangulation methods
+          - Negative case analysis
+          - Audit trail maintenance
+
+  - id: project-management
+    title: Project Management
+    instruction: |
+      Define detailed project management approach.
+      Ensure smooth execution and timely delivery.
+    elicit: true
+    sections:
+      - id: detailed-timeline
+        title: Detailed Project Timeline
+        type: table
+        columns: [Week, Phase, Activities, Deliverables, Dependencies]
+        instruction: Week-by-week project plan with dependencies
+      - id: resource-allocation
+        title: Resource Allocation
+        type: table
+        columns: [Resource, Role, Hours/Week, Phase, Cost]
+        instruction: Detailed resource planning across project
+      - id: budget-detail
+        title: Detailed Budget
+        type: table
+        columns: [Category, Item, Quantity, Unit Cost, Total, Notes]
+        instruction: |
+          Complete budget breakdown:
+          - Participant incentives
+          - Platform/tool costs
+          - Transcription services
+          - Analysis software
+          - Team time (if applicable)
+          - Contingency (10-15%)
+      - id: communication-plan
+        title: Stakeholder Communication Plan
+        type: table
+        columns: [Stakeholder, Update Type, Frequency, Format, Owner]
+        instruction: How stakeholders stay informed throughout
+
+  - id: risk-management
+    title: Risk Management
+    instruction: |
+      Identify and plan for potential risks to study success.
+      Create mitigation strategies and contingency plans.
+    elicit: true
+    sections:
+      - id: risk-assessment
+        title: Risk Assessment Matrix
+        type: table
+        columns: [Risk, Category, Probability (1-5), Impact (1-5), Risk Score, Mitigation Strategy, Owner]
+        instruction: |
+          Key risk categories:
+          - Recruitment risks
+          - Data quality risks
+          - Timeline risks
+          - Resource risks
+          - Technical risks
+          - Ethical risks
+      - id: contingency-plans
+        title: Contingency Plans
+        type: structured
+        instruction: |
+          Detailed contingencies for high-impact risks:
+          - Recruitment shortfall plan
+          - Data quality issue response
+          - Timeline compression options
+          - Budget overrun handling
+      - id: monitoring-plan
+        title: Risk Monitoring Plan
+        type: structured
+        instruction: |
+          How risks will be monitored:
+          - Weekly risk review process
+          - Early warning indicators
+          - Escalation thresholds
+          - Decision authorities
+
+  - id: ethical-framework
+    title: Ethical Framework
+    instruction: |
+      Ensure study meets all ethical requirements and protects participants.
+      Address consent, privacy, and participant welfare.
+    sections:
+      - id: ethical-approval
+        title: Ethical Approval Status
+        type: structured
+        instruction: |
+          IRB or ethics review status:
+          - Approval requirement assessment
+          - Submission timeline
+          - Key ethical considerations
+          - Approval documentation
+      - id: informed-consent
+        title: Informed Consent Process
+        type: structured
+        instruction: |
+          Consent approach:
+          - Consent form key elements
+          - Process for obtaining consent
+          - Special populations considerations
+          - Withdrawal procedures
+      - id: participant-welfare
+        title: Participant Welfare Measures
+        type: bullet-list
+        instruction: |
+          Welfare protections:
+          - Psychological safety measures
+          - Sensitive topic handling
+          - Support resources available
+          - Debriefing procedures
+      - id: data-ethics
+        title: Data Ethics & Privacy
+        type: structured
+        instruction: |
+          Data protection measures:
+          - GDPR/CCPA compliance
+          - Anonymization standards
+          - Data sharing restrictions
+          - Right to deletion process
+
+  - id: quality-assurance
+    title: Quality Assurance Framework
+    instruction: |
+      Define quality standards and monitoring approach.
+      Ensure research meets highest quality standards.
+    sections:
+      - id: quality-standards
+        title: Quality Standards
+        type: bullet-list
+        instruction: |
+          Standards to maintain:
+          - Methodological rigor standards
+          - Data quality thresholds
+          - Analysis transparency requirements
+          - Reporting completeness criteria
+      - id: quality-checkpoints
+        title: Quality Checkpoints
+        type: table
+        columns: [Phase, Checkpoint, Criteria, Review Process, Approver]
+        instruction: Quality gates throughout study
+      - id: quality-monitoring
+        title: Quality Monitoring Process
+        type: structured
+        instruction: |
+          Ongoing quality management:
+          - Session quality reviews
+          - Data quality audits
+          - Analysis peer review
+          - Stakeholder feedback loops
+
+  - id: deliverables-outputs
+    title: Deliverables & Outputs
+    instruction: |
+      Define all study deliverables and their specifications.
+      Ensure alignment with stakeholder expectations.
+    sections:
+      - id: deliverables-list
+        title: Complete Deliverables List
+        type: table
+        columns: [Deliverable, Format, Audience, Due Date, Success Criteria]
+        instruction: All study outputs with specifications
+      - id: report-structure
+        title: Final Report Structure
+        type: structured
+        instruction: |
+          Main report outline:
+          - Executive summary (2-3 pages)
+          - Methodology (5-7 pages)
+          - Findings (15-20 pages)
+          - Insights & synthesis (10-12 pages)
+          - Recommendations (5-7 pages)
+          - Appendices (as needed)
+      - id: presentation-plan
+        title: Results Presentation Plan
+        type: structured
+        instruction: |
+          How results will be shared:
+          - Stakeholder presentation format
+          - Workshop or readout sessions
+          - Report distribution plan
+          - Follow-up support approach
+
+  - id: implementation-readiness
+    title: Implementation Readiness
+    instruction: |
+      Final checklist before study launch.
+      Confirm all elements are in place for successful execution.
+    sections:
+      - id: launch-checklist
+        title: Pre-Launch Checklist
+        type: checklist
+        items:
+          - Research objectives finalized
+          - Methodology approved
+          - Budget approved
+          - Team assembled and trained
+          - Recruitment channels active
+          - Materials and guides complete
+          - Pilot testing complete
+          - Tools and platforms ready
+          - Data security measures in place
+          - Stakeholder communication sent
+      - id: go-no-go
+        title: Go/No-Go Decision
+        type: structured
+        instruction: |
+          Launch decision criteria:
+          - All checklist items complete
+          - Key stakeholder approval obtained
+          - Risk mitigation plans in place
+          - Team confidence assessment
+      - id: immediate-next-steps
+        title: Immediate Next Steps
+        type: numbered-list
+        instruction: Actions for first 48 hours post-approval

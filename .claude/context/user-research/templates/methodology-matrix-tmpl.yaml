@@ -1,0 +1,324 @@
+# Research Methodology Matrix Template
+template:
+  id: methodology-matrix-v1
+  name: Research Methodology Selection Matrix
+  version: 1.0
+  output:
+    format: markdown
+    filename: research-outputs/methodology-matrix.md
+    title: "Research Methodology Selection for {{project_name}}"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+
+sections:
+  - id: context-summary
+    title: Research Context
+    instruction: |
+      Summarize the research context from the project brief.
+      Include objectives, constraints, and key considerations that will influence methodology selection.
+    sections:
+      - id: objectives-recap
+        title: Research Objectives
+        type: bullet-list
+        instruction: Key research questions and goals from the brief
+      - id: constraints-recap
+        title: Constraints & Requirements
+        type: structured
+        instruction: Time, budget, resource, and access constraints
+      - id: stakeholder-needs
+        title: Stakeholder Needs
+        type: bullet-list
+        instruction: What stakeholders need from this research
+
+  - id: methodology-criteria
+    title: Evaluation Criteria
+    instruction: |
+      Define and weight the criteria for evaluating research methodologies.
+      Adjust weights based on project priorities and constraints.
+    elicit: true
+    sections:
+      - id: criteria-weights
+        title: Weighted Criteria
+        type: table
+        columns: [Criterion, Weight %, Description, Priority Rationale]
+        instruction: |
+          Define evaluation criteria with weights totaling 100%.
+          Standard criteria include:
+          - Research Fit (25-35%): Alignment with questions
+          - Resource Feasibility (20-30%): Time/budget/expertise
+          - Data Quality (15-25%): Depth and reliability
+          - Stakeholder Value (10-20%): Decision usefulness
+          - Risk Level (5-15%): Implementation risks
+          - Speed to Insights (5-15%): Time to actionable findings
+      - id: scoring-scale
+        title: Scoring Scale Definition
+        type: structured
+        instruction: |
+          Define what each score means:
+          5 = Excellent fit/Very low risk
+          4 = Good fit/Low risk
+          3 = Moderate fit/Moderate risk
+          2 = Poor fit/High risk
+          1 = Not suitable/Very high risk
+
+  - id: qualitative-evaluation
+    title: Qualitative Methods Evaluation
+    instruction: |
+      Evaluate each qualitative method against the defined criteria.
+      Consider depth, context, and exploratory power.
+    elicit: true
+    sections:
+      - id: interviews-eval
+        title: In-Depth Interviews (IDIs)
+        type: structured
+        instruction: |
+          Evaluate 1-on-1 interviews:
+          - Best for: Individual experiences, journey mapping, sensitive topics
+          - Typical N: 15-30 participants
+          - Duration: 45-90 minutes each
+          - Analysis: Thematic analysis, narrative analysis
+      - id: focus-groups-eval
+        title: Focus Groups
+        type: structured
+        instruction: |
+          Evaluate group discussions:
+          - Best for: Concept testing, idea generation, social dynamics
+          - Typical N: 3-5 groups of 6-10 people
+          - Duration: 90-120 minutes per group
+          - Analysis: Group dynamics, consensus/divergence
+      - id: ethnography-eval
+        title: Ethnographic Observation
+        type: structured
+        instruction: |
+          Evaluate field observation:
+          - Best for: Contextual behavior, unmet needs, workflow analysis
+          - Typical N: 8-15 participants
+          - Duration: 2-8 hours per session
+          - Analysis: Behavioral patterns, contextual insights
+      - id: diary-studies-eval
+        title: Diary Studies
+        type: structured
+        instruction: |
+          Evaluate longitudinal self-reporting:
+          - Best for: Temporal patterns, in-the-moment experiences
+          - Typical N: 12-20 participants
+          - Duration: 1-4 weeks
+          - Analysis: Journey mapping, temporal analysis
+
+  - id: quantitative-evaluation
+    title: Quantitative Methods Evaluation
+    instruction: |
+      Evaluate each quantitative method against criteria.
+      Consider scale, statistical power, and validation needs.
+    elicit: true
+    sections:
+      - id: survey-eval
+        title: Surveys
+        type: structured
+        instruction: |
+          Evaluate structured questionnaires:
+          - Best for: Measuring attitudes, segmentation, validation
+          - Typical N: 100-1000+ respondents
+          - Duration: 5-20 minutes per response
+          - Analysis: Statistical analysis, segmentation
+      - id: conjoint-eval
+        title: Conjoint Analysis
+        type: structured
+        instruction: |
+          Evaluate trade-off analysis:
+          - Best for: Feature prioritization, pricing, preferences
+          - Typical N: 200-500 respondents
+          - Duration: 10-15 minutes per response
+          - Analysis: Preference modeling, importance scores
+      - id: ab-testing-eval
+        title: A/B Testing
+        type: structured
+        instruction: |
+          Evaluate controlled experiments:
+          - Best for: Optimization, causal inference, validation
+          - Typical N: Depends on effect size (1000s)
+          - Duration: 1-4 weeks typically
+          - Analysis: Statistical significance, effect size
+      - id: analytics-eval
+        title: Analytics Mining
+        type: structured
+        instruction: |
+          Evaluate behavioral data analysis:
+          - Best for: Actual behavior, patterns, funnels
+          - Typical N: All available users
+          - Duration: Historical data + ongoing
+          - Analysis: Pattern detection, cohort analysis
+
+  - id: mixed-methods-evaluation
+    title: Mixed Methods Evaluation
+    instruction: |
+      Evaluate integrated approaches combining qualitative and quantitative methods.
+      Consider sequencing and integration strategies.
+    elicit: true
+    sections:
+      - id: sequential-explanatory-eval
+        title: Sequential Explanatory (Quant → Qual)
+        type: structured
+        instruction: |
+          Survey/analytics first, then interviews to explain:
+          - Best for: Explaining patterns, diving deep on findings
+          - Timeline: Quant phase + 2-3 weeks for qual
+          - Integration: Qual explains quant findings
+      - id: sequential-exploratory-eval
+        title: Sequential Exploratory (Qual → Quant)
+        type: structured
+        instruction: |
+          Interviews/observation first, then survey to validate:
+          - Best for: Hypothesis generation and testing
+          - Timeline: Qual phase + 2-3 weeks for quant
+          - Integration: Quant validates qual insights
+      - id: concurrent-triangulation-eval
+        title: Concurrent Triangulation
+        type: structured
+        instruction: |
+          Parallel qual and quant streams:
+          - Best for: Comprehensive understanding, validation
+          - Timeline: Parallel execution
+          - Integration: Converge findings for robust insights
+
+  - id: evaluation-matrix
+    title: Methodology Scoring Matrix
+    instruction: |
+      Create the evaluation matrix with all methods scored against weighted criteria.
+      Calculate weighted scores for systematic comparison.
+    elicit: true
+    sections:
+      - id: scoring-matrix
+        title: Complete Evaluation Matrix
+        type: table
+        columns: [Method, Research Fit, Feasibility, Data Quality, Value, Risk, Speed, Weighted Total]
+        instruction: |
+          Score each method (1-5) against each criterion.
+          Calculate weighted total = Σ(score × weight) for each method.
+          Highlight top 3 scoring methods.
+      - id: sensitivity-analysis
+        title: Sensitivity Analysis
+        type: structured
+        instruction: |
+          How would recommendations change if:
+          - Timeline was compressed by 50%?
+          - Budget was doubled?
+          - Sample access was limited?
+
+  - id: methodology-recommendation
+    title: Final Methodology Recommendation
+    instruction: |
+      Based on systematic evaluation, recommend the optimal methodology or combination.
+      Provide clear rationale and implementation guidance.
+    elicit: true
+    sections:
+      - id: primary-method
+        title: Primary Method Selection
+        type: structured
+        instruction: |
+          Recommended primary method with:
+          - Method name and approach
+          - Weighted score from matrix
+          - Key strengths for this project
+          - Specific implementation plan
+      - id: supporting-methods
+        title: Supporting/Secondary Methods
+        type: structured
+        instruction: |
+          Additional methods to triangulate or extend:
+          - Method and role in research
+          - How it complements primary method
+          - Sequencing and integration plan
+      - id: trade-offs
+        title: Accepted Trade-offs
+        type: bullet-list
+        instruction: |
+          What are we giving up with this selection:
+          - Depth vs. breadth trade-offs
+          - Speed vs. rigor trade-offs
+          - Cost vs. quality trade-offs
+      - id: alternatives
+        title: Alternative Approaches
+        type: structured
+        instruction: |
+          Backup options if primary method fails:
+          - Plan B methodology
+          - Trigger points for switching
+          - Risk mitigation strategies
+
+  - id: implementation-planning
+    title: Implementation Planning
+    instruction: |
+      Detailed planning for executing the selected methodology.
+      Include sampling, recruitment, and analysis approaches.
+    sections:
+      - id: sample-design
+        title: Sample Design
+        type: structured
+        instruction: |
+          Define sampling approach:
+          - Target population definition
+          - Sample size and power calculations
+          - Recruitment strategy
+          - Screening criteria
+      - id: data-collection-plan
+        title: Data Collection Plan
+        type: table
+        columns: [Phase, Method, Sample Size, Duration, Deliverable]
+        instruction: Detailed collection timeline and outputs
+      - id: analysis-approach
+        title: Analysis Approach
+        type: structured
+        instruction: |
+          How data will be analyzed:
+          - Qualitative analysis framework
+          - Quantitative analysis plan
+          - Integration strategy for mixed methods
+      - id: quality-controls
+        title: Quality Controls
+        type: bullet-list
+        instruction: |
+          Measures to ensure research quality:
+          - Pilot testing plans
+          - Inter-rater reliability (if applicable)
+          - Data validation checks
+          - Peer review process
+
+  - id: resource-requirements
+    title: Resource Requirements
+    instruction: |
+      Detail all resources needed for the selected methodology.
+      Ensure alignment with available resources.
+    sections:
+      - id: team-expertise
+        title: Team & Expertise Needs
+        type: bullet-list
+        instruction: Required skills and time allocation
+      - id: tools-platforms
+        title: Tools & Platforms
+        type: table
+        columns: [Tool/Platform, Purpose, Cost, Setup Time]
+        instruction: All tools needed for data collection and analysis
+      - id: budget-breakdown
+        title: Budget Breakdown
+        type: table
+        columns: [Category, Item, Quantity, Unit Cost, Total]
+        instruction: Detailed budget for selected methodology
+
+  - id: risk-mitigation
+    title: Risk Assessment & Mitigation
+    instruction: |
+      Identify and plan for methodology-specific risks.
+      Create contingency plans for critical risks.
+    sections:
+      - id: methodology-risks
+        title: Methodology-Specific Risks
+        type: table
+        columns: [Risk, Probability (H/M/L), Impact (H/M/L), Mitigation Plan]
+        instruction: Risks specific to chosen methods
+      - id: contingency-planning
+        title: Contingency Plans
+        type: structured
+        instruction: What to do if primary approach encounters issues

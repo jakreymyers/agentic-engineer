@@ -1,0 +1,426 @@
+# Jobs-to-be-Done Framework Template
+template:
+  id: jtbd-framework-v1
+  name: Jobs-to-be-Done Analysis Framework
+  version: 1.0
+  output:
+    format: markdown
+    filename: docs/research/jtbd/{{job_category}}-analysis.md
+    title: "{{job_category}} - Jobs-to-be-Done Analysis"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  framework: clayton-christensen
+  evidence_requirement: strict
+
+sections:
+  - id: job-overview
+    title: Job Overview
+    instruction: |
+      Define the job based on actual user struggles and contexts observed in research.
+      Focus on what users are trying to achieve, not the solutions they currently use.
+    elicit: true
+    sections:
+      - id: job-statement
+        title: Job Statement
+        sections:
+          - id: main-job
+            title: Main Job
+            type: job-statement
+            instruction: |
+              Format: [Verb] + [Object] + [Contextual Clarifier]
+              Example: "Stay informed about industry changes when traveling"
+          - id: job-category
+            title: Job Category
+            type: selection
+            options: [Core Functional, Related, Consumption Chain, Emotional, Social]
+          - id: job-importance
+            title: Job Importance
+            type: rating
+            scale: 1-10
+            instruction: How critical is this job to users? (based on research)
+          - id: current-satisfaction
+            title: Current Satisfaction
+            type: rating
+            scale: 1-10
+            instruction: How well are current solutions doing this job?
+          - id: opportunity-score
+            title: Opportunity Score
+            type: calculated
+            formula: importance + (importance - satisfaction)
+            instruction: Higher scores indicate greater opportunity
+
+  - id: context-triggers
+    title: Context and Triggers
+    instruction: |
+      Document the situations and triggers that create demand for this job,
+      based on actual scenarios observed or described in research.
+    elicit: true
+    sections:
+      - id: triggering-events
+        title: Triggering Events
+        type: evidence-list
+        instruction: |
+          What prompts users to seek solutions:
+          - Event: [What happens]
+          - Context: [Situation/environment]
+          - Frequency: [How often occurs]
+          - Evidence: [Research source/quote]
+      - id: situational-factors
+        title: Situational Factors
+        type: categorized-list
+        categories: [Where, When, With Whom, Under What Constraints]
+        instruction: Context that shapes the job
+      - id: first-thought
+        title: First Thought
+        type: structured-list
+        instruction: |
+          What users first consider when job arises:
+          - Initial Reaction: [What they think]
+          - Default Solution: [What they usually do]
+          - Alternatives Considered: [Other options]
+          - Evidence: [Supporting quotes]
+
+  - id: struggling-moments
+    title: Struggling Moments
+    instruction: |
+      Identify the specific struggles that create demand for better solutions.
+      These are the moments where current solutions fail users.
+    elicit: true
+    sections:
+      - id: struggle-types
+        title: Types of Struggles
+        sections:
+          - id: functional-struggles
+            title: Functional Struggles
+            type: evidence-list
+            instruction: |
+              Can't accomplish the task:
+              - Struggle: [Description]
+              - Impact: [Consequence]
+              - Frequency: [How often]
+              - Evidence: [Quote/observation]
+          - id: emotional-struggles
+            title: Emotional Struggles
+            type: evidence-list
+            instruction: Negative feelings experienced
+          - id: social-struggles
+            title: Social Struggles
+            type: evidence-list
+            instruction: Social/relational problems
+          - id: financial-struggles
+            title: Financial/Time Struggles
+            type: evidence-list
+            instruction: Resource waste or inefficiency
+      - id: struggle-intensity
+        title: Struggle Intensity
+        type: intensity-matrix
+        columns: [Struggle, Frequency, Severity, Duration, Evidence]
+      - id: current-workarounds
+        title: Current Workarounds
+        type: workaround-list
+        instruction: How users currently cope with struggles
+
+  - id: job-dimensions
+    title: Three Dimensions of the Job
+    instruction: |
+      Break down the job into its functional, emotional, and social dimensions.
+      All dimensions must be supported by research evidence.
+    elicit: true
+    sections:
+      - id: functional-dimension
+        title: Functional Dimension
+        sections:
+          - id: functional-outcomes
+            title: Desired Functional Outcomes
+            type: outcome-list
+            instruction: |
+              What users want to accomplish:
+              Format: [Direction] + [Metric] + [Object] + [Context]
+              Example: "Minimize time to find relevant information"
+          - id: success-criteria
+            title: Functional Success Criteria
+            type: criteria-list
+            instruction: How users measure functional success
+          - id: functional-evidence
+            title: Supporting Evidence
+            type: quote-bank
+            instruction: Quotes demonstrating functional needs
+      - id: emotional-dimension
+        title: Emotional Dimension
+        sections:
+          - id: emotional-outcomes
+            title: Desired Emotional Outcomes
+            type: emotion-list
+            instruction: |
+              How users want to feel:
+              - Feeling: [Desired emotion]
+              - Avoid: [Emotions to prevent]
+              - Evidence: [Supporting quote]
+          - id: emotional-drivers
+            title: Emotional Drivers
+            type: driver-list
+            instruction: What drives these emotional needs
+      - id: social-dimension
+        title: Social Dimension
+        sections:
+          - id: social-outcomes
+            title: Desired Social Outcomes
+            type: social-list
+            instruction: |
+              How users want to be perceived:
+              - Perception: [How they want to appear]
+              - Audience: [Who they want to impress]
+              - Evidence: [Supporting data]
+          - id: social-drivers
+            title: Social Drivers
+            type: driver-list
+            instruction: What creates these social needs
+
+  - id: forces-analysis
+    title: Four Forces Analysis
+    instruction: |
+      Analyze the forces that influence whether users will switch to a new solution.
+      This reveals what drives and blocks progress toward better solutions.
+    elicit: true
+    sections:
+      - id: push-forces
+        title: Push Forces (Away from Current)
+        sections:
+          - id: functional-push
+            title: Functional Push
+            type: force-list
+            instruction: |
+              Problems with current solution:
+              - Problem: [What's wrong]
+              - Severity: [Impact level]
+              - Frequency: [How often]
+              - Evidence: [Quote expressing frustration]
+          - id: emotional-push
+            title: Emotional Push
+            type: force-list
+            instruction: Negative emotions from current state
+          - id: social-push
+            title: Social Push
+            type: force-list
+            instruction: Social pressures to change
+      - id: pull-forces
+        title: Pull Forces (Toward New)
+        sections:
+          - id: functional-pull
+            title: Functional Pull
+            type: force-list
+            instruction: |
+              Attraction of new solution:
+              - Attraction: [What appeals]
+              - Expected Benefit: [Improvement anticipated]
+              - Evidence: [Quote about desires]
+          - id: emotional-pull
+            title: Emotional Pull
+            type: force-list
+            instruction: Positive emotions from new solution
+          - id: social-pull
+            title: Social Pull
+            type: force-list
+            instruction: Social benefits of switching
+      - id: anxiety-forces
+        title: Anxiety Forces (New Solution Concerns)
+        sections:
+          - id: functional-anxiety
+            title: Functional Anxiety
+            type: anxiety-list
+            instruction: Fears about new solution performance
+          - id: emotional-anxiety
+            title: Emotional Anxiety
+            type: anxiety-list
+            instruction: Emotional barriers to change
+          - id: social-anxiety
+            title: Social Anxiety
+            type: anxiety-list
+            instruction: Social risks of switching
+      - id: habit-forces
+        title: Habit Forces (Current Solution Attachment)
+        sections:
+          - id: functional-habits
+            title: Functional Habits
+            type: habit-list
+            instruction: Familiar processes and workflows
+          - id: emotional-habits
+            title: Emotional Habits
+            type: habit-list
+            instruction: Comfort with known solution
+          - id: social-habits
+            title: Social Habits
+            type: habit-list
+            instruction: Social/organizational inertia
+
+  - id: outcome-expectations
+    title: Desired Outcomes and Success Metrics
+    instruction: |
+      Define specific, measurable outcomes users expect when the job is done well.
+      These guide solution design and evaluation.
+    elicit: true
+    sections:
+      - id: outcome-statements
+        title: Outcome Statements
+        type: outcome-matrix
+        columns: [Outcome, Type, Current Performance, Target, Evidence]
+        instruction: |
+          Structure: [Direction] + [Metric] + [Object] + [Context]
+          Types: Speed, Quality, Output, Cost, Accessibility
+      - id: importance-satisfaction
+        title: Importance vs Satisfaction Analysis
+        type: scatter-plot
+        axes: [Importance (1-10), Satisfaction (1-10)]
+        instruction: Plot each outcome to identify opportunities
+      - id: opportunity-landscape
+        title: Opportunity Landscape
+        type: opportunity-map
+        instruction: Map high-importance, low-satisfaction areas
+
+  - id: job-architecture
+    title: Job Architecture
+    instruction: |
+      Structure the job hierarchy and relationships to understand
+      the complete job ecosystem.
+    elicit: true
+    sections:
+      - id: job-hierarchy
+        title: Job Hierarchy
+        type: hierarchical-list
+        instruction: |
+          Big Job: [Main objective]
+          ├── Related Job 1: [Supporting job]
+          ├── Related Job 2: [Supporting job]
+          └── Little Jobs: [Micro-tasks]
+      - id: job-chain
+        title: Job Chain
+        type: sequence-diagram
+        instruction: |
+          How jobs connect sequentially:
+          Trigger → Job 1 → Job 2 → Job 3 → Success
+      - id: job-dependencies
+        title: Job Dependencies
+        type: dependency-map
+        instruction: Prerequisites and relationships between jobs
+
+  - id: solution-criteria
+    title: Solution Hiring Criteria
+    instruction: |
+      Define what users look for when "hiring" a solution for this job,
+      based on their evaluation criteria observed in research.
+    elicit: true
+    sections:
+      - id: must-haves
+        title: Must-Have Capabilities
+        type: criteria-list
+        instruction: |
+          Non-negotiable requirements:
+          - Capability: [What it must do]
+          - Reason: [Why critical]
+          - Evidence: [Research support]
+      - id: nice-to-haves
+        title: Nice-to-Have Features
+        type: criteria-list
+        instruction: Desirable but not essential
+      - id: deal-breakers
+        title: Deal Breakers
+        type: criteria-list
+        instruction: What would cause rejection
+      - id: trade-offs
+        title: Acceptable Trade-offs
+        type: trade-off-list
+        instruction: What users will sacrifice for core job
+
+  - id: competitive-landscape
+    title: Current Solution Landscape
+    instruction: |
+      Document how users currently get this job done and why
+      current solutions fall short.
+    sections:
+      - id: current-solutions
+        title: Current Solutions
+        type: solution-matrix
+        columns: [Solution, Usage %, Strengths, Weaknesses, When Used]
+      - id: non-consumption
+        title: Non-Consumption
+        type: analysis
+        instruction: When/why users choose no solution
+      - id: substitutes
+        title: Substitutes and Alternatives
+        type: substitute-list
+        instruction: Unexpected ways users get job done
+
+  - id: innovation-opportunities
+    title: Innovation Opportunities
+    instruction: |
+      Identify specific opportunities to better serve this job based on
+      unmet needs and struggles documented in research.
+    elicit: true
+    sections:
+      - id: unmet-outcomes
+        title: Unmet Outcomes
+        type: opportunity-list
+        instruction: Outcomes not well served by current solutions
+      - id: overserved-outcomes
+        title: Overserved Outcomes
+        type: list
+        instruction: Areas where simpler solutions would suffice
+      - id: innovation-vectors
+        title: Innovation Vectors
+        type: categorized-list
+        categories: [Eliminate, Reduce, Raise, Create]
+        instruction: Blue Ocean strategy framework
+      - id: solution-concepts
+        title: Solution Concepts
+        type: concept-list
+        instruction: High-level ideas for better solutions
+
+  - id: evidence-documentation
+    title: Supporting Evidence
+    instruction: |
+      Document all research evidence supporting this JTBD analysis
+      to maintain credibility and traceability.
+    sections:
+      - id: research-sources
+        title: Research Sources
+        type: source-list
+        instruction: All research that informed this analysis
+      - id: key-quotes
+        title: Key Supporting Quotes
+        type: quote-bank
+        instruction: |
+          Organized by job dimension:
+          Functional: "[Quote]" - Participant ID
+          Emotional: "[Quote]" - Participant ID
+          Social: "[Quote]" - Participant ID
+      - id: behavioral-evidence
+        title: Behavioral Evidence
+        type: observation-list
+        instruction: Observed behaviors supporting job existence
+      - id: validation-plan
+        title: Validation Plan
+        type: plan
+        instruction: How to validate job accuracy over time
+
+validation:
+  required_fields:
+    - job_overview
+    - struggling_moments
+    - job_dimensions
+    - forces_analysis
+    - outcome_expectations
+  evidence_requirements:
+    - All jobs traced to struggles
+    - Three dimensions documented
+    - Forces balanced with evidence
+    - Outcomes measurable
+    - Opportunities justified
+  quality_checks:
+    - Job vs solution distinction clear
+    - Context documented
+    - Struggles identified
+    - Forces analyzed
+    - Outcomes defined
+    - Evidence complete

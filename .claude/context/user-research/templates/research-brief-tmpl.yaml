@@ -1,0 +1,266 @@
+# Research Brief Template
+template:
+  id: research-brief-v1
+  name: Research Project Brief
+  version: 1.0
+  output:
+    format: markdown
+    filename: research-outputs/research-brief.md
+    title: "{{project_name}} Research Project Brief"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+
+sections:
+  - id: executive-summary
+    title: Executive Summary
+    instruction: |
+      Create a concise 2-3 paragraph executive summary that captures the essence of this research initiative.
+      Include: research purpose, key objectives, expected impact, and timeline.
+      This section should give stakeholders a complete understanding in 30 seconds of reading.
+    elicit: true
+    owner: research-orchestrator
+    sections:
+      - id: purpose-statement
+        title: Purpose Statement
+        type: paragraph
+        instruction: One clear sentence explaining why this research is being conducted
+      - id: key-objectives
+        title: Key Objectives
+        type: bullet-list
+        instruction: 3-5 bullet points of primary research objectives
+      - id: expected-impact
+        title: Expected Impact
+        type: paragraph
+        instruction: Brief description of how findings will be used
+
+  - id: research-objectives
+    title: Research Objectives
+    instruction: |
+      Define comprehensive research objectives that align with business goals.
+      Be specific about what you want to learn and why it matters.
+      Each objective should be measurable and achievable within the project timeline.
+    elicit: true
+    sections:
+      - id: business-goals
+        title: Business Goals Alignment
+        type: bullet-list
+        instruction: |
+          List how this research supports organizational objectives.
+          Each goal should connect research outcomes to business impact.
+        examples:
+          - "Reduce customer churn by understanding pain points in onboarding"
+          - "Increase conversion by identifying barriers in checkout flow"
+      - id: research-questions
+        title: Research Questions
+        type: numbered-list
+        prefix: RQ
+        instruction: |
+          Specific, answerable questions this research will address.
+          Prioritize questions that will drive actionable decisions.
+        examples:
+          - "RQ1: What are the primary reasons users abandon cart during checkout?"
+          - "RQ2: How do users currently solve this problem without our product?"
+      - id: success-criteria
+        title: Success Criteria
+        type: bullet-list
+        instruction: |
+          Measurable criteria that define research success.
+          Include both process metrics and outcome metrics.
+        examples:
+          - "Complete 20 in-depth interviews with target users"
+          - "Identify at least 3 actionable improvement opportunities"
+          - "Achieve 90% stakeholder satisfaction with insights quality"
+
+  - id: stakeholder-mapping
+    title: Stakeholder Mapping
+    instruction: |
+      Identify all stakeholders involved in or affected by this research.
+      Define roles, responsibilities, and communication plans.
+      Ensure all key decision-makers are included.
+    elicit: true
+    sections:
+      - id: stakeholder-table
+        title: Stakeholder Registry
+        type: table
+        columns: [Name, Role, Interest/Influence, Involvement, Communication]
+        instruction: |
+          Map stakeholders by influence and interest levels.
+          Define specific involvement and communication needs.
+      - id: raci-matrix
+        title: RACI Matrix
+        type: table
+        columns: [Activity, Responsible, Accountable, Consulted, Informed]
+        instruction: Define clear roles for research activities
+      - id: communication-plan
+        title: Communication Plan
+        type: structured
+        instruction: |
+          Define when and how stakeholders will be updated.
+          Include cadence, format, and key touchpoints.
+
+  - id: scope-definition
+    title: Scope Definition
+    instruction: |
+      Clearly define what is included and excluded from this research.
+      Set boundaries to manage expectations and resources effectively.
+    elicit: true
+    sections:
+      - id: in-scope
+        title: In Scope
+        type: bullet-list
+        instruction: Explicitly list what will be investigated
+        examples:
+          - "Desktop and mobile user experiences"
+          - "Users in North American markets"
+          - "Features related to core workflow"
+      - id: out-scope
+        title: Out of Scope
+        type: bullet-list
+        instruction: Explicitly list what won't be covered
+        examples:
+          - "Backend technical implementation details"
+          - "Competitive pricing analysis"
+          - "International market considerations"
+      - id: constraints
+        title: Constraints & Limitations
+        type: bullet-list
+        instruction: Identify constraints that may impact research
+        examples:
+          - "6-week timeline for completion"
+          - "$5,000 budget for participant incentives"
+          - "Limited access to enterprise users"
+
+  - id: methodology-overview
+    title: Methodology Overview
+    instruction: |
+      Provide high-level overview of research approach.
+      Detail will be added in methodology selection task.
+    sections:
+      - id: approach
+        title: Research Approach
+        type: paragraph
+        instruction: Describe qualitative, quantitative, or mixed methods approach
+      - id: methods
+        title: Proposed Methods
+        type: bullet-list
+        instruction: List potential research methods to be evaluated
+      - id: sample-size
+        title: Target Sample
+        type: structured
+        instruction: Initial thoughts on participant numbers and profiles
+
+  - id: resource-planning
+    title: Resource Planning
+    instruction: |
+      Plan all resources required for successful research execution.
+      Consider people, time, budget, and tools.
+    elicit: true
+    sections:
+      - id: timeline
+        title: Timeline & Milestones
+        type: table
+        columns: [Phase, Duration, Start Date, End Date, Deliverables]
+        instruction: Create realistic timeline with key milestones
+      - id: budget
+        title: Budget Breakdown
+        type: table
+        columns: [Category, Item, Quantity, Unit Cost, Total Cost]
+        instruction: Detailed budget including all research expenses
+      - id: team-resources
+        title: Team Resources
+        type: bullet-list
+        instruction: List team members and time allocation
+      - id: tools-infrastructure
+        title: Tools & Infrastructure
+        type: bullet-list
+        instruction: Required tools, software, and services
+
+  - id: risk-assessment
+    title: Risk Assessment
+    instruction: |
+      Identify potential risks and mitigation strategies.
+      Consider recruitment, timeline, quality, and stakeholder risks.
+    elicit: true
+    sections:
+      - id: risk-matrix
+        title: Risk Matrix
+        type: table
+        columns: [Risk, Probability, Impact, Mitigation Strategy, Owner]
+        instruction: Document key risks with mitigation plans
+      - id: contingency-plans
+        title: Contingency Plans
+        type: structured
+        instruction: Backup plans for critical risks
+
+  - id: ethical-considerations
+    title: Ethical Considerations
+    instruction: |
+      Address all ethical aspects of the research.
+      Ensure participant welfare and data privacy.
+    sections:
+      - id: consent-process
+        title: Consent Process
+        type: paragraph
+        instruction: How informed consent will be obtained
+      - id: data-privacy
+        title: Data Privacy & Security
+        type: bullet-list
+        instruction: Measures to protect participant data
+      - id: compensation
+        title: Participant Compensation
+        type: structured
+        instruction: Fair compensation structure
+
+  - id: deliverables
+    title: Expected Deliverables
+    instruction: |
+      List all deliverables and their intended audiences.
+      Include format, timing, and distribution plans.
+    sections:
+      - id: deliverables-list
+        title: Deliverables List
+        type: table
+        columns: [Deliverable, Format, Audience, Due Date]
+        instruction: Complete list of research outputs
+      - id: success-metrics
+        title: Success Metrics
+        type: bullet-list
+        instruction: How deliverable quality will be measured
+
+  - id: next-steps
+    title: Next Steps
+    instruction: |
+      Define immediate next steps to move forward.
+      Include owners and timelines for each action.
+    sections:
+      - id: immediate-actions
+        title: Immediate Actions (Next 48 Hours)
+        type: numbered-list
+        instruction: Critical path items to start research
+      - id: week-one-actions
+        title: Week 1 Actions
+        type: numbered-list
+        instruction: Actions for the first week
+      - id: dependencies
+        title: Dependencies & Prerequisites
+        type: bullet-list
+        instruction: What needs to be in place before starting
+
+  - id: approval-signatures
+    title: Approval & Sign-off
+    instruction: |
+      Document formal approval from key stakeholders.
+      Include date and any conditions of approval.
+    sections:
+      - id: approvals
+        title: Approvals
+        type: table
+        columns: [Stakeholder, Role, Approval Status, Date, Notes]
+        instruction: Track stakeholder approvals
+      - id: changelog
+        title: Document Change Log
+        type: table
+        columns: [Date, Version, Changes, Author]
+        instruction: Track document versions and updates

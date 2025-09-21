@@ -1,0 +1,434 @@
+# Ethnographic Research Plan Template
+# Comprehensive template for planning immersive ethnographic studies
+
+template:
+  id: ethnographic-plan-template
+  name: Ethnographic Research Study Plan
+  version: 1.0
+  output:
+    format: markdown
+    filename: docs/research/ethnographic-study-plan.md
+    title: "{{project_name}} Ethnographic Research Plan"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  sensitivity: cultural
+
+sections:
+  - id: research-framing
+    title: Research Framing
+    elicit: true
+    instruction: |
+      Establish the ethnographic research focus, theoretical perspective, and positioning.
+      Consider cultural sensitivity and ethical implications from the outset.
+    sections:
+      - id: phenomenon-focus
+        title: Phenomenon of Interest
+        type: paragraphs
+        instruction: |
+          Describe the cultural phenomenon, behaviors, or contexts you aim to understand.
+          What makes ethnographic observation essential for this research?
+          (2-3 paragraphs)
+        validation:
+          required: true
+          min_length: 300
+
+      - id: research-questions
+        title: Guiding Research Questions
+        type: numbered-list
+        instruction: |
+          List open-ended, exploratory questions that will guide observation.
+          Avoid hypothesis-driven questions; focus on discovery.
+        examples:
+          - "How do users integrate technology into their daily routines?"
+          - "What cultural rituals emerge around product use?"
+          - "How do social dynamics influence adoption patterns?"
+          - "What tacit knowledge guides user behaviors?"
+
+      - id: theoretical-lens
+        title: Theoretical Perspective
+        type: structured
+        fields:
+          primary_framework: "Theoretical framework (e.g., symbolic interactionism)"
+          epistemology: "Ways of knowing (interpretive, critical, etc.)"
+          researcher_stance: "Participant observer | Non-participant | Collaborative"
+          cultural_focus: "Emic (insider) | Etic (outsider) | Both"
+
+      - id: scope-boundaries
+        title: Study Boundaries
+        type: structured
+        fields:
+          temporal_scope: "Duration and intensity of observation"
+          spatial_scope: "Physical/virtual spaces to observe"
+          social_scope: "Groups, roles, or individuals of focus"
+          phenomenon_scope: "Specific behaviors or practices"
+
+  - id: field-sites
+    title: Field Site Selection
+    elicit: true
+    instruction: |
+      Define field sites with detailed justification for selection.
+      Consider access, representation, and ethical implications.
+    sections:
+      - id: site-identification
+        title: Proposed Field Sites
+        type: table
+        columns: [Site, Type, Access Status, Key Characteristics, Research Value]
+        instruction: |
+          List 1-3 primary sites and any comparison sites.
+          Include physical and/or digital spaces.
+        validation:
+          min_rows: 1
+          max_rows: 5
+
+      - id: site-justification
+        title: Site Selection Rationale
+        type: structured-list
+        instruction: |
+          For each site, provide detailed justification.
+        format: |
+          **Site: {{site_name}}**
+          - Phenomenon accessibility: {{how_observable}}
+          - Cultural richness: {{depth_available}}
+          - Practical feasibility: {{logistics}}
+          - Ethical acceptability: {{considerations}}
+          - Risk assessment: {{safety_concerns}}
+
+      - id: access-strategy
+        title: Access and Entry Strategy
+        type: structured
+        fields:
+          gatekeepers: "Key contacts and relationships"
+          permission_process: "Formal approvals needed"
+          relationship_building: "Rapport development plan"
+          reciprocity: "Value exchange with community"
+          exit_planning: "Departure and follow-up approach"
+
+  - id: participant-engagement
+    title: Participant Engagement Plan
+    elicit: true
+    instruction: |
+      Design approach for identifying, recruiting, and engaging with participants.
+      Emphasize relationship-building and ethical considerations.
+    sections:
+      - id: participant-selection
+        title: Participant Selection Criteria
+        type: structured
+        fields:
+          key_informants: "Characteristics of cultural experts"
+          typical_members: "Representative participants"
+          marginal_voices: "Underrepresented perspectives"
+          theoretical_sampling: "Emergent selection criteria"
+          sample_size: "Estimated number of key participants"
+
+      - id: consent-process
+        title: Informed Consent Process
+        type: structured
+        fields:
+          initial_consent: "How consent is obtained"
+          ongoing_consent: "Continuous consent approach"
+          vulnerable_populations: "Special considerations"
+          data_use_agreement: "How data will be used"
+          withdrawal_rights: "Participant exit process"
+
+      - id: compensation-reciprocity
+        title: Compensation and Reciprocity
+        type: structured
+        fields:
+          monetary_compensation: "Payment approach if any"
+          non_monetary_benefits: "Other value provided"
+          community_benefit: "Broader positive impact"
+          knowledge_sharing: "How findings return to community"
+          relationship_maintenance: "Long-term engagement"
+
+  - id: observation-framework
+    title: Observation Framework
+    elicit: true
+    instruction: |
+      Develop systematic observation protocols while maintaining flexibility for emergence.
+    sections:
+      - id: observation-dimensions
+        title: Observation Dimensions
+        type: checklist
+        instruction: |
+          Select Spradley's dimensions to focus on:
+        items:
+          - Space (physical layout and environment)
+          - Actors (people present and roles)
+          - Activities (sets of related acts)
+          - Objects (physical artifacts present)
+          - Acts (single actions observed)
+          - Events (occasions or gatherings)
+          - Time (sequencing and duration)
+          - Goals (objectives and purposes)
+          - Feelings (emotions expressed)
+
+      - id: observation-schedule
+        title: Observation Schedule
+        type: structured
+        fields:
+          phase_1: "Initial orientation (duration, focus)"
+          phase_2: "Focused observation (duration, focus)"
+          phase_3: "Selective observation (duration, focus)"
+          daily_routine: "Typical day structure"
+          total_hours: "Estimated observation hours"
+
+      - id: field-note-structure
+        title: Field Note Structure
+        type: structured-list
+        instruction: |
+          Define field note organization and categories.
+        categories:
+          - Descriptive notes (objective observations)
+          - Reflective notes (personal thoughts)
+          - Analytic notes (emerging patterns)
+          - Methodological notes (process decisions)
+          - Ethical notes (concerns and considerations)
+
+  - id: data-collection
+    title: Data Collection Methods
+    elicit: true
+    instruction: |
+      Plan comprehensive data collection beyond observation.
+    sections:
+      - id: primary-methods
+        title: Primary Data Collection
+        type: table
+        columns: [Method, Purpose, Frequency, Documentation]
+        rows:
+          - ["Participant observation", "Primary behavioral data", "Daily", "Field notes"]
+          - ["Contextual interviews", "Meaning and interpretation", "As needed", "Audio/transcripts"]
+          - ["Photo documentation", "Visual context", "Throughout", "Photo logs"]
+          - ["Artifact collection", "Material culture", "As available", "Catalog"]
+
+      - id: supplementary-methods
+        title: Supplementary Methods
+        type: checklist
+        items:
+          - Walking interviews
+          - Photo elicitation
+          - Video documentation
+          - Cultural probes
+          - Diary studies
+          - Social network mapping
+          - Environmental mapping
+          - Document analysis
+
+      - id: recording-protocols
+        title: Recording Protocols
+        type: structured
+        fields:
+          audio_recording: "When and how audio recorded"
+          video_recording: "Video documentation approach"
+          photography: "Photo consent and usage"
+          digital_tools: "Software and apps used"
+          data_security: "Storage and protection"
+
+  - id: analysis-approach
+    title: Analysis Approach
+    elicit: true
+    instruction: |
+      Plan iterative analysis process that begins during fieldwork.
+    sections:
+      - id: coding-strategy
+        title: Coding Strategy
+        type: structured
+        fields:
+          initial_coding: "Open coding approach"
+          focused_coding: "Axial coding process"
+          theoretical_coding: "Selective coding method"
+          constant_comparison: "Iterative refinement"
+          software_tools: "NVivo, Atlas.ti, etc."
+
+      - id: interpretation-framework
+        title: Interpretation Framework
+        type: structured
+        fields:
+          thick_description: "Approach to rich narratives"
+          cultural_interpretation: "Meaning-making process"
+          pattern_identification: "How patterns recognized"
+          theoretical_development: "Theory building approach"
+          reflexivity: "Self-awareness practices"
+
+      - id: validation-strategies
+        title: Validation Strategies
+        type: checklist
+        instruction: |
+          Select quality criteria approaches:
+        items:
+          - Prolonged engagement
+          - Persistent observation
+          - Data triangulation
+          - Member checking
+          - Peer debriefing
+          - Negative case analysis
+          - Audit trail maintenance
+          - Reflexive journaling
+
+  - id: ethical-framework
+    title: Ethical Framework
+    elicit: true
+    instruction: |
+      Establish comprehensive ethical guidelines and procedures.
+    sections:
+      - id: ethical-principles
+        title: Core Ethical Principles
+        type: table
+        columns: [Principle, Application, Safeguards]
+        rows:
+          - ["Beneficence", "Maximize benefits", "Community involvement"]
+          - ["Non-maleficence", "Minimize harm", "Risk assessment"]
+          - ["Autonomy", "Respect choice", "Ongoing consent"]
+          - ["Justice", "Fair treatment", "Inclusive approach"]
+          - ["Veracity", "Truthful representation", "Member validation"]
+
+      - id: sensitive-situations
+        title: Sensitive Situation Protocols
+        type: structured-list
+        instruction: |
+          Define protocols for handling sensitive situations:
+        scenarios:
+          - Witnessing illegal activities
+          - Observing harmful behaviors
+          - Confidential information disclosure
+          - Vulnerable participant protection
+          - Cultural taboos and boundaries
+
+      - id: irb-compliance
+        title: IRB/Ethics Review
+        type: structured
+        fields:
+          irb_status: "Submitted/Approved/Exempt"
+          protocol_number: "IRB protocol reference"
+          special_populations: "Additional protections"
+          data_management: "Privacy and storage plan"
+          reporting_requirements: "Adverse event procedures"
+
+  - id: reflexivity-plan
+    title: Reflexivity and Positionality
+    elicit: true
+    instruction: |
+      Plan for researcher reflexivity and acknowledgment of positionality.
+    sections:
+      - id: researcher-positionality
+        title: Researcher Positionality
+        type: paragraphs
+        instruction: |
+          Describe researcher background, assumptions, and potential biases.
+          How might these influence observation and interpretation?
+
+      - id: reflexive-practices
+        title: Reflexive Practices
+        type: bullet-list
+        instruction: |
+          List specific reflexive practices to employ:
+        defaults:
+          - Daily reflection sessions
+          - Reflexive journaling
+          - Peer debriefing sessions
+          - Assumption checking exercises
+          - Bias examination protocols
+          - Impact assessment reviews
+
+      - id: power-dynamics
+        title: Power Dynamics
+        type: paragraphs
+        instruction: |
+          Acknowledge power differentials and mitigation strategies.
+          How will you address researcher-participant dynamics?
+
+  - id: deliverables-dissemination
+    title: Deliverables and Dissemination
+    elicit: true
+    instruction: |
+      Plan outputs and knowledge sharing approach.
+    sections:
+      - id: deliverable-types
+        title: Planned Deliverables
+        type: checklist
+        items:
+          - Ethnographic report (narrative)
+          - Thick descriptions
+          - Photo essays
+          - Video documentation
+          - Cultural models
+          - Journey maps
+          - Design principles
+          - Experience prototypes
+          - Academic publications
+          - Community presentations
+
+      - id: dissemination-strategy
+        title: Dissemination Strategy
+        type: table
+        columns: [Audience, Format, Timeline, Purpose]
+        rows:
+          - ["Participants", "Community presentation", "Month 3", "Validation"]
+          - ["Stakeholders", "Executive report", "Month 3", "Decision-making"]
+          - ["Design team", "Workshops", "Month 3-4", "Application"]
+          - ["Academic", "Journal article", "Month 6", "Knowledge contribution"]
+
+      - id: knowledge-translation
+        title: Knowledge Translation
+        type: structured
+        fields:
+          participant_review: "How participants review findings"
+          stakeholder_workshops: "Interactive knowledge transfer"
+          design_implications: "Translation to practice"
+          policy_recommendations: "Systemic change suggestions"
+          future_research: "Next steps identified"
+
+  - id: logistics-resources
+    title: Logistics and Resources
+    elicit: true
+    instruction: |
+      Detail practical requirements and resource planning.
+    sections:
+      - id: timeline
+        title: Project Timeline
+        type: table
+        columns: [Phase, Duration, Key Activities, Deliverables]
+        rows:
+          - ["Pre-field prep", "2 weeks", "IRB, access, training", "Study plan"]
+          - ["Field entry", "1 week", "Rapport building", "Initial notes"]
+          - ["Immersion", "3-6 weeks", "Deep observation", "Field data"]
+          - ["Analysis", "2-3 weeks", "Coding, synthesis", "Findings"]
+          - ["Writing", "2-3 weeks", "Report creation", "Final outputs"]
+
+      - id: resource-requirements
+        title: Resource Requirements
+        type: structured
+        fields:
+          personnel: "Team composition and roles"
+          equipment: "Recording devices, software"
+          travel: "Transportation and accommodation"
+          compensation: "Participant payments"
+          supplies: "Materials and tools"
+          total_budget: "Estimated total cost"
+
+      - id: risk-mitigation
+        title: Risk Mitigation Plan
+        type: table
+        columns: [Risk, Likelihood, Impact, Mitigation]
+        instruction: |
+          Identify and plan for potential risks.
+
+quality_assurance:
+  ethical_review:
+    - IRB approval obtained
+    - Consent processes defined
+    - Privacy protections in place
+    - Community benefit articulated
+
+  methodological_rigor:
+    - Observation framework systematic
+    - Analysis approach defined
+    - Validation strategies selected
+    - Reflexivity practices planned
+
+  practical_feasibility:
+    - Access confirmed
+    - Resources adequate
+    - Timeline realistic
+    - Team prepared

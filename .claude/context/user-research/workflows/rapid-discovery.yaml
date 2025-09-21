@@ -1,0 +1,531 @@
+# Rapid Discovery Sprint Workflow
+# 5-day intensive research sprint for quick insights
+
+workflow:
+  id: rapid-discovery
+  name: Rapid Discovery Sprint
+  version: 1.0
+  description: |
+    Compressed 5-day research sprint for rapid insight generation.
+    Optimized for speed while maintaining research quality.
+    Ideal for urgent decisions or early-stage exploration.
+
+  estimated_duration: 5 days
+  team_size: 2-3 researchers
+  output_artifacts:
+    - Research brief (lightweight)
+    - Interview recordings and notes
+    - Key themes and patterns
+    - Top insights presentation
+    - Quick wins recommendations
+    - Next steps documentation
+
+sprint_schedule:
+  day_1:
+    name: Plan & Prepare
+    morning:
+      - Define research questions
+      - Identify target participants
+      - Create discussion guide outline
+    afternoon:
+      - Finalize interview guide
+      - Schedule participants
+      - Prepare recording setup
+
+  day_2:
+    name: Interview Day 1
+    sessions: 4-5 interviews
+    duration: 30-45 minutes each
+    evening: Quick debrief and notes
+
+  day_3:
+    name: Interview Day 2
+    sessions: 4-5 interviews
+    duration: 30-45 minutes each
+    evening: Pattern identification
+
+  day_4:
+    name: Analysis & Synthesis
+    morning:
+      - Rapid coding session
+      - Theme extraction
+    afternoon:
+      - Cross-interview synthesis
+      - Insight prioritization
+
+  day_5:
+    name: Report & Present
+    morning:
+      - Create presentation
+      - Prepare recommendations
+    afternoon:
+      - Stakeholder presentation
+      - Action planning session
+
+phases:
+  - id: rapid-setup
+    name: Sprint Planning
+    duration: 0.5 days
+    agent: research-orchestrator
+    priority: critical
+
+    steps:
+      - id: define-focus
+        action: Rapid objective setting
+        outputs:
+          - Research questions (3-5)
+          - Success criteria
+          - Scope boundaries
+        quality_gates:
+          - Questions focused
+          - Scope achievable in 5 days
+          - Stakeholders aligned
+
+      - id: select-approach
+        action: Choose rapid methods
+        outputs:
+          - Method selection
+          - Participant criteria
+          - Logistics plan
+        quality_gates:
+          - Methods appropriate
+          - Participants available
+          - Logistics confirmed
+
+    handoff:
+      to: interview-specialist
+      mode: express
+      artifacts:
+        - Research questions
+        - Participant list
+
+  - id: guide-creation
+    name: Interview Preparation
+    duration: 0.5 days
+    agent: interview-specialist
+    priority: high
+
+    steps:
+      - id: draft-guide
+        task: create-discussion-guide
+        mode: rapid
+        template: discussion-guide-tmpl
+        outputs:
+          - Focused discussion guide
+          - Priority questions
+          - Time allocations
+        quality_gates:
+          - Core questions defined
+          - Time realistic
+          - Flow logical
+
+      - id: prep-logistics
+        action: Prepare interview setup
+        outputs:
+          - Recording setup tested
+          - Calendar confirmed
+          - Consent forms ready
+        quality_gates:
+          - Tech working
+          - Participants confirmed
+          - Materials ready
+
+    handoff:
+      to: interview-specialist
+      artifacts:
+        - Discussion guide
+        - Interview schedule
+
+  - id: data-collection-sprint
+    name: Intensive Interviews
+    duration: 2 days
+    agent: interview-specialist
+    priority: critical
+
+    steps:
+      - id: conduct-interviews
+        action: Run back-to-back interviews
+        pace: 8-10 interviews total
+        outputs:
+          - Interview recordings
+          - Real-time notes
+          - Key quotes captured
+        quality_gates:
+          - 80% completion rate
+          - Audio quality good
+          - Notes captured
+
+      - id: daily-debrief
+        action: End-of-day synthesis
+        frequency: daily
+        outputs:
+          - Daily insights
+          - Emerging patterns
+          - Questions to probe
+        quality_gates:
+          - Patterns documented
+          - Team aligned
+          - Adjustments made
+
+    handoff:
+      to: data-analyst
+      mode: rolling
+      artifacts:
+        - Recordings
+        - Session notes
+        - Initial patterns
+
+  - id: rapid-analysis
+    name: Speed Analysis
+    duration: 1 day
+    agent: data-analyst
+    priority: critical
+
+    steps:
+      - id: quick-coding
+        action: Rapid thematic coding
+        approach: Top-line analysis
+        outputs:
+          - Key themes (5-7)
+          - Supporting quotes
+          - Pattern map
+        quality_gates:
+          - Major themes identified
+          - Evidence collected
+          - Team consensus
+
+      - id: affinity-sprint
+        action: Quick affinity mapping
+        tools:
+          - digital-affinity-mapper
+        outputs:
+          - Affinity clusters
+          - Insight statements
+          - Opportunity areas
+        quality_gates:
+          - Data organized
+          - Insights clear
+          - Opportunities identified
+
+    handoff:
+      to: insight-synthesizer
+      mode: express
+      artifacts:
+        - Theme analysis
+        - Affinity map
+        - Key quotes
+
+  - id: rapid-synthesis
+    name: Quick Synthesis
+    duration: 0.5 days
+    agent: insight-synthesizer
+    priority: high
+
+    steps:
+      - id: synthesize-insights
+        task: synthesize-cross-interview
+        mode: rapid
+        outputs:
+          - Top 10 insights
+          - Key patterns
+          - User needs list
+        quality_gates:
+          - Insights evidence-based
+          - Patterns clear
+          - Needs articulated
+
+      - id: identify-quickwins
+        action: Extract immediate opportunities
+        outputs:
+          - Quick wins (3-5)
+          - Low-hanging fruit
+          - Next research needs
+        quality_gates:
+          - Wins achievable
+          - Impact clear
+          - Next steps defined
+
+    handoff:
+      to: research-reporter
+      mode: express
+      artifacts:
+        - Key insights
+        - Quick wins
+        - Recommendations
+
+  - id: sprint-reporting
+    name: Rapid Reporting
+    duration: 0.5 days
+    agent: research-reporter
+    priority: critical
+
+    error_handling:
+      time_overrun:
+        detection: Preparation exceeding 4 hours
+        handler: use_sprint_template
+        fallback: bullets_over_slides
+        minimum: 5_key_insights
+
+      visualization_issues:
+        detection: Charts/graphics not ready
+        handler: use_simple_visuals
+        fallback: text_based_insights
+        priority: clarity_over_polish
+
+      review_bottleneck:
+        detection: Stakeholder review delayed
+        handler: proceed_with_draft
+        fallback: live_editing_session
+        documentation: capture_all_feedback
+
+    steps:
+      - id: create-presentation
+        action: Build insights deck
+        format: presentation
+        outputs:
+          - Insights presentation
+          - One-page summary
+          - Recommendations slide
+        quality_gates:
+          - Story clear
+          - Visuals impactful
+          - Actions specific
+
+      - id: prepare-delivery
+        action: Rehearse presentation
+        outputs:
+          - Polished deck
+          - Speaker notes
+          - Q&A prep
+        quality_gates:
+          - Time <30 minutes
+          - Messages clear
+          - Team aligned
+
+    handoff:
+      to: research-orchestrator
+      artifacts:
+        - Presentation deck
+        - Executive summary
+        - Action items
+
+  - id: sprint-close
+    name: Delivery & Next Steps
+    duration: 0.5 days
+    agent: research-orchestrator
+    priority: high
+
+    error_handling:
+      stakeholder_conflict:
+        detection: Disagreement on findings
+        handler: facilitate_alignment_session
+        fallback: document_different_perspectives
+        resolution: escalate_to_sponsor
+
+      action_paralysis:
+        detection: No clear next steps emerging
+        handler: propose_default_actions
+        fallback: schedule_follow_up_workshop
+        timeline: within_one_week
+
+      scope_creep:
+        detection: New questions emerging
+        handler: capture_in_parking_lot
+        fallback: separate_research_brief
+        boundary: maintain_sprint_closure
+
+    steps:
+      - id: present-findings
+        action: Stakeholder presentation
+        format: interactive workshop
+        outputs:
+          - Findings presented
+          - Feedback gathered
+          - Decisions made
+        quality_gates:
+          - Stakeholders engaged
+          - Decisions documented
+          - Actions assigned
+
+      - id: plan-next
+        action: Define follow-up research
+        outputs:
+          - Research roadmap
+          - Deep-dive areas
+          - Resource needs
+        quality_gates:
+          - Next steps clear
+          - Timeline defined
+          - Buy-in secured
+
+rapid_techniques:
+  interviews:
+    - format: Semi-structured
+    - duration: 30-45 minutes
+    - focus: Core questions only
+    - recording: Audio only
+
+  analysis:
+    - approach: Top-line thematic
+    - depth: Key patterns only
+    - coding: Single-pass
+    - validation: Team consensus
+
+  synthesis:
+    - method: Rapid clustering
+    - output: Key insights only
+    - evidence: Representative quotes
+    - scope: Directional findings
+
+  reporting:
+    - format: Presentation
+    - length: 20-30 slides
+    - focus: Action-oriented
+    - delivery: Workshop style
+
+constraints:
+  - Sample size: 8-10 participants
+  - Interview length: 30-45 minutes
+  - Analysis depth: Top-line only
+  - Documentation: Essential only
+  - Quality trade-offs accepted
+
+success_metrics:
+  - Sprint completed: 5 days
+  - Interviews conducted: >8
+  - Insights generated: >10
+  - Decisions enabled: >3
+  - Stakeholder satisfaction: >4/5
+  - Follow-up committed: Yes
+
+quality_shortcuts:
+  allowed:
+    - Single-coder analysis
+    - Rapid note-taking vs full transcription
+    - Top-line themes vs deep coding
+    - Presentation vs full report
+    - Team consensus vs validation
+
+  not_compromised:
+    - Participant consent
+    - Data security
+    - Core research ethics
+    - Evidence for insights
+    - Actionability of findings
+
+escalation_triggers:
+  - Participant recruitment issues
+  - Technical failures
+  - Team availability problems
+  - Stakeholder alignment gaps
+  - Time overruns
+
+tools_required:
+  - intelligent-transcription-service (optional)
+  - digital-affinity-mapper
+  - research-viz-generator (lightweight)
+
+deliverables:
+  minimum:
+    - Insights presentation
+    - One-page summary
+    - Recorded interviews
+
+  optional:
+    - Full transcripts
+    - Detailed analysis
+    - Comprehensive report
+    - Journey maps
+    - Personas
+
+follow_up:
+  recommended:
+    - Deep-dive research on key findings
+    - Quantitative validation
+    - Longitudinal study
+    - Expanded sample
+    - Specialized methods
+
+configuration:
+  mode: sprint
+  pace: intensive
+  quality: good-enough
+  focus: action
+  timeline: fixed
+
+error_recovery_plan:
+  sprint_level:
+    abort_conditions:
+      - participant_count: <3 by day 2
+      - stakeholder_withdrawal: true
+      - critical_resource_loss: true
+
+    recovery_strategies:
+      minor_delays:
+        detection: <2 hours behind
+        action: compress_upcoming_activities
+        communication: team_notification
+
+      major_delays:
+        detection: >4 hours behind or day_boundary_crossed
+        action: emergency_replan
+        options:
+          - extend_by_1_day
+          - reduce_scope_significantly
+          - convert_to_standard_project
+        decision_maker: research_lead
+
+      quality_compromise:
+        detection: <60% quality_threshold
+        action: stakeholder_consultation
+        options:
+          - accept_with_caveats
+          - supplement_with_followup
+          - abort_and_restart
+
+  checkpoint_management:
+    frequency: twice_daily
+    checkpoints:
+      - morning: 9am
+      - evening: 5pm
+    evaluation:
+      - progress_vs_plan
+      - quality_indicators
+      - team_capacity
+      - risk_factors
+
+    decision_tree:
+      on_track: continue
+      minor_issues: adjust_and_continue
+      major_issues: escalate_immediately
+      blocked: emergency_replan
+
+  communication_protocol:
+    internal:
+      - team_sync: every_4_hours
+      - status_updates: slack_channel
+      - blockers: immediate_escalation
+
+    stakeholder:
+      - daily_summary: end_of_day
+      - risk_alerts: immediate
+      - scope_changes: approval_required
+
+error_metrics:
+  tracking:
+    - error_frequency_by_phase
+    - recovery_time_per_error
+    - quality_impact_assessment
+    - resource_cost_of_errors
+
+  post_sprint:
+    - error_analysis_report
+    - prevention_recommendations
+    - process_improvements
+    - training_needs_identified
+
+  continuous_improvement:
+    - error_pattern_analysis
+    - root_cause_investigation
+    - preventive_measure_implementation
+    - effectiveness_monitoring

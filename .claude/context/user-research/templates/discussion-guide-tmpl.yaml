@@ -1,0 +1,367 @@
+# Interview Discussion Guide Template
+template:
+  id: discussion-guide-v1
+  name: Interview Discussion Guide
+  version: 1.0
+  output:
+    format: markdown
+    filename: research-outputs/discussion-guide.md
+    title: "{{project_name}} Interview Discussion Guide"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+
+sections:
+  - id: guide-header
+    title: Discussion Guide Header
+    instruction: |
+      Create the essential header information for the interview guide.
+      This establishes context and logistics for interviewers.
+    elicit: true
+    owner: interview-specialist
+    sections:
+      - id: project-details
+        title: Project & Study Information
+        type: structured
+        instruction: |
+          Core project identification:
+          - Study name and tracking identifier
+          - Research objectives summary (2-3 sentences)
+          - Target participant description
+          - Interview format and duration
+      - id: interviewer-notes
+        title: Interviewer Preparation Notes
+        type: bullet-list
+        instruction: |
+          Key preparation reminders:
+          - Critical background context to understand
+          - Sensitive topics requiring special handling
+          - Participant-specific considerations
+          - Technology or materials needed
+
+  - id: opening-section
+    title: Interview Opening (5-10 minutes)
+    instruction: |
+      Design the interview opening to build rapport and set expectations.
+      Critical for establishing trust and participant comfort.
+    elicit: true
+    sections:
+      - id: welcome-script
+        title: Welcome & Introduction Script
+        type: structured
+        instruction: |
+          Professional but warm opening:
+          - Interviewer introduction (name, role, organization)
+          - Study purpose explanation (without biasing)
+          - Interview process overview (duration, recording, breaks)
+          - Participant role emphasis (expert in their experience)
+      - id: consent-verification
+        title: Consent & Recording Confirmation
+        type: structured
+        instruction: |
+          Legal and ethical requirements:
+          - Consent form review and confirmation
+          - Recording permission with backup consent
+          - Right to pause/stop reminder
+          - Confidentiality assurance reiteration
+      - id: rapport-questions
+        title: Rapport Building Questions
+        type: question-set
+        instruction: |
+          2-3 warm-up questions that:
+          - Are easy and comfortable to answer
+          - Relate to research topic without diving deep
+          - Help participant settle into conversation
+          - Give interviewer sense of communication style
+
+  - id: background-section
+    title: Background & Context (10-15 minutes)
+    instruction: |
+      Establish participant context and current state.
+      Foundation for understanding their perspective on main topics.
+    elicit: true
+    sections:
+      - id: demographic-context
+        title: Relevant Background Information
+        type: question-set
+        instruction: |
+          Background questions that:
+          - Provide context for interpreting responses
+          - Are directly relevant to research objectives
+          - Respect privacy while gathering needed info
+          - Follow broad-to-specific progression
+      - id: current-state
+        title: Current State & Experience
+        type: question-set
+        instruction: |
+          Present situation exploration:
+          - Current relationship to research topic
+          - Recent relevant experiences or changes
+          - Baseline attitudes or behaviors
+          - Environmental or contextual factors
+
+  - id: core-topics
+    title: Core Research Topics
+    instruction: |
+      Main research exploration organized by priority topics.
+      Each topic should have clear objectives and question progression.
+    elicit: true
+    sections:
+      - id: primary-topic
+        title: "Primary Topic: {{primary_research_area}}"
+        type: topic-block
+        instruction: |
+          Topic exploration structure:
+          - Grand tour question to open topic naturally
+          - 3-4 follow-up questions with increasing specificity
+          - Experience-based questions (what happened)
+          - Opinion/feeling questions (what it meant)
+          - Behavioral questions (what they did)
+        components:
+          - grand_tour_question
+          - experience_questions
+          - attitude_questions
+          - behavior_questions
+          - probe_opportunities
+      - id: secondary-topic
+        title: "Secondary Topic: {{secondary_research_area}}"
+        type: topic-block
+        instruction: |
+          Second priority topic with:
+          - Smooth transition from primary topic
+          - Similar structure adapted to topic
+          - Comparison/contrast opportunities if relevant
+          - Connections to primary topic where appropriate
+      - id: additional-topics
+        title: Additional Research Areas
+        type: repeatable-topic-block
+        instruction: |
+          For each additional topic:
+          - Clear prioritization (required vs. optional)
+          - Shorter question sets if time-constrained
+          - Flexibility markers for interview adaptation
+
+  - id: deep-dive-section
+    title: Deep Dive & Critical Incidents (15-20 minutes)
+    instruction: |
+      Explore specific experiences and concrete examples.
+      Critical for getting beyond general attitudes to actual behavior.
+    elicit: true
+    sections:
+      - id: critical-incidents
+        title: Critical Incident Exploration
+        type: question-set
+        instruction: |
+          Critical incident technique questions:
+          - "Tell me about a recent time when..."
+          - "Walk me through that experience step by step..."
+          - "What happened before/during/after..."
+          - "What was going through your mind..."
+          - "How did that make you feel..."
+      - id: specific-examples
+        title: Concrete Example Requests
+        type: question-set
+        instruction: |
+          Example-seeking questions for each major topic:
+          - Request specific, recent examples
+          - Ask for step-by-step walkthroughs
+          - Explore decision points and rationale
+          - Understand contextual factors
+      - id: hypothetical-scenarios
+        title: Hypothetical Scenarios (Optional)
+        type: question-set
+        condition: Appropriate for research objectives
+        instruction: |
+          Carefully designed hypothetical questions:
+          - "What would need to change for..."
+          - "How would you handle..."
+          - "Imagine if [constraint] weren't an issue..."
+          - Note: These reveal attitudes, not behavior
+
+  - id: synthesis-section
+    title: Synthesis & Reflection (5-10 minutes)
+    instruction: |
+      Help participants reflect and synthesize their thoughts.
+      Opportunity to capture their highest-level insights.
+    elicit: true
+    sections:
+      - id: priority-identification
+        title: Priority & Value Questions
+        type: question-set
+        instruction: |
+          Synthesis questions:
+          - "What's most important to you about [topic]?"
+          - "If you could change one thing about [situation]..."
+          - "What advice would you give someone in similar situation?"
+          - "How would you summarize your main thoughts on [topic]?"
+      - id: reflection-prompts
+        title: Reflection & Summary Prompts
+        type: question-set
+        instruction: |
+          Meta-cognitive questions:
+          - "As you think about everything we've discussed..."
+          - "What stands out most to you from our conversation?"
+          - "Is there anything that surprised you about your own responses?"
+          - "What did I not ask that you think is important?"
+
+  - id: closing-section
+    title: Interview Closing (5 minutes)
+    instruction: |
+      Professional conclusion with clear next steps.
+      Maintain positive relationship and set appropriate expectations.
+    sections:
+      - id: final-sharing
+        title: Final Sharing Opportunity
+        type: structured
+        instruction: |
+          Open-ended closing:
+          - "Is there anything else you'd like to share about [topic]?"
+          - "Any questions about the study or what we discussed?"
+          - "Anything you thought I would ask but didn't?"
+      - id: next-steps
+        title: Next Steps & Follow-up
+        type: structured
+        instruction: |
+          Clear conclusion:
+          - Thank you and appreciation expression
+          - Study timeline and results sharing plan
+          - Contact information for questions
+          - Compensation/incentive processing
+          - Any follow-up interview scheduling
+
+  - id: supporting-materials
+    title: Supporting Materials
+    instruction: |
+      Essential materials for effective interview execution.
+      Quick reference and backup resources for interviewers.
+    sections:
+      - id: probe-bank
+        title: Probe Bank Quick Reference
+        type: reference-table
+        columns: [Probe Type, Example Questions, When to Use]
+        instruction: |
+          Organized probe collection:
+          - Clarification probes
+          - Elaboration probes
+          - Example probes
+          - Contrast probes
+          - Emotional probes
+      - id: transition-statements
+        title: Topic Transition Phrases
+        type: reference-list
+        instruction: |
+          Natural transition language:
+          - "I'd like to shift our focus to..."
+          - "That's really helpful. Now I'm curious about..."
+          - "Building on what you just shared..."
+          - "Let's explore a different aspect..."
+      - id: logistics-checklist
+        title: Interview Logistics Checklist
+        type: checklist
+        items:
+          - Recording equipment tested and backup ready
+          - Consent forms signed and accessible
+          - Participant contact info available
+          - Discussion guide and probe bank printed/accessible
+          - Note-taking materials ready
+          - Quiet, private space secured
+          - Emergency contact information available
+          - Post-interview protocol materials ready
+
+  - id: quality-assurance
+    title: Quality Assurance Guidelines
+    instruction: |
+      Standards and checkpoints for maintaining interview quality.
+      Guidance for consistent, professional execution.
+    sections:
+      - id: question-quality
+        title: Question Quality Checklist
+        type: checklist
+        items:
+          - Questions are open-ended and exploratory
+          - Language is neutral and non-leading
+          - Single concept per question (no double-barreled)
+          - Appropriate complexity for participant
+          - Cultural sensitivity maintained
+          - Accessibility considerations addressed
+      - id: bias-prevention
+        title: Bias Prevention Reminders
+        type: bullet-list
+        instruction: |
+          Ongoing awareness:
+          - Monitor for leading or loaded language
+          - Avoid confirming or validating specific responses
+          - Maintain curious, non-judgmental stance
+          - Recognize and manage personal reactions
+          - Balance depth with participant comfort
+      - id: ethical-standards
+        title: Ethical Standards Checklist
+        type: checklist
+        items:
+          - Participant welfare prioritized over data collection
+          - Confidentiality maintained throughout
+          - Consent boundaries respected
+          - Right to pause/stop honored
+          - Distress indicators monitored
+          - Professional boundaries maintained
+
+workflow_customization:
+  by_interview_type:
+    in_person:
+      additions:
+        - Physical space setup considerations
+        - Non-verbal communication awareness
+        - Materials management
+    remote:
+      additions:
+        - Technology backup plans
+        - Screen sharing protocols
+        - Virtual rapport building techniques
+    phone:
+      additions:
+        - Audio-only rapport building
+        - Vocal cue interpretation
+        - Note-taking strategies
+
+  by_participant_type:
+    vulnerable_populations:
+      modifications:
+        - Enhanced consent procedures
+        - Shortened session options
+        - Additional support resources
+    expert_participants:
+      modifications:
+        - Technical language considerations
+        - Methodology questions preparation
+        - Time efficiency emphasis
+
+  by_research_sensitivity:
+    sensitive_topics:
+      additions:
+        - Trauma-informed approaches
+        - Resource referral information
+        - Distress management protocols
+    standard_topics:
+      modifications:
+        - Streamlined procedures
+        - Focus on rapport and depth
+
+validation:
+  pilot_testing:
+    - Test with 2-3 practice participants
+    - Timing validation for each section
+    - Question clarity assessment
+    - Flow and transition evaluation
+
+  expert_review:
+    - Methodology expert assessment
+    - Subject matter expert input
+    - Cultural sensitivity review
+    - Ethical standards verification
+
+  stakeholder_approval:
+    - Research team consensus
+    - Client or sponsor approval
+    - IRB or ethics committee review
+    - Legal compliance verification

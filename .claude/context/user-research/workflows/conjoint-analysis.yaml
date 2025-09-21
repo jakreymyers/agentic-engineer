@@ -1,0 +1,503 @@
+# Conjoint Analysis Research Workflow
+# Quantitative preference and trade-off analysis workflow
+
+workflow:
+  id: conjoint-analysis
+  name: Conjoint Analysis Research
+  version: 1.0
+  description: |
+    Systematic workflow for conducting conjoint analysis to understand
+    user preferences, feature trade-offs, and willingness to pay.
+    Combines quantitative rigor with qualitative insights.
+
+  estimated_duration: 2-3 weeks
+  team_size: 2-3 researchers + 1 analyst
+  output_artifacts:
+    - Conjoint design specification
+    - Survey instrument
+    - Raw choice data
+    - Utility scores and part-worths
+    - Market simulation results
+    - Preference segments
+    - Strategic recommendations
+    - Technical appendix
+
+methodology:
+  type: Choice-Based Conjoint (CBC)
+  alternatives:
+    - Adaptive Conjoint Analysis (ACA)
+    - Menu-Based Choice (MBC)
+    - MaxDiff scaling
+  design: Fractional factorial
+  analysis: Hierarchical Bayes (HB)
+
+phases:
+  - id: study-planning
+    name: Conjoint Study Planning
+    duration: 2-3 days
+    agent: research-orchestrator
+    description: |
+      Define research objectives and establish conjoint
+      analysis framework and success criteria.
+
+    steps:
+      - id: define-objectives
+        task: establish-research-project
+        focus: conjoint-specific
+        outputs:
+          - Research objectives
+          - Business questions
+          - Decision criteria
+        quality_gates:
+          - Objectives quantifiable
+          - Decisions identified
+          - Stakeholders aligned
+
+      - id: select-methodology
+        action: Choose conjoint approach
+        outputs:
+          - Method selection (CBC/ACA/MBC)
+          - Rationale documentation
+          - Resource requirements
+        quality_gates:
+          - Method appropriate
+          - Resources available
+          - Timeline feasible
+
+    handoff:
+      to: research-strategist
+      artifacts:
+        - Study objectives
+        - Method selection
+        - Success criteria
+
+  - id: attribute-design
+    name: Attribute & Level Definition
+    duration: 3-4 days
+    agent: research-strategist
+    description: |
+      Define product attributes and levels for conjoint analysis,
+      ensuring realistic and actionable combinations.
+
+    steps:
+      - id: identify-attributes
+        action: Define key attributes
+        outputs:
+          - Attribute list (4-7)
+          - Attribute definitions
+          - Measurement scales
+        quality_gates:
+          - Attributes independent
+          - Definitions clear
+          - Measurable
+
+      - id: define-levels
+        action: Specify attribute levels
+        outputs:
+          - Level specifications (2-5 per attribute)
+          - Level descriptions
+          - Visual representations
+        quality_gates:
+          - Levels realistic
+          - Range appropriate
+          - Clearly differentiated
+
+      - id: design-experiment
+        task: setup-conjoint-analysis
+        template: conjoint-setup-tmpl
+        outputs:
+          - Experimental design
+          - Choice sets
+          - Design efficiency metrics
+        quality_gates:
+          - Design efficient (>0.8)
+          - Orthogonality maintained
+          - Balance achieved
+
+    handoff:
+      to: interview-specialist
+      artifacts:
+        - Attribute definitions
+        - Level specifications
+        - Experimental design
+
+  - id: instrument-development
+    name: Survey Instrument Creation
+    duration: 2-3 days
+    agent: interview-specialist
+    description: |
+      Develop conjoint survey instrument with choice tasks,
+      screening questions, and supplementary measures.
+
+    steps:
+      - id: create-choice-tasks
+        action: Build choice scenarios
+        outputs:
+          - Choice task cards
+          - Task instructions
+          - Practice scenarios
+        quality_gates:
+          - Tasks clear
+          - Cognitive load appropriate
+          - Instructions tested
+
+      - id: develop-survey
+        action: Create full instrument
+        outputs:
+          - Screening questions
+          - Choice tasks (12-20)
+          - Follow-up questions
+          - Demographics
+        quality_gates:
+          - Flow logical
+          - Length appropriate (<15 min)
+          - Mobile-friendly
+
+      - id: pilot-test
+        action: Conduct pilot testing
+        sample: 10-20 respondents
+        outputs:
+          - Pilot results
+          - Feedback analysis
+          - Refinements made
+        quality_gates:
+          - Comprehension verified
+          - Timing confirmed
+          - Issues resolved
+
+    handoff:
+      to: data-analyst
+      artifacts:
+        - Final survey instrument
+        - Choice design matrix
+        - Pilot test results
+
+  - id: data-collection
+    name: Conjoint Data Collection
+    duration: 5-7 days
+    agent: interview-specialist
+    description: |
+      Deploy conjoint survey and collect choice data
+      from target sample population.
+
+    steps:
+      - id: recruit-sample
+        action: Recruit participants
+        tools:
+          - research-participant-manager
+        outputs:
+          - Recruited sample
+          - Sample characteristics
+          - Response tracking
+        quality_gates:
+          - Sample size achieved (n>200)
+          - Representation adequate
+          - Quality checks passed
+
+      - id: deploy-survey
+        action: Launch and monitor survey
+        outputs:
+          - Response data
+          - Completion rates
+          - Time metrics
+        quality_gates:
+          - Completion rate >70%
+          - Data quality high
+          - No technical issues
+
+      - id: data-validation
+        action: Validate response quality
+        outputs:
+          - Cleaned dataset
+          - Quality metrics
+          - Exclusion decisions
+        quality_gates:
+          - Consistency checks passed
+          - No straightlining
+          - Attention checks passed
+
+    handoff:
+      to: data-analyst
+      artifacts:
+        - Raw choice data
+        - Cleaned dataset
+        - Sample description
+
+  - id: quantitative-analysis
+    name: Conjoint Analysis & Modeling
+    duration: 3-4 days
+    agent: data-analyst
+    description: |
+      Conduct hierarchical Bayes analysis to estimate
+      utilities and preference structures.
+
+    steps:
+      - id: estimate-utilities
+        task: perform-statistical-analysis
+        method: Hierarchical Bayes
+        tools:
+          - research-stats-analyzer
+        outputs:
+          - Individual utilities
+          - Aggregate part-worths
+          - Model fit statistics
+        quality_gates:
+          - Convergence achieved
+          - Fit statistics acceptable
+          - Face validity confirmed
+
+      - id: importance-analysis
+        action: Calculate attribute importance
+        outputs:
+          - Importance scores
+          - Relative importance chart
+          - Sensitivity analysis
+        quality_gates:
+          - Importance logical
+          - Sensitivity reasonable
+          - Patterns interpretable
+
+      - id: segment-analysis
+        action: Identify preference segments
+        outputs:
+          - Preference segments (3-5)
+          - Segment profiles
+          - Segment utilities
+        quality_gates:
+          - Segments distinct
+          - Size actionable
+          - Profiles coherent
+
+      - id: market-simulation
+        action: Run market simulations
+        outputs:
+          - Share of preference
+          - Competitive scenarios
+          - Optimization results
+        quality_gates:
+          - Simulations realistic
+          - Results stable
+          - Insights actionable
+
+    handoff:
+      to: insight-synthesizer
+      artifacts:
+        - Utility estimates
+        - Importance scores
+        - Segment analysis
+        - Simulation results
+
+  - id: insight-integration
+    name: Insight Development
+    duration: 2-3 days
+    agent: insight-synthesizer
+    description: |
+      Integrate quantitative findings with qualitative insights
+      to develop strategic recommendations.
+
+    steps:
+      - id: synthesize-quant
+        task: synthesize-cross-interview
+        focus: quantitative
+        outputs:
+          - Key preference patterns
+          - Trade-off insights
+          - Segment narratives
+        quality_gates:
+          - Insights clear
+          - Evidence strong
+          - Implications identified
+
+      - id: develop-strategy
+        action: Create strategic implications
+        outputs:
+          - Product strategy
+          - Pricing implications
+          - Feature priorities
+        quality_gates:
+          - Strategy grounded
+          - Priorities clear
+          - Feasible
+
+      - id: create-scenarios
+        action: Develop decision scenarios
+        outputs:
+          - Product configurations
+          - Market scenarios
+          - ROI projections
+        quality_gates:
+          - Scenarios realistic
+          - Projections justified
+          - Decisions enabled
+
+    handoff:
+      to: research-reporter
+      artifacts:
+        - Strategic insights
+        - Product recommendations
+        - Decision scenarios
+
+  - id: reporting-delivery
+    name: Report & Recommendations
+    duration: 2-3 days
+    agent: research-reporter
+    description: |
+      Create comprehensive conjoint analysis report with
+      visualizations and strategic recommendations.
+
+    steps:
+      - id: technical-report
+        task: generate-research-report
+        focus: quantitative
+        template: research-report-tmpl
+        outputs:
+          - Technical report
+          - Methodology appendix
+          - Statistical details
+        quality_gates:
+          - Methods documented
+          - Results accurate
+          - Reproducible
+
+      - id: create-visuals
+        task: design-visualizations
+        focus: conjoint-specific
+        tools:
+          - research-viz-generator
+        outputs:
+          - Utility charts
+          - Importance graphs
+          - Simulation dashboards
+        quality_gates:
+          - Visuals clear
+          - Data accurate
+          - Interactive where helpful
+
+      - id: executive-summary
+        task: create-executive-summary
+        template: executive-summary-tmpl
+        outputs:
+          - Executive presentation
+          - Decision framework
+          - Action recommendations
+        quality_gates:
+          - Story compelling
+          - Actions clear
+          - ROI articulated
+
+      - id: decision-tools
+        action: Create decision support tools
+        outputs:
+          - Product optimizer
+          - Scenario planner
+          - Segment calculator
+        quality_gates:
+          - Tools functional
+          - User-friendly
+          - Documented
+
+    handoff:
+      to: research-orchestrator
+      artifacts:
+        - Technical report
+        - Executive presentation
+        - Decision tools
+        - Raw data archive
+
+  - id: implementation
+    name: Decision Support & Implementation
+    duration: 1-2 days
+    agent: research-orchestrator
+    description: |
+      Support stakeholder decisions and plan
+      implementation of conjoint insights.
+
+    steps:
+      - id: workshop-delivery
+        action: Facilitate decision workshop
+        outputs:
+          - Workshop conducted
+          - Decisions documented
+          - Actions assigned
+        quality_gates:
+          - Stakeholders engaged
+          - Decisions made
+          - Ownership clear
+
+      - id: implementation-planning
+        action: Create implementation plan
+        outputs:
+          - Implementation roadmap
+          - Success metrics
+          - Monitoring plan
+        quality_gates:
+          - Plan detailed
+          - Metrics defined
+          - Timeline agreed
+
+technical_specifications:
+  design:
+    type: Fractional factorial
+    efficiency: ">0.85"
+    balance: Orthogonal
+    blocks: Optional
+    prohibitions: Supported
+
+  sample:
+    minimum: 200
+    recommended: 300-500
+    per_segment: 75-100
+    power_analysis: Required
+
+  analysis:
+    primary: Hierarchical Bayes (HB)
+    alternatives:
+      - Latent Class Analysis
+      - Mixed Logit
+      - Aggregate Logit
+    software:
+      - Sawtooth Software
+      - R (mlogit, bayesm)
+      - Python (pylogit)
+
+  validation:
+    holdout_tasks: 2-3
+    hit_rate: ">65%"
+    MAE_threshold: "<15%"
+    test_retest: Optional
+
+quality_metrics:
+  design_efficiency: ">0.85"
+  sample_size: ">200"
+  completion_rate: ">70%"
+  model_fit: "RLH >0.6"
+  prediction_accuracy: ">65%"
+  segment_stability: ">80%"
+
+deliverables:
+  required:
+    - Utility estimates (individual and aggregate)
+    - Importance scores
+    - Market simulation results
+    - Technical report
+    - Executive presentation
+
+  optional:
+    - Segment analysis
+    - Competitive scenarios
+    - Price sensitivity curves
+    - Product optimizer tool
+    - Raw data files
+
+tools_required:
+  - research-participant-manager
+  - research-stats-analyzer
+  - research-viz-generator
+  - Conjoint analysis software
+
+configuration:
+  attributes: 4-7
+  levels_per_attribute: 2-5
+  choice_tasks: 12-20
+  alternatives_per_task: 2-4
+  none_option: optional
